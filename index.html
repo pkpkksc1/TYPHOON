@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SBLC Typhoon Logistics Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">SBLC · TYPHOON LOGISTICS</div>
+        <h1>태풍 물류 대시보드</h1>
+        <p id="updatedAt" class="muted">데이터 불러오는 중...</p>
+      </div>
+      <button id="refreshBtn" class="refresh-btn">새로고침</button>
+    </header>
+
+    <main>
+      <section class="hero-grid">
+        <article class="card typhoon-card">
+          <div class="section-title">현재 태풍</div>
+          <div class="typhoon-head">
+            <div class="storm-icon">🌀</div>
+            <div>
+              <h2 id="typhoonName">-</h2>
+              <div id="typhoonPosition" class="big-line">-</div>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><span>중심기압</span><b id="pressure">-</b></div>
+            <div class="metric"><span>최대풍속</span><b id="maxWind">-</b></div>
+            <div class="metric"><span>이동방향</span><b id="moveDir">-</b></div>
+            <div class="metric"><span>이동속도</span><b id="moveSpeed">-</b></div>
+          </div>
+        </article>
+
+        <article class="card compare-card">
+          <div class="section-title">JMA ↔ KMA 예보 비교</div>
+          <div id="compareBadge" class="big-badge">-</div>
+          <div class="compare-stats">
+            <div><span>평균 차이</span><b id="compareAvg">-</b></div>
+            <div><span>최대 차이</span><b id="compareMax">-</b></div>
+          </div>
+          <p class="hint">두 기관의 예상 경로가 얼마나 비슷한지 보여줍니다.</p>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="section-row">
+          <div>
+            <div class="section-title">5일 예상 경로</div>
+            <h3>태풍 위치 변화</h3>
+          </div>
+        </div>
+        <div id="track" class="track"></div>
+      </section>
+
+      <section>
+        <div class="section-row">
+          <div>
+            <div class="section-title">물류 거점</div>
+            <h3>거리 + 비 + 바람 종합 위험도</h3>
+          </div>
+        </div>
+        <div id="locations" class="location-grid"></div>
+      </section>
+
+      <section class="two-col">
+        <article class="card">
+          <div class="section-title">물류 노선</div>
+          <h3>노선별 위험도</h3>
+          <div id="routes" class="list"></div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">항공편</div>
+          <h3>ICN → PVG</h3>
+          <div id="flights" class="list"></div>
+        </article>
+      </section>
+
+      <footer>
+        <div id="attribution"></div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
