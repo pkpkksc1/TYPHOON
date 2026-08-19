@@ -10,9 +10,9 @@
     "name": "SAUDEL"
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 205
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 87
   },
   "locations": {
     "SUZHOU": {
@@ -32,8 +32,8 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.5,
-        "current_gust_mps": 8.1,
+        "current_wind_mps": 2.9,
+        "current_gust_mps": 6.4,
         "max_72h_rain_mm": 1.77,
         "max_72h_rain_time": "2026-08-22 13:00",
         "max_72h_wind_mps": 7.9,
@@ -65,8 +65,8 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.0,
-        "current_gust_mps": 7.9,
+        "current_wind_mps": 2.7,
+        "current_gust_mps": 7.8,
         "max_72h_rain_mm": 1.47,
         "max_72h_rain_time": "2026-08-22 11:00",
         "max_72h_wind_mps": 7.2,
@@ -97,15 +97,15 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
+        "current_rain_mm": 0.01,
         "current_wind_mps": 1.0,
         "current_gust_mps": 3.0,
-        "max_72h_rain_mm": 1.45,
-        "max_72h_rain_time": "2026-08-20 12:00",
-        "max_72h_wind_mps": 3.3,
-        "max_72h_wind_time": "2026-08-20 14:00",
-        "max_72h_gust_mps": 8.2,
-        "max_72h_gust_time": "2026-08-22 17:00"
+        "max_72h_rain_mm": 0.6,
+        "max_72h_rain_time": "2026-08-21 07:00",
+        "max_72h_wind_mps": 3.2,
+        "max_72h_wind_time": "2026-08-22 17:00",
+        "max_72h_gust_mps": 8.0,
+        "max_72h_gust_time": "2026-08-22 15:00"
       },
       "score_detail": {
         "distance": 0,
@@ -130,15 +130,15 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.51,
-        "current_wind_mps": 2.1,
-        "current_gust_mps": 3.8,
+        "current_rain_mm": 0.35,
+        "current_wind_mps": 1.4,
+        "current_gust_mps": 2.6,
         "max_72h_rain_mm": 6.28,
         "max_72h_rain_time": "2026-08-22 12:00",
-        "max_72h_wind_mps": 3.5,
-        "max_72h_wind_time": "2026-08-21 20:00",
-        "max_72h_gust_mps": 7.1,
-        "max_72h_gust_time": "2026-08-21 20:00"
+        "max_72h_wind_mps": 5.4,
+        "max_72h_wind_time": "2026-08-20 12:00",
+        "max_72h_gust_mps": 8.0,
+        "max_72h_gust_time": "2026-08-20 13:00"
       },
       "score_detail": {
         "distance": 0,
@@ -150,7 +150,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락국제공항",
-      "score": 18,
+      "score": 13,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -163,19 +163,19 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.35,
-        "current_wind_mps": 4.2,
-        "current_gust_mps": 9.9,
-        "max_72h_rain_mm": 0.76,
-        "max_72h_rain_time": "2026-08-20 15:00",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 2.3,
+        "current_gust_mps": 3.1,
+        "max_72h_rain_mm": 0.43,
+        "max_72h_rain_time": "2026-08-20 00:00",
         "max_72h_wind_mps": 8.1,
         "max_72h_wind_time": "2026-08-22 13:00",
-        "max_72h_gust_mps": 13.5,
-        "max_72h_gust_time": "2026-08-20 12:00"
+        "max_72h_gust_mps": 13.0,
+        "max_72h_gust_time": "2026-08-21 15:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 8,
+        "rain": 3,
         "wind": 5,
         "gust": 5
       }
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-19T19:02:13.771272+00:00"
+  "generated_at_utc": "2026-08-19T19:48:29.474689+00:00"
 }
