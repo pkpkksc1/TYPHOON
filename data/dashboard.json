@@ -1,11 +1,68 @@
 {
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
-  "parser_version": "8.0",
-  "generated_at_utc": "2026-08-19T15:35:32.584218+00:00",
+  "parser_version": "8.1",
+  "generated_at_utc": "2026-08-19T16:37:56.046812+00:00",
   "typhoon": {
     "number": "2618",
-    "name": "SAUDEL"
+    "name": "SAUDEL",
+    "current": {
+      "time": "2026-08-19T21:00:00+09:00",
+      "lat": 8.9,
+      "lon": 153.2,
+      "pressure_hpa": 996.0,
+      "max_wind_mps": 20.6,
+      "gust_mps": 30.9,
+      "movement_direction": "北西",
+      "movement_speed_kmh": 14.8
+    },
+    "forecast_track": [
+      {
+        "forecast_hour": 24,
+        "time": "2026-08-20T21:00:00+09:00",
+        "lat": 13.1,
+        "lon": 151.6,
+        "pressure_hpa": 990.0,
+        "max_wind_mps": 25.7,
+        "movement_direction": "北北西"
+      },
+      {
+        "forecast_hour": 48,
+        "time": "2026-08-21T21:00:00+09:00",
+        "lat": 16.2,
+        "lon": 149.4,
+        "pressure_hpa": 970.0,
+        "max_wind_mps": 36.0,
+        "movement_direction": "北北西"
+      },
+      {
+        "forecast_hour": 72,
+        "time": "2026-08-22T21:00:00+09:00",
+        "lat": 19.2,
+        "lon": 145.7,
+        "pressure_hpa": 950.0,
+        "max_wind_mps": 43.7,
+        "movement_direction": "北西"
+      },
+      {
+        "forecast_hour": 96,
+        "time": "2026-08-23T21:00:00+09:00",
+        "lat": 21.9,
+        "lon": 140.9,
+        "pressure_hpa": 940.0,
+        "max_wind_mps": 46.3,
+        "movement_direction": "西北西"
+      },
+      {
+        "forecast_hour": 120,
+        "time": "2026-08-24T21:00:00+09:00",
+        "lat": 24.2,
+        "lon": 136.0,
+        "pressure_hpa": 950.0,
+        "max_wind_mps": 43.7,
+        "movement_direction": "西北西"
+      }
+    ]
   },
   "forecast_comparison": {
     "emoji": "🟡",
@@ -188,42 +245,20 @@
       "route": "ICN → PVG",
       "status": {
         "emoji": "🟡",
-        "label_ko": "출발 예정 43분 지연"
+        "label_ko": "출발 43분 지연"
       },
       "departure": {
-        "scheduled_local": "2026-08-20T08:10:00+09:00",
-        "actual_local": "2026-08-20T08:53:00+09:00",
-        "display_time_local": "2026-08-20 08:53",
+        "scheduled_local": "2026-08-19T23:10:00+09:00",
+        "actual_local": "2026-08-19T23:53:00+09:00",
+        "display_time_local": "2026-08-19 23:53",
         "delay_minutes": 43,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-20T08:20:00+08:00",
+        "scheduled_local": "2026-08-20T00:20:00+08:00",
         "actual_local": null,
-        "display_time_local": "2026-08-20 08:20",
-        "delay_minutes": null,
-        "timezone_label_ko": "중국시간"
-      }
-    },
-    {
-      "flight_iata": "KE249",
-      "route": "ICN → PVG",
-      "status": {
-        "emoji": "🟢",
-        "label_ko": "출발 예정"
-      },
-      "departure": {
-        "scheduled_local": "2026-08-20T11:00:00+09:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-20 11:00",
-        "delay_minutes": 0,
-        "timezone_label_ko": "한국시간"
-      },
-      "arrival": {
-        "scheduled_local": "2026-08-20T11:10:00+08:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-20 11:10",
-        "delay_minutes": null,
+        "display_time_local": "2026-08-20 00:12",
+        "delay_minutes": 1432,
         "timezone_label_ko": "중국시간"
       }
     }
