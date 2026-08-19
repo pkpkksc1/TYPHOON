@@ -117,24 +117,24 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 15,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 시간당 강수 2.74 mm",
+      "reason_ko": "최대 시간당 강수 6.28 mm",
       "typhoon": {
         "closest_distance_km": 3109,
         "closest_time": "2026-08-24T21:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.52,
-        "current_wind_mps": 1.8,
-        "current_gust_mps": 2.3,
-        "max_72h_rain_mm": 2.74,
-        "max_72h_rain_time": "2026-08-19 22:00",
+        "current_rain_mm": 0.51,
+        "current_wind_mps": 2.1,
+        "current_gust_mps": 3.8,
+        "max_72h_rain_mm": 6.28,
+        "max_72h_rain_time": "2026-08-22 12:00",
         "max_72h_wind_mps": 3.5,
         "max_72h_wind_time": "2026-08-21 20:00",
         "max_72h_gust_mps": 7.1,
@@ -142,7 +142,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 15,
+        "rain": 20,
         "wind": 0,
         "gust": 0
       }
@@ -201,13 +201,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 18,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (최대 시간당 강수 6.28 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-19T16:55:16.860110+00:00"
+  "generated_at_utc": "2026-08-19T17:49:23.316044+00:00"
 }
