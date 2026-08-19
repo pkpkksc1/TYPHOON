@@ -1,7 +1,9 @@
 {
   "source": "Japan Meteorological Agency (JMA)",
   "product": "Typhoon Analysis and Forecast Information (5-day)",
-  "active_count": 0,
+  "feed_high": "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
+  "feed_long": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
+  "active_count": 1,
   "locations": {
     "SUZHOU": {
       "name": "Suzhou",
@@ -39,9 +41,146 @@
       "enabled": true
     }
   },
-  "typhoons": [],
+  "typhoons": [
+    {
+      "slot": "VPTW60",
+      "event_id": "TC2621",
+      "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
+      "feed_updated": "2026-08-19T12:40:48Z",
+      "report_time": "2026-08-19T21:45:00+09:00",
+      "target_time": "2026-08-19T21:00:00+09:00",
+      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260819124049_0_VPTW60_010000.xml",
+      "typhoon": {
+        "number": "2618",
+        "name": "SAUDEL",
+        "kana": "ソウデル"
+      },
+      "analysis": {
+        "time": "2026-08-19T21:00:00+09:00",
+        "time_type": "実況",
+        "lat": 8.9,
+        "lon": 153.2,
+        "raw_coordinate": "+8.9+153.2/",
+        "area": "熱帯低気圧",
+        "pressure_hpa": 996.0,
+        "max_wind_mps": 40.0,
+        "gust_mps": 60.0,
+        "movement_direction": "北西",
+        "movement_speed": 8.0,
+        "movement_speed_unit": "ノット",
+        "movement_speed_kmh": 8.0,
+        "forecast_circle_radius": 180.0,
+        "forecast_circle_radius_unit": "海里",
+        "distances_km": {
+          "SUZHOU": 4190,
+          "PVG": 4080,
+          "ICN": 4160,
+          "CRK": 3614,
+          "HAN": 5248
+        }
+      },
+      "forecast": [
+        {
+          "time": "2026-08-20T21:00:00+09:00",
+          "time_type": "予報　２４時間後",
+          "lat": null,
+          "lon": null,
+          "raw_coordinate": null,
+          "area": "熱帯低気圧",
+          "pressure_hpa": 990.0,
+          "max_wind_mps": 50.0,
+          "gust_mps": 70.0,
+          "movement_direction": "北北西",
+          "movement_speed": 11.0,
+          "movement_speed_unit": "ノット",
+          "movement_speed_kmh": 11.0,
+          "forecast_circle_radius": 50.0,
+          "forecast_circle_radius_unit": "海里",
+          "forecast_hour": 24,
+          "distances_km": {}
+        },
+        {
+          "time": "2026-08-21T21:00:00+09:00",
+          "time_type": "予報　４８時間後",
+          "lat": null,
+          "lon": null,
+          "raw_coordinate": null,
+          "area": "熱帯低気圧",
+          "pressure_hpa": 970.0,
+          "max_wind_mps": 70.0,
+          "gust_mps": 100.0,
+          "movement_direction": "北北西",
+          "movement_speed": 9.0,
+          "movement_speed_unit": "ノット",
+          "movement_speed_kmh": 9.0,
+          "forecast_circle_radius": 85.0,
+          "forecast_circle_radius_unit": "海里",
+          "forecast_hour": 48,
+          "distances_km": {}
+        },
+        {
+          "time": "2026-08-22T21:00:00+09:00",
+          "time_type": "予報　７２時間後",
+          "lat": null,
+          "lon": null,
+          "raw_coordinate": null,
+          "area": "熱帯低気圧",
+          "pressure_hpa": 950.0,
+          "max_wind_mps": 85.0,
+          "gust_mps": 120.0,
+          "movement_direction": "北西",
+          "movement_speed": 12.0,
+          "movement_speed_unit": "ノット",
+          "movement_speed_kmh": 12.0,
+          "forecast_circle_radius": 120.0,
+          "forecast_circle_radius_unit": "海里",
+          "forecast_hour": 72,
+          "distances_km": {}
+        },
+        {
+          "time": "2026-08-23T21:00:00+09:00",
+          "time_type": "予報　９６時間後",
+          "lat": null,
+          "lon": null,
+          "raw_coordinate": null,
+          "area": "熱帯低気圧",
+          "pressure_hpa": 940.0,
+          "max_wind_mps": 90.0,
+          "gust_mps": 130.0,
+          "movement_direction": "西北西",
+          "movement_speed": 13.0,
+          "movement_speed_unit": "ノット",
+          "movement_speed_kmh": 13.0,
+          "forecast_circle_radius": 150.0,
+          "forecast_circle_radius_unit": "海里",
+          "forecast_hour": 96,
+          "distances_km": {}
+        },
+        {
+          "time": "2026-08-24T21:00:00+09:00",
+          "time_type": "予報　１２０時間後",
+          "lat": null,
+          "lon": null,
+          "raw_coordinate": null,
+          "area": "熱帯低気圧",
+          "pressure_hpa": 950.0,
+          "max_wind_mps": 85.0,
+          "gust_mps": 120.0,
+          "movement_direction": "西北西",
+          "movement_speed": 13.0,
+          "movement_speed_unit": "ノット",
+          "movement_speed_kmh": 13.0,
+          "forecast_circle_radius": 215.0,
+          "forecast_circle_radius_unit": "海里",
+          "forecast_hour": 120,
+          "distances_km": {}
+        }
+      ]
+    }
+  ],
   "warnings": {
     "feed_errors": [],
     "xml_errors": []
-  }
+  },
+  "generated_at_utc": "2026-08-19T13:19:55.330933+00:00"
 }
