@@ -45,14 +45,14 @@
         "timezone": "Asia/Shanghai",
         "timezone_label_ko": "중국시간",
         "scheduled_raw": "2026-08-20T00:20:00+00:00",
-        "estimated_raw": "2026-08-20T00:17:00+00:00",
+        "estimated_raw": "2026-08-20T00:12:00+00:00",
         "actual_raw": null,
         "scheduled_local": "2026-08-20T00:20:00+08:00",
-        "estimated_local": "2026-08-20T00:17:00+08:00",
+        "estimated_local": "2026-08-20T00:12:00+08:00",
         "actual_local": null,
-        "display_time_local": "2026-08-20 00:17",
-        "calculated_delay_minutes": 1437,
-        "api_delay_minutes": 43,
+        "display_time_local": "2026-08-20 00:12",
+        "calculated_delay_minutes": 1432,
+        "api_delay_minutes": null,
         "terminal": null,
         "gate": null
       },
@@ -61,5 +61,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-19T16:30:47.280680+00:00"
+  "generated_at_utc": "2026-08-19T16:35:00.638900+00:00"
 }
