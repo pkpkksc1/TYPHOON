@@ -1,0 +1,435 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+SBLC Typhoon Dashboard - Step 6
+Combined logistics risk
+
+Inputs:
+    data/typhoon_impact.json
+    data/weather.json
+
+Output:
+    data/typhoon_risk.json
+
+This is an internal operational risk score, NOT an official airport
+cancellation/delay rule.
+
+Risk inputs:
+1) Typhoon closest distance
+2) Hourly rain
+3) Wind
+4) Gust
+
+Uses Python standard library only.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+
+IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
+WEATHER_PATH = BASE_DIR / "data" / "weather.json"
+OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
+
+PARSER_VERSION = "6.0"
+
+LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
+
+ROUTES = [
+    {
+        "code": "SUZHOU_PVG_ICN",
+        "name_ko": "쑤저우 → PVG → 한국",
+        "locations": ["SUZHOU", "PVG", "ICN"],
+    },
+    {
+        "code": "SUZHOU_PVG_HAN",
+        "name_ko": "쑤저우 → PVG → 하노이",
+        "locations": ["SUZHOU", "PVG", "HAN"],
+    },
+    {
+        "code": "SUZHOU_PVG_CRK",
+        "name_ko": "쑤저우 → PVG → 클락",
+        "locations": ["SUZHOU", "PVG", "CRK"],
+    },
+    {
+        "code": "ICN_PVG",
+        "name_ko": "한국 → PVG",
+        "locations": ["ICN", "PVG"],
+    },
+]
+
+
+def load_json(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        raise FileNotFoundError(f"Missing file: {path}")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def to_float(value: Any) -> Optional[float]:
+    if value in (None, ""):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def risk_label(score: int) -> Dict[str, str]:
+    if score >= 70:
+        return {
+            "level": "RED",
+            "emoji": "🔴",
+            "label_ko": "높음",
+        }
+    if score >= 35:
+        return {
+            "level": "YELLOW",
+            "emoji": "🟡",
+            "label_ko": "주의",
+        }
+    return {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음",
+    }
+
+
+def distance_score(distance_km: Optional[float]) -> int:
+    if distance_km is None:
+        return 0
+    if distance_km <= 200:
+        return 40
+    if distance_km <= 400:
+        return 30
+    if distance_km <= 700:
+        return 20
+    if distance_km <= 1000:
+        return 10
+    return 0
+
+
+def rain_score(rain_mm: float) -> int:
+    # hourly precipitation
+    if rain_mm >= 10:
+        return 25
+    if rain_mm >= 5:
+        return 20
+    if rain_mm >= 2:
+        return 15
+    if rain_mm >= 0.5:
+        return 8
+    if rain_mm > 0:
+        return 3
+    return 0
+
+
+def wind_score(wind_mps: float) -> int:
+    if wind_mps >= 20:
+        return 20
+    if wind_mps >= 15:
+        return 15
+    if wind_mps >= 10:
+        return 10
+    if wind_mps >= 7:
+        return 5
+    return 0
+
+
+def gust_score(gust_mps: float) -> int:
+    if gust_mps >= 30:
+        return 25
+    if gust_mps >= 25:
+        return 20
+    if gust_mps >= 20:
+        return 15
+    if gust_mps >= 15:
+        return 10
+    if gust_mps >= 10:
+        return 5
+    return 0
+
+
+def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
+    current = location.get("current", {})
+    hourly = location.get("hourly_forecast", [])
+
+    max_rain = to_float(current.get("rain_mm")) or 0.0
+    max_wind = to_float(current.get("wind_mps")) or 0.0
+    max_gust = to_float(current.get("gust_mps")) or 0.0
+    max_rain_time = current.get("last_updated")
+    max_wind_time = current.get("last_updated")
+    max_gust_time = current.get("last_updated")
+
+    for item in hourly:
+        if not isinstance(item, dict):
+            continue
+
+        rain = to_float(item.get("rain_mm")) or 0.0
+        wind = to_float(item.get("wind_mps")) or 0.0
+        gust = to_float(item.get("gust_mps")) or 0.0
+        tm = item.get("time")
+
+        if rain > max_rain:
+            max_rain = rain
+            max_rain_time = tm
+
+        if wind > max_wind:
+            max_wind = wind
+            max_wind_time = tm
+
+        if gust > max_gust:
+            max_gust = gust
+            max_gust_time = tm
+
+    return {
+        "current_rain_mm": to_float(current.get("rain_mm")),
+        "current_wind_mps": to_float(current.get("wind_mps")),
+        "current_gust_mps": to_float(current.get("gust_mps")),
+        "max_72h_rain_mm": round(max_rain, 2),
+        "max_72h_rain_time": max_rain_time,
+        "max_72h_wind_mps": round(max_wind, 1),
+        "max_72h_wind_time": max_wind_time,
+        "max_72h_gust_mps": round(max_gust, 1),
+        "max_72h_gust_time": max_gust_time,
+    }
+
+
+def make_location_risk(
+    code: str,
+    impact_item: Dict[str, Any],
+    weather_item: Dict[str, Any],
+) -> Dict[str, Any]:
+    weather = summarize_weather(weather_item)
+
+    closest_distance = to_float(
+        impact_item.get("closest_distance_km")
+    )
+
+    d_score = distance_score(closest_distance)
+    r_score = rain_score(weather["max_72h_rain_mm"])
+    w_score = wind_score(weather["max_72h_wind_mps"])
+    g_score = gust_score(weather["max_72h_gust_mps"])
+
+    total = min(100, d_score + r_score + w_score + g_score)
+    risk = risk_label(total)
+
+    reasons: List[str] = []
+
+    if d_score:
+        reasons.append(
+            f"태풍 최접근 {round(closest_distance)} km"
+        )
+
+    if r_score >= 15:
+        reasons.append(
+            f"최대 시간당 강수 {weather['max_72h_rain_mm']} mm"
+        )
+
+    if w_score >= 10:
+        reasons.append(
+            f"최대 풍속 {weather['max_72h_wind_mps']} m/s"
+        )
+
+    if g_score >= 10:
+        reasons.append(
+            f"최대 돌풍 {weather['max_72h_gust_mps']} m/s"
+        )
+
+    if not reasons:
+        reasons.append("특이 위험요소 낮음")
+
+    return {
+        "code": code,
+        "name_ko": impact_item.get(
+            "name_ko",
+            weather_item.get("name_ko", code),
+        ),
+        "score": total,
+        "risk": risk,
+        "reason_ko": " / ".join(reasons),
+        "typhoon": {
+            "closest_distance_km": (
+                round(closest_distance)
+                if closest_distance is not None
+                else None
+            ),
+            "closest_time": impact_item.get("closest_time"),
+            "trend_ko": impact_item.get("trend_ko"),
+        },
+        "weather": weather,
+        "score_detail": {
+            "distance": d_score,
+            "rain": r_score,
+            "wind": w_score,
+            "gust": g_score,
+        },
+    }
+
+
+def risk_rank(level: str) -> int:
+    return {
+        "GREEN": 1,
+        "YELLOW": 2,
+        "RED": 3,
+    }.get(level, 0)
+
+
+def make_route_risk(
+    route: Dict[str, Any],
+    locations: Dict[str, Dict[str, Any]],
+) -> Dict[str, Any]:
+    route_locations = [
+        locations[code]
+        for code in route["locations"]
+        if code in locations
+    ]
+
+    if not route_locations:
+        return {
+            "code": route["code"],
+            "name_ko": route["name_ko"],
+            "score": 0,
+            "risk": {
+                "level": "NO_DATA",
+                "emoji": "⚪",
+                "label_ko": "자료 없음",
+            },
+            "reason_ko": "자료 없음",
+        }
+
+    worst = max(
+        route_locations,
+        key=lambda x: (
+            risk_rank(x["risk"]["level"]),
+            x["score"],
+        ),
+    )
+
+    # Route score uses worst hub score.
+    return {
+        "code": route["code"],
+        "name_ko": route["name_ko"],
+        "score": worst["score"],
+        "risk": worst["risk"],
+        "reason_ko": (
+            f"{worst['name_ko']} "
+            f"{worst['risk']['label_ko']} "
+            f"({worst['reason_ko']})"
+        ),
+        "locations": route["locations"],
+    }
+
+
+def semantic_payload(data: Dict[str, Any]) -> Dict[str, Any]:
+    clone = json.loads(json.dumps(data, ensure_ascii=False))
+    clone.pop("generated_at_utc", None)
+    return clone
+
+
+def write_if_changed(data: Dict[str, Any]) -> bool:
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    if OUTPUT_PATH.exists():
+        try:
+            old = load_json(OUTPUT_PATH)
+            if semantic_payload(old) == semantic_payload(data):
+                print("No combined risk change.")
+                return False
+        except Exception:
+            pass
+
+    data["generated_at_utc"] = datetime.now(
+        timezone.utc
+    ).isoformat()
+
+    OUTPUT_PATH.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    print(f"Updated: {OUTPUT_PATH}")
+    return True
+
+
+def main() -> int:
+    print(f"Combined risk parser: {PARSER_VERSION}")
+
+    impact = load_json(IMPACT_PATH)
+    weather = load_json(WEATHER_PATH)
+
+    impact_locations = impact.get("locations", {})
+    weather_locations = weather.get("locations", {})
+
+    locations: Dict[str, Dict[str, Any]] = {}
+
+    for code in LOCATION_ORDER:
+        if (
+            code in impact_locations
+            and code in weather_locations
+        ):
+            locations[code] = make_location_risk(
+                code,
+                impact_locations[code],
+                weather_locations[code],
+            )
+
+    routes = [
+        make_route_risk(route, locations)
+        for route in ROUTES
+    ]
+
+    output = {
+        "source": "JMA/KMA + WeatherAPI.com",
+        "product": "Combined Logistics Typhoon Risk",
+        "parser_version": PARSER_VERSION,
+        "status": "OK",
+        "note_ko": (
+            "내부 물류 판단용 위험도입니다. "
+            "공항 공식 결항/지연 기준이 아닙니다."
+        ),
+        "attribution": "Powered by WeatherAPI.com",
+        "typhoon": impact.get("typhoon"),
+        "forecast_confidence": impact.get(
+            "forecast_confidence"
+        ),
+        "locations": locations,
+        "routes": routes,
+    }
+
+    write_if_changed(output)
+
+    print("")
+    print("=== COMBINED LOCATION RISK ===")
+    for code in LOCATION_ORDER:
+        if code not in locations:
+            continue
+        item = locations[code]
+        print(
+            f"{item['risk']['emoji']} "
+            f"{item['name_ko']} "
+            f"{item['score']}점 - "
+            f"{item['risk']['label_ko']}"
+        )
+
+    print("")
+    print("=== ROUTE RISK ===")
+    for route in routes:
+        print(
+            f"{route['risk']['emoji']} "
+            f"{route['name_ko']} "
+            f"{route['score']}점 - "
+            f"{route['risk']['label_ko']}"
+        )
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
