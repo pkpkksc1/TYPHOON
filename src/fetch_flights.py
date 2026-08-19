@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
 API_URL = "https://api.aviationstack.com/v1/flights"
-PARSER_VERSION = "7.1"
+PARSER_VERSION = "7.2"
 FLIGHTS = ["KE315", "KE249"]
 
 KST = timezone(timedelta(hours=9))
@@ -119,7 +119,7 @@ def make_status(
     arr_delay = arrival.get("calculated_delay_minutes")
 
     # If actual departure exists, departure delay is the clearest current status.
-    if departure.get("actual"):
+    if departure.get("actual_utc"):
         if isinstance(dep_delay, int) and dep_delay >= 10:
             return {
                 "level": "YELLOW",
@@ -128,7 +128,7 @@ def make_status(
             }
 
         # Landed flight: use arrival delay if available.
-        if arrival.get("actual"):
+        if arrival.get("actual_utc"):
             if isinstance(arr_delay, int) and arr_delay >= 10:
                 return {
                     "level": "YELLOW",
@@ -255,7 +255,7 @@ def load_flight(api_key: str, flight_iata: str) -> Dict[str, Any]:
     req = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "sblc-typhoon-dashboard/7.1",
+            "User-Agent": "sblc-typhoon-dashboard/7.2",
         },
     )
 
