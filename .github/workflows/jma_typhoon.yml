@@ -1,10 +1,9 @@
 name: JMA Typhoon Fetch
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    # 30분마다 실행 / GitHub cron은 UTC 기준
-    - cron: "7,37 * * * *"
+    - cron: '7,37 * * * *'
 
 permissions:
   contents: write
@@ -24,7 +23,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Fetch JMA typhoon data
         run: python src/fetch_jma_typhoon.py
