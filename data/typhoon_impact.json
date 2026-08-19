@@ -1,0 +1,325 @@
+{
+  "source": "JMA + JMA/KMA comparison",
+  "product": "Logistics Typhoon Impact",
+  "parser_version": "4.0",
+  "status": "OK",
+  "note_ko": "현재 위험도는 태풍과의 거리 기준입니다. 강수·공항풍속·항공편 운항정보는 이후 단계에서 추가됩니다.",
+  "typhoon": {
+    "number": "2618",
+    "name": "SAUDEL"
+  },
+  "forecast_confidence": {
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 85
+  },
+  "risk_rule": {
+    "red": "0~300 km",
+    "yellow": "301~700 km",
+    "green": "701 km 이상"
+  },
+  "locations": {
+    "SUZHOU": {
+      "code": "SUZHOU",
+      "name_ko": "쑤저우",
+      "current_distance_km": 4190,
+      "closest_distance_km": 1708,
+      "closest_time": "2026-08-24T21:00:00+09:00",
+      "closest_forecast_hour": 120,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "timeline": [
+        {
+          "forecast_hour": 0,
+          "time": "2026-08-19T21:00:00+09:00",
+          "distance_km": 4190
+        },
+        {
+          "forecast_hour": 24,
+          "time": "2026-08-20T21:00:00+09:00",
+          "distance_km": 3758
+        },
+        {
+          "forecast_hour": 48,
+          "time": "2026-08-21T21:00:00+09:00",
+          "distance_km": 3363
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-08-22T21:00:00+09:00",
+          "distance_km": 2852
+        },
+        {
+          "forecast_hour": 96,
+          "time": "2026-08-23T21:00:00+09:00",
+          "distance_km": 2269
+        },
+        {
+          "forecast_hour": 120,
+          "time": "2026-08-24T21:00:00+09:00",
+          "distance_km": 1708
+        }
+      ]
+    },
+    "PVG": {
+      "code": "PVG",
+      "name_ko": "푸동국제공항",
+      "current_distance_km": 4080,
+      "closest_distance_km": 1595,
+      "closest_time": "2026-08-24T21:00:00+09:00",
+      "closest_forecast_hour": 120,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "timeline": [
+        {
+          "forecast_hour": 0,
+          "time": "2026-08-19T21:00:00+09:00",
+          "distance_km": 4080
+        },
+        {
+          "forecast_hour": 24,
+          "time": "2026-08-20T21:00:00+09:00",
+          "distance_km": 3646
+        },
+        {
+          "forecast_hour": 48,
+          "time": "2026-08-21T21:00:00+09:00",
+          "distance_km": 3250
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-08-22T21:00:00+09:00",
+          "distance_km": 2738
+        },
+        {
+          "forecast_hour": 96,
+          "time": "2026-08-23T21:00:00+09:00",
+          "distance_km": 2155
+        },
+        {
+          "forecast_hour": 120,
+          "time": "2026-08-24T21:00:00+09:00",
+          "distance_km": 1595
+        }
+      ]
+    },
+    "ICN": {
+      "code": "ICN",
+      "name_ko": "인천국제공항",
+      "current_distance_km": 4160,
+      "closest_distance_km": 1732,
+      "closest_time": "2026-08-24T21:00:00+09:00",
+      "closest_forecast_hour": 120,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "timeline": [
+        {
+          "forecast_hour": 0,
+          "time": "2026-08-19T21:00:00+09:00",
+          "distance_km": 4160
+        },
+        {
+          "forecast_hour": 24,
+          "time": "2026-08-20T21:00:00+09:00",
+          "distance_km": 3682
+        },
+        {
+          "forecast_hour": 48,
+          "time": "2026-08-21T21:00:00+09:00",
+          "distance_km": 3265
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-08-22T21:00:00+09:00",
+          "distance_km": 2759
+        },
+        {
+          "forecast_hour": 96,
+          "time": "2026-08-23T21:00:00+09:00",
+          "distance_km": 2218
+        },
+        {
+          "forecast_hour": 120,
+          "time": "2026-08-24T21:00:00+09:00",
+          "distance_km": 1732
+        }
+      ]
+    },
+    "HAN": {
+      "code": "HAN",
+      "name_ko": "하노이 노이바이 국제공항",
+      "current_distance_km": 5248,
+      "closest_distance_km": 3109,
+      "closest_time": "2026-08-24T21:00:00+09:00",
+      "closest_forecast_hour": 120,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "timeline": [
+        {
+          "forecast_hour": 0,
+          "time": "2026-08-19T21:00:00+09:00",
+          "distance_km": 5248
+        },
+        {
+          "forecast_hour": 24,
+          "time": "2026-08-20T21:00:00+09:00",
+          "distance_km": 4931
+        },
+        {
+          "forecast_hour": 48,
+          "time": "2026-08-21T21:00:00+09:00",
+          "distance_km": 4611
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-08-22T21:00:00+09:00",
+          "distance_km": 4158
+        },
+        {
+          "forecast_hour": 96,
+          "time": "2026-08-23T21:00:00+09:00",
+          "distance_km": 3622
+        },
+        {
+          "forecast_hour": 120,
+          "time": "2026-08-24T21:00:00+09:00",
+          "distance_km": 3109
+        }
+      ]
+    },
+    "CRK": {
+      "code": "CRK",
+      "name_ko": "클락국제공항",
+      "current_distance_km": 3614,
+      "closest_distance_km": 1900,
+      "closest_time": "2026-08-24T21:00:00+09:00",
+      "closest_forecast_hour": 120,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "timeline": [
+        {
+          "forecast_hour": 0,
+          "time": "2026-08-19T21:00:00+09:00",
+          "distance_km": 3614
+        },
+        {
+          "forecast_hour": 24,
+          "time": "2026-08-20T21:00:00+09:00",
+          "distance_km": 3352
+        },
+        {
+          "forecast_hour": 48,
+          "time": "2026-08-21T21:00:00+09:00",
+          "distance_km": 3087
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-08-22T21:00:00+09:00",
+          "distance_km": 2705
+        },
+        {
+          "forecast_hour": 96,
+          "time": "2026-08-23T21:00:00+09:00",
+          "distance_km": 2268
+        },
+        {
+          "forecast_hour": 120,
+          "time": "2026-08-24T21:00:00+09:00",
+          "distance_km": 1900
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "code": "SUZHOU_PVG_ICN",
+      "name_ko": "쑤저우 → PVG → 한국",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 최접근 1708 km",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "ICN"
+      ]
+    },
+    {
+      "code": "SUZHOU_PVG_HAN",
+      "name_ko": "쑤저우 → PVG → 하노이",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 최접근 1708 km",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "HAN"
+      ]
+    },
+    {
+      "code": "SUZHOU_PVG_CRK",
+      "name_ko": "쑤저우 → PVG → 클락",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 최접근 1708 km",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "CRK"
+      ]
+    },
+    {
+      "code": "ICN_PVG",
+      "name_ko": "한국 → PVG",
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "인천국제공항 최접근 1732 km",
+      "locations": [
+        "ICN",
+        "PVG"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-08-19T14:49:40.743256+00:00"
+}
