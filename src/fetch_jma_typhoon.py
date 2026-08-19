@@ -174,19 +174,27 @@ def parse_coordinate(text: Optional[str]) -> Tuple[Optional[float], Optional[flo
 
 
 def find_center_coordinate(info: ET.Element) -> Tuple[Optional[float], Optional[float], Optional[str]]:
-    candidates = list(iter_local(info, "Coordinate"))
-    # Prefer decimal-degree center coordinate.
+    # JMA analysis positions are usually Coordinate.
+    # Forecast-circle centers can be stored as BasePoint inside ProbabilityCircle.
+    candidates: List[ET.Element] = []
+    for tag_name in ("Coordinate", "BasePoint"):
+        candidates.extend(list(iter_local(info, tag_name)))
+
+    # Prefer center-position / forecast-circle center coordinates expressed in degrees.
+    preferred_words = ("中心位置", "予報円中心", "予報円")
     for el in candidates:
         typ = get_attr(el, "type")
-        if "中心位置" in typ and "度" in typ:
+        if any(word in typ for word in preferred_words) and ("度" in typ or not typ):
             lat, lon = parse_coordinate(el.text)
             if lat is not None:
                 return lat, lon, el.text.strip() if el.text else None
-    # Fallback: any coordinate that parses as decimal lat/lon.
+
+    # Fallback: any coordinate-like value that parses as decimal lat/lon.
     for el in candidates:
         lat, lon = parse_coordinate(el.text)
         if lat is not None:
             return lat, lon, el.text.strip() if el.text else None
+
     return None, None, None
 
 
@@ -254,13 +262,39 @@ def find_area_name(info: ET.Element) -> Optional[str]:
 def normalize_speed_kmh(value: Optional[float], unit: Optional[str]) -> Optional[float]:
     if value is None:
         return None
-    u = (unit or "").lower()
-    if "km/h" in u or "km/h" == u or "km毎時" in u:
+    u = (unit or "").strip().lower()
+    if "km/h" in u or "km毎時" in u or "キロメートル毎時" in u:
         return round(value, 1)
-    if "m/s" in u:
+    if "m/s" in u or "メートル毎秒" in u:
         return round(value * 3.6, 1)
-    if "kt" in u or "knot" in u:
+    if "ノット" in u or "kt" in u or "knot" in u:
         return round(value * 1.852, 1)
+    return round(value, 1)
+
+
+def normalize_speed_mps(value: Optional[float], unit: Optional[str]) -> Optional[float]:
+    if value is None:
+        return None
+    u = (unit or "").strip().lower()
+    if "m/s" in u or "メートル毎秒" in u:
+        return round(value, 1)
+    if "ノット" in u or "kt" in u or "knot" in u:
+        return round(value * 0.514444, 1)
+    if "km/h" in u or "km毎時" in u or "キロメートル毎時" in u:
+        return round(value / 3.6, 1)
+    return round(value, 1)
+
+
+def normalize_distance_km(value: Optional[float], unit: Optional[str]) -> Optional[float]:
+    if value is None:
+        return None
+    u = (unit or "").strip().lower()
+    if "海里" in u or "nautical" in u or u in ("nm", "nmi"):
+        return round(value * 1.852, 1)
+    if "km" in u or "キロメートル" in u:
+        return round(value, 1)
+    if "m" == u or "メートル" == u:
+        return round(value / 1000.0, 1)
     return round(value, 1)
 
 
@@ -290,14 +324,19 @@ def parse_meteo_info(info: ET.Element) -> Dict[str, Any]:
         "raw_coordinate": raw_coord,
         "area": find_area_name(info),
         "pressure_hpa": pressure if (pressure_unit in (None, "", "hPa")) else pressure,
-        "max_wind_mps": max_wind if wind_unit in (None, "", "m/s") else max_wind,
-        "gust_mps": gust if gust_unit in (None, "", "m/s") else gust,
+        "max_wind_source_value": max_wind,
+        "max_wind_source_unit": wind_unit,
+        "max_wind_mps": normalize_speed_mps(max_wind, wind_unit),
+        "gust_source_value": gust,
+        "gust_source_unit": gust_unit,
+        "gust_mps": normalize_speed_mps(gust, gust_unit),
         "movement_direction": move_dir,
         "movement_speed": move_speed,
         "movement_speed_unit": move_speed_unit,
         "movement_speed_kmh": normalize_speed_kmh(move_speed, move_speed_unit),
         "forecast_circle_radius": radius,
         "forecast_circle_radius_unit": radius_unit,
+        "forecast_circle_radius_km": normalize_distance_km(radius, radius_unit),
     }
 
 
