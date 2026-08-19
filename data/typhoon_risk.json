@@ -1,0 +1,250 @@
+{
+  "source": "JMA/KMA + WeatherAPI.com",
+  "product": "Combined Logistics Typhoon Risk",
+  "parser_version": "6.0",
+  "status": "OK",
+  "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
+  "attribution": "Powered by WeatherAPI.com",
+  "typhoon": {
+    "number": "2618",
+    "name": "SAUDEL"
+  },
+  "forecast_confidence": {
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 85
+  },
+  "locations": {
+    "SUZHOU": {
+      "code": "SUZHOU",
+      "name_ko": "쑤저우",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "특이 위험요소 낮음",
+      "typhoon": {
+        "closest_distance_km": 1708,
+        "closest_time": "2026-08-24T21:00:00+09:00",
+        "trend_ko": "접근 중"
+      },
+      "weather": {
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 4.5,
+        "current_gust_mps": 9.4,
+        "max_72h_rain_mm": 0.52,
+        "max_72h_rain_time": "2026-08-21 16:00",
+        "max_72h_wind_mps": 7.9,
+        "max_72h_wind_time": "2026-08-21 13:00",
+        "max_72h_gust_mps": 11.5,
+        "max_72h_gust_time": "2026-08-21 19:00"
+      },
+      "score_detail": {
+        "distance": 0,
+        "rain": 8,
+        "wind": 5,
+        "gust": 5
+      }
+    },
+    "PVG": {
+      "code": "PVG",
+      "name_ko": "푸동국제공항",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "특이 위험요소 낮음",
+      "typhoon": {
+        "closest_distance_km": 1595,
+        "closest_time": "2026-08-24T21:00:00+09:00",
+        "trend_ko": "접근 중"
+      },
+      "weather": {
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 3.5,
+        "current_gust_mps": 8.0,
+        "max_72h_rain_mm": 0.59,
+        "max_72h_rain_time": "2026-08-21 14:00",
+        "max_72h_wind_mps": 7.2,
+        "max_72h_wind_time": "2026-08-21 13:00",
+        "max_72h_gust_mps": 12.5,
+        "max_72h_gust_time": "2026-08-21 21:00"
+      },
+      "score_detail": {
+        "distance": 0,
+        "rain": 8,
+        "wind": 5,
+        "gust": 5
+      }
+    },
+    "ICN": {
+      "code": "ICN",
+      "name_ko": "인천국제공항",
+      "score": 8,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "특이 위험요소 낮음",
+      "typhoon": {
+        "closest_distance_km": 1732,
+        "closest_time": "2026-08-24T21:00:00+09:00",
+        "trend_ko": "접근 중"
+      },
+      "weather": {
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 1.0,
+        "current_gust_mps": 3.0,
+        "max_72h_rain_mm": 1.45,
+        "max_72h_rain_time": "2026-08-20 12:00",
+        "max_72h_wind_mps": 3.7,
+        "max_72h_wind_time": "2026-08-19 12:00",
+        "max_72h_gust_mps": 6.0,
+        "max_72h_gust_time": "2026-08-20 14:00"
+      },
+      "score_detail": {
+        "distance": 0,
+        "rain": 8,
+        "wind": 0,
+        "gust": 0
+      }
+    },
+    "HAN": {
+      "code": "HAN",
+      "name_ko": "하노이 노이바이 국제공항",
+      "score": 15,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "최대 시간당 강수 2.74 mm",
+      "typhoon": {
+        "closest_distance_km": 3109,
+        "closest_time": "2026-08-24T21:00:00+09:00",
+        "trend_ko": "접근 중"
+      },
+      "weather": {
+        "current_rain_mm": 1.38,
+        "current_wind_mps": 2.4,
+        "current_gust_mps": 4.5,
+        "max_72h_rain_mm": 2.74,
+        "max_72h_rain_time": "2026-08-19 22:00",
+        "max_72h_wind_mps": 3.5,
+        "max_72h_wind_time": "2026-08-21 20:00",
+        "max_72h_gust_mps": 7.1,
+        "max_72h_gust_time": "2026-08-21 20:00"
+      },
+      "score_detail": {
+        "distance": 0,
+        "rain": 15,
+        "wind": 0,
+        "gust": 0
+      }
+    },
+    "CRK": {
+      "code": "CRK",
+      "name_ko": "클락국제공항",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "특이 위험요소 낮음",
+      "typhoon": {
+        "closest_distance_km": 1900,
+        "closest_time": "2026-08-24T21:00:00+09:00",
+        "trend_ko": "접근 중"
+      },
+      "weather": {
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 2.6,
+        "current_gust_mps": 4.2,
+        "max_72h_rain_mm": 1.93,
+        "max_72h_rain_time": "2026-08-19 15:00",
+        "max_72h_wind_mps": 7.8,
+        "max_72h_wind_time": "2026-08-20 13:00",
+        "max_72h_gust_mps": 13.5,
+        "max_72h_gust_time": "2026-08-20 12:00"
+      },
+      "score_detail": {
+        "distance": 0,
+        "rain": 8,
+        "wind": 5,
+        "gust": 5
+      }
+    }
+  },
+  "routes": [
+    {
+      "code": "SUZHOU_PVG_ICN",
+      "name_ko": "쑤저우 → PVG → 한국",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "ICN"
+      ]
+    },
+    {
+      "code": "SUZHOU_PVG_HAN",
+      "name_ko": "쑤저우 → PVG → 하노이",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "HAN"
+      ]
+    },
+    {
+      "code": "SUZHOU_PVG_CRK",
+      "name_ko": "쑤저우 → PVG → 클락",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "CRK"
+      ]
+    },
+    {
+      "code": "ICN_PVG",
+      "name_ko": "한국 → PVG",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "푸동국제공항 낮음 (특이 위험요소 낮음)",
+      "locations": [
+        "ICN",
+        "PVG"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-08-19T15:04:35.793754+00:00"
+}
