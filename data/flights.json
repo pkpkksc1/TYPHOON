@@ -1,7 +1,7 @@
 {
   "source": "Aviationstack",
   "product": "Manual Flight Status",
-  "parser_version": "7.3",
+  "parser_version": "7.4",
   "route": "ICN → PVG",
   "tracked_flights": [
     "KE315"
@@ -61,5 +61,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-19T16:35:00.638900+00:00"
+  "generated_at_utc": "2026-08-19T16:37:33.320411+00:00"
 }
