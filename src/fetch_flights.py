@@ -793,6 +793,32 @@ def load_flight(
     )
 
 
+    # =====================================================
+    # Aviationstack 원본 시간 확인용 로그
+    # =====================================================
+
+    print("")
+    print("==========================================")
+    print(f"=== {flight_iata} RAW TIME CHECK ===")
+    print("==========================================")
+
+    print("")
+    print("[Departure]")
+    print("scheduled :", raw_departure.get("scheduled"))
+    print("estimated :", raw_departure.get("estimated"))
+    print("actual    :", raw_departure.get("actual"))
+    print("timezone  :", raw_departure.get("timezone"))
+
+    print("")
+    print("[Arrival]")
+    print("scheduled :", raw_arrival.get("scheduled"))
+    print("estimated :", raw_arrival.get("estimated"))
+    print("actual    :", raw_arrival.get("actual"))
+    print("timezone  :", raw_arrival.get("timezone"))
+
+    print("==========================================")
+    print("")
+
     departure = (
         normalize_departure(
             raw_departure
