@@ -9,9 +9,9 @@
     "name": "SAUDEL"
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 205
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 87
   },
   "risk_rule": {
     "red": "0~300 km",
@@ -346,5 +346,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-19T18:57:22.660272+00:00"
+  "generated_at_utc": "2026-08-19T19:44:30.691808+00:00"
 }
