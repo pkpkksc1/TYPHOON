@@ -38,13 +38,15 @@ jobs:
             exit 1
           fi
 
-          if git diff --quiet -- data/kma_typhoon.json; then
+          git add data/kma_typhoon.json
+
+          if git diff --cached --quiet; then
             echo "No KMA data change. Nothing to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/kma_typhoon.json
+
           git commit -m "Update KMA typhoon data"
           git push
