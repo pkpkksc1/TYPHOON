@@ -1,11 +1,10 @@
 {
   "source": "Aviationstack",
   "product": "Manual Flight Status",
-  "parser_version": "7.1",
+  "parser_version": "7.3",
   "route": "ICN → PVG",
   "tracked_flights": [
-    "KE315",
-    "KE249"
+    "KE315"
   ],
   "time_display": {
     "departure": "한국시간",
@@ -17,24 +16,24 @@
       "flight_number": "315",
       "route": "ICN → PVG",
       "found": true,
-      "status_raw": "scheduled",
+      "status_raw": "active",
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
-        "label_ko": "출발 예정 43분 지연"
+        "label_ko": "출발 43분 지연"
       },
       "departure": {
         "airport": "Seoul (Incheon)",
         "iata": "ICN",
         "timezone": "Asia/Seoul",
         "timezone_label_ko": "한국시간",
-        "scheduled_utc": "2026-08-19T23:10:00+00:00",
-        "estimated_utc": "2026-08-19T23:10:00+00:00",
-        "actual_utc": "2026-08-19T23:53:00+00:00",
-        "scheduled_local": "2026-08-20T08:10:00+09:00",
-        "estimated_local": "2026-08-20T08:10:00+09:00",
-        "actual_local": "2026-08-20T08:53:00+09:00",
-        "display_time_local": "2026-08-20 08:53",
+        "scheduled_raw": "2026-08-19T23:10:00+00:00",
+        "estimated_raw": "2026-08-19T23:10:00+00:00",
+        "actual_raw": "2026-08-19T23:53:00+00:00",
+        "scheduled_local": "2026-08-19T23:10:00+09:00",
+        "estimated_local": "2026-08-19T23:10:00+09:00",
+        "actual_local": "2026-08-19T23:53:00+09:00",
+        "display_time_local": "2026-08-19 23:53",
         "calculated_delay_minutes": 43,
         "api_delay_minutes": null,
         "terminal": null,
@@ -45,70 +44,22 @@
         "iata": "PVG",
         "timezone": "Asia/Shanghai",
         "timezone_label_ko": "중국시간",
-        "scheduled_utc": "2026-08-20T00:20:00+00:00",
-        "estimated_utc": null,
-        "actual_utc": null,
-        "scheduled_local": "2026-08-20T08:20:00+08:00",
-        "estimated_local": null,
+        "scheduled_raw": "2026-08-20T00:20:00+00:00",
+        "estimated_raw": "2026-08-20T00:17:00+00:00",
+        "actual_raw": null,
+        "scheduled_local": "2026-08-20T00:20:00+08:00",
+        "estimated_local": "2026-08-20T00:17:00+08:00",
         "actual_local": null,
-        "display_time_local": "2026-08-20 08:20",
-        "calculated_delay_minutes": null,
-        "api_delay_minutes": null,
+        "display_time_local": "2026-08-20 00:17",
+        "calculated_delay_minutes": 1437,
+        "api_delay_minutes": 43,
         "terminal": null,
         "gate": null
       },
       "airline": "Korean Air",
       "flight_date": "2026-08-19"
-    },
-    {
-      "flight_iata": "KE249",
-      "flight_number": "249",
-      "route": "ICN → PVG",
-      "found": true,
-      "status_raw": "scheduled",
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "출발 예정"
-      },
-      "departure": {
-        "airport": "Seoul (Incheon)",
-        "iata": "ICN",
-        "timezone": "Asia/Seoul",
-        "timezone_label_ko": "한국시간",
-        "scheduled_utc": "2026-08-20T02:00:00+00:00",
-        "estimated_utc": "2026-08-20T02:00:00+00:00",
-        "actual_utc": null,
-        "scheduled_local": "2026-08-20T11:00:00+09:00",
-        "estimated_local": "2026-08-20T11:00:00+09:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-20 11:00",
-        "calculated_delay_minutes": 0,
-        "api_delay_minutes": null,
-        "terminal": null,
-        "gate": null
-      },
-      "arrival": {
-        "airport": "Shanghai Pudong International",
-        "iata": "PVG",
-        "timezone": "Asia/Shanghai",
-        "timezone_label_ko": "중국시간",
-        "scheduled_utc": "2026-08-20T03:10:00+00:00",
-        "estimated_utc": null,
-        "actual_utc": null,
-        "scheduled_local": "2026-08-20T11:10:00+08:00",
-        "estimated_local": null,
-        "actual_local": null,
-        "display_time_local": "2026-08-20 11:10",
-        "calculated_delay_minutes": null,
-        "api_delay_minutes": null,
-        "terminal": null,
-        "gate": null
-      },
-      "airline": "Korean Air",
-      "flight_date": "2026-08-20"
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-19T15:23:08.223740+00:00"
+  "generated_at_utc": "2026-08-19T16:30:47.280680+00:00"
 }
