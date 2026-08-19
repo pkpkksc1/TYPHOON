@@ -11,11 +11,8 @@ Required GitHub Secret:
 API:
     https://apis.data.go.kr/1360000/TyphoonInfoService
 
-Flow:
-1) Search the last 3 days with getTyphoonInfoList
-2) Pick the newest bulletin
-3) Call getTyphoonFcst with tmFc + typSeq
-4) Save a simple normalized JSON for later JMA/KMA comparison
+Version:
+    KMA parser v2.2
 
 Uses Python standard library only.
 """
@@ -25,12 +22,13 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "kma_typhoon.json"
@@ -39,8 +37,9 @@ BASE_URL = "https://apis.data.go.kr/1360000/TyphoonInfoService"
 LIST_ENDPOINT = f"{BASE_URL}/getTyphoonInfoList"
 FCST_ENDPOINT = f"{BASE_URL}/getTyphoonFcst"
 
-PARSER_VERSION = "2.0"
-USER_AGENT = "sblc-typhoon-dashboard/2.0 (KMA OpenAPI client)"
+PARSER_VERSION = "2.2"
+USER_AGENT = "sblc-typhoon-dashboard/2.2 (KMA OpenAPI client)"
+
 KST = timezone(timedelta(hours=9))
 
 
@@ -53,76 +52,109 @@ def get_api_key() -> str:
     if not raw:
         raise RuntimeError("KMA_API_KEY secret is missing.")
 
-    # If the portal gave an URL-encoded key, decode it once here.
-    # urlencode() below will encode it correctly for the request.
+    # 공공데이터포털 인증키가 URL 인코딩된 상태여도 정상 처리.
     return urllib.parse.unquote(raw)
 
 
 def fetch_json(url: str, params: Dict[str, Any]) -> Dict[str, Any]:
     query = urllib.parse.urlencode(params)
-    req = urllib.request.Request(
-        f"{url}?{query}",
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": "application/json",
-        },
+    full_url = f"{url}?{query}"
+
+    last_error: Optional[BaseException] = None
+
+    # KMA 서버가 간헐적으로 느릴 때를 대비해 최대 3회 재시도.
+    for attempt in range(1, 4):
+        req = urllib.request.Request(
+            full_url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "application/json",
+            },
+        )
+
+        try:
+            print(f"KMA request attempt {attempt}/3: {url}")
+
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                raw = resp.read().decode("utf-8", errors="replace")
+
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError as e:
+                raise RuntimeError(
+                    f"KMA returned non-JSON data: {raw[:500]}"
+                ) from e
+
+            check_api_result(data)
+            return data
+
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")
+
+            # 인증키/요청값 문제는 재시도해도 해결되지 않으므로 즉시 종료.
+            if 400 <= e.code < 500:
+                raise RuntimeError(
+                    f"KMA HTTP {e.code}: {body[:500]}"
+                ) from e
+
+            last_error = e
+
+        except (urllib.error.URLError, TimeoutError) as e:
+            last_error = e
+
+        if attempt < 3:
+            wait_sec = attempt * 10
+            print(
+                f"KMA request failed: {last_error}. "
+                f"Retrying in {wait_sec}s..."
+            )
+            time.sleep(wait_sec)
+
+    raise RuntimeError(
+        f"KMA connection failed after 3 attempts: {last_error}"
     )
-
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            raw = resp.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"KMA HTTP {e.code}: {body[:500]}") from e
-    except urllib.error.URLError as e:
-        raise RuntimeError(f"KMA connection error: {e}") from e
-
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError as e:
-        raise RuntimeError(f"KMA returned non-JSON data: {raw[:500]}") from e
-
-    check_api_result(data)
-    return data
 
 
 def check_api_result(data: Dict[str, Any]) -> None:
     response = data.get("response")
+
     if not isinstance(response, dict):
         return
 
     header = response.get("header")
+
     if not isinstance(header, dict):
         return
 
     code = str(header.get("resultCode", "")).strip()
     message = str(header.get("resultMsg", "")).strip()
 
-    # Public Data Portal normally uses "00" for success.
     if code and code != "00":
         raise RuntimeError(f"KMA API error {code}: {message}")
 
 
 def extract_items(data: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    Accept common Public Data Portal response shapes.
-    """
     response = data.get("response", data)
+
     if not isinstance(response, dict):
         return []
 
     body = response.get("body", response)
+
     if not isinstance(body, dict):
         return []
 
     items = body.get("items", [])
+
     if isinstance(items, dict):
         items = items.get("item", [])
 
     if isinstance(items, dict):
         return [items]
+
     if isinstance(items, list):
         return [x for x in items if isinstance(x, dict)]
+
     return []
 
 
@@ -136,6 +168,7 @@ def first_value(item: Dict[str, Any], *keys: str) -> Any:
 def to_float(value: Any) -> Optional[float]:
     if value in (None, ""):
         return None
+
     try:
         return float(value)
     except (TypeError, ValueError):
@@ -145,6 +178,7 @@ def to_float(value: Any) -> Optional[float]:
 def to_int(value: Any) -> Optional[int]:
     if value in (None, ""):
         return None
+
     try:
         return int(float(value))
     except (TypeError, ValueError):
@@ -154,31 +188,60 @@ def to_int(value: Any) -> Optional[int]:
 def digits_only(value: Any) -> str:
     if value is None:
         return ""
+
     return "".join(ch for ch in str(value) if ch.isdigit())
 
 
 def parse_kma_time(value: Any) -> Optional[datetime]:
     s = digits_only(value)
-    for fmt in ("%Y%m%d%H%M", "%Y%m%d%H", "%Y%m%d"):
-        try:
-            if len(s) == len(datetime.now().strftime(fmt)):
-                return datetime.strptime(s, fmt).replace(tzinfo=KST)
-        except ValueError:
-            pass
-    return None
+
+    formats = {
+        12: "%Y%m%d%H%M",
+        10: "%Y%m%d%H",
+        8: "%Y%m%d",
+    }
+
+    fmt = formats.get(len(s))
+    if not fmt:
+        return None
+
+    try:
+        return datetime.strptime(s, fmt).replace(tzinfo=KST)
+    except ValueError:
+        return None
 
 
 def bulletin_sort_key(item: Dict[str, Any]) -> tuple:
-    tm_fc = first_value(item, "tmFc", "tmfc", "TM_FC")
+    # 현재 KMA 실제 응답은 announceTime / typhoonSeq 사용.
+    tm_fc = first_value(
+        item,
+        "announceTime",
+        "tmFc",
+        "tmfc",
+        "TM_FC",
+    )
+
+    typ_seq = first_value(
+        item,
+        "typhoonSeq",
+        "typSeq",
+        "typseq",
+        "typNo",
+    )
+
     dt = parse_kma_time(tm_fc)
-    seq = to_int(first_value(item, "typSeq", "typseq", "typNo", "typhoonSeq")) or -1
-    return (dt or datetime.min.replace(tzinfo=KST), seq)
+    seq = to_int(typ_seq) or -1
+
+    return (
+        dt or datetime.min.replace(tzinfo=KST),
+        seq,
+    )
 
 
 def get_latest_bulletin(service_key: str) -> Dict[str, Any]:
     """
-    KMA typhoon data is normally available for the recent 3-day window.
-    Search today, yesterday, and two days ago; then select the newest item.
+    최근 3일 범위에서 태풍정보 목록을 조회하고
+    가장 최신 발표자료 1건을 선택한다.
     """
     found: List[Dict[str, Any]] = []
     today = now_kst().date()
@@ -196,41 +259,101 @@ def get_latest_bulletin(service_key: str) -> Dict[str, Any]:
                 "tmFc": day,
             },
         )
+
         found.extend(extract_items(data))
 
     if not found:
         return {}
 
-    found.sort(key=bulletin_sort_key, reverse=True)
+    found.sort(
+        key=bulletin_sort_key,
+        reverse=True,
+    )
+
     return found[0]
 
 
 def normalize_forecast_item(item: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Normalize the commonly documented KMA TyphoonInfoService forecast fields.
-    Unknown/raw fields are kept in raw_item so we can adjust the parser
-    without losing source data.
+    KMA 예보 응답을 대시보드용으로 단순화.
+    원본은 raw_item에 그대로 남겨 실제 필드가 달라도 확인 가능.
     """
     return {
         "forecast_time": first_value(
             item,
-            "tmEf", "tmFcst", "tmFcstDate", "tm",
+            "tmEf",
+            "tmFcst",
+            "tmFcstDate",
+            "tm",
         ),
-        "lat": to_float(first_value(item, "lat", "latitude")),
-        "lon": to_float(first_value(item, "lon", "longitude")),
-        "pressure_hpa": to_float(first_value(item, "ps", "pres", "pressure")),
-        "max_wind_mps": to_float(first_value(item, "ws", "windSpeed")),
-        "movement_direction": first_value(item, "dir", "direction"),
-        "movement_speed_kmh": to_float(first_value(item, "sp", "speed")),
-        "forecast_text_ko": first_value(item, "fclocko", "fcstKo", "remark"),
+        "lat": to_float(
+            first_value(
+                item,
+                "lat",
+                "latitude",
+            )
+        ),
+        "lon": to_float(
+            first_value(
+                item,
+                "lon",
+                "longitude",
+            )
+        ),
+        "pressure_hpa": to_float(
+            first_value(
+                item,
+                "ps",
+                "pres",
+                "pressure",
+            )
+        ),
+        "max_wind_mps": to_float(
+            first_value(
+                item,
+                "ws",
+                "windSpeed",
+            )
+        ),
+        "movement_direction": first_value(
+            item,
+            "dir",
+            "direction",
+        ),
+        "movement_speed_kmh": to_float(
+            first_value(
+                item,
+                "sp",
+                "speed",
+            )
+        ),
         "probability_radius_km": to_float(
-            first_value(item, "radPr", "radpr", "probabilityRadius")
+            first_value(
+                item,
+                "radPr",
+                "radpr",
+                "probabilityRadius",
+            )
         ),
         "gale_radius_km": to_float(
-            first_value(item, "rad15", "galeRadius")
+            first_value(
+                item,
+                "rad15",
+                "galeRadius",
+            )
         ),
         "storm_radius_km": to_float(
-            first_value(item, "rad25", "stormRadius")
+            first_value(
+                item,
+                "rad25",
+                "stormRadius",
+            )
+        ),
+        "forecast_text_ko": first_value(
+            item,
+            "fclocko",
+            "fcstKo",
+            "remark",
         ),
         "raw_item": item,
     }
@@ -241,6 +364,7 @@ def get_forecast(
     bulletin_time: str,
     typhoon_seq: int,
 ) -> List[Dict[str, Any]]:
+
     data = fetch_json(
         FCST_ENDPOINT,
         {
@@ -253,45 +377,75 @@ def get_forecast(
         },
     )
 
-    normalized = [normalize_forecast_item(x) for x in extract_items(data)]
+    normalized = [
+        normalize_forecast_item(x)
+        for x in extract_items(data)
+    ]
 
     normalized.sort(
-        key=lambda x: parse_kma_time(x.get("forecast_time"))
-        or datetime.max.replace(tzinfo=KST)
+        key=lambda x: (
+            parse_kma_time(x.get("forecast_time"))
+            or datetime.max.replace(tzinfo=KST)
+        )
     )
+
     return normalized
 
 
 def semantic_payload(data: Dict[str, Any]) -> Dict[str, Any]:
-    clone = json.loads(json.dumps(data, ensure_ascii=False))
+    clone = json.loads(
+        json.dumps(data, ensure_ascii=False)
+    )
+
     clone.pop("generated_at_utc", None)
+
     return clone
 
 
 def write_if_changed(data: Dict[str, Any]) -> bool:
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     if OUTPUT_PATH.exists():
         try:
-            old = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+            old = json.loads(
+                OUTPUT_PATH.read_text(
+                    encoding="utf-8"
+                )
+            )
+
             if semantic_payload(old) == semantic_payload(data):
                 print("No meaningful KMA data change.")
                 return False
+
         except Exception:
             pass
 
-    data["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    data["generated_at_utc"] = (
+        datetime.now(timezone.utc).isoformat()
+    )
 
     OUTPUT_PATH.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(
+            data,
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
         encoding="utf-8",
     )
+
     print(f"Updated: {OUTPUT_PATH}")
+
     return True
 
 
 def main() -> int:
     service_key = get_api_key()
+
+    print(f"KMA parser version: {PARSER_VERSION}")
 
     latest = get_latest_bulletin(service_key)
 
@@ -305,14 +459,29 @@ def main() -> int:
             "forecast": [],
             "message": "No recent KMA typhoon bulletin found.",
         }
+
         write_if_changed(data)
+
         print("No recent KMA typhoon bulletin found.")
         return 0
 
-    tm_fc_raw = first_value(latest, "tmFc", "tmfc", "TM_FC")
+    # 실제 응답에서 확인된 키:
+    # announceTime = 202608191030
+    # typhoonSeq   = 35
+    tm_fc_raw = first_value(
+        latest,
+        "announceTime",
+        "tmFc",
+        "tmfc",
+        "TM_FC",
+    )
+
     typ_seq_raw = first_value(
         latest,
-        "typSeq", "typseq", "typNo", "typhoonSeq",
+        "typhoonSeq",
+        "typSeq",
+        "typseq",
+        "typNo",
     )
 
     tm_fc = digits_only(tm_fc_raw)
@@ -320,11 +489,22 @@ def main() -> int:
 
     if not tm_fc or typ_seq is None:
         raise RuntimeError(
-            "KMA list data was returned, but tmFc/typSeq could not be found. "
+            "KMA list data was returned, but "
+            "announceTime/typhoonSeq could not be found. "
             f"Latest raw item: {latest}"
         )
 
-    forecasts = get_forecast(service_key, tm_fc, typ_seq)
+    print(
+        f"Latest KMA bulletin: "
+        f"announceTime={tm_fc}, "
+        f"typhoonSeq={typ_seq}"
+    )
+
+    forecasts = get_forecast(
+        service_key,
+        tm_fc,
+        typ_seq,
+    )
 
     data = {
         "source": "Korea Meteorological Administration (KMA)",
@@ -332,9 +512,17 @@ def main() -> int:
         "parser_version": PARSER_VERSION,
         "active_count": 1,
         "bulletin": {
-            "tmFc": tm_fc,
-            "typSeq": typ_seq,
-            "title": first_value(latest, "title", "tit"),
+            "announceTime": tm_fc,
+            "typhoonSeq": typ_seq,
+            "announceSeq": first_value(
+                latest,
+                "announceSeq",
+            ),
+            "title": first_value(
+                latest,
+                "title",
+                "tit",
+            ),
             "raw_item": latest,
         },
         "forecast": forecasts,
@@ -342,8 +530,16 @@ def main() -> int:
 
     write_if_changed(data)
 
-    print(f"KMA bulletin: tmFc={tm_fc}, typSeq={typ_seq}")
-    print(f"Forecast points: {len(forecasts)}")
+    print(
+        f"KMA bulletin: "
+        f"announceTime={tm_fc}, "
+        f"typhoonSeq={typ_seq}"
+    )
+
+    print(
+        f"Forecast points: {len(forecasts)}"
+    )
+
     return 0
 
 
