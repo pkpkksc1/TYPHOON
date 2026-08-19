@@ -1,90 +1,205 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SBLC Typhoon Logistics Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topbar">
+  <div class="page-shell">
+
+    <header class="page-header">
       <div>
-        <div class="eyebrow">SBLC · TYPHOON LOGISTICS</div>
+        <div class="brand-line">SBLC · TYPHOON LOGISTICS CONTROL</div>
         <h1>태풍 물류 대시보드</h1>
-        <p id="updatedAt" class="muted">데이터 불러오는 중...</p>
       </div>
-      <button id="refreshBtn" class="refresh-btn">새로고침</button>
+      <div class="header-right">
+        <div id="updatedAt" class="updated-at">데이터 불러오는 중...</div>
+        <button id="refreshBtn" class="refresh-btn">새로고침</button>
+      </div>
     </header>
 
-    <main>
-      <section class="hero-grid">
-        <article class="card typhoon-card">
-          <div class="section-title">현재 태풍</div>
-          <div class="typhoon-head">
-            <div class="storm-icon">🌀</div>
+    <main class="dashboard">
+
+      <!-- 상단 왼쪽 : 현재 태풍 -->
+      <section class="panel current-panel">
+        <div class="section-kicker">현재 태풍</div>
+
+        <div class="current-top">
+          <div class="typhoon-symbol">🌀</div>
+          <div>
+            <div id="typhoonTitle" class="typhoon-title">-</div>
+            <div id="typhoonBaseTime" class="subtle">기준 시각 -</div>
+          </div>
+        </div>
+
+        <div class="current-metrics">
+          <div class="metric-box">
+            <div class="metric-label">현재 위치</div>
+            <div id="currentPosition" class="metric-main">-</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-label">중심기압</div>
+            <div id="pressure" class="metric-main">-</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-label">최대풍속</div>
+            <div id="maxWind" class="metric-main">-</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-label">이동방향</div>
+            <div id="moveDir" class="metric-main">-</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-label">이동속도</div>
+            <div id="moveSpeed" class="metric-main">-</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 상단 오른쪽 : JMA/KMA 비교 -->
+      <section class="panel compare-panel">
+        <div class="section-kicker">JMA ↔ KMA 예보 비교</div>
+
+        <div class="agency-row">
+          <div class="agency-box jma">
+            <div class="agency-mark">J</div>
             <div>
-              <h2 id="typhoonName">-</h2>
-              <div id="typhoonPosition" class="big-line">-</div>
+              <div class="agency-name">JMA</div>
+              <div class="agency-sub">일본기상청</div>
             </div>
           </div>
-          <div class="metric-grid">
-            <div class="metric"><span>중심기압</span><b id="pressure">-</b></div>
-            <div class="metric"><span>최대풍속</span><b id="maxWind">-</b></div>
-            <div class="metric"><span>이동방향</span><b id="moveDir">-</b></div>
-            <div class="metric"><span>이동속도</span><b id="moveSpeed">-</b></div>
-          </div>
-        </article>
 
-        <article class="card compare-card">
-          <div class="section-title">JMA ↔ KMA 예보 비교</div>
-          <div id="compareBadge" class="big-badge">-</div>
-          <div class="compare-stats">
-            <div><span>평균 차이</span><b id="compareAvg">-</b></div>
-            <div><span>최대 차이</span><b id="compareMax">-</b></div>
+          <div class="agency-arrow">
+            <div class="arrow-line">↔</div>
+            <div class="arrow-caption">예보 위치 비교</div>
           </div>
-          <p class="hint">두 기관의 예상 경로가 얼마나 비슷한지 보여줍니다.</p>
-        </article>
-      </section>
 
-      <section class="card">
-        <div class="section-row">
-          <div>
-            <div class="section-title">5일 예상 경로</div>
-            <h3>태풍 위치 변화</h3>
+          <div class="agency-box kma">
+            <div class="agency-mark korea">K</div>
+            <div>
+              <div class="agency-name">KMA</div>
+              <div class="agency-sub">한국기상청</div>
+            </div>
           </div>
         </div>
-        <div id="track" class="track"></div>
-      </section>
 
-      <section>
-        <div class="section-row">
-          <div>
-            <div class="section-title">물류 거점</div>
-            <h3>거리 + 비 + 바람 종합 위험도</h3>
+        <div class="compare-cards">
+          <div class="compare-card">
+            <span>평균 차이</span>
+            <strong id="compareAvg">-</strong>
+          </div>
+
+          <div class="compare-card">
+            <span>상태</span>
+            <strong id="compareStatus">-</strong>
+          </div>
+
+          <div class="compare-card">
+            <span>최대 차이</span>
+            <strong id="compareMax">-</strong>
           </div>
         </div>
-        <div id="locations" class="location-grid"></div>
+
+        <div class="compare-note">
+          두 기관의 같은 시각 예보 위치 차이를 비교해 예보 신뢰도를 한눈에 확인합니다.
+        </div>
       </section>
 
-      <section class="two-col">
-        <article class="card">
-          <div class="section-title">물류 노선</div>
-          <h3>노선별 위험도</h3>
-          <div id="routes" class="list"></div>
-        </article>
+      <!-- 중앙 : 5일 예상 경로 -->
+      <section class="panel track-panel">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">5일 예상 경로</div>
+            <h2>태풍 이동 경로</h2>
+          </div>
+          <div class="legend">
+            <span><i class="dot now"></i>현재</span>
+            <span><i class="dot h24"></i>24h</span>
+            <span><i class="dot h48"></i>48h</span>
+            <span><i class="dot h72"></i>72h</span>
+            <span><i class="dot h96"></i>96h</span>
+            <span><i class="dot h120"></i>120h</span>
+          </div>
+        </div>
 
-        <article class="card">
-          <div class="section-title">항공편</div>
-          <h3>ICN → PVG</h3>
-          <div id="flights" class="list"></div>
-        </article>
+        <div class="track-content">
+          <div class="map-card">
+            <div class="map-title">WESTERN PACIFIC / EAST ASIA</div>
+            <div id="trackMap" class="track-map">
+              <div class="map-grid"></div>
+              <div class="map-label label-china">CHINA</div>
+              <div class="map-label label-korea">KOREA</div>
+              <div class="map-label label-japan">JAPAN</div>
+              <div class="map-label label-ph">PHILIPPINES</div>
+              <div class="map-label label-pacific">PACIFIC</div>
+              <svg id="trackSvg" class="track-svg" viewBox="0 0 1000 520" preserveAspectRatio="none">
+                <polyline id="trackLine" points="" fill="none" stroke="#dce9f8" stroke-width="4" />
+              </svg>
+              <div id="trackPoints"></div>
+            </div>
+          </div>
+
+          <div class="track-table-wrap">
+            <table class="track-table">
+              <thead>
+                <tr>
+                  <th>예상</th>
+                  <th>시각</th>
+                  <th>위도 / 경도</th>
+                  <th>기압</th>
+                  <th>풍속</th>
+                </tr>
+              </thead>
+              <tbody id="trackTableBody"></tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
-      <footer>
-        <div id="attribution"></div>
-      </footer>
+      <!-- 하단 왼쪽 : 거점 위험도 -->
+      <section class="panel locations-panel">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">주요 거점 위험도</div>
+            <h2>물류 거점 상태</h2>
+          </div>
+          <div class="risk-legend">
+            <span><i class="risk-dot green"></i>낮음</span>
+            <span><i class="risk-dot yellow"></i>주의</span>
+            <span><i class="risk-dot red"></i>높음</span>
+          </div>
+        </div>
+
+        <div id="locationsGrid" class="locations-grid"></div>
+      </section>
+
+      <!-- 하단 중앙 : 노선 위험도 -->
+      <section class="panel routes-panel">
+        <div class="section-kicker">물류 노선 위험도</div>
+        <h2>주요 노선</h2>
+        <div id="routesList" class="route-list"></div>
+      </section>
+
+      <!-- 하단 오른쪽 : 항공편 -->
+      <section class="panel flights-panel">
+        <div class="section-kicker">항공편 운항 현황</div>
+        <h2>ICN → PVG</h2>
+        <div id="flightsList" class="flight-list"></div>
+      </section>
+
     </main>
+
+    <footer class="footer">
+      <div id="footerUpdated">최종 업데이트 -</div>
+      <div id="attribution">데이터 출처 -</div>
+    </footer>
+
   </div>
 
   <script src="dashboard.js"></script>
