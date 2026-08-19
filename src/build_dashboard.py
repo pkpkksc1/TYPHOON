@@ -2,19 +2,17 @@
 # -*- coding: utf-8 -*-
 
 """
-SBLC Typhoon Dashboard - Step 8
+SBLC Typhoon Dashboard - Step 8.1
 Build one dashboard summary JSON
 
 Inputs:
+    data/jma_typhoon.json
     data/typhoon_compare.json
     data/typhoon_risk.json
     data/flights.json
 
 Output:
     data/dashboard.json
-
-Purpose:
-    One simple file for dashboard/email rendering.
 """
 
 from __future__ import annotations
@@ -27,13 +25,13 @@ from typing import Any, Dict, List
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
+JMA_PATH = BASE_DIR / "data" / "jma_typhoon.json"
 COMPARE_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.0"
-
+PARSER_VERSION = "8.1"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
 
 
@@ -104,7 +102,51 @@ def simplify_flight(item: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
+    typhoons = jma.get("typhoons", [])
+
+    if not isinstance(typhoons, list) or not typhoons:
+        return {}
+
+    item = typhoons[0]
+    meta = item.get("typhoon", {})
+    analysis = item.get("analysis", {}) or {}
+
+    forecast_points: List[Dict[str, Any]] = []
+
+    for p in item.get("forecast", []):
+        if not isinstance(p, dict):
+            continue
+
+        forecast_points.append({
+            "forecast_hour": p.get("forecast_hour"),
+            "time": p.get("time"),
+            "lat": p.get("lat"),
+            "lon": p.get("lon"),
+            "pressure_hpa": p.get("pressure_hpa"),
+            "max_wind_mps": p.get("max_wind_mps"),
+            "movement_direction": p.get("movement_direction"),
+        })
+
+    return {
+        "number": meta.get("number"),
+        "name": meta.get("name"),
+        "current": {
+            "time": analysis.get("time"),
+            "lat": analysis.get("lat"),
+            "lon": analysis.get("lon"),
+            "pressure_hpa": analysis.get("pressure_hpa"),
+            "max_wind_mps": analysis.get("max_wind_mps"),
+            "gust_mps": analysis.get("gust_mps"),
+            "movement_direction": analysis.get("movement_direction"),
+            "movement_speed_kmh": analysis.get("movement_speed_kmh"),
+        },
+        "forecast_track": forecast_points,
+    }
+
+
 def main() -> int:
+    jma = load_json(JMA_PATH)
     compare = load_json(COMPARE_PATH)
     risk = load_json(RISK_PATH)
     flights = load_json(FLIGHTS_PATH)
@@ -112,26 +154,28 @@ def main() -> int:
     compare_summary = compare.get("summary", {})
     compare_overall = compare_summary.get("overall", {})
 
-    risk_locations = risk.get("locations", {})
-    locations = {}
+    locations: Dict[str, Dict[str, Any]] = {}
 
     for code in LOCATION_ORDER:
-        item = risk_locations.get(code)
+        item = risk.get("locations", {}).get(code)
         if isinstance(item, dict):
             locations[code] = simplify_location(item)
 
-    route_summaries: List[Dict[str, Any]] = []
+    routes: List[Dict[str, Any]] = []
+
     for route in risk.get("routes", []):
         if not isinstance(route, dict):
             continue
-        r = route.get("risk", {})
-        route_summaries.append({
+
+        rr = route.get("risk", {})
+
+        routes.append({
             "code": route.get("code"),
             "name_ko": route.get("name_ko"),
             "score": route.get("score"),
             "risk": {
-                "emoji": r.get("emoji"),
-                "label_ko": r.get("label_ko"),
+                "emoji": rr.get("emoji"),
+                "label_ko": rr.get("label_ko"),
             },
             "reason_ko": route.get("reason_ko"),
         })
@@ -147,7 +191,7 @@ def main() -> int:
         "product": "Dashboard Summary",
         "parser_version": PARSER_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "typhoon": risk.get("typhoon"),
+        "typhoon": get_typhoon_track(jma),
         "forecast_comparison": {
             "emoji": compare_overall.get("emoji", "⚪"),
             "label_ko": compare_overall.get("label_ko", "비교자료 없음"),
@@ -155,7 +199,7 @@ def main() -> int:
             "max_difference_km": compare_summary.get("max_difference_km"),
         },
         "locations": locations,
-        "routes": route_summaries,
+        "routes": routes,
         "flights": flight_summaries,
         "attribution": [
             "Japan Meteorological Agency (JMA)",
@@ -166,15 +210,20 @@ def main() -> int:
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
     OUTPUT_PATH.write_text(
-        json.dumps(output, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(
+            output,
+            ensure_ascii=False,
+            indent=2,
+        ) + "\n",
         encoding="utf-8",
     )
 
     print(f"Dashboard summary version: {PARSER_VERSION}")
     print(f"Updated: {OUTPUT_PATH}")
     print(f"Locations: {len(locations)}")
-    print(f"Routes: {len(route_summaries)}")
+    print(f"Routes: {len(routes)}")
     print(f"Flights: {len(flight_summaries)}")
 
     return 0
