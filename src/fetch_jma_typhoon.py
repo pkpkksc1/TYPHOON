@@ -34,7 +34,7 @@ TARGET_TITLE_WORDS = (
 MAX_ENTRY_AGE_HOURS = 12
 MAX_XML_DOWNLOADS = 18
 
-USER_AGENT = "sblc-typhoon-dashboard/1.0 (JMA XML PULL client)"
+USER_AGENT = "sblc-typhoon-dashboard/1.2 (JMA XML PULL client)"
 
 
 def local_name(tag: str) -> str:
@@ -298,6 +298,68 @@ def normalize_distance_km(value: Optional[float], unit: Optional[str]) -> Option
     return round(value, 1)
 
 
+
+def collect_radius_details(info: ET.Element) -> List[Dict[str, Any]]:
+    details: List[Dict[str, Any]] = []
+    for el in iter_local(info, "Radius"):
+        val = numeric_text(el)
+        if val is None:
+            continue
+        unit = get_attr(el, "unit") or None
+        typ = get_attr(el, "type") or None
+        details.append({
+            "type": typ,
+            "value": val,
+            "unit": unit,
+            "km": normalize_distance_km(val, unit),
+        })
+    return details
+
+
+def classify_radius_details(radius_details: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    groups = {
+        "forecast_circle": [],
+        "storm_wind_area": [],
+        "gale_wind_area": [],
+        "storm_warning_area": [],
+        "other": [],
+    }
+
+    for item in radius_details:
+        typ = item.get("type") or ""
+        if "予報円" in typ:
+            groups["forecast_circle"].append(item)
+        elif "暴風警戒域" in typ:
+            groups["storm_warning_area"].append(item)
+        elif "暴風域" in typ:
+            groups["storm_wind_area"].append(item)
+        elif "強風域" in typ:
+            groups["gale_wind_area"].append(item)
+        else:
+            groups["other"].append(item)
+
+    return groups
+
+
+def find_forecast_circle_radius(
+    radius_details: List[Dict[str, Any]]
+) -> Tuple[Optional[float], Optional[str], Optional[float]]:
+    for item in radius_details:
+        typ = item.get("type") or ""
+        if "予報円" in typ:
+            return item["value"], item["unit"], item["km"]
+    return None, None, None
+
+
+def validate_point(point: Dict[str, Any], is_forecast: bool) -> List[str]:
+    issues: List[str] = []
+    if point.get("lat") is None or point.get("lon") is None:
+        issues.append("missing_center_coordinate")
+    if is_forecast and point.get("forecast_circle_radius") is None:
+        issues.append("forecast_circle_radius_not_found")
+    return issues
+
+
 def parse_meteo_info(info: ET.Element) -> Dict[str, Any]:
     dt_el = next(iter(iter_local(info, "DateTime")), None)
     dt_text = dt_el.text.strip() if dt_el is not None and dt_el.text else None
@@ -312,11 +374,16 @@ def parse_meteo_info(info: ET.Element) -> Dict[str, Any]:
     move_dir = find_typed_text(info, "Direction", "移動方向")
     move_speed, move_speed_unit = find_typed_numeric(info, "Speed", "移動速度")
 
-    radius, radius_unit = find_typed_numeric(info, "Radius", "予報円")
-    if radius is None:
-        radius, radius_unit = find_typed_numeric(info, "Radius", "半径")
+    radius_details = collect_radius_details(info)
+    radius_groups = classify_radius_details(radius_details)
 
-    return {
+    is_forecast = "予報" in (dt_type or "")
+    if is_forecast:
+        radius, radius_unit, radius_km = find_forecast_circle_radius(radius_details)
+    else:
+        radius, radius_unit, radius_km = None, None, None
+
+    result = {
         "time": dt_text,
         "time_type": dt_type or None,
         "lat": lat,
@@ -336,8 +403,19 @@ def parse_meteo_info(info: ET.Element) -> Dict[str, Any]:
         "movement_speed_kmh": normalize_speed_kmh(move_speed, move_speed_unit),
         "forecast_circle_radius": radius,
         "forecast_circle_radius_unit": radius_unit,
-        "forecast_circle_radius_km": normalize_distance_km(radius, radius_unit),
+        "forecast_circle_radius_km": radius_km,
+        "radius_details": radius_details,
+        "radius_groups": radius_groups,
     }
+
+    result["data_quality"] = {
+        "status": "OK",
+        "issues": validate_point(result, is_forecast),
+    }
+    if result["data_quality"]["issues"]:
+        result["data_quality"]["status"] = "WARN"
+
+    return result
 
 
 def hours_between(base: Optional[str], target: Optional[str]) -> Optional[int]:
@@ -512,6 +590,7 @@ def main() -> int:
     data = {
         "source": "Japan Meteorological Agency (JMA)",
         "product": "Typhoon Analysis and Forecast Information (5-day)",
+        "parser_version": "1.2",
         "feed_high": HIGH_FEED,
         "feed_long": LONG_FEED,
         "active_count": len(typhoons),
