@@ -1,10 +1,10 @@
 {
-  "source": "JMA + KMA comparison + JTWC wind radii",
+  "source": "JMA + KMA comparison + JTWC + CMA wind radii",
   "product": "Logistics Typhoon Impact",
-  "parser_version": "4.3",
+  "parser_version": "4.5-CMA",
   "status": "OK",
-  "calculation_mode": "JTWC_WIND_RADII",
-  "note_ko": "거점 위험도는 JTWC 34/50/64kt 방향별 풍권반경을 우선 사용합니다. JTWC 풍권은 해상 기준이며, 공항 공식 결항/폐쇄 기준이 아닙니다.",
+  "calculation_mode": "JTWC_FORECAST + CMA_CURRENT_CROSSCHECK",
+  "note_ko": "향후 5일 거점 위험도는 JTWC 34/50/64kt 방향별 풍권을 주력으로 사용하고, CMA 방향별 강풍 영향권은 현재 시점 교차검증에 사용합니다. CMA 예보에는 현재 구조상 향후 풍권반경이 없어 미래 풍권 계산에는 사용하지 않습니다.",
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
@@ -22,7 +22,10 @@
     "high": "34kt 강풍 영향권 내부",
     "caution": "해당 방향 34kt 강풍반경의 1.5배 이내",
     "low": "해당 방향 34kt 강풍반경의 1.5배보다 멀리",
-    "fallback": "JTWC 풍권 미확보 시 JMA 중심거리 300/700km 임시 기준"
+    "fallback": "JTWC 풍권 미확보 시 JMA 중심거리 300/700km 임시 기준",
+    "cma_current_high": "CMA 해당 방향 강풍 영향권 내부",
+    "cma_current_caution": "CMA 해당 방향 강풍 영향권 반경의 1.5배 이내",
+    "combined_current": "현재 위험은 JTWC와 CMA 판정 중 더 높은 단계를 사용하며, 동일 단계면 두 기관의 공통 판정으로 표시"
   },
   "locations": {
     "SUZHOU": {
@@ -275,7 +278,41 @@
             "basis": "34kt 강풍 영향권과 충분히 떨어짐"
           }
         }
-      ]
+      ],
+      "current_crosscheck": {
+        "combined_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
+        },
+        "jtwc_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma": {
+          "center_distance_km": 3732,
+          "bearing_deg": 309,
+          "quadrant": "NW",
+          "wind_zone_label_ko": "강풍 영향권",
+          "wind_standard_raw": "30KTS",
+          "wind_radius_30_km": 150,
+          "distance_to_30kt_boundary_km": 3582,
+          "distance_to_30kt_radius_ratio": 24.88,
+          "boundary_status_ko": "CMA 강풍 영향권까지 3582 km"
+        }
+      }
     },
     "PVG": {
       "code": "PVG",
@@ -527,7 +564,41 @@
             "basis": "34kt 강풍 영향권과 충분히 떨어짐"
           }
         }
-      ]
+      ],
+      "current_crosscheck": {
+        "combined_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
+        },
+        "jtwc_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma": {
+          "center_distance_km": 3621,
+          "bearing_deg": 310,
+          "quadrant": "NW",
+          "wind_zone_label_ko": "강풍 영향권",
+          "wind_standard_raw": "30KTS",
+          "wind_radius_30_km": 150,
+          "distance_to_30kt_boundary_km": 3471,
+          "distance_to_30kt_radius_ratio": 24.14,
+          "boundary_status_ko": "CMA 강풍 영향권까지 3471 km"
+        }
+      }
     },
     "ICN": {
       "code": "ICN",
@@ -779,7 +850,41 @@
             "basis": "34kt 강풍 영향권과 충분히 떨어짐"
           }
         }
-      ]
+      ],
+      "current_crosscheck": {
+        "combined_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
+        },
+        "jtwc_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma": {
+          "center_distance_km": 3682,
+          "bearing_deg": 323,
+          "quadrant": "NW",
+          "wind_zone_label_ko": "강풍 영향권",
+          "wind_standard_raw": "30KTS",
+          "wind_radius_30_km": 150,
+          "distance_to_30kt_boundary_km": 3532,
+          "distance_to_30kt_radius_ratio": 24.55,
+          "boundary_status_ko": "CMA 강풍 영향권까지 3532 km"
+        }
+      }
     },
     "HAN": {
       "code": "HAN",
@@ -1031,7 +1136,41 @@
             "basis": "34kt 강풍 영향권과 충분히 떨어짐"
           }
         }
-      ]
+      ],
+      "current_crosscheck": {
+        "combined_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
+        },
+        "jtwc_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma": {
+          "center_distance_km": 4869,
+          "bearing_deg": 288,
+          "quadrant": "NW",
+          "wind_zone_label_ko": "강풍 영향권",
+          "wind_standard_raw": "30KTS",
+          "wind_radius_30_km": 150,
+          "distance_to_30kt_boundary_km": 4719,
+          "distance_to_30kt_radius_ratio": 32.46,
+          "boundary_status_ko": "CMA 강풍 영향권까지 4719 km"
+        }
+      }
     },
     "CRK": {
       "code": "CRK",
@@ -1283,7 +1422,41 @@
             "basis": "34kt 강풍 영향권과 충분히 떨어짐"
           }
         }
-      ]
+      ],
+      "current_crosscheck": {
+        "combined_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
+        },
+        "jtwc_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma_current_risk": {
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
+        },
+        "cma": {
+          "center_distance_km": 3276,
+          "bearing_deg": 279,
+          "quadrant": "NW",
+          "wind_zone_label_ko": "강풍 영향권",
+          "wind_standard_raw": "30KTS",
+          "wind_radius_30_km": 150,
+          "distance_to_30kt_boundary_km": 3126,
+          "distance_to_30kt_radius_ratio": 21.84,
+          "boundary_status_ko": "CMA 강풍 영향권까지 3126 km"
+        }
+      }
     }
   },
   "routes": [
@@ -1359,5 +1532,48 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T11:44:51.188575+00:00"
+  "generated_at_utc": "2026-08-20T11:46:01.699944+00:00",
+  "cma_crosscheck": {
+    "status": "OK",
+    "name_en": "SAUDEL",
+    "name_cn": "沙德尔",
+    "number": 2618,
+    "time_utc": "202608200900",
+    "grade": "TS",
+    "grade_ko": "열대폭풍",
+    "pressure_hpa": 995,
+    "max_wind_mps": 20,
+    "lat": 12.5,
+    "lon": 150.8,
+    "movement_direction": "N",
+    "movement_direction_ko": "북",
+    "movement_speed_kmh": 15,
+    "wind_radii": [
+      {
+        "label": "30KTS",
+        "ne_km": 280,
+        "se_km": 280,
+        "sw_km": 180,
+        "nw_km": 150,
+        "raw": [
+          "30KTS",
+          280,
+          280,
+          180,
+          150,
+          3305487
+        ],
+        "meaning_ko": "30kt 풍권"
+      }
+    ]
+  },
+  "agency_time_comparison": {
+    "jtwc_time_utc": null,
+    "cma_time_utc": "2026-08-20T09:00:00+00:00",
+    "jtwc_time_china": null,
+    "cma_time_china": "08/20 17:00",
+    "difference_hours": null,
+    "label_ko": "기관 발표시각 차이 확인 불가",
+    "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지"
+  }
 }
