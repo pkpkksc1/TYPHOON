@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 78,
-    "max_difference_km": 155,
+    "average_difference_km": 138,
+    "max_difference_km": 214,
     "overall": {
       "level": "YELLOW",
       "emoji": "🟡",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-21T06:00:00+09:00",
+      "jma_time": "2026-08-21T09:00:00+09:00",
       "kma_time": "202608210300",
-      "time_gap_hours": 3.0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 13.8,
-        "lon": 149.4
+        "lat": 14.3,
+        "lon": 149.2
       },
       "kma": {
         "lat": 13.7,
         "lon": 150.1
       },
-      "difference_km": 76,
+      "difference_km": 118,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -39,18 +39,18 @@
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-21T18:00:00+09:00",
+      "jma_time": "2026-08-21T21:00:00+09:00",
       "kma_time": "202608211500",
-      "time_gap_hours": 3.0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 15.8,
-        "lon": 148.3
+        "lat": 16.1,
+        "lon": 148.0
       },
       "kma": {
         "lat": 15.6,
         "lon": 148.8
       },
-      "difference_km": 58,
+      "difference_km": 102,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -58,39 +58,39 @@
       }
     },
     {
-      "forecast_hour": 45,
-      "jma_time": "2026-08-22T15:00:00+09:00",
+      "forecast_hour": 48,
+      "jma_time": "2026-08-22T21:00:00+09:00",
       "kma_time": "202608221500",
-      "time_gap_hours": 0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 19.2,
-        "lon": 145.8
+        "lat": 19.7,
+        "lon": 144.9
       },
       "kma": {
         "lat": 19.0,
         "lon": 145.7
       },
-      "difference_km": 25,
+      "difference_km": 114,
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
       }
     },
     {
-      "forecast_hour": 69,
-      "jma_time": "2026-08-23T15:00:00+09:00",
+      "forecast_hour": 72,
+      "jma_time": "2026-08-23T21:00:00+09:00",
       "kma_time": "202608231500",
-      "time_gap_hours": 0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 22.4,
-        "lon": 141.2
+        "lat": 22.6,
+        "lon": 139.8
       },
       "kma": {
         "lat": 22.0,
         "lon": 140.9
       },
-      "difference_km": 54,
+      "difference_km": 131,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -98,39 +98,39 @@
       }
     },
     {
-      "forecast_hour": 93,
-      "jma_time": "2026-08-24T15:00:00+09:00",
+      "forecast_hour": 96,
+      "jma_time": "2026-08-24T21:00:00+09:00",
       "kma_time": "202608241500",
-      "time_gap_hours": 0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 25.0,
-        "lon": 136.2
+        "lat": 25.2,
+        "lon": 134.8
       },
       "kma": {
         "lat": 24.2,
         "lon": 135.8
       },
-      "difference_km": 98,
+      "difference_km": 150,
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
+        "level": "RED",
+        "emoji": "🔴",
+        "label_ko": "차이 큼"
       }
     },
     {
-      "forecast_hour": 117,
-      "jma_time": "2026-08-25T15:00:00+09:00",
+      "forecast_hour": 120,
+      "jma_time": "2026-08-25T21:00:00+09:00",
       "kma_time": "202608251500",
-      "time_gap_hours": 0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 27.1,
-        "lon": 133.1
+        "lat": 27.6,
+        "lon": 131.3
       },
       "kma": {
         "lat": 25.9,
         "lon": 132.3
       },
-      "difference_km": 155,
+      "difference_km": 214,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -138,5 +138,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-20T09:51:25.160796+00:00"
+  "generated_at_utc": "2026-08-20T13:10:27.899020+00:00"
 }
