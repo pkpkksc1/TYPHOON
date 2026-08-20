@@ -31,8 +31,8 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.07,
-        "current_wind_mps": 4.3,
+        "current_rain_mm": 0.12,
+        "current_wind_mps": 4.7,
         "current_gust_mps": 5.6,
         "max_72h_rain_mm": 1.77,
         "max_72h_rain_time": "2026-08-22 13:00",
@@ -64,9 +64,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.2,
-        "current_wind_mps": 4.7,
-        "current_gust_mps": 6.1,
+        "current_rain_mm": 0.25,
+        "current_wind_mps": 4.9,
+        "current_gust_mps": 6.4,
         "max_72h_rain_mm": 1.47,
         "max_72h_rain_time": "2026-08-22 11:00",
         "max_72h_wind_mps": 7.2,
@@ -97,9 +97,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.56,
+        "current_rain_mm": 0.13,
         "current_wind_mps": 1.0,
-        "current_gust_mps": 1.0,
+        "current_gust_mps": 3.0,
         "max_72h_rain_mm": 0.6,
         "max_72h_rain_time": "2026-08-21 07:00",
         "max_72h_wind_mps": 3.2,
@@ -130,8 +130,8 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.04,
-        "current_wind_mps": 4.4,
+        "current_rain_mm": 0.06,
+        "current_wind_mps": 5.0,
         "current_gust_mps": 6.7,
         "max_72h_rain_mm": 6.28,
         "max_72h_rain_time": "2026-08-22 12:00",
@@ -163,9 +163,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.05,
-        "current_wind_mps": 5.4,
-        "current_gust_mps": 8.8,
+        "current_rain_mm": 0.09,
+        "current_wind_mps": 5.9,
+        "current_gust_mps": 9.5,
         "max_72h_rain_mm": 0.43,
         "max_72h_rain_time": "2026-08-20 00:00",
         "max_72h_wind_mps": 8.1,
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T04:06:17.914232+00:00"
+  "generated_at_utc": "2026-08-20T05:03:09.471284+00:00"
 }
