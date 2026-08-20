@@ -7,7 +7,10 @@
   "attribution": "Powered by WeatherAPI.com",
   "typhoon": {
     "number": "2618",
-    "name": "SAUDEL"
+    "name": "SAUDEL",
+    "jtwc_id": "17W",
+    "jtwc_warning_number": 8,
+    "jtwc_issue_time_utc": "2026-08-20T09:00:00Z"
   },
   "forecast_confidence": {
     "emoji": "🟡",
@@ -26,8 +29,8 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1300,
-        "closest_time": "2026-08-25T15:00:00+09:00",
+        "closest_distance_km": 1274,
+        "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
@@ -59,14 +62,14 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1185,
-        "closest_time": "2026-08-25T15:00:00+09:00",
+        "closest_distance_km": 1161,
+        "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.11,
-        "current_wind_mps": 4.9,
-        "current_gust_mps": 7.3,
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 4.7,
+        "current_gust_mps": 7.7,
         "max_72h_rain_mm": 1.78,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 7.4,
@@ -92,8 +95,8 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1310,
-        "closest_time": "2026-08-25T15:00:00+09:00",
+        "closest_distance_km": 1368,
+        "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
@@ -125,8 +128,8 @@
       },
       "reason_ko": "최대 시간당 강수 15.08 mm",
       "typhoon": {
-        "closest_distance_km": 2839,
-        "closest_time": "2026-08-25T15:00:00+09:00",
+        "closest_distance_km": 2748,
+        "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
@@ -158,8 +161,8 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1854,
-        "closest_time": "2026-08-25T15:00:00+09:00",
+        "closest_distance_km": 1727,
+        "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
@@ -246,5 +249,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T09:59:09.681752+00:00"
+  "generated_at_utc": "2026-08-20T10:55:56.510585+00:00"
 }
