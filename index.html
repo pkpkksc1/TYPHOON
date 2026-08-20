@@ -224,7 +224,7 @@ button{
 
 .map{
   position:relative;
-  height:360px;
+  height:410px;
   overflow:hidden;
   border-radius:12px;
   border:1px solid var(--line);
@@ -385,6 +385,23 @@ td{
   gap:8px;
 }
 
+.flights .list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.flight-group{
+  display:inline-block;
+  margin-top:3px;
+  padding:2px 6px;
+  border-radius:5px;
+  background:#0f3154;
+  color:#9fd2ff;
+  font-size:9px;
+  font-weight:900;
+}
+
 .route-title{
   font-weight:900;
   font-size:13px;
@@ -481,6 +498,10 @@ td{
   }
 
   .loc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .flights .list{
     grid-template-columns:1fr;
   }
 
@@ -703,8 +724,10 @@ td{
         <polyline
           id="trackLine"
           fill="none"
-          stroke="#dce9f8"
-          stroke-width="4"
+          stroke="#73b9ff"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         >
         </polyline>
 
@@ -791,7 +814,7 @@ td{
   </div>
 
   <h2>
-    ICN → PVG
+    대표 항공편
   </h2>
 
   <div
@@ -1341,30 +1364,41 @@ async function load(){
   // 경로
   // ========================================
 
-  const track =
+  const rawTrack =
     [
-
       {
         forecast_hour:0,
         time:c.time,
         lat:c.lat,
         lon:c.lon,
-        pressure_hpa:
-          c.pressure_hpa,
-        max_wind_mps:
-          c.max_wind_mps
+        pressure_hpa:c.pressure_hpa,
+        max_wind_mps:c.max_wind_mps
       },
-
-      ...(
-        t.forecast_track ||
-        []
-      )
-
+      ...(t.forecast_track || [])
     ]
     .filter(
       p =>
         p.lat != null &&
         p.lon != null
+    );
+
+  // 시간순 정렬 + 같은 forecast_hour 중복 제거
+  const seenHours = new Set();
+  const track = rawTrack
+    .sort(
+      (a,b) =>
+        Number(a.forecast_hour || 0) -
+        Number(b.forecast_hour || 0)
+    )
+    .filter(
+      p => {
+        const h = Number(p.forecast_hour || 0);
+        if(seenHours.has(h)){
+          return false;
+        }
+        seenHours.add(h);
+        return true;
+      }
     );
 
 
@@ -1831,6 +1865,19 @@ async function load(){
               ${
                 safe(
                   f.route
+                )
+              }
+            </div>
+
+            <div class="flight-group">
+              ${
+                safe(
+                  f.group_ko,
+                  (
+                    String(f.route || "").startsWith("ICN")
+                      ? "WF수입"
+                      : "수출"
+                  )
                 )
               }
             </div>
