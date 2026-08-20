@@ -1060,7 +1060,7 @@ td{
 <section class="panel track">
 
   <div class="kicker">
-    5일 예상 경로
+    2일 예상 경로
   </div>
 
   <h2>
@@ -1843,8 +1843,15 @@ $("pressure")
 
   const pts = [];
 
+  // 화면에는 현재 ~ 48시간(2일)까지만 표시
+  // 원본 dashboard.json의 5일 예보 데이터는 그대로 유지
+  const displayTrack =
+    track.filter(
+      p => Number(p.forecast_hour || 0) <= 48
+    );
 
-  track.forEach(
+
+  displayTrack.forEach(
     p => {
 
       const a =
