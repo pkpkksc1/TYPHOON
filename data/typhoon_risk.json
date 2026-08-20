@@ -37,10 +37,10 @@
         "current_rain_mm": 0.0,
         "current_wind_mps": 4.1,
         "current_gust_mps": 9.1,
-        "max_72h_rain_mm": 0.1,
-        "max_72h_rain_time": "2026-08-22 11:00",
-        "max_72h_wind_mps": 8.9,
-        "max_72h_wind_time": "2026-08-23 11:00",
+        "max_72h_rain_mm": 0.21,
+        "max_72h_rain_time": "2026-08-21 15:00",
+        "max_72h_wind_mps": 9.8,
+        "max_72h_wind_time": "2026-08-23 12:00",
         "max_72h_gust_mps": 15.6,
         "max_72h_gust_time": "2026-08-23 01:00"
       },
@@ -67,15 +67,15 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 2.9,
-        "current_gust_mps": 8.1,
-        "max_72h_rain_mm": 0.57,
-        "max_72h_rain_time": "2026-08-21 11:00",
-        "max_72h_wind_mps": 7.4,
-        "max_72h_wind_time": "2026-08-22 12:00",
-        "max_72h_gust_mps": 14.0,
-        "max_72h_gust_time": "2026-08-22 22:00"
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 3.1,
+        "current_gust_mps": 8.8,
+        "max_72h_rain_mm": 1.09,
+        "max_72h_rain_time": "2026-08-22 12:00",
+        "max_72h_wind_mps": 7.8,
+        "max_72h_wind_time": "2026-08-23 12:00",
+        "max_72h_gust_mps": 14.1,
+        "max_72h_gust_time": "2026-08-23 00:00"
       },
       "score_detail": {
         "distance": 0,
@@ -87,32 +87,32 @@
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "score": 8,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "최대 시간당 강수 9.07 mm",
       "typhoon": {
         "closest_distance_km": 1368,
         "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.4,
-        "current_gust_mps": 1.6,
-        "max_72h_rain_mm": 1.28,
-        "max_72h_rain_time": "2026-08-21 10:00",
-        "max_72h_wind_mps": 4.3,
-        "max_72h_wind_time": "2026-08-23 16:00",
-        "max_72h_gust_mps": 9.3,
-        "max_72h_gust_time": "2026-08-23 16:00"
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 1.3,
+        "current_gust_mps": 1.5,
+        "max_72h_rain_mm": 9.07,
+        "max_72h_rain_time": "2026-08-21 07:00",
+        "max_72h_wind_mps": 4.4,
+        "max_72h_wind_time": "2026-08-21 14:00",
+        "max_72h_gust_mps": 7.3,
+        "max_72h_gust_time": "2026-08-21 09:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 8,
+        "rain": 20,
         "wind": 0,
         "gust": 0
       }
@@ -133,11 +133,11 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.14,
-        "current_wind_mps": 6.8,
-        "current_gust_mps": 10.9,
-        "max_72h_rain_mm": 1.97,
-        "max_72h_rain_time": "2026-08-22 18:00",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 6.0,
+        "current_gust_mps": 10.6,
+        "max_72h_rain_mm": 1.79,
+        "max_72h_rain_time": "2026-08-23 09:00",
         "max_72h_wind_mps": 10.0,
         "max_72h_wind_time": "2026-08-23 10:00",
         "max_72h_gust_mps": 14.2,
@@ -159,22 +159,22 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 시간당 강수 15.08 mm",
+      "reason_ko": "최대 시간당 강수 29.25 mm",
       "typhoon": {
         "closest_distance_km": 2748,
         "closest_time": "2026-08-25T06:00:00Z",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 4.4,
-        "current_gust_mps": 9.5,
-        "max_72h_rain_mm": 15.08,
-        "max_72h_rain_time": "2026-08-22 10:00",
-        "max_72h_wind_mps": 6.4,
-        "max_72h_wind_time": "2026-08-21 17:00",
-        "max_72h_gust_mps": 11.9,
-        "max_72h_gust_time": "2026-08-22 22:00"
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 4.8,
+        "current_gust_mps": 10.2,
+        "max_72h_rain_mm": 29.25,
+        "max_72h_rain_time": "2026-08-22 02:00",
+        "max_72h_wind_mps": 4.9,
+        "max_72h_wind_time": "2026-08-21 04:00",
+        "max_72h_gust_mps": 12.3,
+        "max_72h_gust_time": "2026-08-22 15:00"
       },
       "score_detail": {
         "distance": 0,
@@ -200,12 +200,12 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.6,
-        "current_gust_mps": 3.9,
-        "max_72h_rain_mm": 1.7,
-        "max_72h_rain_time": "2026-08-23 19:00",
+        "current_wind_mps": 2.9,
+        "current_gust_mps": 4.7,
+        "max_72h_rain_mm": 1.89,
+        "max_72h_rain_time": "2026-08-23 15:00",
         "max_72h_wind_mps": 7.6,
-        "max_72h_wind_time": "2026-08-21 11:00",
+        "max_72h_wind_time": "2026-08-21 13:00",
         "max_72h_gust_mps": 12.7,
         "max_72h_gust_time": "2026-08-23 11:00"
       },
@@ -221,13 +221,13 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 18,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (최대 돌풍 15.6 m/s)",
+      "reason_ko": "인천 국제공항 낮음 (최대 시간당 강수 9.07 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -243,7 +243,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 낮음 (최대 시간당 강수 15.08 mm)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (최대 시간당 강수 29.25 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -285,18 +285,18 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 18,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "인천 국제공항 낮음 (최대 시간당 강수 9.07 mm)",
       "locations": [
         "ICN",
         "PVG"
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T19:54:22.220111+00:00"
+  "generated_at_utc": "2026-08-20T20:55:17.129746+00:00"
 }
