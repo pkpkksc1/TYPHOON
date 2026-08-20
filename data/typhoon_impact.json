@@ -279,7 +279,7 @@
     },
     "PVG": {
       "code": "PVG",
-      "name_ko": "푸동국제공항",
+      "name_ko": "푸동 국제공항",
       "risk_source": "JTWC_WIND_RADII",
       "current_distance_km": 3672,
       "closest_distance_km": 1161,
@@ -531,7 +531,7 @@
     },
     "ICN": {
       "code": "ICN",
-      "name_ko": "인천국제공항",
+      "name_ko": "인천 국제공항",
       "risk_source": "JTWC_WIND_RADII",
       "current_distance_km": 3742,
       "closest_distance_km": 1368,
@@ -1287,7 +1287,7 @@
     },
     "CRK": {
       "code": "CRK",
-      "name_ko": "클락국제공항",
+      "name_ko": "클락 국제공항",
       "risk_source": "JTWC_WIND_RADII",
       "current_distance_km": 3297,
       "closest_distance_km": 1727,
@@ -1549,7 +1549,7 @@
         "severity_rank": 1,
         "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "푸동국제공항 낮음 (강풍 영향권까지 883 km)",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 883 km)",
       "worst_location": "PVG",
       "locations": [
         "SUZHOU",
@@ -1567,7 +1567,7 @@
         "severity_rank": 1,
         "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "푸동국제공항 낮음 (강풍 영향권까지 883 km)",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 883 km)",
       "worst_location": "PVG",
       "locations": [
         "SUZHOU",
@@ -1585,7 +1585,7 @@
         "severity_rank": 1,
         "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "푸동국제공항 낮음 (강풍 영향권까지 883 km)",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 883 km)",
       "worst_location": "PVG",
       "locations": [
         "SUZHOU",
@@ -1603,7 +1603,7 @@
         "severity_rank": 1,
         "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "푸동국제공항 낮음 (강풍 영향권까지 883 km)",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 883 km)",
       "worst_location": "PVG",
       "locations": [
         "SUZHOU",
@@ -1621,7 +1621,7 @@
         "severity_rank": 1,
         "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "푸동국제공항 낮음 (강풍 영향권까지 883 km)",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 883 km)",
       "worst_location": "PVG",
       "locations": [
         "ICN",
@@ -1629,5 +1629,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T12:56:20.358729+00:00"
+  "generated_at_utc": "2026-08-20T13:09:17.656337+00:00"
 }
