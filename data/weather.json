@@ -13,20 +13,20 @@
         "lon": 120.5853
       },
       "resolved_location": {
-        "name": "Suzhou",
+        "name": "Yangchiatsun",
         "region": "Jiangsu",
         "country": "China",
-        "lat": 31.311,
-        "lon": 120.618,
-        "localtime": "2026-08-20 18:57"
+        "lat": 31.285,
+        "lon": 120.596,
+        "localtime": "2026-08-20 19:34"
       },
       "current": {
-        "last_updated": "2026-08-20 18:45",
-        "rain_mm": 0.01,
-        "wind_mps": 5.2,
-        "gust_mps": 8.7,
+        "last_updated": "2026-08-20 19:30",
+        "rain_mm": 0.0,
+        "wind_mps": 4.8,
+        "gust_mps": 9.1,
         "wind_dir": "E",
-        "condition": "Patchy rain nearby"
+        "condition": "Clear"
       },
       "hourly_forecast": [
         {
@@ -167,7 +167,7 @@
         {
           "time": "2026-08-20 15:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 16,
+          "chance_of_rain_pct": 13,
           "wind_mps": 5.6,
           "gust_mps": 6.9,
           "wind_dir": "E",
@@ -176,7 +176,7 @@
         {
           "time": "2026-08-20 16:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 15,
+          "chance_of_rain_pct": 13,
           "wind_mps": 5.7,
           "gust_mps": 7.3,
           "wind_dir": "E",
@@ -194,7 +194,7 @@
         {
           "time": "2026-08-20 18:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 20,
+          "chance_of_rain_pct": 18,
           "wind_mps": 5.2,
           "gust_mps": 8.7,
           "wind_dir": "E",
@@ -248,7 +248,7 @@
         {
           "time": "2026-08-21 00:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 27,
+          "chance_of_rain_pct": 24,
           "wind_mps": 4.2,
           "gust_mps": 9.4,
           "wind_dir": "E",
@@ -266,7 +266,7 @@
         {
           "time": "2026-08-21 02:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.7,
           "gust_mps": 10.3,
           "wind_dir": "ESE",
@@ -275,7 +275,7 @@
         {
           "time": "2026-08-21 03:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.6,
           "gust_mps": 10.2,
           "wind_dir": "ESE",
@@ -293,7 +293,7 @@
         {
           "time": "2026-08-21 05:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 29,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.2,
           "gust_mps": 9.5,
           "wind_dir": "ESE",
@@ -338,7 +338,7 @@
         {
           "time": "2026-08-21 10:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 14,
+          "chance_of_rain_pct": 16,
           "wind_mps": 6.4,
           "gust_mps": 8.0,
           "wind_dir": "ESE",
@@ -374,7 +374,7 @@
         {
           "time": "2026-08-21 14:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
+          "chance_of_rain_pct": 12,
           "wind_mps": 7.1,
           "gust_mps": 8.8,
           "wind_dir": "ESE",
@@ -464,7 +464,7 @@
         {
           "time": "2026-08-22 00:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 22,
           "wind_mps": 5.7,
           "gust_mps": 12.1,
           "wind_dir": "ESE",
@@ -473,7 +473,7 @@
         {
           "time": "2026-08-22 01:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 23,
+          "chance_of_rain_pct": 27,
           "wind_mps": 5.7,
           "gust_mps": 11.6,
           "wind_dir": "ESE",
@@ -500,7 +500,7 @@
         {
           "time": "2026-08-22 04:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 24,
+          "chance_of_rain_pct": 26,
           "wind_mps": 4.7,
           "gust_mps": 10.5,
           "wind_dir": "ESE",
@@ -509,7 +509,7 @@
         {
           "time": "2026-08-22 05:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 26,
           "wind_mps": 4.2,
           "gust_mps": 9.8,
           "wind_dir": "ESE",
@@ -518,7 +518,7 @@
         {
           "time": "2026-08-22 06:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.2,
           "gust_mps": 9.9,
           "wind_dir": "E",
@@ -527,7 +527,7 @@
         {
           "time": "2026-08-22 07:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 24,
           "wind_mps": 4.9,
           "gust_mps": 10.1,
           "wind_dir": "E",
@@ -536,7 +536,7 @@
         {
           "time": "2026-08-22 08:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 21,
+          "chance_of_rain_pct": 20,
           "wind_mps": 6.2,
           "gust_mps": 9.9,
           "wind_dir": "E",
@@ -572,7 +572,7 @@
         {
           "time": "2026-08-22 12:00",
           "rain_mm": 0.09,
-          "chance_of_rain_pct": 22,
+          "chance_of_rain_pct": 20,
           "wind_mps": 7.8,
           "gust_mps": 11.3,
           "wind_dir": "ESE",
@@ -692,15 +692,15 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-20 18:57"
+        "localtime": "2026-08-20 19:34"
       },
       "current": {
-        "last_updated": "2026-08-20 18:45",
-        "rain_mm": 0.05,
-        "wind_mps": 4.1,
-        "gust_mps": 8.3,
+        "last_updated": "2026-08-20 19:30",
+        "rain_mm": 0.0,
+        "wind_mps": 3.9,
+        "gust_mps": 8.7,
         "wind_dir": "E",
-        "condition": "Patchy rain nearby"
+        "condition": "Partly Cloudy"
       },
       "hourly_forecast": [
         {
@@ -1366,15 +1366,15 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-20 19:57"
+        "localtime": "2026-08-20 20:34"
       },
       "current": {
-        "last_updated": "2026-08-20 19:45",
+        "last_updated": "2026-08-20 20:30",
         "rain_mm": 0.0,
-        "wind_mps": 1.4,
-        "gust_mps": 2.2,
-        "wind_dir": "ENE",
-        "condition": "Overcast"
+        "wind_mps": 1.0,
+        "gust_mps": 3.0,
+        "wind_dir": "SSE",
+        "condition": "Smoky haze"
       },
       "hourly_forecast": [
         {
@@ -1390,8 +1390,8 @@
           "time": "2026-08-20 01:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 22,
-          "wind_mps": 0.1,
-          "gust_mps": 0.2,
+          "wind_mps": 1.0,
+          "gust_mps": 3.0,
           "wind_dir": "SSE",
           "condition": "Smoky haze"
         },
@@ -2035,20 +2035,20 @@
         "lon": 105.807
       },
       "resolved_location": {
-        "name": "Ninh Bac",
+        "name": "Noi Bai",
         "region": "",
         "country": "Vietnam",
-        "lat": 21.233,
-        "lon": 105.8,
-        "localtime": "2026-08-20 17:57"
+        "lat": 21.217,
+        "lon": 105.817,
+        "localtime": "2026-08-20 18:34"
       },
       "current": {
-        "last_updated": "2026-08-20 17:45",
-        "rain_mm": 0.24,
-        "wind_mps": 2.8,
-        "gust_mps": 3.8,
-        "wind_dir": "WSW",
-        "condition": "Sunny"
+        "last_updated": "2026-08-20 18:15",
+        "rain_mm": 0.0,
+        "wind_mps": 2.2,
+        "gust_mps": 3.3,
+        "wind_dir": "W",
+        "condition": "Clear"
       },
       "hourly_forecast": [
         {
@@ -2211,7 +2211,7 @@
           "wind_mps": 2.8,
           "gust_mps": 3.8,
           "wind_dir": "WSW",
-          "condition": "Sunny"
+          "condition": "Light rain shower"
         },
         {
           "time": "2026-08-20 18:00",
@@ -2220,7 +2220,7 @@
           "wind_mps": 2.2,
           "gust_mps": 3.3,
           "wind_dir": "W",
-          "condition": "Smoky haze"
+          "condition": "Clear"
         },
         {
           "time": "2026-08-20 19:00",
@@ -2714,13 +2714,13 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-20 18:57"
+        "localtime": "2026-08-20 19:34"
       },
       "current": {
-        "last_updated": "2026-08-20 18:45",
-        "rain_mm": 0.04,
-        "wind_mps": 3.3,
-        "gust_mps": 6.3,
+        "last_updated": "2026-08-20 19:30",
+        "rain_mm": 0.01,
+        "wind_mps": 3.0,
+        "gust_mps": 6.4,
         "wind_dir": "SW",
         "condition": "Patchy rain nearby"
       },
@@ -3377,5 +3377,5 @@
     }
   },
   "errors": [],
-  "generated_at_utc": "2026-08-20T10:57:02.474801+00:00"
+  "generated_at_utc": "2026-08-20T11:34:58.653508+00:00"
 }
