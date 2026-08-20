@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-SBLC Typhoon Dashboard - Step 4.4
+SBLC Typhoon Dashboard - Step 4.6
 Add CMA current wind-radius cross-check to existing JTWC impact output.
 
 Inputs:
@@ -11,7 +11,7 @@ Inputs:
     data/typhoon_impact.json   # existing v4.3 JTWC result
 
 Output:
-    data/typhoon_impact.json   # enriched v4.4 result
+    data/typhoon_impact.json   # enriched v4.6 result
 
 Logic:
 - Future 5-day logistics risk remains JTWC-based because CMA forecast
@@ -39,7 +39,7 @@ JMA_PATH = BASE_DIR / "data" / "jma_typhoon.json"
 CMA_PATH = BASE_DIR / "data" / "cma_typhoon.json"
 IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.5-CMA"
+PARSER_VERSION = "4.6-CMA"
 CMA_CAUTION_MULTIPLIER = 1.5
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
@@ -98,7 +98,7 @@ def find_jtwc_current_time(impact: Dict[str, Any]) -> Optional[datetime]:
         if isinstance(timeline, list) and timeline:
             first = timeline[0]
             if isinstance(first, dict):
-                for key in ("time_utc", "valid_time_utc", "forecast_time_utc", "datetime_utc"):
+                for key in ("time", "time_utc", "valid_time_utc", "forecast_time_utc", "datetime_utc"):
                     dt = parse_iso_utc(first.get(key))
                     if dt:
                         return dt
