@@ -1,7 +1,7 @@
 {
   "source": "JMA/KMA + WeatherAPI.com",
   "product": "Combined Logistics Typhoon Risk",
-  "parser_version": "6.0",
+  "parser_version": "6.1",
   "status": "OK",
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
@@ -34,9 +34,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 4.8,
-        "current_gust_mps": 9.1,
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 5.0,
+        "current_gust_mps": 10.0,
         "max_72h_rain_mm": 1.11,
         "max_72h_rain_time": "2026-08-20 13:00",
         "max_72h_wind_mps": 8.3,
@@ -67,9 +67,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 3.9,
-        "current_gust_mps": 8.7,
+        "current_rain_mm": 0.04,
+        "current_wind_mps": 3.8,
+        "current_gust_mps": 8.8,
         "max_72h_rain_mm": 1.78,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 7.4,
@@ -101,8 +101,8 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
-        "current_gust_mps": 3.0,
+        "current_wind_mps": 1.4,
+        "current_gust_mps": 1.6,
         "max_72h_rain_mm": 1.19,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 3.1,
@@ -133,9 +133,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 2.2,
-        "current_gust_mps": 3.3,
+        "current_rain_mm": 0.19,
+        "current_wind_mps": 1.6,
+        "current_gust_mps": 1.7,
         "max_72h_rain_mm": 15.08,
         "max_72h_rain_time": "2026-08-22 10:00",
         "max_72h_wind_mps": 6.4,
@@ -166,9 +166,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 3.0,
-        "current_gust_mps": 6.4,
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 2.6,
+        "current_gust_mps": 5.5,
         "max_72h_rain_mm": 0.68,
         "max_72h_rain_time": "2026-08-22 21:00",
         "max_72h_wind_mps": 7.6,
@@ -234,6 +234,22 @@
       ]
     },
     {
+      "code": "SUZHOU_PVG_MNL",
+      "name_ko": "쑤저우 → PVG → 마닐라",
+      "score": 18,
+      "risk": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "낮음"
+      },
+      "reason_ko": "쑤저우 낮음 (특이 위험요소 낮음)",
+      "locations": [
+        "SUZHOU",
+        "PVG",
+        "MNL"
+      ]
+    },
+    {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
       "score": 18,
@@ -249,5 +265,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T11:51:47.983657+00:00"
+  "generated_at_utc": "2026-08-20T12:50:14.298853+00:00"
 }
