@@ -38,7 +38,7 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.1"
+PARSER_VERSION = "6.2"
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
@@ -309,11 +309,30 @@ def make_route_risk(
             "reason_ko": "자료 없음",
         }
 
+    valid_route_locations = [
+        x for x in route_locations
+        if x.get("risk", {}).get("level") != "NO_DATA"
+    ]
+
+    if not valid_route_locations:
+        return {
+            "code": route["code"],
+            "name_ko": route["name_ko"],
+            "score": None,
+            "risk": {
+                "level": "NO_DATA",
+                "emoji": "⚪",
+                "label_ko": "자료 없음",
+            },
+            "reason_ko": "노선 거점 데이터 없음",
+            "locations": route["locations"],
+        }
+
     worst = max(
-        route_locations,
+        valid_route_locations,
         key=lambda x: (
             risk_rank(x["risk"]["level"]),
-            x["score"],
+            x.get("score") or 0,
         ),
     )
 
@@ -375,15 +394,82 @@ def main() -> int:
     locations: Dict[str, Dict[str, Any]] = {}
 
     for code in LOCATION_ORDER:
-        if (
-            code in impact_locations
-            and code in weather_locations
-        ):
+        impact_item = impact_locations.get(code)
+        weather_item = weather_locations.get(code)
+
+        if isinstance(impact_item, dict) and isinstance(weather_item, dict):
             locations[code] = make_location_risk(
                 code,
-                impact_locations[code],
-                weather_locations[code],
+                impact_item,
+                weather_item,
             )
+            continue
+
+        # Always expose all configured logistics hubs to the dashboard.
+        # If an upstream source is missing, show NO_DATA instead of
+        # silently dropping the location card.
+        fallback_names = {
+            "SUZHOU": "쑤저우",
+            "PVG": "푸동 국제공항",
+            "ICN": "인천 국제공항",
+            "MNL": "마닐라 국제공항",
+            "HAN": "하노이 노이바이 국제공항",
+            "CRK": "클락 국제공항",
+        }
+
+        missing = []
+        if not isinstance(impact_item, dict):
+            missing.append("태풍 영향")
+        if not isinstance(weather_item, dict):
+            missing.append("날씨")
+
+        locations[code] = {
+            "code": code,
+            "name_ko": fallback_names.get(code, code),
+            "score": None,
+            "risk": {
+                "level": "NO_DATA",
+                "emoji": "⚪",
+                "label_ko": "자료 없음",
+            },
+            "reason_ko": f"{' / '.join(missing)} 데이터 없음",
+            "typhoon": {
+                "closest_distance_km": (
+                    impact_item.get("closest_distance_km")
+                    if isinstance(impact_item, dict)
+                    else None
+                ),
+                "closest_time": (
+                    impact_item.get("closest_time")
+                    if isinstance(impact_item, dict)
+                    else None
+                ),
+                "trend_ko": (
+                    impact_item.get("trend_ko")
+                    if isinstance(impact_item, dict)
+                    else None
+                ),
+            },
+            "weather": summarize_weather(weather_item)
+            if isinstance(weather_item, dict)
+            else {
+                "current_rain_mm": None,
+                "current_wind_mps": None,
+                "current_gust_mps": None,
+                "max_72h_rain_mm": 0.0,
+                "max_72h_rain_time": None,
+                "max_72h_wind_mps": 0.0,
+                "max_72h_wind_time": None,
+                "max_72h_gust_mps": 0.0,
+                "max_72h_gust_time": None,
+            },
+            "score_detail": {
+                "distance": 0,
+                "rain": 0,
+                "wind": 0,
+                "gust": 0,
+            },
+        }
 
     routes = [
         make_route_risk(route, locations)
