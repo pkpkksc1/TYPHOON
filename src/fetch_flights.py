@@ -3,7 +3,7 @@
 
 """
 SBLC Typhoon Dashboard
-Flight Status Fetch v8.0 - 7 representative flights
+Flight Status Fetch v8.1 - 7 representative flights
 
 Aviationstack targets
 
@@ -28,6 +28,12 @@ Important:
 Required GitHub Secret:
     AVIATIONSTACK_API_KEY
 
+Selection / robustness updates in v8.1:
+    - Fix same-day early actual time being misread as +24h delay
+    - Prefer today's flight_date
+    - Prefer nearest future service over past service
+    - Keep NO_DATA flights without failing workflow
+
 Output:
     data/flights.json
 """
@@ -48,7 +54,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
 API_URL = "https://api.aviationstack.com/v1/flights"
-PARSER_VERSION = "8.0"
+PARSER_VERSION = "8.1"
 
 
 AIRPORTS = {
@@ -178,16 +184,19 @@ def diff_minutes(
     scheduled: Any,
     actual_or_estimated: Any,
 ) -> Optional[int]:
+    """
+    Delay in minutes using the local wall-clock timestamps supplied by Aviationstack.
 
+    Important:
+    - If actual/estimated is earlier than scheduled on the SAME calendar date,
+      this is treated as an early departure/arrival (negative delay), not +24h.
+    - Cross-midnight is only applied when the calendar date genuinely advances.
+    """
     start = parse_local_clock(scheduled)
     end = parse_local_clock(actual_or_estimated)
 
     if not start or not end:
         return None
-
-    # Cross-midnight correction.
-    if end < start:
-        end = end + timedelta(days=1)
 
     return round((end - start).total_seconds() / 60)
 
@@ -362,6 +371,74 @@ def make_status(
     }
 
 
+def current_local_date_for_airport(airport_iata: str) -> str:
+    """
+    Return today's date for the departure airport timezone.
+    Fixed-offset zones are enough for our tracked airports.
+    """
+    offset_text = AIRPORTS.get(airport_iata, {}).get("offset", "+00:00")
+    sign = 1 if offset_text.startswith("+") else -1
+
+    try:
+        hours, minutes = map(int, offset_text[1:].split(":"))
+    except Exception:
+        hours, minutes = 0, 0
+
+    offset = timezone(sign * timedelta(hours=hours, minutes=minutes))
+    return datetime.now(timezone.utc).astimezone(offset).strftime("%Y-%m-%d")
+
+
+def date_distance_days(date_text: Optional[str], target_date: str) -> int:
+    try:
+        d = datetime.strptime(str(date_text), "%Y-%m-%d").date()
+        t = datetime.strptime(target_date, "%Y-%m-%d").date()
+        return (d - t).days
+    except Exception:
+        return 9999
+
+
+def candidate_rank(
+    row: Dict[str, Any],
+    config: Dict[str, str],
+) -> tuple:
+    """
+    Ranking priority:
+    1) today
+    2) future date closest to today
+    3) past dates last
+    4) expected departure clock proximity
+    """
+    dep_iata = config["dep_iata"]
+    today_local = current_local_date_for_airport(dep_iata)
+
+    flight_date = row.get("flight_date")
+    delta_days = date_distance_days(flight_date, today_local)
+
+    if delta_days == 0:
+        date_bucket = 0
+        date_distance = 0
+    elif delta_days > 0:
+        date_bucket = 1
+        date_distance = delta_days
+    else:
+        date_bucket = 2
+        date_distance = abs(delta_days)
+
+    sched_clock = clock_hhmm(
+        row.get("departure", {}).get("scheduled")
+    )
+    clock_distance = circular_clock_difference_minutes(
+        sched_clock,
+        config.get("expected_departure_local"),
+    )
+
+    return (
+        date_bucket,
+        date_distance,
+        clock_distance,
+    )
+
+
 def candidate_matches_route(
     candidate: Dict[str, Any],
     config: Dict[str, str],
@@ -392,20 +469,39 @@ def choose_best_candidate(
     if not matches:
         return None
 
-    expected = config.get("expected_departure_local")
-
-    # Pick the matching record whose scheduled local clock is closest
-    # to the operating schedule supplied by the user.
+    # Prefer today's service, then the nearest future service,
+    # and only use a past service as a last resort.
     matches.sort(
-        key=lambda row: circular_clock_difference_minutes(
-            clock_hhmm(
-                row.get("departure", {}).get("scheduled")
-            ),
-            expected,
-        )
+        key=lambda row: candidate_rank(row, config)
     )
 
-    return matches[0]
+    selected = matches[0]
+
+    # Explicit past-flight protection:
+    # if a future/today record exists, never return a past one.
+    dep_iata = config["dep_iata"]
+    today_local = current_local_date_for_airport(dep_iata)
+
+    selected_delta = date_distance_days(
+        selected.get("flight_date"),
+        today_local,
+    )
+
+    if selected_delta < 0:
+        non_past = [
+            row for row in matches
+            if date_distance_days(
+                row.get("flight_date"),
+                today_local,
+            ) >= 0
+        ]
+        if non_past:
+            non_past.sort(
+                key=lambda row: candidate_rank(row, config)
+            )
+            selected = non_past[0]
+
+    return selected
 
 
 def load_flight(
@@ -431,7 +527,7 @@ def load_flight(
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "sblc-typhoon-dashboard/8.0"
+            "User-Agent": "sblc-typhoon-dashboard/8.1"
         },
     )
 
@@ -462,6 +558,7 @@ def load_flight(
                 "level": "NO_DATA",
                 "emoji": "⚪",
                 "label_ko": "조회 결과 없음",
+                "note_ko": "API에 운항편 데이터가 없으며 오류로 처리하지 않음",
             },
         }
 
@@ -522,6 +619,13 @@ def load_flight(
         "expected_departure_local": config["expected_departure_local"],
         "selected_scheduled_clock": selected_clock,
         "schedule_match_difference_minutes": schedule_difference,
+        "selection_date_local_today": current_local_date_for_airport(dep_iata),
+        "selected_flight_date": row.get("flight_date"),
+        "selected_date_distance_days": date_distance_days(
+            row.get("flight_date"),
+            current_local_date_for_airport(dep_iata),
+        ),
+        "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
         "found": True,
         "status_raw": row.get("flight_status"),
         "status": status,
