@@ -8,7 +8,7 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 56,
+    "average_difference_km": 78,
     "max_difference_km": 115,
     "overall": {
       "level": "YELLOW",
@@ -19,46 +19,46 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-20T21:00:00+09:00",
+      "jma_time": "2026-08-21T00:00:00+09:00",
       "kma_time": "202608202100",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
-        "lat": 12.9,
-        "lon": 151.0
+        "lat": 13.3,
+        "lon": 150.4
       },
       "kma": {
         "lat": 13.0,
         "lon": 151.2
       },
-      "difference_km": 24,
+      "difference_km": 93,
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
       }
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-21T09:00:00+09:00",
+      "jma_time": "2026-08-21T12:00:00+09:00",
       "kma_time": "202608210900",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
-        "lat": 14.7,
-        "lon": 149.7
+        "lat": 15.1,
+        "lon": 149.2
       },
       "kma": {
         "lat": 14.7,
         "lon": 150.1
       },
-      "difference_km": 43,
+      "difference_km": 106,
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "차이 있음"
       }
     },
     {
-      "forecast_hour": 48,
+      "forecast_hour": 45,
       "jma_time": "2026-08-22T09:00:00+09:00",
       "kma_time": "202608220900",
       "time_gap_hours": 0,
@@ -78,7 +78,7 @@
       }
     },
     {
-      "forecast_hour": 72,
+      "forecast_hour": 69,
       "jma_time": "2026-08-23T09:00:00+09:00",
       "kma_time": "202608230900",
       "time_gap_hours": 0,
@@ -98,7 +98,7 @@
       }
     },
     {
-      "forecast_hour": 96,
+      "forecast_hour": 93,
       "jma_time": "2026-08-24T09:00:00+09:00",
       "kma_time": "202608240900",
       "time_gap_hours": 0,
@@ -118,7 +118,7 @@
       }
     },
     {
-      "forecast_hour": 120,
+      "forecast_hour": 117,
       "jma_time": "2026-08-25T09:00:00+09:00",
       "kma_time": "202608250900",
       "time_gap_hours": 0,
@@ -138,5 +138,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-20T03:11:33.159803+00:00"
+  "generated_at_utc": "2026-08-20T04:00:06.644563+00:00"
 }
