@@ -15,7 +15,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 138
+    "average_difference_km": 73
   },
   "locations": {
     "SUZHOU": {
@@ -298,5 +298,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T13:26:28.330527+00:00"
+  "generated_at_utc": "2026-08-20T14:07:14.237956+00:00"
 }
