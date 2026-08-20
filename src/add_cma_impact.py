@@ -39,7 +39,7 @@ JMA_PATH = BASE_DIR / "data" / "jma_typhoon.json"
 CMA_PATH = BASE_DIR / "data" / "cma_typhoon.json"
 IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.4-CMA"
+PARSER_VERSION = "4.5-CMA"
 CMA_CAUTION_MULTIPLIER = 1.5
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
@@ -66,6 +66,66 @@ def to_float(v: Any) -> Optional[float]:
         return float(v)
     except (TypeError, ValueError):
         return None
+
+
+def parse_compact_utc(value: Any) -> Optional[datetime]:
+    if not value:
+        return None
+    try:
+        return datetime.strptime(str(value), "%Y%m%d%H%M").replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def parse_iso_utc(value: Any) -> Optional[datetime]:
+    if not value:
+        return None
+    try:
+        s = str(value).replace("Z", "+00:00")
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def find_jtwc_current_time(impact: Dict[str, Any]) -> Optional[datetime]:
+    # Prefer first timeline point because existing v4.3 impact is JTWC-based.
+    for code in LOCATION_ORDER:
+        item = impact.get("locations", {}).get(code, {})
+        timeline = item.get("timeline", [])
+        if isinstance(timeline, list) and timeline:
+            first = timeline[0]
+            if isinstance(first, dict):
+                for key in ("time_utc", "valid_time_utc", "forecast_time_utc", "datetime_utc"):
+                    dt = parse_iso_utc(first.get(key))
+                    if dt:
+                        return dt
+                    dt = parse_compact_utc(first.get(key))
+                    if dt:
+                        return dt
+
+    # Fallback to common metadata fields.
+    for container_key in ("jtwc", "typhoon", "source_meta"):
+        container = impact.get(container_key, {})
+        if isinstance(container, dict):
+            for key in ("time_utc", "base_time_utc", "analysis_time_utc", "current_time_utc"):
+                dt = parse_iso_utc(container.get(key))
+                if dt:
+                    return dt
+                dt = parse_compact_utc(container.get(key))
+                if dt:
+                    return dt
+    return None
+
+
+def display_cn_time(dt: Optional[datetime]) -> Optional[str]:
+    if dt is None:
+        return None
+    from datetime import timedelta
+    cn = dt.astimezone(timezone(timedelta(hours=8)))
+    return cn.strftime("%m/%d %H:%M")
 
 
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -125,23 +185,23 @@ def risk_obj(level: str, label: str, rank: int, basis: str) -> Dict[str, Any]:
 
 def cma_risk(distance: float, radius30: Optional[float]) -> Dict[str, Any]:
     if radius30 is None:
-        return risk_obj("NO_DATA", "자료 없음", 0, "CMA 30kt 풍권 자료 없음")
+        return risk_obj("NO_DATA", "자료 없음", 0, "CMA 강풍 영향권 자료 없음")
 
     if radius30 <= 0:
-        return risk_obj("GREEN", "낮음", 1, "해당 방향 CMA 30kt 풍권 없음")
+        return risk_obj("GREEN", "낮음", 1, "해당 방향 CMA 강풍 영향권 없음")
 
     if distance <= radius30:
-        return risk_obj("RED", "높음", 3, "CMA 30kt 풍권 내부")
+        return risk_obj("RED", "높음", 3, "CMA 강풍 영향권 내부")
 
     if distance <= radius30 * CMA_CAUTION_MULTIPLIER:
         return risk_obj(
             "YELLOW",
             "주의",
             2,
-            f"CMA 30kt 풍권반경의 {CMA_CAUTION_MULTIPLIER:.1f}배 이내",
+            f"CMA 강풍 영향권 반경의 {CMA_CAUTION_MULTIPLIER:.1f}배 이내",
         )
 
-    return risk_obj("GREEN", "낮음", 1, "CMA 30kt 풍권과 충분히 떨어짐")
+    return risk_obj("GREEN", "낮음", 1, "CMA 강풍 영향권과 충분히 떨어짐")
 
 
 def matching_cma_storm(cma: Dict[str, Any], impact: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -250,7 +310,7 @@ def main() -> int:
 
         impact["note_ko"] = (
             "향후 5일 거점 위험도는 JTWC 34/50/64kt 방향별 풍권을 주력으로 사용하고, "
-            "CMA 30kt 방향별 풍권은 현재 시점 교차검증에 사용합니다. "
+            "CMA 방향별 강풍 영향권은 현재 시점 교차검증에 사용합니다. "
             "CMA 예보에는 현재 구조상 향후 풍권반경이 없어 미래 풍권 계산에는 사용하지 않습니다."
         )
 
@@ -270,6 +330,27 @@ def main() -> int:
             "movement_direction_ko": current.get("movement_direction_ko"),
             "movement_speed_kmh": current.get("movement_speed_kmh"),
             "wind_radii": current.get("wind_radii", []),
+        }
+
+        cma_time = parse_compact_utc(current.get("time_utc"))
+        jtwc_time = find_jtwc_current_time(impact)
+
+        diff_hours = None
+        if cma_time is not None and jtwc_time is not None:
+            diff_hours = round(abs((cma_time - jtwc_time).total_seconds()) / 3600.0, 1)
+
+        impact["agency_time_comparison"] = {
+            "jtwc_time_utc": jtwc_time.isoformat() if jtwc_time else None,
+            "cma_time_utc": cma_time.isoformat() if cma_time else None,
+            "jtwc_time_china": display_cn_time(jtwc_time),
+            "cma_time_china": display_cn_time(cma_time),
+            "difference_hours": diff_hours,
+            "label_ko": (
+                f"기관 발표시각 차이 {diff_hours:g}시간"
+                if diff_hours is not None
+                else "기관 발표시각 차이 확인 불가"
+            ),
+            "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지",
         }
 
         locations = impact.get("locations", {})
@@ -300,14 +381,34 @@ def main() -> int:
             jrisk = current_jtwc_risk(locations[code])
             combined = choose_more_severe(jrisk, crisk)
 
+            jrank = int(jrisk.get("severity_rank", 0) or 0)
+            crank = int(crisk.get("severity_rank", 0) or 0)
+
+            if jrank == 1 and crank == 1:
+                combined = risk_obj(
+                    "GREEN", "낮음", 1,
+                    "JTWC · CMA 모두 강풍 영향권 밖"
+                )
+            elif jrank >= 3 and crank >= 3:
+                combined = risk_obj(
+                    "RED", "높음", 3,
+                    "JTWC · CMA 모두 강풍 영향권 진입"
+                )
+            elif crank > jrank:
+                combined["basis"] = "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            elif jrank > crank:
+                combined["basis"] = "JTWC 판정이 CMA보다 높아 JTWC 기준 적용"
+            elif jrank == 2 and crank == 2:
+                combined["basis"] = "JTWC · CMA 모두 강풍 영향권 접근"
+
             if clearance is None:
-                boundary = "CMA 30kt 풍권 자료 없음"
+                boundary = "CMA 강풍 영향권 자료 없음"
             elif radius30 == 0:
-                boundary = f"해당 방향 CMA 30kt 풍권 0 km · 중심까지 {round(dist)} km"
+                boundary = f"해당 방향 CMA 강풍 영향권 0 km · 중심까지 {round(dist)} km"
             elif clearance < 0:
-                boundary = f"CMA 30kt 풍권 내부 {round(abs(clearance))} km"
+                boundary = f"CMA 강풍 영향권 내부 {round(abs(clearance))} km"
             else:
-                boundary = f"CMA 30kt 풍권까지 {round(clearance)} km"
+                boundary = f"CMA 강풍 영향권까지 {round(clearance)} km"
 
             locations[code]["current_crosscheck"] = {
                 "combined_risk": combined,
@@ -317,6 +418,8 @@ def main() -> int:
                     "center_distance_km": round(dist),
                     "bearing_deg": round(b),
                     "quadrant": q,
+                    "wind_zone_label_ko": "강풍 영향권",
+                    "wind_standard_raw": "30KTS",
                     "wind_radius_30_km": (
                         round(radius30) if radius30 is not None else None
                     ),
@@ -330,12 +433,12 @@ def main() -> int:
                 },
             }
 
-        impact["risk_rule"]["cma_current_high"] = "CMA 해당 방향 30kt 풍권 내부"
+        impact["risk_rule"]["cma_current_high"] = "CMA 해당 방향 강풍 영향권 내부"
         impact["risk_rule"]["cma_current_caution"] = (
-            f"CMA 해당 방향 30kt 풍권반경의 {CMA_CAUTION_MULTIPLIER:.1f}배 이내"
+            f"CMA 해당 방향 강풍 영향권 반경의 {CMA_CAUTION_MULTIPLIER:.1f}배 이내"
         )
         impact["risk_rule"]["combined_current"] = (
-            "현재 위험은 JTWC 현재 판정과 CMA 현재 판정 중 더 높은 단계 사용"
+            "현재 위험은 JTWC와 CMA 판정 중 더 높은 단계를 사용하며, 동일 단계면 두 기관의 공통 판정으로 표시"
         )
 
     impact["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
