@@ -546,6 +546,75 @@ td{
     align-items:flex-end;
   }
 }
+
+/* v8.5 compact left-side agency reference block */
+.compact-agency-panel{
+  display:grid;
+  grid-template-columns:minmax(360px, 48%) 1fr;
+  gap:12px;
+  align-items:start;
+}
+
+.agency-left{
+  min-width:0;
+}
+
+.compact-left-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+}
+
+.compact-left-grid .agency{
+  min-height:112px;
+  padding:8px 9px;
+}
+
+.compact-left-grid .agency strong{
+  font-size:14px;
+}
+
+.compact-left-grid .agency-country{
+  font-size:8px;
+}
+
+.compact-left-grid .agency-role{
+  font-size:8px;
+  line-height:1.4;
+}
+
+.compact-left-grid .agency-main{
+  font-size:8px;
+}
+
+.compare-title{
+  margin-top:8px;
+  font-size:11px;
+  font-weight:900;
+  color:#8fc8ff;
+}
+
+.agency-reserved-space{
+  min-height:250px;
+  border:1px dashed transparent;
+  border-radius:10px;
+}
+
+@media(max-width:900px){
+  .compact-agency-panel{
+    grid-template-columns:1fr;
+  }
+
+  .agency-reserved-space{
+    display:none;
+  }
+}
+
+@media(max-width:560px){
+  .compact-left-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -641,73 +710,84 @@ td{
 </section>
 
 
-<section class="panel compare">
+<section class="panel compare compact-agency-panel">
 
-  <div class="kicker">
-    태풍 데이터 사용 현황
+  <div class="agency-left">
+
+    <div class="kicker">
+      태풍 데이터 사용 현황
+    </div>
+
+    <div class="agency-grid compact-left-grid">
+
+      <div class="agency jma">
+        <strong>🇯🇵 JP JMA</strong>
+        <div class="agency-country">일본기상청</div>
+        <div class="agency-role">
+          현재위치 · 예상경로<br>
+          기압 · 최대풍속
+        </div>
+        <span class="agency-main">기본 태풍 경로</span>
+      </div>
+
+      <div class="agency kma">
+        <strong>🇰🇷 KR KMA</strong>
+        <div class="agency-country">한국기상청</div>
+        <div class="agency-role">
+          예상경로<br>
+          JMA 경로 편차 확인
+        </div>
+        <span class="agency-main">예상경로 비교</span>
+      </div>
+
+      <div class="agency cma">
+        <strong>🇨🇳 CN CMA</strong>
+        <div class="agency-country">중국기상국</div>
+        <div class="agency-role">
+          현재위치 · 기압 · 풍속<br>
+          강풍반경
+        </div>
+        <span class="agency-main">중국 측 현재 정보</span>
+      </div>
+
+      <div class="agency jtwc">
+        <strong>🇺🇸 US JTWC</strong>
+        <div class="agency-country">합동태풍경보센터</div>
+        <div class="agency-role">
+          예상경로 · 강풍반경<br>
+          거점·노선 위험도
+        </div>
+        <span class="agency-main">위험도 계산 핵심</span>
+      </div>
+
+    </div>
+
+    <div class="compare-title">
+      예상경로 위치 차이 (JMA ↔ KMA)
+    </div>
+
+    <div class="compare-row">
+
+      <div class="compare-box">
+        <span>평균 위치 차이</span>
+        <b id="avgDiff">-</b>
+      </div>
+
+      <div class="compare-box">
+        <span>최대 위치 차이</span>
+        <b id="maxDiff">-</b>
+      </div>
+
+    </div>
+
+    <div class="compare-definition">
+      같은 예보 시각의 JMA·KMA 예상 태풍 중심 위치 간 거리
+    </div>
+
   </div>
 
-  <div class="agency-grid">
-
-    <div class="agency jma">
-      <strong>🇯🇵 JMA</strong>
-      <div class="agency-country">일본기상청</div>
-      <div class="agency-role">
-        현재위치 · 예상경로<br>
-        기압 · 최대풍속
-      </div>
-      <span class="agency-main">기본 태풍 경로</span>
-    </div>
-
-    <div class="agency kma">
-      <strong>🇰🇷 KMA</strong>
-      <div class="agency-country">한국기상청</div>
-      <div class="agency-role">
-        예상경로<br>
-        JMA 경로 편차 확인
-      </div>
-      <span class="agency-main">예상경로 비교</span>
-    </div>
-
-    <div class="agency cma">
-      <strong>🇨🇳 CMA</strong>
-      <div class="agency-country">중국기상국</div>
-      <div class="agency-role">
-        현재위치 · 기압 · 풍속<br>
-        강풍반경
-      </div>
-      <span class="agency-main">중국 측 현재 정보</span>
-    </div>
-
-    <div class="agency jtwc">
-      <strong>🇺🇸 JTWC</strong>
-      <div class="agency-country">합동태풍경보센터</div>
-      <div class="agency-role">
-        예상경로 · 강풍반경<br>
-        거점·노선 위험도
-      </div>
-      <span class="agency-main">위험도 계산 핵심</span>
-    </div>
-
-  </div>
-
-  <div class="compare-row">
-
-    <div class="compare-box">
-      <span>JMA ↔ KMA 평균 위치 차이</span>
-      <b id="avgDiff">-</b>
-    </div>
-
-    <div class="compare-box">
-      <span>JMA ↔ KMA 최대 위치 차이</span>
-      <b id="maxDiff">-</b>
-    </div>
-
-  </div>
-
-  <div class="compare-definition">
-    <b>차이 기준:</b> 같은 예보 시각의 JMA·KMA 예상 태풍 중심 위치 간 거리
-    (평균 = 각 시각 평균 / 최대 = 가장 큰 차이).
+  <div class="agency-reserved-space">
+    <!-- 향후 추가 정보 영역 -->
   </div>
 
 </section>
