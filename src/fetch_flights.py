@@ -3,19 +3,27 @@
 
 """
 SBLC Typhoon Dashboard
-Flight Status Fetch v7.4
+Flight Status Fetch v8.0 - 7 representative flights
 
-Target:
-    KE315
-    ICN -> PVG
+Aviationstack targets
 
-Changes:
-1. KE249 완전 제거
-2. KE315만 조회
-3. Aviationstack 시간의 시/분 값을 공항 현지시간으로 사용
-4. ICN 출발 = 한국시간
-5. PVG 도착 = 중국시간
-6. 예정/실제 차이로 지연시간 직접 계산
+WF수입
+    KE315  ICN -> PVG  기준 출발 23:10
+    KE249  ICN -> PVG  기준 출발 01:20
+    KE335  ICN -> PVG  기준 출발 01:20
+
+수출
+    PR337  PVG -> MNL  기준 출발 16:00
+    RW609  PVG -> CRK  기준 출발 16:30
+    KJ948  PVG -> ICN  기준 출발 03:05
+    KJ988  PVG -> ICN  기준 출발 19:20
+
+Important:
+- Keeps v7.4 Aviationstack handling:
+  timestamp date/hour/minute is treated as the airport local wall clock.
+- The API's timezone suffix is preserved only in *_raw fields.
+- Route + flight ident + expected departure clock are used to avoid
+  choosing the wrong record when multiple records are returned.
 
 Required GitHub Secret:
     AVIATIONSTACK_API_KEY
@@ -31,537 +39,301 @@ import os
 import sys
 import urllib.parse
 import urllib.request
-
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
-# =========================================================
-# 기본 설정
-# =========================================================
-
 BASE_DIR = Path(__file__).resolve().parents[1]
+OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
-OUTPUT_PATH = (
-    BASE_DIR
-    / "data"
-    / "flights.json"
-)
-
-API_URL = (
-    "https://api.aviationstack.com/v1/flights"
-)
-
-PARSER_VERSION = "7.4"
+API_URL = "https://api.aviationstack.com/v1/flights"
+PARSER_VERSION = "8.0"
 
 
-# =========================================================
-# 조회 항공편
-# KE249 제거
-# =========================================================
+AIRPORTS = {
+    "ICN": {
+        "timezone": "Asia/Seoul",
+        "timezone_label_ko": "한국시간",
+        "offset": "+09:00",
+    },
+    "PVG": {
+        "timezone": "Asia/Shanghai",
+        "timezone_label_ko": "중국시간",
+        "offset": "+08:00",
+    },
+    "MNL": {
+        "timezone": "Asia/Manila",
+        "timezone_label_ko": "필리핀시간",
+        "offset": "+08:00",
+    },
+    "CRK": {
+        "timezone": "Asia/Manila",
+        "timezone_label_ko": "필리핀시간",
+        "offset": "+08:00",
+    },
+}
 
-FLIGHTS = [
-    "KE315",
+
+FLIGHT_CONFIGS = [
+    {
+        "flight_iata": "KE315",
+        "group_ko": "WF수입",
+        "dep_iata": "ICN",
+        "arr_iata": "PVG",
+        "expected_departure_local": "23:10",
+    },
+    {
+        "flight_iata": "KE249",
+        "group_ko": "WF수입",
+        "dep_iata": "ICN",
+        "arr_iata": "PVG",
+        "expected_departure_local": "01:20",
+    },
+    {
+        "flight_iata": "KE335",
+        "group_ko": "WF수입",
+        "dep_iata": "ICN",
+        "arr_iata": "PVG",
+        "expected_departure_local": "01:20",
+    },
+    {
+        "flight_iata": "PR337",
+        "group_ko": "수출",
+        "dep_iata": "PVG",
+        "arr_iata": "MNL",
+        "expected_departure_local": "16:00",
+    },
+    {
+        "flight_iata": "RW609",
+        "group_ko": "수출",
+        "dep_iata": "PVG",
+        "arr_iata": "CRK",
+        "expected_departure_local": "16:30",
+    },
+    {
+        "flight_iata": "KJ948",
+        "group_ko": "수출",
+        "dep_iata": "PVG",
+        "arr_iata": "ICN",
+        "expected_departure_local": "03:05",
+    },
+    {
+        "flight_iata": "KJ988",
+        "group_ko": "수출",
+        "dep_iata": "PVG",
+        "arr_iata": "ICN",
+        "expected_departure_local": "19:20",
+    },
 ]
 
 
-# =========================================================
-# ISO 시간 파싱
-#
-# 중요:
-# Aviationstack KE315 응답에서는
-#
-# 23:10:00+00:00
-#
-# 형태로 들어오지만,
-# KE315 실제 스케줄 확인 결과
-# 23:10은 ICN 현지시간이다.
-#
-# 따라서 UTC +9 변환하지 않고
-# 날짜/시/분 자체를 현지시간으로 사용한다.
-# =========================================================
-
-def parse_local_clock(
-    value: Any
-) -> Optional[datetime]:
-
+def parse_local_clock(value: Any) -> Optional[datetime]:
+    """
+    Preserve v7.4 behavior:
+    treat YYYY-MM-DDTHH:MM:SS as local airport wall-clock time,
+    ignoring the timezone suffix supplied by Aviationstack.
+    """
     if not value:
         return None
 
     text = str(value).strip()
 
     try:
-
-        # timezone 부분 제거
-        # 예:
-        # 2026-08-19T23:10:00+00:00
-        # →
-        # 2026-08-19T23:10:00
-
         if "T" in text:
-
-            date_part = text[:19]
-
             return datetime.strptime(
-                date_part,
-                "%Y-%m-%dT%H:%M:%S"
+                text[:19],
+                "%Y-%m-%dT%H:%M:%S",
             )
-
     except ValueError:
         return None
 
     return None
 
 
-# =========================================================
-# 현지시간 ISO 표시
-# =========================================================
-
-def local_iso(
-    value: Any,
-    offset_text: str
-) -> Optional[str]:
-
+def local_iso(value: Any, offset_text: str) -> Optional[str]:
     dt = parse_local_clock(value)
-
     if not dt:
         return None
 
-    return (
-        dt.strftime(
-            "%Y-%m-%dT%H:%M:%S"
-        )
-        + offset_text
-    )
+    return dt.strftime("%Y-%m-%dT%H:%M:%S") + offset_text
 
 
-# =========================================================
-# 대시보드 표시용
-# =========================================================
-
-def local_short(
-    value: Any
-) -> Optional[str]:
-
+def local_short(value: Any) -> Optional[str]:
     dt = parse_local_clock(value)
-
     if not dt:
         return None
 
-    return dt.strftime(
-        "%Y-%m-%d %H:%M"
-    )
+    return dt.strftime("%Y-%m-%d %H:%M")
 
 
-# =========================================================
-# 지연시간 계산
-# =========================================================
+def clock_hhmm(value: Any) -> Optional[str]:
+    dt = parse_local_clock(value)
+    if not dt:
+        return None
+    return dt.strftime("%H:%M")
+
 
 def diff_minutes(
     scheduled: Any,
-    actual_or_estimated: Any
+    actual_or_estimated: Any,
 ) -> Optional[int]:
 
-    start = parse_local_clock(
-        scheduled
-    )
-
-    end = parse_local_clock(
-        actual_or_estimated
-    )
+    start = parse_local_clock(scheduled)
+    end = parse_local_clock(actual_or_estimated)
 
     if not start or not end:
         return None
 
-
-    # 자정을 넘어간 경우 보정
-    #
-    # 예:
-    # 예정 23:50
-    # 실제 00:20
-
+    # Cross-midnight correction.
     if end < start:
+        end = end + timedelta(days=1)
 
-        from datetime import timedelta
-
-        end = end + timedelta(
-            days=1
-        )
+    return round((end - start).total_seconds() / 60)
 
 
-    minutes = (
-        end - start
-    ).total_seconds() / 60
+def circular_clock_difference_minutes(
+    actual_hhmm: Optional[str],
+    expected_hhmm: Optional[str],
+) -> int:
+    """
+    Distance between two clock times without caring about calendar date.
+    Used only to select the best Aviationstack record.
+    """
+    if not actual_hhmm or not expected_hhmm:
+        return 10_000
 
+    try:
+        ah, am = map(int, actual_hhmm.split(":"))
+        eh, em = map(int, expected_hhmm.split(":"))
+    except (ValueError, AttributeError):
+        return 10_000
 
-    return round(
-        minutes
-    )
+    a = ah * 60 + am
+    e = eh * 60 + em
+    d = abs(a - e)
 
+    return min(d, 1440 - d)
 
-# =========================================================
-# 실제 → 예상 → 예정 순서
-# =========================================================
 
 def select_display_time(
     actual: Any,
     estimated: Any,
-    scheduled: Any
+    scheduled: Any,
 ) -> Any:
-
     if actual:
         return actual
-
     if estimated:
         return estimated
-
     return scheduled
 
 
-# =========================================================
-# 출발 데이터
-# ICN = 한국시간
-# =========================================================
-
-def normalize_departure(
-    raw: Dict[str, Any]
+def normalize_airport_event(
+    raw: Dict[str, Any],
+    airport_iata: str,
 ) -> Dict[str, Any]:
 
-    scheduled = raw.get(
-        "scheduled"
+    airport_meta = AIRPORTS.get(
+        airport_iata,
+        {
+            "timezone": None,
+            "timezone_label_ko": "현지시간",
+            "offset": "",
+        },
     )
 
-    estimated = raw.get(
-        "estimated"
+    scheduled = raw.get("scheduled")
+    estimated = raw.get("estimated")
+    actual = raw.get("actual")
+
+    operational_time = select_display_time(
+        actual,
+        estimated,
+        scheduled,
     )
 
-    actual = raw.get(
-        "actual"
-    )
-
-
-    operational_time = (
-        select_display_time(
-            actual,
-            estimated,
-            scheduled
-        )
-    )
-
-
-    delay_target = (
-        actual
-        or estimated
-    )
-
+    delay_target = actual or estimated
 
     calculated_delay = None
-
     if delay_target:
-
-        calculated_delay = (
-            diff_minutes(
-                scheduled,
-                delay_target
-            )
+        calculated_delay = diff_minutes(
+            scheduled,
+            delay_target,
         )
 
+    offset = airport_meta["offset"]
 
     return {
+        "airport": raw.get("airport"),
+        "iata": raw.get("iata") or airport_iata,
+        "timezone": airport_meta["timezone"],
+        "timezone_label_ko": airport_meta["timezone_label_ko"],
 
-        "airport":
-            raw.get("airport"),
+        # Aviationstack original values
+        "scheduled_raw": scheduled,
+        "estimated_raw": estimated,
+        "actual_raw": actual,
 
-        "iata":
-            raw.get("iata"),
+        # Dashboard local-clock values
+        "scheduled_local": local_iso(scheduled, offset),
+        "estimated_local": local_iso(estimated, offset),
+        "actual_local": local_iso(actual, offset),
+        "display_time_local": local_short(operational_time),
 
-        "timezone":
-            "Asia/Seoul",
-
-        "timezone_label_ko":
-            "한국시간",
-
-
-        # Aviationstack 원본
-        "scheduled_raw":
-            scheduled,
-
-        "estimated_raw":
-            estimated,
-
-        "actual_raw":
-            actual,
-
-
-        # 현지시간
-        "scheduled_local":
-            local_iso(
-                scheduled,
-                "+09:00"
-            ),
-
-        "estimated_local":
-            local_iso(
-                estimated,
-                "+09:00"
-            ),
-
-        "actual_local":
-            local_iso(
-                actual,
-                "+09:00"
-            ),
-
-
-        "display_time_local":
-            local_short(
-                operational_time
-            ),
-
-
-        "calculated_delay_minutes":
-            calculated_delay,
-
-
-        "api_delay_minutes":
-            raw.get("delay"),
-
-
-        "terminal":
-            raw.get("terminal"),
-
-        "gate":
-            raw.get("gate"),
+        "calculated_delay_minutes": calculated_delay,
+        "api_delay_minutes": raw.get("delay"),
+        "terminal": raw.get("terminal"),
+        "gate": raw.get("gate"),
     }
 
-
-# =========================================================
-# 도착 데이터
-# PVG = 중국시간
-# =========================================================
-
-def normalize_arrival(
-    raw: Dict[str, Any]
-) -> Dict[str, Any]:
-
-    scheduled = raw.get(
-        "scheduled"
-    )
-
-    estimated = raw.get(
-        "estimated"
-    )
-
-    actual = raw.get(
-        "actual"
-    )
-
-
-    operational_time = (
-        select_display_time(
-            actual,
-            estimated,
-            scheduled
-        )
-    )
-
-
-    delay_target = (
-        actual
-        or estimated
-    )
-
-
-    calculated_delay = None
-
-    if delay_target:
-
-        calculated_delay = (
-            diff_minutes(
-                scheduled,
-                delay_target
-            )
-        )
-
-
-    return {
-
-        "airport":
-            raw.get("airport"),
-
-        "iata":
-            raw.get("iata"),
-
-        "timezone":
-            "Asia/Shanghai",
-
-        "timezone_label_ko":
-            "중국시간",
-
-
-        # Aviationstack 원본
-        "scheduled_raw":
-            scheduled,
-
-        "estimated_raw":
-            estimated,
-
-        "actual_raw":
-            actual,
-
-
-        # 현지시간
-        "scheduled_local":
-            local_iso(
-                scheduled,
-                "+08:00"
-            ),
-
-        "estimated_local":
-            local_iso(
-                estimated,
-                "+08:00"
-            ),
-
-        "actual_local":
-            local_iso(
-                actual,
-                "+08:00"
-            ),
-
-
-        "display_time_local":
-            local_short(
-                operational_time
-            ),
-
-
-        "calculated_delay_minutes":
-            calculated_delay,
-
-
-        "api_delay_minutes":
-            raw.get("delay"),
-
-
-        "terminal":
-            raw.get("terminal"),
-
-        "gate":
-            raw.get("gate"),
-    }
-
-
-# =========================================================
-# 항공편 상태
-# =========================================================
 
 def make_status(
     flight_status: str,
     departure: Dict[str, Any],
-    arrival: Dict[str, Any]
-) -> Dict[str, str]:
+    arrival: Dict[str, Any],
+) -> Dict[str, Any]:
 
-    raw_status = (
-        flight_status
-        or ""
-    ).lower()
-
-
-    # ----------------------------
-    # 결항
-    # ----------------------------
+    raw_status = (flight_status or "").lower()
 
     if raw_status == "cancelled":
-
         return {
             "level": "RED",
             "emoji": "🔴",
             "label_ko": "결항",
         }
 
-
-    # ----------------------------
-    # 운항 문제 / 회항
-    # ----------------------------
-
-    if raw_status in (
-        "incident",
-        "diverted"
-    ):
-
+    if raw_status in ("incident", "diverted"):
         return {
             "level": "RED",
             "emoji": "🔴",
             "label_ko": "운항 문제",
         }
 
+    dep_delay = departure.get("calculated_delay_minutes")
+    arr_delay = arrival.get("calculated_delay_minutes")
 
-    dep_delay = (
-        departure.get(
-            "calculated_delay_minutes"
-        )
-    )
-
-    arr_delay = (
-        arrival.get(
-            "calculated_delay_minutes"
-        )
-    )
-
-
-    # ----------------------------
-    # 실제 출발 완료
-    # ----------------------------
-
-    if departure.get(
-        "actual_raw"
-    ):
-
-        if (
-            isinstance(
-                dep_delay,
-                int
-            )
-            and dep_delay >= 10
-        ):
-
+    # Arrival complete has priority over previous departure delay.
+    if arrival.get("actual_raw"):
+        if isinstance(arr_delay, int) and arr_delay >= 10:
             return {
                 "level": "YELLOW",
                 "emoji": "🟡",
-                "label_ko":
-                    f"출발 {dep_delay}분 지연",
+                "label_ko": f"도착 {arr_delay}분 지연",
             }
 
+        return {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "도착 완료",
+        }
 
-        # 도착까지 완료
-        if arrival.get(
-            "actual_raw"
-        ):
-
-            if (
-                isinstance(
-                    arr_delay,
-                    int
-                )
-                and arr_delay >= 10
-            ):
-
-                return {
-                    "level": "YELLOW",
-                    "emoji": "🟡",
-                    "label_ko":
-                        f"도착 {arr_delay}분 지연",
-                }
-
-
+    if departure.get("actual_raw"):
+        if isinstance(dep_delay, int) and dep_delay >= 10:
             return {
-                "level": "GREEN",
-                "emoji": "🟢",
-                "label_ko": "도착 완료",
+                "level": "YELLOW",
+                "emoji": "🟡",
+                "label_ko": f"출발 {dep_delay}분 지연",
             }
-
 
         return {
             "level": "GREEN",
@@ -569,35 +341,19 @@ def make_status(
             "label_ko": "출발 완료",
         }
 
-
-    # ----------------------------
-    # 아직 출발 전
-    # ----------------------------
-
-    if (
-        isinstance(
-            dep_delay,
-            int
-        )
-        and dep_delay >= 10
-    ):
-
+    if isinstance(dep_delay, int) and dep_delay >= 10:
         return {
             "level": "YELLOW",
             "emoji": "🟡",
-            "label_ko":
-                f"출발 예정 {dep_delay}분 지연",
+            "label_ko": f"출발 예정 {dep_delay}분 지연",
         }
 
-
     if raw_status == "active":
-
         return {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "운항 중",
         }
-
 
     return {
         "level": "GREEN",
@@ -606,474 +362,271 @@ def make_status(
     }
 
 
-# =========================================================
-# Aviationstack API 조회
-# =========================================================
+def candidate_matches_route(
+    candidate: Dict[str, Any],
+    config: Dict[str, str],
+) -> bool:
+
+    dep = candidate.get("departure", {}).get("iata")
+    arr = candidate.get("arrival", {}).get("iata")
+    ident = candidate.get("flight", {}).get("iata")
+
+    return (
+        dep == config["dep_iata"]
+        and arr == config["arr_iata"]
+        and ident == config["flight_iata"]
+    )
+
+
+def choose_best_candidate(
+    rows: List[Dict[str, Any]],
+    config: Dict[str, str],
+) -> Optional[Dict[str, Any]]:
+
+    matches = [
+        row
+        for row in rows
+        if candidate_matches_route(row, config)
+    ]
+
+    if not matches:
+        return None
+
+    expected = config.get("expected_departure_local")
+
+    # Pick the matching record whose scheduled local clock is closest
+    # to the operating schedule supplied by the user.
+    matches.sort(
+        key=lambda row: circular_clock_difference_minutes(
+            clock_hhmm(
+                row.get("departure", {}).get("scheduled")
+            ),
+            expected,
+        )
+    )
+
+    return matches[0]
+
 
 def load_flight(
     api_key: str,
-    flight_iata: str
+    config: Dict[str, str],
 ) -> Dict[str, Any]:
 
-    params = (
-        urllib.parse.urlencode({
-            "access_key":
-                api_key,
+    flight_iata = config["flight_iata"]
+    dep_iata = config["dep_iata"]
+    arr_iata = config["arr_iata"]
+    route = f"{dep_iata} → {arr_iata}"
 
-            "flight_iata":
-                flight_iata,
+    params = urllib.parse.urlencode({
+        "access_key": api_key,
+        "flight_iata": flight_iata,
+        "dep_iata": dep_iata,
+        "arr_iata": arr_iata,
+        "limit": 20,
+    })
 
-            "dep_iata":
-                "ICN",
+    url = f"{API_URL}?{params}"
 
-            "arr_iata":
-                "PVG",
-
-            "limit":
-                10,
-        })
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "sblc-typhoon-dashboard/8.0"
+        },
     )
-
-
-    url = (
-        f"{API_URL}?{params}"
-    )
-
-
-    request = (
-        urllib.request.Request(
-
-            url,
-
-            headers={
-                "User-Agent":
-                    "sblc-typhoon-dashboard/7.4"
-            }
-        )
-    )
-
 
     with urllib.request.urlopen(
         request,
-        timeout=60
+        timeout=60,
     ) as response:
-
         payload = json.loads(
-            response
-            .read()
-            .decode("utf-8")
+            response.read().decode("utf-8")
         )
 
-
-    # API 오류
-    if payload.get(
-        "error"
-    ):
-
+    if payload.get("error"):
         raise RuntimeError(
-            "Aviationstack error "
-            f"for {flight_iata}: "
+            f"Aviationstack error for {flight_iata}: "
             f"{payload['error']}"
         )
 
+    rows = payload.get("data", [])
 
-    rows = (
-        payload.get(
-            "data",
-            []
-        )
-    )
-
-
-    # 조회 없음
     if not rows:
-
         return {
-
-            "flight_iata":
-                flight_iata,
-
-            "route":
-                "ICN → PVG",
-
-            "found":
-                False,
-
+            "flight_iata": flight_iata,
+            "group_ko": config["group_ko"],
+            "route": route,
+            "expected_departure_local": config["expected_departure_local"],
+            "found": False,
             "status": {
-                "level":
-                    "NO_DATA",
-
-                "emoji":
-                    "⚪",
-
-                "label_ko":
-                    "조회 결과 없음",
+                "level": "NO_DATA",
+                "emoji": "⚪",
+                "label_ko": "조회 결과 없음",
             },
         }
 
+    row = choose_best_candidate(rows, config)
 
-    # =====================================================
-    # ICN → PVG 데이터 선택
-    # =====================================================
+    if row is None:
+        return {
+            "flight_iata": flight_iata,
+            "group_ko": config["group_ko"],
+            "route": route,
+            "expected_departure_local": config["expected_departure_local"],
+            "found": False,
+            "status": {
+                "level": "NO_DATA",
+                "emoji": "⚪",
+                "label_ko": "노선 일치 결과 없음",
+            },
+            "candidate_count": len(rows),
+        }
 
-    row = rows[0]
+    raw_departure = row.get("departure", {})
+    raw_arrival = row.get("arrival", {})
 
-
-    for candidate in rows:
-
-        dep_iata = (
-            candidate
-            .get(
-                "departure",
-                {}
-            )
-            .get(
-                "iata"
-            )
-        )
-
-
-        arr_iata = (
-            candidate
-            .get(
-                "arrival",
-                {}
-            )
-            .get(
-                "iata"
-            )
-        )
-
-
-        flight_data = (
-            candidate.get(
-                "flight",
-                {}
-            )
-        )
-
-
-        candidate_flight = (
-            flight_data.get(
-                "iata"
-            )
-        )
-
-
-        if (
-            dep_iata == "ICN"
-            and
-            arr_iata == "PVG"
-            and
-            candidate_flight == flight_iata
-        ):
-
-            row = candidate
-
-            break
-
-
-    # =====================================================
-    # 출발 / 도착
-    # =====================================================
-
-    raw_departure = (
-        row.get(
-            "departure",
-            {}
-        )
+    departure = normalize_airport_event(
+        raw_departure,
+        dep_iata,
     )
 
-
-    raw_arrival = (
-        row.get(
-            "arrival",
-            {}
-        )
+    arrival = normalize_airport_event(
+        raw_arrival,
+        arr_iata,
     )
 
-
-    departure = (
-        normalize_departure(
-            raw_departure
-        )
+    status = make_status(
+        row.get("flight_status"),
+        departure,
+        arrival,
     )
 
+    flight = row.get("flight", {})
 
-    arrival = (
-        normalize_arrival(
-            raw_arrival
-        )
+    selected_clock = clock_hhmm(
+        raw_departure.get("scheduled")
     )
 
-
-    status = (
-        make_status(
-
-            row.get(
-                "flight_status"
-            ),
-
-            departure,
-
-            arrival
-        )
+    schedule_difference = circular_clock_difference_minutes(
+        selected_clock,
+        config["expected_departure_local"],
     )
-
-
-    flight = (
-        row.get(
-            "flight",
-            {}
-        )
-    )
-
 
     return {
-
-        "flight_iata":
-            flight.get(
-                "iata"
-            )
-            or flight_iata,
-
-
-        "flight_number":
-            flight.get(
-                "number"
-            ),
-
-
-        "route":
-            "ICN → PVG",
-
-
-        "found":
-            True,
-
-
-        "status_raw":
-            row.get(
-                "flight_status"
-            ),
-
-
-        "status":
-            status,
-
-
-        "departure":
-            departure,
-
-
-        "arrival":
-            arrival,
-
-
-        "airline":
-            row.get(
-                "airline",
-                {}
-            )
-            .get(
-                "name"
-            ),
-
-
-        "flight_date":
-            row.get(
-                "flight_date"
-            ),
+        "flight_iata": flight.get("iata") or flight_iata,
+        "flight_number": flight.get("number"),
+        "group_ko": config["group_ko"],
+        "route": route,
+        "dep_iata": dep_iata,
+        "arr_iata": arr_iata,
+        "expected_departure_local": config["expected_departure_local"],
+        "selected_scheduled_clock": selected_clock,
+        "schedule_match_difference_minutes": schedule_difference,
+        "found": True,
+        "status_raw": row.get("flight_status"),
+        "status": status,
+        "departure": departure,
+        "arrival": arrival,
+        "airline": row.get("airline", {}).get("name"),
+        "flight_date": row.get("flight_date"),
     }
 
-
-# =========================================================
-# MAIN
-# =========================================================
 
 def main() -> int:
+    print(f"Flight fetch version: {PARSER_VERSION}")
 
-    print(
-        f"Flight fetch version: "
-        f"{PARSER_VERSION}"
-    )
-
-
-    # API KEY
-    api_key = (
-        os.environ.get(
-            "AVIATIONSTACK_API_KEY",
-            ""
-        )
-        .strip()
-    )
-
+    api_key = os.environ.get(
+        "AVIATIONSTACK_API_KEY",
+        "",
+    ).strip()
 
     if not api_key:
-
         raise RuntimeError(
-            "AVIATIONSTACK_API_KEY "
-            "secret is missing."
+            "AVIATIONSTACK_API_KEY secret is missing."
         )
 
+    results: List[Dict[str, Any]] = []
+    errors: List[Dict[str, str]] = []
 
-    results: List[
-        Dict[str, Any]
-    ] = []
-
-
-    errors: List[
-        Dict[str, str]
-    ] = []
-
-
-    # =====================================================
-    # KE315만 조회
-    # =====================================================
-
-    for flight in FLIGHTS:
+    for config in FLIGHT_CONFIGS:
+        ident = config["flight_iata"]
+        route = f"{config['dep_iata']} -> {config['arr_iata']}"
 
         print(
-            f"Fetching "
-            f"{flight} "
-            f"ICN -> PVG"
+            f"Fetching {config['group_ko']} / "
+            f"{ident} / {route}"
         )
 
-
         try:
-
-            result = (
+            results.append(
                 load_flight(
                     api_key,
-                    flight
+                    config,
                 )
             )
-
-
-            results.append(
-                result
-            )
-
-
         except Exception as exc:
-
             errors.append({
-                "flight_iata":
-                    flight,
-
-                "error":
-                    str(exc),
+                "flight_iata": ident,
+                "group_ko": config["group_ko"],
+                "route": route,
+                "error": str(exc),
             })
-
-
-            print(
-                f"ERROR "
-                f"{flight}: "
-                f"{exc}"
-            )
-
-
-    # =====================================================
-    # JSON
-    # =====================================================
+            print(f"ERROR {ident}: {exc}")
 
     output = {
+        "source": "Aviationstack",
+        "product": "Manual Flight Status - 7 Representative Flights",
+        "parser_version": PARSER_VERSION,
 
-        "source":
-            "Aviationstack",
-
-
-        "product":
-            "Manual Flight Status",
-
-
-        "parser_version":
-            PARSER_VERSION,
-
-
-        "route":
-            "ICN → PVG",
-
-
-        "tracked_flights":
-            FLIGHTS,
-
-
-        "time_display": {
-
-            "departure":
-                "한국시간",
-
-            "arrival":
-                "중국시간",
+        "groups": {
+            "WF수입": [
+                c["flight_iata"]
+                for c in FLIGHT_CONFIGS
+                if c["group_ko"] == "WF수입"
+            ],
+            "수출": [
+                c["flight_iata"]
+                for c in FLIGHT_CONFIGS
+                if c["group_ko"] == "수출"
+            ],
         },
 
+        "tracked_flights": [
+            c["flight_iata"]
+            for c in FLIGHT_CONFIGS
+        ],
 
-        "flights":
-            results,
+        "flight_config": FLIGHT_CONFIGS,
+        "flights": results,
+        "errors": errors,
 
-
-        "errors":
-            errors,
-
-
-        "generated_at_utc":
-            datetime.now(
-                timezone.utc
-            ).isoformat(),
+        "generated_at_utc": datetime.now(
+            timezone.utc
+        ).isoformat(),
     }
-
-
-    # =====================================================
-    # 저장
-    # =====================================================
 
     OUTPUT_PATH.parent.mkdir(
         parents=True,
-        exist_ok=True
+        exist_ok=True,
     )
 
-
     OUTPUT_PATH.write_text(
-
         json.dumps(
             output,
             ensure_ascii=False,
-            indent=2
-        )
-        + "\n",
-
-        encoding="utf-8"
+            indent=2,
+        ) + "\n",
+        encoding="utf-8",
     )
 
+    print(f"Updated: {OUTPUT_PATH}")
+    print(f"Flights returned: {len(results)}")
+    print(f"Errors: {len(errors)}")
 
-    print(
-        f"Updated: "
-        f"{OUTPUT_PATH}"
-    )
-
-
-    print(
-        f"Flights returned: "
-        f"{len(results)}"
-    )
-
-
-    print(
-        f"Errors: "
-        f"{len(errors)}"
-    )
-
-
-    return (
-        1
-        if errors
-        else 0
-    )
+    # Do not fail the whole workflow when only one airline has no result.
+    # Fail only if all 7 API calls errored.
+    return 1 if len(errors) == len(FLIGHT_CONFIGS) else 0
 
 
 if __name__ == "__main__":
-
-    sys.exit(
-        main()
-    )
+    sys.exit(main())
