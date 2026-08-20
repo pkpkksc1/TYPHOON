@@ -254,21 +254,18 @@ button{
 
 .map{
   position:relative;
-  width:100%;
+  height:410px;
   overflow:hidden;
   border-radius:12px;
   border:1px solid var(--line);
-  background:#091728;
-}
 
-.map-bg{
-  display:block;
-  width:100%;
-  height:auto;
-  position:relative;
-  z-index:0;
-  user-select:none;
-  pointer-events:none;
+  /* Static East Asia map.
+     The image itself is the coordinate reference for the typhoon overlay. */
+  background-image:url("./assets/typhoon-map.png");
+  background-repeat:no-repeat;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-color:#091728;
 }
 
 .map-label{
@@ -286,7 +283,6 @@ button{
   inset:0;
   width:100%;
   height:100%;
-  z-index:2;
 }
 
 .point{
@@ -900,17 +896,6 @@ td{
 #mapPoints{position:absolute;inset:0;z-index:3}
 
 
-
-/* v8.20 - single typhoon overlay aligned to native map aspect ratio */
-#mapPoints{
-  position:absolute;
-  inset:0;
-  z-index:3;
-}
-.plabel{
-  text-shadow:0 1px 3px #000,0 0 4px #000;
-}
-
 </style>
 </head>
 
@@ -1093,11 +1078,6 @@ td{
   <div class="track-wrap">
 
     <div class="map" id="map">
-      <img
-        class="map-bg"
-        src="./assets/typhoon-map.png"
-        alt="동아시아 태풍 경로 배경지도"
-      >
 
       <div class="map-label china">
         CHINA
@@ -1122,7 +1102,7 @@ td{
 
       <svg
         id="trackSvg"
-        viewBox="0 0 1000 568.85"
+        viewBox="0 0 1000 520"
         preserveAspectRatio="none"
       >
 
@@ -1659,126 +1639,45 @@ function xy(
 ){
 
   /*
-    assets/typhoon-map.png 실제 격자선 기준 보정
+    assets/typhoon-map.png 좌표 보정
 
-    경도 격자:
-      110E ≈ x 26.4%
-      120E ≈ x 41.7%
-      130E ≈ x 57.0%
-      140E ≈ x 72.2%
-      150E ≈ x 87.4%
+    지도 이미지의 바깥 여백을 제외하고 실제 지도 영역에
+    위경도를 배치한다.
 
-    위도 격자:
-      40N ≈ y 11.2%
-      30N ≈ y 38.3%
-      20N ≈ y 63.8%
-      10N ≈ y 86.7%
+    기준 범위:
+      경도 100E ~ 160E
+      위도   5N ~ 45N
 
-    태풍 경로와 배경 이미지가 같은 크기로
-    확대/축소되므로 화면 크기가 바뀌어도
-    이 비율은 그대로 유지된다.
+    실제 지도 영역의 이미지 내 위치(%):
+      left   7.7
+      right 93.7
+      top    9.0
+      bottom 92.0
   */
 
-  const lonGrid = [
-    [110,26.4],
-    [120,41.7],
-    [130,57.0],
-    [140,72.2],
-    [150,87.4]
-  ];
+  const mapLeft   = 7.7;
+  const mapRight  = 93.7;
+  const mapTop    = 9.0;
+  const mapBottom = 92.0;
 
-  const latGrid = [
-    [40,11.2],
-    [30,38.3],
-    [20,63.8],
-    [10,86.7]
-  ];
+  const minLon = 100;
+  const maxLon = 160;
+  const minLat = 5;
+  const maxLat = 45;
 
+  const rawX =
+    mapLeft +
+    ((lon-minLon)/(maxLon-minLon)) *
+    (mapRight-mapLeft);
 
-  function interpolate(
-    value,
-    grid
-  ){
-
-    const sorted =
-      [...grid].sort(
-        (a,b) => a[0]-b[0]
-      );
-
-
-    if(value <= sorted[0][0]){
-
-      const a = sorted[0];
-      const b = sorted[1];
-
-      return a[1] +
-        (
-          (value-a[0]) /
-          (b[0]-a[0])
-        ) *
-        (b[1]-a[1]);
-    }
-
-
-    if(
-      value >=
-      sorted[sorted.length-1][0]
-    ){
-
-      const a =
-        sorted[sorted.length-2];
-
-      const b =
-        sorted[sorted.length-1];
-
-      return a[1] +
-        (
-          (value-a[0]) /
-          (b[0]-a[0])
-        ) *
-        (b[1]-a[1]);
-    }
-
-
-    for(
-      let i=0;
-      i<sorted.length-1;
-      i++
-    ){
-
-      const a = sorted[i];
-      const b = sorted[i+1];
-
-      if(
-        value >= a[0] &&
-        value <= b[0]
-      ){
-
-        return a[1] +
-          (
-            (value-a[0]) /
-            (b[0]-a[0])
-          ) *
-          (b[1]-a[1]);
-      }
-
-    }
-
-
-    return 50;
-  }
-
+  const rawY =
+    mapTop +
+    ((maxLat-lat)/(maxLat-minLat)) *
+    (mapBottom-mapTop);
 
   return{
-    x:interpolate(
-      Number(lon),
-      lonGrid
-    ),
-
-    y:interpolate(
-      Number(lat),
-      latGrid
-    )
+    x:Math.max(mapLeft,Math.min(mapRight,rawX)),
+    y:Math.max(mapTop,Math.min(mapBottom,rawY))
   };
 }
 
@@ -2060,7 +1959,7 @@ $("pressure")
 
 
       pts.push(
-        `${a.x*10},${a.y*5.6885}`
+        `${a.x*10},${a.y*5.2}`
       );
 }
   );
