@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-SBLC Typhoon Dashboard - Step 4.2
+SBLC Typhoon Dashboard - Step 4.3
 Logistics hub / route impact using JTWC wind radii.
 
 Inputs:
@@ -44,7 +44,7 @@ COMPARE_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 JTWC_PATH = BASE_DIR / "data" / "jtwc_typhoon.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.2"
+PARSER_VERSION = "4.3"
 CAUTION_RADIUS_MULTIPLIER = 1.5
 
 # Used only if JTWC radii are unavailable.
@@ -258,7 +258,9 @@ def radius_km(
     q = quadrants.get(quadrant, {})
 
     value = to_float(q.get("km"))
-    if value is None or value <= 0:
+    # JTWC can explicitly report 0 NM for a quadrant.
+    # 0 means "no wind radius in this quadrant", not missing data.
+    if value is None or value < 0:
         return None
     return value
 
@@ -508,6 +510,11 @@ def make_wind_point(
 
     if clearance_34 is None:
         boundary_text = "해당 방향 34kt 강풍반경 자료 없음"
+    elif r34 == 0:
+        boundary_text = (
+            f"해당 방향 34kt 강풍반경 0 km · "
+            f"태풍 중심까지 {round(distance)} km"
+        )
     elif clearance_34 < 0:
         boundary_text = (
             f"강풍 영향권 내부 {round(abs(clearance_34))} km"
