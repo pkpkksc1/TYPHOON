@@ -153,47 +153,75 @@ button{
   font-size:17px;
 }
 
-.agencies{
+.agency-grid{
   display:grid;
-  grid-template-columns:1fr 120px 1fr;
-  gap:12px;
-  align-items:center;
-  margin-top:12px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin-top:8px;
 }
 
 .agency{
   background:var(--panel2);
-  border:1px solid #2478bb;
-  border-radius:12px;
-  padding:15px;
-  text-align:center;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:8px 9px;
 }
 
-.agency.kma{
-  border-color:#2ca65a;
-}
+.agency.jma{border-color:#2478bb}
+.agency.kma{border-color:#2ca65a}
+.agency.cma{border-color:#c88716}
+.agency.jtwc{border-color:#8c62c8}
 
 .agency strong{
-  font-size:25px;
-}
-
-.arrow{
-  text-align:center;
-  font-size:34px;
-  color:#89c4ff;
-}
-
-.arrow small{
   display:block;
-  font-size:10px;
+  font-size:14px;
+}
+
+.agency-country{
+  margin-top:1px;
+  font-size:8px;
   color:var(--muted);
+}
+
+.agency-role{
+  margin-top:5px;
+  padding-top:5px;
+  border-top:1px solid var(--line);
+  font-size:8px;
+  line-height:1.4;
+}
+
+.agency-main{
+  display:block;
+  margin-top:5px;
+  padding:3px 5px;
+  border-radius:7px;
+  background:#0d243d;
+  color:#9fd2ff;
+  font-size:8px;
+  font-weight:900;
 }
 
 .compare-row{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-  margin-top:12px;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:8px;
+}
+
+.compare-definition{
+  margin-top:6px;
+  background:#0d1b2e;
+  border:1px dashed var(--line);
+  border-radius:8px;
+  padding:6px 8px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.6;
+}
+
+.compare-definition b{
+  color:var(--text);
 }
 
 .compare-box{
@@ -485,8 +513,8 @@ td{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .agencies{
-    grid-template-columns:1fr;
+  .agency-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   .arrow{
@@ -502,6 +530,10 @@ td{
   }
 
   .flights .list{
+    grid-template-columns:1fr;
+  }
+
+  .agency-grid{
     grid-template-columns:1fr;
   }
 
@@ -612,68 +644,70 @@ td{
 <section class="panel compare">
 
   <div class="kicker">
-    JMA ↔ KMA 예보 비교
+    태풍 데이터 사용 현황
   </div>
 
+  <div class="agency-grid">
 
-  <div class="agencies">
-
-    <div class="agency">
-
-      <strong>
-        JMA
-      </strong>
-
-      <div>
-        일본기상청
+    <div class="agency jma">
+      <strong>🇯🇵 JMA</strong>
+      <div class="agency-country">일본기상청</div>
+      <div class="agency-role">
+        현재위치 · 예상경로<br>
+        기압 · 최대풍속
       </div>
-
+      <span class="agency-main">기본 태풍 경로</span>
     </div>
-
-
-    <div class="arrow">
-
-      ↔
-
-      <small>
-        예보 위치 비교
-      </small>
-
-    </div>
-
 
     <div class="agency kma">
-
-      <strong>
-        KMA
-      </strong>
-
-      <div>
-        한국기상청
+      <strong>🇰🇷 KMA</strong>
+      <div class="agency-country">한국기상청</div>
+      <div class="agency-role">
+        예상경로<br>
+        JMA 경로 편차 확인
       </div>
+      <span class="agency-main">예상경로 비교</span>
+    </div>
 
+    <div class="agency cma">
+      <strong>🇨🇳 CMA</strong>
+      <div class="agency-country">중국기상국</div>
+      <div class="agency-role">
+        현재위치 · 기압 · 풍속<br>
+        강풍반경
+      </div>
+      <span class="agency-main">중국 측 현재 정보</span>
+    </div>
+
+    <div class="agency jtwc">
+      <strong>🇺🇸 JTWC</strong>
+      <div class="agency-country">합동태풍경보센터</div>
+      <div class="agency-role">
+        예상경로 · 강풍반경<br>
+        거점·노선 위험도
+      </div>
+      <span class="agency-main">위험도 계산 핵심</span>
     </div>
 
   </div>
-
 
   <div class="compare-row">
 
     <div class="compare-box">
-      <span>평균 차이</span>
+      <span>JMA ↔ KMA 평균 위치 차이</span>
       <b id="avgDiff">-</b>
     </div>
 
     <div class="compare-box">
-      <span>상태</span>
-      <b id="compareState">-</b>
-    </div>
-
-    <div class="compare-box">
-      <span>최대 차이</span>
+      <span>JMA ↔ KMA 최대 위치 차이</span>
       <b id="maxDiff">-</b>
     </div>
 
+  </div>
+
+  <div class="compare-definition">
+    <b>차이 기준:</b> 같은 예보 시각의 JMA·KMA 예상 태풍 중심 위치 간 거리
+    (평균 = 각 시각 평균 / 최대 = 가장 큰 차이).
   </div>
 
 </section>
@@ -1347,17 +1381,6 @@ async function load(){
         comp.max_difference_km,
         " km"
       );
-
-
-  $("compareState")
-    .textContent =
-      `${safe(
-        comp.emoji,
-        "⚪"
-      )} ${safe(
-        comp.label_ko,
-        "비교자료 없음"
-      )}`;
 
 
   // ========================================
