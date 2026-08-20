@@ -1,7 +1,7 @@
 {
   "source": "JMA + KMA comparison + JTWC + CMA wind radii",
   "product": "Logistics Typhoon Impact",
-  "parser_version": "4.5-CMA",
+  "parser_version": "4.6-CMA",
   "status": "OK",
   "calculation_mode": "JTWC_FORECAST + CMA_CURRENT_CROSSCHECK",
   "note_ko": "향후 5일 거점 위험도는 JTWC 34/50/64kt 방향별 풍권을 주력으로 사용하고, CMA 방향별 강풍 영향권은 현재 시점 교차검증에 사용합니다. CMA 예보에는 현재 구조상 향후 풍권반경이 없어 미래 풍권 계산에는 사용하지 않습니다.",
@@ -1532,7 +1532,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T11:46:01.699944+00:00",
+  "generated_at_utc": "2026-08-20T11:48:57.467409+00:00",
   "cma_crosscheck": {
     "status": "OK",
     "name_en": "SAUDEL",
@@ -1568,12 +1568,12 @@
     ]
   },
   "agency_time_comparison": {
-    "jtwc_time_utc": null,
+    "jtwc_time_utc": "2026-08-20T06:00:00+00:00",
     "cma_time_utc": "2026-08-20T09:00:00+00:00",
-    "jtwc_time_china": null,
+    "jtwc_time_china": "08/20 14:00",
     "cma_time_china": "08/20 17:00",
-    "difference_hours": null,
-    "label_ko": "기관 발표시각 차이 확인 불가",
+    "difference_hours": 3.0,
+    "label_ko": "기관 발표시각 차이 3시간",
     "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지"
   }
 }
