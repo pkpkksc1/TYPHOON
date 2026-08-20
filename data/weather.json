@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-20 20:41"
+        "localtime": "2026-08-20 20:49"
       },
       "current": {
-        "last_updated": "2026-08-20 20:30",
+        "last_updated": "2026-08-20 20:45",
         "rain_mm": 0.01,
         "wind_mps": 5.0,
         "gust_mps": 10.0,
@@ -692,7 +692,7 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-20 20:41"
+        "localtime": "2026-08-20 20:49"
       },
       "current": {
         "last_updated": "2026-08-20 20:30",
@@ -1366,7 +1366,7 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-20 21:41"
+        "localtime": "2026-08-20 21:49"
       },
       "current": {
         "last_updated": "2026-08-20 21:30",
@@ -2040,7 +2040,7 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-20 19:41"
+        "localtime": "2026-08-20 19:49"
       },
       "current": {
         "last_updated": "2026-08-20 19:30",
@@ -2709,15 +2709,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Camp Stolsenburg",
+        "name": "Culayo",
         "region": "Pampanga",
         "country": "Philippines",
         "lat": 15.183,
-        "lon": 120.517,
-        "localtime": "2026-08-20 20:41"
+        "lon": 120.567,
+        "localtime": "2026-08-20 20:49"
       },
       "current": {
-        "last_updated": "2026-08-20 20:30",
+        "last_updated": "2026-08-20 20:45",
         "rain_mm": 0.03,
         "wind_mps": 2.6,
         "gust_mps": 5.5,
@@ -3377,5 +3377,5 @@
     }
   },
   "errors": [],
-  "generated_at_utc": "2026-08-20T12:41:14.370836+00:00"
+  "generated_at_utc": "2026-08-20T12:49:25.313142+00:00"
 }
