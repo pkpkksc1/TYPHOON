@@ -44,14 +44,14 @@ COMPARE_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 JTWC_PATH = BASE_DIR / "data" / "jtwc_typhoon.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.3"
+PARSER_VERSION = "4.4"
 CAUTION_RADIUS_MULTIPLIER = 1.5
 
 # Used only if JTWC radii are unavailable.
 FALLBACK_RED_MAX_KM = 300
 FALLBACK_YELLOW_MAX_KM = 700
 
-LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
+LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
 FALLBACK_LOCATIONS = {
     "SUZHOU": {
@@ -60,14 +60,19 @@ FALLBACK_LOCATIONS = {
         "lon": 120.5853,
     },
     "PVG": {
-        "name_ko": "푸동국제공항",
+        "name_ko": "푸동 국제공항",
         "lat": 31.1443,
         "lon": 121.8083,
     },
     "ICN": {
-        "name_ko": "인천국제공항",
+        "name_ko": "인천 국제공항",
         "lat": 37.4602,
         "lon": 126.4407,
+    },
+    "MNL": {
+        "name_ko": "마닐라 국제공항",
+        "lat": 14.5086,
+        "lon": 121.0198,
     },
     "HAN": {
         "name_ko": "하노이 노이바이 국제공항",
@@ -75,7 +80,7 @@ FALLBACK_LOCATIONS = {
         "lon": 105.8070,
     },
     "CRK": {
-        "name_ko": "클락국제공항",
+        "name_ko": "클락 국제공항",
         "lat": 15.1859,
         "lon": 120.5603,
     },
@@ -86,6 +91,11 @@ ROUTES = [
         "code": "SUZHOU_PVG_ICN",
         "name_ko": "쑤저우 → PVG → 한국",
         "locations": ["SUZHOU", "PVG", "ICN"],
+    },
+    {
+        "code": "SUZHOU_PVG_MNL",
+        "name_ko": "쑤저우 → PVG → 마닐라",
+        "locations": ["SUZHOU", "PVG", "MNL"],
     },
     {
         "code": "SUZHOU_PVG_HAN",

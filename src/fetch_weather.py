@@ -12,7 +12,7 @@ Output:
     data/weather.json
 
 Locations:
-    SUZHOU / PVG / ICN / HAN / CRK
+    SUZHOU / PVG / ICN / MNL / HAN / CRK
 
 Collects:
     current rain, wind, gust
@@ -38,8 +38,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "weather.json"
 
 API_URL = "https://api.weatherapi.com/v1/forecast.json"
-PARSER_VERSION = "5.0"
-USER_AGENT = "sblc-typhoon-dashboard/5.0"
+PARSER_VERSION = "5.1"
+USER_AGENT = "sblc-typhoon-dashboard/5.1"
 
 LOCATIONS = {
     "SUZHOU": {
@@ -48,14 +48,19 @@ LOCATIONS = {
         "lon": 120.5853,
     },
     "PVG": {
-        "name_ko": "푸동국제공항",
+        "name_ko": "푸동 국제공항",
         "lat": 31.1443,
         "lon": 121.8083,
     },
     "ICN": {
-        "name_ko": "인천국제공항",
+        "name_ko": "인천 국제공항",
         "lat": 37.4602,
         "lon": 126.4407,
+    },
+    "MNL": {
+        "name_ko": "마닐라 국제공항",
+        "lat": 14.5086,
+        "lon": 121.0198,
     },
     "HAN": {
         "name_ko": "하노이 노이바이 국제공항",
@@ -63,7 +68,7 @@ LOCATIONS = {
         "lon": 105.8070,
     },
     "CRK": {
-        "name_ko": "클락국제공항",
+        "name_ko": "클락 국제공항",
         "lat": 15.1859,
         "lon": 120.5603,
     },
