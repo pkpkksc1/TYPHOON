@@ -745,189 +745,33 @@ td{
 }
 
 
-/* v8.12 - 항공편 운항 현황 ↔ 태풍 데이터 사용 현황 위치 교체 */
-.flights{
-  grid-column:2/4;
-  grid-row:1;
-}
-.compare{
-  grid-column:3/4;
-  grid-row:auto;
+
+/* v8.16 - stable independent left/right stacks */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+  gap:12px;
+  align-items:start;
 }
 
-/* top-right flights keep two-column cards */
-.flights .list{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-
-/* bottom-right data reference panel fits its new narrower position */
-.compare.compact-agency-panel{
-  display:block;
-}
-.compare .agency-left{
-  width:100%;
-}
-.compare .agency-reserved-space.routes-side{
-  margin-top:10px;
-}
-
-@media(max-width:1100px){
-  .flights{
-    grid-column:2/3;
-    grid-row:1;
-  }
-  .compare{
-    grid-column:2/3;
-    grid-row:auto;
-  }
-  .flights .list{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:760px){
-  .flights,
-  .compare{
-    grid-column:auto;
-    grid-row:auto;
-  }
-}
-
-
-/* v8.13 layout */
-.current{
-  grid-column:1/2;
-  grid-row:1;
-}
-
-.flights{
-  grid-column:2/3;
-  grid-row:1;
-}
-
-.routes{
-  grid-column:3/4;
-  grid-row:1;
-}
-
-.track{
-  grid-column:1/4;
-  grid-row:2;
-}
-
-.agency-bottom{
-  grid-column:1/4;
-  grid-row:3;
-  display:block !important;
-}
-
-.agency-bottom .agency-left{
-  width:100%;
-}
-
-.agency-bottom .compact-left-grid{
-  grid-template-columns:repeat(4,minmax(0,1fr));
-}
-
-.agency-bottom .compare-title{
-  margin-top:10px;
-}
-
-.agency-bottom .compare-row{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-
-.flights .list{
-  grid-template-columns:1fr;
-}
-
-.routes .list{
+.left-stack,
+.right-stack{
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:12px;
+  min-width:0;
 }
 
-/* top cards a little more compact */
+.current,
+.locations,
 .flights,
 .routes{
-  padding:13px;
+  grid-column:auto !important;
+  grid-row:auto !important;
+  margin-top:0 !important;
+  width:100%;
 }
 
-.flights .flight-card,
-.routes .route-card{
-  padding:9px;
-}
-
-.flights .flight-no{
-  font-size:18px;
-}
-
-.flights .times{
-  grid-template-columns:1fr 20px 1fr;
-  gap:4px;
-}
-
-.flights .timebox{
-  padding:6px;
-}
-
-@media(max-width:1100px){
-  .current{
-    grid-column:1/2;
-  }
-
-  .flights{
-    grid-column:2/3;
-  }
-
-  .routes{
-    grid-column:1/3;
-    grid-row:2;
-  }
-
-  .track{
-    grid-column:1/3;
-    grid-row:3;
-  }
-
-  .agency-bottom{
-    grid-column:1/3;
-    grid-row:4;
-  }
-
-  .routes .list{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:760px){
-  .current,
-  .flights,
-  .routes,
-  .track,
-  .agency-bottom{
-    grid-column:auto;
-    grid-row:auto;
-  }
-
-  .track-locations .loc-grid{
-    grid-template-columns:1fr;
-  }
-
-  .agency-bottom .compact-left-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .routes .list{
-    grid-template-columns:1fr;
-  }
-}
-
-
-/* v8.14 - compact top stacks */
-
-/* current typhoon compact */
 .current{
   padding:12px;
 }
@@ -935,95 +779,50 @@ td{
   font-size:24px;
   margin:7px 0 2px;
 }
-.current .sub{
-  font-size:10px;
-}
+.current .sub{font-size:10px}
 .current .metrics{
-  margin-top:9px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:6px;
+  margin-top:9px;
 }
-.current .metric{
-  padding:8px 9px;
-}
+.current .metric{padding:8px 9px}
 .current .metric b{
   margin-top:4px;
   font-size:14px;
 }
 
-/* desktop layout:
-   left  = current + locations
-   right = flights + routes
-*/
-.grid{
-  grid-template-columns:minmax(360px,.9fr) minmax(0,2.1fr);
-  gap:12px;
-  align-items:start;
+.locations{padding:12px}
+.locations .loc-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
 }
+.locations .loc-card{padding:8px}
+.locations .name{font-size:12px}
+.locations .stats{
+  gap:4px;
+  margin-top:6px;
+}
+.locations .stat{padding:5px}
+.locations .stat b{font-size:11px}
 
-.current{
-  grid-column:1/2;
-  grid-row:1;
-}
-
-.locations{
-  grid-column:1/2;
-  grid-row:2;
-}
-
-.flights{
-  grid-column:2/3;
-  grid-row:1;
-}
-
-.routes{
-  grid-column:2/3;
-  grid-row:2;
-}
-
-.track{
-  grid-column:1/3;
-  grid-row:3;
-}
-
-.agency-bottom{
-  grid-column:1/3;
-  grid-row:4;
-}
-
-/* flights 3 x 2 */
-.flights{
-  padding:13px;
-}
+.flights{padding:13px}
 .flights .list{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:8px;
 }
-.flights .flight-card{
-  padding:9px;
-}
-.flights .flight-no{
-  font-size:18px;
-}
+.flights .flight-card{padding:9px}
+.flights .flight-no{font-size:18px}
 .flights .times{
   grid-template-columns:1fr 18px 1fr;
   gap:4px;
   margin-top:7px;
 }
-.flights .timebox{
-  padding:6px;
-}
-.flights .timebox span{
-  font-size:8px;
-}
-.flights .timebox b{
-  font-size:11px;
-}
+.flights .timebox{padding:6px}
+.flights .timebox span{font-size:8px}
+.flights .timebox b{font-size:11px}
 
-/* routes directly below flights, same right width */
-.routes{
-  padding:13px;
-}
+.routes{padding:13px}
 .routes .list{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1034,74 +833,31 @@ td{
   min-height:72px;
 }
 
-/* compact 6 location cards, 2 x 3 */
-.locations{
-  padding:12px;
-}
-.locations .loc-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px;
-}
-.locations .loc-card{
-  padding:8px;
-}
-.locations .name{
-  font-size:12px;
-}
-.locations .stats{
-  gap:4px;
-  margin-top:6px;
-}
-.locations .stat{
-  padding:5px;
-}
-.locations .stat b{
-  font-size:11px;
-}
-
-/* track uses full panel width */
-.track-wrap{
-  display:block !important;
-}
-.track-wrap .map{
+.track{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
   width:100%;
 }
+.track-wrap{display:block !important}
+.track-wrap .map{width:100%}
 
-/* agency stays full width at bottom */
 .agency-bottom{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
   display:block !important;
 }
-.agency-bottom .agency-left{
-  width:100%;
-}
+.agency-bottom .agency-left{width:100%}
 .agency-bottom .compact-left-grid{
   grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.agency-bottom .compare-row{
+  grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
 @media(max-width:1200px){
   .grid{
-    grid-template-columns:1fr 1.45fr;
-  }
-  .flights .list{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-  .routes .list{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:900px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-  .current,
-  .locations,
-  .flights,
-  .routes,
-  .track,
-  .agency-bottom{
-    grid-column:1;
-    grid-row:auto;
+    grid-template-columns:minmax(320px,40%) minmax(0,60%);
   }
   .flights .list,
   .routes .list{
@@ -1109,64 +865,27 @@ td{
   }
 }
 
-@media(max-width:620px){
+@media(max-width:760px){
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .left-stack,
+  .right-stack,
+  .track,
+  .agency-bottom{
+    grid-column:1/-1;
+  }
+  .left-stack,
+  .right-stack{gap:10px}
   .flights .list,
   .routes .list,
-  .locations .loc-grid,
-  .agency-bottom .compact-left-grid{
+  .locations .loc-grid{
     grid-template-columns:1fr;
   }
-}
-
-
-/* v8.15 - 현재 태풍 ↔ 물류 거점 상태 빈 공간 제거 */
-.current{
-  grid-column:1/2;
-  grid-row:1;
-}
-
-.locations{
-  grid-column:1/2;
-  grid-row:1;
-  align-self:start;
-  margin-top:236px;
-}
-
-/* 오른쪽은 기존 배치 유지 */
-.flights{
-  grid-column:2/3;
-  grid-row:1;
-}
-
-.routes{
-  grid-column:2/3;
-  grid-row:2;
-}
-
-/* 주요 노선 아래부터 전체폭 */
-.track{
-  grid-column:1/3;
-  grid-row:3;
-}
-
-.agency-bottom{
-  grid-column:1/3;
-  grid-row:4;
-}
-
-@media(max-width:900px){
-  .current,
-  .locations,
-  .flights,
-  .routes,
-  .track,
-  .agency-bottom{
-    grid-column:1;
-    grid-row:auto;
-  }
-
-  .locations{
-    margin-top:0;
+  .agency-bottom .compact-left-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
@@ -1217,6 +936,8 @@ td{
 
 <main class="grid">
 
+
+<div class="left-stack">
 
 <section class="panel current">
 
@@ -1278,9 +999,62 @@ td{
 
 </section>
 
+</div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="right-stack">
+
+<section class="panel flights">
+
+  <div class="kicker">
+    항공편 운항 현황
+  </div>
+
+  <h2>
+    대표 항공편
+  </h2>
+
+  <div
+    id="flightsList"
+    class="list"
+  >
+  </div>
+
+</section>
+
+
+<section class="panel routes">
+
+  <div class="kicker">
+    물류 노선 위험도
+  </div>
+
+  <h2>
+    주요 노선
+  </h2>
+
+  <div
+    id="routesList"
+    class="list"
+  >
+  </div>
+
+</section>
+
+</div>
 
 
 <section class="panel track">
@@ -1346,50 +1120,6 @@ td{
 
 
 
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-<section class="panel flights">
-
-  <div class="kicker">
-    항공편 운항 현황
-  </div>
-
-  <h2>
-    대표 항공편
-  </h2>
-
-  <div
-    id="flightsList"
-    class="list"
-  >
-  </div>
-
-</section>
-
-
-<section class="panel routes">
-
-  <div class="kicker">
-    물류 노선 위험도
-  </div>
-
-  <h2>
-    주요 노선
-  </h2>
-
-  <div
-    id="routesList"
-    class="list"
-  >
   </div>
 
 </section>

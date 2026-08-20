@@ -94,3 +94,149 @@ footer{color:var(--muted);font-size:11px;padding:20px 2px 5px}
   .location-grid{grid-template-columns:1fr}
   .topbar{align-items:flex-start}
 }
+
+
+
+/* v8.16 - stable independent left/right stacks */
+.grid{
+  display:grid;
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+  gap:12px;
+  align-items:start;
+}
+
+.left-stack,
+.right-stack{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+}
+
+.current,
+.locations,
+.flights,
+.routes{
+  grid-column:auto !important;
+  grid-row:auto !important;
+  margin-top:0 !important;
+  width:100%;
+}
+
+.current{
+  padding:12px;
+}
+.current .typhoon-title{
+  font-size:24px;
+  margin:7px 0 2px;
+}
+.current .sub{font-size:10px}
+.current .metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin-top:9px;
+}
+.current .metric{padding:8px 9px}
+.current .metric b{
+  margin-top:4px;
+  font-size:14px;
+}
+
+.locations{padding:12px}
+.locations .loc-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+}
+.locations .loc-card{padding:8px}
+.locations .name{font-size:12px}
+.locations .stats{
+  gap:4px;
+  margin-top:6px;
+}
+.locations .stat{padding:5px}
+.locations .stat b{font-size:11px}
+
+.flights{padding:13px}
+.flights .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.flights .flight-card{padding:9px}
+.flights .flight-no{font-size:18px}
+.flights .times{
+  grid-template-columns:1fr 18px 1fr;
+  gap:4px;
+  margin-top:7px;
+}
+.flights .timebox{padding:6px}
+.flights .timebox span{font-size:8px}
+.flights .timebox b{font-size:11px}
+
+.routes{padding:13px}
+.routes .list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.routes .route-card{
+  padding:9px;
+  min-height:72px;
+}
+
+.track{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
+}
+.track-wrap{display:block !important}
+.track-wrap .map{width:100%}
+
+.agency-bottom{
+  grid-column:1/-1 !important;
+  grid-row:auto !important;
+  width:100%;
+  display:block !important;
+}
+.agency-bottom .agency-left{width:100%}
+.agency-bottom .compact-left-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.agency-bottom .compare-row{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+@media(max-width:1200px){
+  .grid{
+    grid-template-columns:minmax(320px,40%) minmax(0,60%);
+  }
+  .flights .list,
+  .routes .list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px){
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .left-stack,
+  .right-stack,
+  .track,
+  .agency-bottom{
+    grid-column:1/-1;
+  }
+  .left-stack,
+  .right-stack{gap:10px}
+  .flights .list,
+  .routes .list,
+  .locations .loc-grid{
+    grid-template-columns:1fr;
+  }
+  .agency-bottom .compact-left-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
