@@ -1,7 +1,7 @@
 {
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
-  "parser_version": "1.0",
+  "parser_version": "1.1",
   "active_count": 2,
   "typhoons": [
     {
@@ -159,10 +159,10 @@
         "wind_radii": [
           {
             "label": "30KTS",
-            "radius_1_km": 280,
-            "radius_2_km": 280,
-            "radius_3_km": 180,
-            "radius_4_km": 150,
+            "ne_km": 280,
+            "se_km": 280,
+            "sw_km": 180,
+            "nw_km": 150,
             "raw": [
               "30KTS",
               280,
@@ -171,7 +171,7 @@
               150,
               3305487
             ],
-            "note_ko": "CMA 원본 4방향 순서는 스키마 추가 검증 전까지 원본 순서 그대로 보존"
+            "meaning_ko": "30kt 풍권"
           }
         ]
       },
@@ -269,5 +269,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-20T11:22:42.602257+00:00"
+  "generated_at_utc": "2026-08-20T11:25:04.866762+00:00"
 }
