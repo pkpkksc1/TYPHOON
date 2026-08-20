@@ -895,6 +895,33 @@ td{
 #trackSvg{z-index:2}
 #mapPoints{position:absolute;inset:0;z-index:3}
 
+
+/* v8.19 - actual logistics hub coordinates */
+.hub-point{
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+}
+.hub-point i{
+  display:block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#f4f8ff;
+  border:1px solid rgba(7,18,32,.9);
+  box-shadow:0 0 0 1px rgba(255,255,255,.28);
+}
+.hub-point span{
+  position:absolute;
+  left:8px;
+  top:-4px;
+  white-space:nowrap;
+  font-size:8px;
+  font-weight:800;
+  color:rgba(238,247,255,.92);
+  text-shadow:0 1px 2px #071220,0 0 3px #071220;
+}
+
 </style>
 </head>
 
@@ -1637,54 +1664,46 @@ function xy(
   lon
 ){
 
-  // Coordinate bounds calibrated to assets/typhoon-map.png.
-  // Approx. image coverage:
-  // west 92.5°E / east 157.5°E / south 7.5°N / north 44.0°N
-  const minLat=7.5;
-  const maxLat=44.0;
+  /*
+    assets/typhoon-map.png 좌표 보정
 
-  const minLon=92.5;
-  const maxLon=157.5;
+    지도 이미지의 바깥 여백을 제외하고 실제 지도 영역에
+    위경도를 배치한다.
 
+    기준 범위:
+      경도 100E ~ 160E
+      위도   5N ~ 45N
+
+    실제 지도 영역의 이미지 내 위치(%):
+      left   7.7
+      right 93.7
+      top    9.0
+      bottom 92.0
+  */
+
+  const mapLeft   = 7.7;
+  const mapRight  = 93.7;
+  const mapTop    = 9.0;
+  const mapBottom = 92.0;
+
+  const minLon = 100;
+  const maxLon = 160;
+  const minLat = 5;
+  const maxLat = 45;
+
+  const rawX =
+    mapLeft +
+    ((lon-minLon)/(maxLon-minLon)) *
+    (mapRight-mapLeft);
+
+  const rawY =
+    mapTop +
+    ((maxLat-lat)/(maxLat-minLat)) *
+    (mapBottom-mapTop);
 
   return{
-
-    x:
-      Math.max(
-        2,
-        Math.min(
-          98,
-          (
-            (
-              lon-minLon
-            ) /
-            (
-              maxLon-minLon
-            )
-          ) * 100
-        )
-      ),
-
-
-    y:
-      Math.max(
-        3,
-        Math.min(
-          97,
-          (
-            1 -
-            (
-              (
-                lat-minLat
-              ) /
-              (
-                maxLat-minLat
-              )
-            )
-          ) * 100
-        )
-      )
-
+    x:Math.max(mapLeft,Math.min(mapRight,rawX)),
+    y:Math.max(mapTop,Math.min(mapBottom,rawY))
   };
 }
 
@@ -1848,6 +1867,41 @@ $("pressure")
 
   $("mapPoints")
     .innerHTML = "";
+
+
+  // 주요 물류 거점: 태풍 경로와 동일한 xy() 좌표계 사용
+  const hubs = [
+    ["SUZHOU",31.2989,120.5853],
+    ["PVG",31.1443,121.8083],
+    ["ICN",37.4602,126.4407],
+    ["MNL",14.5086,121.0198],
+    ["CRK",15.1859,120.5603],
+    ["HAN",21.2187,105.8042]
+  ];
+
+  hubs.forEach(
+    ([code,lat,lon]) => {
+
+      const pos = xy(lat,lon);
+
+      const hub =
+        document.createElement("div");
+
+      hub.className = "hub-point";
+
+      hub.style.left =
+        `calc(${pos.x}% - 3px)`;
+
+      hub.style.top =
+        `calc(${pos.y}% - 3px)`;
+
+      hub.innerHTML =
+        `<i></i><span>${code}</span>`;
+
+      $("mapPoints")
+        .appendChild(hub);
+    }
+  );
 
 
   const pts = [];
