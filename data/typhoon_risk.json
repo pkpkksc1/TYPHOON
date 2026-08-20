@@ -31,9 +31,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.67,
-        "current_wind_mps": 5.1,
-        "current_gust_mps": 6.2,
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 5.5,
+        "current_gust_mps": 6.9,
         "max_72h_rain_mm": 1.77,
         "max_72h_rain_time": "2026-08-22 13:00",
         "max_72h_wind_mps": 7.9,
@@ -64,14 +64,14 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.16,
-        "current_wind_mps": 5.1,
-        "current_gust_mps": 6.6,
-        "max_72h_rain_mm": 1.47,
-        "max_72h_rain_time": "2026-08-22 11:00",
-        "max_72h_wind_mps": 7.2,
-        "max_72h_wind_time": "2026-08-21 13:00",
-        "max_72h_gust_mps": 13.4,
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 4.8,
+        "current_gust_mps": 7.0,
+        "max_72h_rain_mm": 1.78,
+        "max_72h_rain_time": "2026-08-20 11:00",
+        "max_72h_wind_mps": 7.4,
+        "max_72h_wind_time": "2026-08-22 12:00",
+        "max_72h_gust_mps": 14.0,
         "max_72h_gust_time": "2026-08-22 22:00"
       },
       "score_detail": {
@@ -97,15 +97,15 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.04,
-        "current_wind_mps": 1.2,
-        "current_gust_mps": 1.6,
-        "max_72h_rain_mm": 0.6,
-        "max_72h_rain_time": "2026-08-21 07:00",
-        "max_72h_wind_mps": 3.2,
-        "max_72h_wind_time": "2026-08-22 17:00",
-        "max_72h_gust_mps": 7.2,
-        "max_72h_gust_time": "2026-08-22 17:00"
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 1.7,
+        "current_gust_mps": 2.7,
+        "max_72h_rain_mm": 1.19,
+        "max_72h_rain_time": "2026-08-20 11:00",
+        "max_72h_wind_mps": 3.1,
+        "max_72h_wind_time": "2026-08-21 12:00",
+        "max_72h_gust_mps": 7.9,
+        "max_72h_gust_time": "2026-08-21 15:00"
       },
       "score_detail": {
         "distance": 0,
@@ -130,13 +130,13 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.07,
-        "current_wind_mps": 5.4,
-        "current_gust_mps": 7.4,
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 5.1,
+        "current_gust_mps": 7.7,
         "max_72h_rain_mm": 6.28,
         "max_72h_rain_time": "2026-08-22 12:00",
         "max_72h_wind_mps": 5.4,
-        "max_72h_wind_time": "2026-08-20 12:45",
+        "max_72h_wind_time": "2026-08-20 12:00",
         "max_72h_gust_mps": 8.0,
         "max_72h_gust_time": "2026-08-20 13:00"
       },
@@ -150,7 +150,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락국제공항",
-      "score": 13,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -163,19 +163,19 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.05,
-        "current_wind_mps": 6.5,
-        "current_gust_mps": 10.3,
-        "max_72h_rain_mm": 0.43,
-        "max_72h_rain_time": "2026-08-20 00:00",
-        "max_72h_wind_mps": 8.1,
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 2.6,
+        "current_gust_mps": 3.8,
+        "max_72h_rain_mm": 0.68,
+        "max_72h_rain_time": "2026-08-22 21:00",
+        "max_72h_wind_mps": 7.6,
         "max_72h_wind_time": "2026-08-22 13:00",
-        "max_72h_gust_mps": 13.0,
-        "max_72h_gust_time": "2026-08-21 15:00"
+        "max_72h_gust_mps": 11.1,
+        "max_72h_gust_time": "2026-08-22 13:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 8,
         "wind": 5,
         "gust": 5
       }
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T07:21:55.962700+00:00"
+  "generated_at_utc": "2026-08-20T08:04:36.488024+00:00"
 }
