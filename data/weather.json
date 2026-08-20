@@ -18,15 +18,15 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-20 19:34"
+        "localtime": "2026-08-20 20:41"
       },
       "current": {
-        "last_updated": "2026-08-20 19:30",
-        "rain_mm": 0.0,
-        "wind_mps": 4.8,
-        "gust_mps": 9.1,
+        "last_updated": "2026-08-20 20:30",
+        "rain_mm": 0.01,
+        "wind_mps": 5.0,
+        "gust_mps": 10.0,
         "wind_dir": "E",
-        "condition": "Clear"
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -692,15 +692,15 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-20 19:34"
+        "localtime": "2026-08-20 20:41"
       },
       "current": {
-        "last_updated": "2026-08-20 19:30",
-        "rain_mm": 0.0,
-        "wind_mps": 3.9,
-        "gust_mps": 8.7,
-        "wind_dir": "E",
-        "condition": "Partly Cloudy"
+        "last_updated": "2026-08-20 20:30",
+        "rain_mm": 0.04,
+        "wind_mps": 3.8,
+        "gust_mps": 8.8,
+        "wind_dir": "ESE",
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1366,15 +1366,15 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-20 20:34"
+        "localtime": "2026-08-20 21:41"
       },
       "current": {
-        "last_updated": "2026-08-20 20:30",
+        "last_updated": "2026-08-20 21:30",
         "rain_mm": 0.0,
-        "wind_mps": 1.0,
-        "gust_mps": 3.0,
-        "wind_dir": "SSE",
-        "condition": "Smoky haze"
+        "wind_mps": 1.4,
+        "gust_mps": 1.6,
+        "wind_dir": "NE",
+        "condition": "Overcast"
       },
       "hourly_forecast": [
         {
@@ -1390,8 +1390,8 @@
           "time": "2026-08-20 01:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 22,
-          "wind_mps": 1.0,
-          "gust_mps": 3.0,
+          "wind_mps": 0.1,
+          "gust_mps": 0.2,
           "wind_dir": "SSE",
           "condition": "Smoky haze"
         },
@@ -2040,15 +2040,15 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-20 18:34"
+        "localtime": "2026-08-20 19:41"
       },
       "current": {
-        "last_updated": "2026-08-20 18:15",
-        "rain_mm": 0.0,
-        "wind_mps": 2.2,
-        "gust_mps": 3.3,
+        "last_updated": "2026-08-20 19:30",
+        "rain_mm": 0.19,
+        "wind_mps": 1.6,
+        "gust_mps": 1.7,
         "wind_dir": "W",
-        "condition": "Clear"
+        "condition": "Light rain shower"
       },
       "hourly_forecast": [
         {
@@ -2220,7 +2220,7 @@
           "wind_mps": 2.2,
           "gust_mps": 3.3,
           "wind_dir": "W",
-          "condition": "Clear"
+          "condition": "Smoky haze"
         },
         {
           "time": "2026-08-20 19:00",
@@ -2709,19 +2709,19 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Camp Stolsenburg",
         "region": "Pampanga",
         "country": "Philippines",
         "lat": 15.183,
-        "lon": 120.567,
-        "localtime": "2026-08-20 19:34"
+        "lon": 120.517,
+        "localtime": "2026-08-20 20:41"
       },
       "current": {
-        "last_updated": "2026-08-20 19:30",
-        "rain_mm": 0.01,
-        "wind_mps": 3.0,
-        "gust_mps": 6.4,
-        "wind_dir": "SW",
+        "last_updated": "2026-08-20 20:30",
+        "rain_mm": 0.03,
+        "wind_mps": 2.6,
+        "gust_mps": 5.5,
+        "wind_dir": "WSW",
         "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
@@ -3377,5 +3377,5 @@
     }
   },
   "errors": [],
-  "generated_at_utc": "2026-08-20T11:34:58.653508+00:00"
+  "generated_at_utc": "2026-08-20T12:41:14.370836+00:00"
 }
