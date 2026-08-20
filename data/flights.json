@@ -1,7 +1,7 @@
 {
   "source": "Aviationstack",
   "product": "Manual Flight Status - 7 Representative Flights",
-  "parser_version": "8.0",
+  "parser_version": "8.1",
   "groups": {
     "WF수입": [
       "KE315",
@@ -86,6 +86,10 @@
       "expected_departure_local": "23:10",
       "selected_scheduled_clock": "23:10",
       "schedule_match_difference_minutes": 0,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-20",
+      "selected_date_distance_days": 0,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
       "status": {
@@ -140,12 +144,16 @@
       "expected_departure_local": "01:20",
       "selected_scheduled_clock": "02:00",
       "schedule_match_difference_minutes": 40,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-20",
+      "selected_date_distance_days": 0,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "landed",
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "도착 1368분 지연"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "도착 완료"
       },
       "departure": {
         "airport": "Seoul (Incheon)",
@@ -159,7 +167,7 @@
         "estimated_local": "2026-08-20T02:00:00+09:00",
         "actual_local": "2026-08-20T01:32:00+09:00",
         "display_time_local": "2026-08-20 01:32",
-        "calculated_delay_minutes": 1412,
+        "calculated_delay_minutes": -28,
         "api_delay_minutes": null,
         "terminal": null,
         "gate": null
@@ -176,7 +184,7 @@
         "estimated_local": "2026-08-20T01:56:00+08:00",
         "actual_local": "2026-08-20T01:58:00+08:00",
         "display_time_local": "2026-08-20 01:58",
-        "calculated_delay_minutes": 1368,
+        "calculated_delay_minutes": -72,
         "api_delay_minutes": null,
         "terminal": "1",
         "gate": null
@@ -194,6 +202,10 @@
       "expected_departure_local": "01:20",
       "selected_scheduled_clock": "01:50",
       "schedule_match_difference_minutes": 30,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-21",
+      "selected_date_distance_days": 1,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
       "status": {
@@ -248,6 +260,10 @@
       "expected_departure_local": "16:00",
       "selected_scheduled_clock": "16:00",
       "schedule_match_difference_minutes": 0,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-20",
+      "selected_date_distance_days": 0,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "active",
       "status": {
@@ -301,7 +317,8 @@
       "status": {
         "level": "NO_DATA",
         "emoji": "⚪",
-        "label_ko": "조회 결과 없음"
+        "label_ko": "조회 결과 없음",
+        "note_ko": "API에 운항편 데이터가 없으며 오류로 처리하지 않음"
       }
     },
     {
@@ -314,6 +331,10 @@
       "expected_departure_local": "03:05",
       "selected_scheduled_clock": "03:05",
       "schedule_match_difference_minutes": 0,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-20",
+      "selected_date_distance_days": 0,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
       "status": {
@@ -368,6 +389,10 @@
       "expected_departure_local": "19:20",
       "selected_scheduled_clock": "18:35",
       "schedule_match_difference_minutes": 45,
+      "selection_date_local_today": "2026-08-20",
+      "selected_flight_date": "2026-08-19",
+      "selected_date_distance_days": -1,
+      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
       "status": {
@@ -414,5 +439,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-20T12:02:03.302573+00:00"
+  "generated_at_utc": "2026-08-20T12:05:52.624158+00:00"
 }
