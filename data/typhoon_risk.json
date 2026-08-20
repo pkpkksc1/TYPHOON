@@ -12,7 +12,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 61
+    "average_difference_km": 78
   },
   "locations": {
     "SUZHOU": {
@@ -31,9 +31,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.01,
+        "current_rain_mm": 0.0,
         "current_wind_mps": 5.7,
-        "current_gust_mps": 7.3,
+        "current_gust_mps": 7.8,
         "max_72h_rain_mm": 1.11,
         "max_72h_rain_time": "2026-08-20 13:00",
         "max_72h_wind_mps": 8.3,
@@ -98,8 +98,8 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.5,
-        "current_gust_mps": 2.3,
+        "current_wind_mps": 1.7,
+        "current_gust_mps": 2.6,
         "max_72h_rain_mm": 1.19,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 3.1,
@@ -130,9 +130,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.38,
-        "current_wind_mps": 2.2,
-        "current_gust_mps": 4.0,
+        "current_rain_mm": 0.12,
+        "current_wind_mps": 2.8,
+        "current_gust_mps": 4.2,
         "max_72h_rain_mm": 15.08,
         "max_72h_rain_time": "2026-08-22 10:00",
         "max_72h_wind_mps": 6.4,
@@ -163,9 +163,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.04,
-        "current_wind_mps": 5.6,
-        "current_gust_mps": 10.1,
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 4.4,
+        "current_gust_mps": 9.6,
         "max_72h_rain_mm": 0.68,
         "max_72h_rain_time": "2026-08-22 21:00",
         "max_72h_wind_mps": 7.6,
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T09:04:28.983426+00:00"
+  "generated_at_utc": "2026-08-20T09:59:09.681752+00:00"
 }
