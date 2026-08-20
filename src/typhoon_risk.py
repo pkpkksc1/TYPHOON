@@ -38,9 +38,9 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.0"
+PARSER_VERSION = "6.1"
 
-LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
+LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
 ROUTES = [
     {
@@ -57,6 +57,11 @@ ROUTES = [
         "code": "SUZHOU_PVG_CRK",
         "name_ko": "쑤저우 → PVG → 클락",
         "locations": ["SUZHOU", "PVG", "CRK"],
+    },
+    {
+        "code": "SUZHOU_PVG_MNL",
+        "name_ko": "쑤저우 → PVG → 마닐라",
+        "locations": ["SUZHOU", "PVG", "MNL"],
     },
     {
         "code": "ICN_PVG",

@@ -31,8 +31,15 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.1"
-LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
+PARSER_VERSION = "8.2"
+LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
+REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
+LOCATION_NAME_OVERRIDES = {
+    "PVG": "푸동 국제공항",
+    "ICN": "인천 국제공항",
+    "MNL": "마닐라 국제공항",
+    "CRK": "클락 국제공항",
+}
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -41,13 +48,13 @@ def load_json(path: Path) -> Dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def simplify_location(item: Dict[str, Any]) -> Dict[str, Any]:
+def simplify_location(item: Dict[str, Any], code: str = "") -> Dict[str, Any]:
     weather = item.get("weather", {})
     typhoon = item.get("typhoon", {})
     risk = item.get("risk", {})
 
     return {
-        "name_ko": item.get("name_ko"),
+        "name_ko": LOCATION_NAME_OVERRIDES.get(code, item.get("name_ko")),
         "score": item.get("score"),
         "risk": {
             "emoji": risk.get("emoji"),
@@ -159,7 +166,7 @@ def main() -> int:
     for code in LOCATION_ORDER:
         item = risk.get("locations", {}).get(code)
         if isinstance(item, dict):
-            locations[code] = simplify_location(item)
+            locations[code] = simplify_location(item, code)
 
     routes: List[Dict[str, Any]] = []
 
@@ -169,9 +176,13 @@ def main() -> int:
 
         rr = route.get("risk", {})
 
+        route_name = route.get("name_ko")
+        if route.get("code") == "ICN_PVG":
+            route_name = "한국 → PVG"
+
         routes.append({
             "code": route.get("code"),
-            "name_ko": route.get("name_ko"),
+            "name_ko": route_name,
             "score": route.get("score"),
             "risk": {
                 "emoji": rr.get("emoji"),
@@ -180,11 +191,34 @@ def main() -> int:
             "reason_ko": route.get("reason_ko"),
         })
 
+    # Manila route: use the worst risk among SUZHOU / PVG / MNL.
+    # This becomes active as soon as MNL exists in data/typhoon_risk.json.
+    if "MNL" in locations and not any(r.get("code") == "SUZHOU_PVG_MNL" for r in routes):
+        route_codes = ["SUZHOU", "PVG", "MNL"]
+        route_items = [locations[c] for c in route_codes if c in locations]
+        level_rank = {"낮음": 1, "주의": 2, "높음": 3}
+        worst = max(
+            route_items,
+            key=lambda x: level_rank.get(x.get("risk", {}).get("label_ko"), 0),
+        )
+        routes.insert(3, {
+            "code": "SUZHOU_PVG_MNL",
+            "name_ko": "쑤저우 → PVG → 마닐라",
+            "score": max((x.get("score") or 0) for x in route_items),
+            "risk": worst.get("risk", {}),
+            "reason_ko": f"{worst.get('name_ko')} {worst.get('risk', {}).get('label_ko')} ({worst.get('reason_ko') or '-'})",
+        })
+
     flight_summaries = [
         simplify_flight(x)
         for x in flights.get("flights", [])
         if isinstance(x, dict)
+        and x.get("flight_iata") in REPRESENTATIVE_FLIGHTS
     ]
+    flight_summaries.sort(
+        key=lambda x: REPRESENTATIVE_FLIGHTS.index(x.get("flight_iata"))
+        if x.get("flight_iata") in REPRESENTATIVE_FLIGHTS else 999
+    )
 
     output = {
         "source": "SBLC Typhoon Dashboard",
