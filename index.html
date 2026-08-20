@@ -742,6 +742,55 @@ td{
   }
 }
 
+
+/* v8.12 - 항공편 운항 현황 ↔ 태풍 데이터 사용 현황 위치 교체 */
+.flights{
+  grid-column:2/4;
+  grid-row:1;
+}
+.compare{
+  grid-column:3/4;
+  grid-row:auto;
+}
+
+/* top-right flights keep two-column cards */
+.flights .list{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+/* bottom-right data reference panel fits its new narrower position */
+.compare.compact-agency-panel{
+  display:block;
+}
+.compare .agency-left{
+  width:100%;
+}
+.compare .agency-reserved-space.routes-side{
+  margin-top:10px;
+}
+
+@media(max-width:1100px){
+  .flights{
+    grid-column:2/3;
+    grid-row:1;
+  }
+  .compare{
+    grid-column:2/3;
+    grid-row:auto;
+  }
+  .flights .list{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:760px){
+  .flights,
+  .compare{
+    grid-column:auto;
+    grid-row:auto;
+  }
+}
+
 </style>
 </head>
 
