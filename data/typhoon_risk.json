@@ -31,15 +31,15 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 5.5,
-        "current_gust_mps": 6.9,
-        "max_72h_rain_mm": 1.77,
-        "max_72h_rain_time": "2026-08-22 13:00",
-        "max_72h_wind_mps": 7.9,
-        "max_72h_wind_time": "2026-08-21 13:00",
-        "max_72h_gust_mps": 13.4,
-        "max_72h_gust_time": "2026-08-22 18:00"
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 5.7,
+        "current_gust_mps": 7.3,
+        "max_72h_rain_mm": 1.11,
+        "max_72h_rain_time": "2026-08-20 13:00",
+        "max_72h_wind_mps": 8.3,
+        "max_72h_wind_time": "2026-08-22 14:00",
+        "max_72h_gust_mps": 14.7,
+        "max_72h_gust_time": "2026-08-22 23:00"
       },
       "score_detail": {
         "distance": 0,
@@ -64,9 +64,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 4.8,
-        "current_gust_mps": 7.0,
+        "current_rain_mm": 0.11,
+        "current_wind_mps": 4.9,
+        "current_gust_mps": 7.3,
         "max_72h_rain_mm": 1.78,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 7.4,
@@ -98,8 +98,8 @@
       },
       "weather": {
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.7,
-        "current_gust_mps": 2.7,
+        "current_wind_mps": 1.5,
+        "current_gust_mps": 2.3,
         "max_72h_rain_mm": 1.19,
         "max_72h_rain_time": "2026-08-20 11:00",
         "max_72h_wind_mps": 3.1,
@@ -117,34 +117,34 @@
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 20,
+      "score": 30,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 시간당 강수 6.28 mm",
+      "reason_ko": "최대 시간당 강수 15.08 mm",
       "typhoon": {
         "closest_distance_km": 2839,
         "closest_time": "2026-08-25T15:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 5.1,
-        "current_gust_mps": 7.7,
-        "max_72h_rain_mm": 6.28,
-        "max_72h_rain_time": "2026-08-22 12:00",
-        "max_72h_wind_mps": 5.4,
-        "max_72h_wind_time": "2026-08-20 12:00",
-        "max_72h_gust_mps": 8.0,
-        "max_72h_gust_time": "2026-08-20 13:00"
+        "current_rain_mm": 0.38,
+        "current_wind_mps": 2.2,
+        "current_gust_mps": 4.0,
+        "max_72h_rain_mm": 15.08,
+        "max_72h_rain_time": "2026-08-22 10:00",
+        "max_72h_wind_mps": 6.4,
+        "max_72h_wind_time": "2026-08-21 17:00",
+        "max_72h_gust_mps": 11.9,
+        "max_72h_gust_time": "2026-08-22 22:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 20,
+        "rain": 25,
         "wind": 0,
-        "gust": 0
+        "gust": 5
       }
     },
     "CRK": {
@@ -163,9 +163,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 2.6,
-        "current_gust_mps": 3.8,
+        "current_rain_mm": 0.04,
+        "current_wind_mps": 5.6,
+        "current_gust_mps": 10.1,
         "max_72h_rain_mm": 0.68,
         "max_72h_rain_time": "2026-08-22 21:00",
         "max_72h_wind_mps": 7.6,
@@ -201,13 +201,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 20,
+      "score": 30,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 낮음 (최대 시간당 강수 6.28 mm)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (최대 시간당 강수 15.08 mm)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T08:04:36.488024+00:00"
+  "generated_at_utc": "2026-08-20T09:04:28.983426+00:00"
 }
