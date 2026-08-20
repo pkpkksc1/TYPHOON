@@ -10,9 +10,9 @@
     "name": "SAUDEL"
   },
   "forecast_confidence": {
-    "emoji": "🟡",
-    "label_ko": "차이 있음",
-    "average_difference_km": 98
+    "emoji": "🔴",
+    "label_ko": "차이 큼",
+    "average_difference_km": 251
   },
   "locations": {
     "SUZHOU": {
@@ -26,14 +26,14 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1509,
-        "closest_time": "2026-08-25T03:00:00+09:00",
+        "closest_distance_km": 1339,
+        "closest_time": "2026-08-25T09:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
         "current_rain_mm": 0.01,
-        "current_wind_mps": 4.3,
-        "current_gust_mps": 8.0,
+        "current_wind_mps": 4.4,
+        "current_gust_mps": 5.8,
         "max_72h_rain_mm": 1.77,
         "max_72h_rain_time": "2026-08-22 13:00",
         "max_72h_wind_mps": 7.9,
@@ -59,14 +59,14 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1396,
-        "closest_time": "2026-08-25T03:00:00+09:00",
+        "closest_distance_km": 1225,
+        "closest_time": "2026-08-25T09:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.23,
-        "current_wind_mps": 3.6,
-        "current_gust_mps": 7.7,
+        "current_rain_mm": 0.43,
+        "current_wind_mps": 3.7,
+        "current_gust_mps": 5.8,
         "max_72h_rain_mm": 1.47,
         "max_72h_rain_time": "2026-08-22 11:00",
         "max_72h_wind_mps": 7.2,
@@ -92,20 +92,20 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1563,
-        "closest_time": "2026-08-25T03:00:00+09:00",
+        "closest_distance_km": 1390,
+        "closest_time": "2026-08-25T09:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.0,
-        "current_gust_mps": 1.1,
+        "current_rain_mm": 0.05,
+        "current_wind_mps": 1.6,
+        "current_gust_mps": 1.9,
         "max_72h_rain_mm": 0.6,
         "max_72h_rain_time": "2026-08-21 07:00",
         "max_72h_wind_mps": 3.2,
         "max_72h_wind_time": "2026-08-22 17:00",
-        "max_72h_gust_mps": 8.0,
-        "max_72h_gust_time": "2026-08-22 15:00"
+        "max_72h_gust_mps": 7.2,
+        "max_72h_gust_time": "2026-08-22 17:00"
       },
       "score_detail": {
         "distance": 0,
@@ -125,14 +125,14 @@
       },
       "reason_ko": "최대 시간당 강수 6.28 mm",
       "typhoon": {
-        "closest_distance_km": 2939,
-        "closest_time": "2026-08-25T03:00:00+09:00",
+        "closest_distance_km": 2829,
+        "closest_time": "2026-08-25T09:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 2.03,
-        "current_wind_mps": 1.6,
-        "current_gust_mps": 3.6,
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 3.4,
+        "current_gust_mps": 6.2,
         "max_72h_rain_mm": 6.28,
         "max_72h_rain_time": "2026-08-22 12:00",
         "max_72h_wind_mps": 5.4,
@@ -158,14 +158,14 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "closest_distance_km": 1807,
-        "closest_time": "2026-08-25T03:00:00+09:00",
+        "closest_distance_km": 1794,
+        "closest_time": "2026-08-25T09:00:00+09:00",
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.18,
+        "current_rain_mm": 0.02,
         "current_wind_mps": 4.7,
-        "current_gust_mps": 10.9,
+        "current_gust_mps": 8.4,
         "max_72h_rain_mm": 0.43,
         "max_72h_rain_time": "2026-08-20 00:00",
         "max_72h_wind_mps": 8.1,
@@ -246,5 +246,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-19T23:45:26.730858+00:00"
+  "generated_at_utc": "2026-08-20T01:57:40.877575+00:00"
 }
