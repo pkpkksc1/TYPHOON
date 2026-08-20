@@ -259,24 +259,17 @@ button{
   border-radius:12px;
   border:1px solid var(--line);
 
-  background:
-    linear-gradient(rgba(45,93,140,.12) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(45,93,140,.12) 1px,transparent 1px),
-    radial-gradient(circle at 30% 30%,rgba(41,98,150,.23),transparent 27%),
-    #091728;
-
-  background-size:
-    10% 12%,
-    10% 12%,
-    auto,
-    auto;
+  /* Static East Asia map.
+     The image itself is the coordinate reference for the typhoon overlay. */
+  background-image:url("./assets/typhoon-map.png");
+  background-repeat:no-repeat;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-color:#091728;
 }
 
 .map-label{
-  position:absolute;
-  color:rgba(157,190,220,.25);
-  font-weight:900;
-  font-size:12px;
+  display:none;
 }
 
 .china{left:8%;top:22%}
@@ -888,6 +881,19 @@ td{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
+
+
+/* v8.18 - static map coordinate overlay */
+.map::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(3,10,20,.04),rgba(3,10,20,.08));
+}
+#trackSvg{z-index:2}
+#mapPoints{position:absolute;inset:0;z-index:3}
 
 </style>
 </head>
@@ -1631,11 +1637,14 @@ function xy(
   lon
 ){
 
-  const minLat=5;
-  const maxLat=45;
+  // Coordinate bounds calibrated to assets/typhoon-map.png.
+  // Approx. image coverage:
+  // west 92.5°E / east 157.5°E / south 7.5°N / north 44.0°N
+  const minLat=7.5;
+  const maxLat=44.0;
 
-  const minLon=100;
-  const maxLon=160;
+  const minLon=92.5;
+  const maxLon=157.5;
 
 
   return{
