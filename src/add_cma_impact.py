@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-SBLC Typhoon Dashboard - Step 4.6
+SBLC Typhoon Dashboard - Step 5.0
 Add CMA current wind-radius cross-check to existing JTWC impact output.
 
 Inputs:
@@ -11,7 +11,7 @@ Inputs:
     data/typhoon_impact.json   # existing v4.3 JTWC result
 
 Output:
-    data/typhoon_impact.json   # enriched v4.6 result
+    data/typhoon_impact.json   # enriched v5.0 result
 
 Logic:
 - Future 5-day logistics risk remains JTWC-based because CMA forecast
@@ -39,7 +39,7 @@ JMA_PATH = BASE_DIR / "data" / "jma_typhoon.json"
 CMA_PATH = BASE_DIR / "data" / "cma_typhoon.json"
 IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.6-CMA"
+PARSER_VERSION = "5.0-CMA"
 CMA_CAUTION_MULTIPLIER = 1.5
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "HAN", "CRK"]
@@ -91,32 +91,66 @@ def parse_iso_utc(value: Any) -> Optional[datetime]:
 
 
 def find_jtwc_current_time(impact: Dict[str, Any]) -> Optional[datetime]:
-    # Prefer first timeline point because existing v4.3 impact is JTWC-based.
+    """
+    Resolve JTWC issue time in safest priority order.
+
+    Priority
+    1. typhoon.jtwc_issue_time_utc  -> actual JTWC warning issue time
+    2. common JTWC metadata fields
+    3. first timeline time as fallback only
+    """
+
+    typhoon_meta = impact.get("typhoon", {})
+    if isinstance(typhoon_meta, dict):
+        dt = parse_iso_utc(typhoon_meta.get("jtwc_issue_time_utc"))
+        if dt:
+            return dt
+
+    for container_key in ("jtwc", "source_meta", "typhoon"):
+        container = impact.get(container_key, {})
+        if not isinstance(container, dict):
+            continue
+
+        for key in (
+            "issue_time_utc",
+            "warning_issue_time_utc",
+            "analysis_time_utc",
+            "base_time_utc",
+            "current_time_utc",
+            "time_utc",
+        ):
+            dt = parse_iso_utc(container.get(key))
+            if dt:
+                return dt
+            dt = parse_compact_utc(container.get(key))
+            if dt:
+                return dt
+
+    # Final fallback: timeline point time.
     for code in LOCATION_ORDER:
         item = impact.get("locations", {}).get(code, {})
         timeline = item.get("timeline", [])
-        if isinstance(timeline, list) and timeline:
-            first = timeline[0]
-            if isinstance(first, dict):
-                for key in ("time", "time_utc", "valid_time_utc", "forecast_time_utc", "datetime_utc"):
-                    dt = parse_iso_utc(first.get(key))
-                    if dt:
-                        return dt
-                    dt = parse_compact_utc(first.get(key))
-                    if dt:
-                        return dt
+        if not isinstance(timeline, list) or not timeline:
+            continue
 
-    # Fallback to common metadata fields.
-    for container_key in ("jtwc", "typhoon", "source_meta"):
-        container = impact.get(container_key, {})
-        if isinstance(container, dict):
-            for key in ("time_utc", "base_time_utc", "analysis_time_utc", "current_time_utc"):
-                dt = parse_iso_utc(container.get(key))
-                if dt:
-                    return dt
-                dt = parse_compact_utc(container.get(key))
-                if dt:
-                    return dt
+        first = timeline[0]
+        if not isinstance(first, dict):
+            continue
+
+        for key in (
+            "time",
+            "time_utc",
+            "valid_time_utc",
+            "forecast_time_utc",
+            "datetime_utc",
+        ):
+            dt = parse_iso_utc(first.get(key))
+            if dt:
+                return dt
+            dt = parse_compact_utc(first.get(key))
+            if dt:
+                return dt
+
     return None
 
 
@@ -164,6 +198,56 @@ def quadrant(b: float) -> str:
     if 180 <= b < 270:
         return "SW"
     return "NW"
+
+
+def friendly_jtwc_basis(basis: Any) -> str:
+    """
+    Convert technical kt wording to operator-friendly Korean.
+    Raw kt values remain in JSON numeric fields for audit/debug.
+    """
+    s = str(basis or "")
+
+    replacements = {
+        "34kt 강풍 영향권": "강풍 영향권",
+        "34kt 강풍반경": "강풍 영향권 반경",
+        "50kt 또는 64kt 영향권": "강한 강풍 영향권",
+        "50kt 영향권": "강한 강풍 영향권",
+        "64kt 영향권": "매우 강한 강풍 영향권",
+        "30kt 풍권": "강풍 영향권",
+    }
+
+    for old, new in replacements.items():
+        s = s.replace(old, new)
+
+    return s
+
+
+def future_risk_summary(location_item: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Preserve existing JTWC future-risk calculation but expose a friendly summary.
+    """
+    risk = location_item.get("risk", {})
+    detail = location_item.get("risk_detail", {})
+
+    if not isinstance(risk, dict):
+        risk = {}
+    if not isinstance(detail, dict):
+        detail = {}
+
+    return {
+        "level": risk.get("level"),
+        "emoji": risk.get("emoji"),
+        "label_ko": risk.get("label_ko"),
+        "severity_rank": risk.get("severity_rank"),
+        "basis_ko": friendly_jtwc_basis(risk.get("basis")),
+        "closest_distance_km": location_item.get("closest_distance_km"),
+        "closest_time_utc": location_item.get("closest_time"),
+        "closest_forecast_hour": location_item.get("closest_forecast_hour"),
+        "strong_wind_zone_distance_km": detail.get("distance_to_34kt_boundary_km"),
+        "strong_wind_zone_status_ko": detail.get("boundary_status_ko"),
+        "source": "JTWC",
+        "scope_ko": "향후 5일",
+    }
 
 
 def risk_obj(level: str, label: str, rank: int, basis: str) -> Dict[str, Any]:
@@ -304,15 +388,24 @@ def main() -> int:
         if storm_lat is None or storm_lon is None:
             raise RuntimeError("CMA current lat/lon missing")
 
-        impact["source"] = "JMA + KMA comparison + JTWC + CMA wind radii"
+        impact["source"] = "JMA + KMA comparison + JTWC forecast + CMA current wind-zone crosscheck"
         impact["parser_version"] = PARSER_VERSION
-        impact["calculation_mode"] = "JTWC_FORECAST + CMA_CURRENT_CROSSCHECK"
+        impact["calculation_mode"] = "JTWC_FORECAST + CMA_CURRENT_CROSSCHECK_V5"
 
         impact["note_ko"] = (
-            "향후 5일 거점 위험도는 JTWC 34/50/64kt 방향별 풍권을 주력으로 사용하고, "
-            "CMA 방향별 강풍 영향권은 현재 시점 교차검증에 사용합니다. "
-            "CMA 예보에는 현재 구조상 향후 풍권반경이 없어 미래 풍권 계산에는 사용하지 않습니다."
+            "현재 위험은 JTWC와 CMA의 강풍 영향권을 교차검증하고, "
+            "향후 5일 위험은 JTWC 방향별 풍권 예보를 주력으로 사용합니다. "
+            "화면에는 kt 대신 '강풍 영향권' 중심의 쉬운 표현을 사용하며, "
+            "원본 kt 수치는 내부 검증용 필드에 유지합니다."
         )
+
+        impact["display_policy"] = {
+            "technical_units_visible": False,
+            "strong_wind_label_ko": "강풍 영향권",
+            "stronger_wind_label_ko": "강한 강풍 영향권",
+            "very_strong_wind_label_ko": "매우 강한 강풍 영향권",
+            "note_ko": "30/34/50/64kt 원본 수치는 내부 검증용으로 유지"
+        }
 
         impact["cma_crosscheck"] = {
             "status": "OK",
@@ -350,6 +443,15 @@ def main() -> int:
                 if diff_hours is not None
                 else "기관 발표시각 차이 확인 불가"
             ),
+            "same_issue_time": (
+                diff_hours == 0 if diff_hours is not None else None
+            ),
+            "jtwc_time_source": (
+                "typhoon.jtwc_issue_time_utc"
+                if impact.get("typhoon", {}).get("jtwc_issue_time_utc")
+                else "fallback"
+            ),
+            "cma_time_source": "cma.current.time_utc",
             "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지",
         }
 
@@ -410,6 +512,27 @@ def main() -> int:
             else:
                 boundary = f"CMA 강풍 영향권까지 {round(clearance)} km"
 
+            # Friendly display versions; original raw calculations remain untouched.
+            friendly_jrisk = dict(jrisk)
+            friendly_jrisk["basis_ko"] = friendly_jtwc_basis(jrisk.get("basis"))
+
+            friendly_crisk = dict(crisk)
+            friendly_crisk["basis_ko"] = friendly_jtwc_basis(crisk.get("basis"))
+
+            friendly_combined = dict(combined)
+            friendly_combined["basis_ko"] = friendly_jtwc_basis(combined.get("basis"))
+
+            locations[code]["risk_summary"] = {
+                "current": {
+                    "scope_ko": "현재",
+                    "final": friendly_combined,
+                    "jtwc": friendly_jrisk,
+                    "cma": friendly_crisk,
+                    "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
+                },
+                "forecast": future_risk_summary(locations[code]),
+            }
+
             locations[code]["current_crosscheck"] = {
                 "combined_risk": combined,
                 "jtwc_current_risk": jrisk,
@@ -432,6 +555,15 @@ def main() -> int:
                     "boundary_status_ko": boundary,
                 },
             }
+
+        impact["risk_rule_display_ko"] = {
+            "very_high": "강한 강풍 영향권 내부",
+            "high": "강풍 영향권 내부",
+            "caution": "강풍 영향권에 가까워지는 구간",
+            "low": "강풍 영향권과 충분히 떨어진 구간",
+            "current_method": "JTWC와 CMA 중 더 높은 위험단계 사용",
+            "forecast_method": "향후 5일 JTWC 예보 중 가장 위험한 시점 사용",
+        }
 
         impact["risk_rule"]["cma_current_high"] = "CMA 해당 방향 강풍 영향권 내부"
         impact["risk_rule"]["cma_current_caution"] = (
