@@ -1493,6 +1493,39 @@ td{
 
 
 /* ==========================================================
+   v8.48 - 현재 거리 + 5일 예보 내 최접근 거리 표시
+   ========================================================== */
+.distance-feature-status{
+  font-size:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.distance-feature-status.ok{color:#37d67a;}
+.distance-feature-status.fail{color:#ff8a8f;}
+.distance-feature-status.pending{color:#f6c85f;}
+
+.locations .distance-stat{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  align-items:center;
+}
+.locations .distance-stat > div{
+  min-width:0;
+}
+.locations .distance-stat > div + div{
+  border-left:1px solid rgba(110,145,180,.20);
+  padding-left:10px;
+}
+.locations .distance-stat span,
+.locations .distance-stat b{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* ==========================================================
    v8.46 - 거점 카드 잘림 방지 + 비교 영역 간소화
    계산 로직 변경 없음
    ========================================================== */
@@ -1659,7 +1692,8 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.46</span>
+        <span>· v8.48</span>
+        <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
       <a
@@ -3292,18 +3326,29 @@ $("pressure")
 
         <div class="stats">
 
-          <div class="stat">
-            <span>
-              태풍 최접근
-            </span>
-            <b>
-              ${
-                fmt(
-                  item.closest_distance_km,
-                  " km"
-                )
-              }
-            </b>
+          <div class="stat distance-stat">
+            <div>
+              <span>현재 거리</span>
+              <b>
+                ${
+                  fmt(
+                    item.current_distance_km,
+                    " km"
+                  )
+                }
+              </b>
+            </div>
+            <div>
+              <span>5일 예보 내 최접근</span>
+              <b>
+                ${
+                  fmt(
+                    item.closest_distance_km,
+                    " km"
+                  )
+                }
+              </b>
+            </div>
           </div>
 
 
@@ -3354,6 +3399,30 @@ $("pressure")
 
     }
   );
+
+
+  // v8.48 적용 여부: 6개 거점에 현재거리 + 예보 최접근 값이 모두 전달됐는지 확인
+  {
+    const statusEl = $("distanceFeatureStatus");
+    const locationItems = Object.values(d.locations || {});
+    const expectedCount = 6;
+    const applied =
+      locationItems.length >= expectedCount &&
+      locationItems.slice(0, expectedCount).every(
+        item =>
+          item &&
+          item.current_distance_km != null &&
+          item.closest_distance_km != null
+      );
+
+    if (statusEl) {
+      statusEl.classList.remove("pending", "ok", "fail");
+      statusEl.classList.add(applied ? "ok" : "fail");
+      statusEl.textContent = applied
+        ? "· 거리표시 적용 ✓"
+        : "· 거리표시 미적용";
+    }
+  }
 
 
   // ========================================
