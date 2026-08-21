@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3"
+PARSER_VERSION = "8.3.1"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -109,6 +109,45 @@ def simplify_flight(item: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+
+def _movement_speed_kmh(analysis: Dict[str, Any]) -> Any:
+    """
+    Keep the existing movement_speed_kmh value when available.
+    Only when it is missing, rebuild it from JMA's raw movement speed.
+    """
+    value = analysis.get("movement_speed_kmh")
+    if value is not None:
+        return value
+
+    raw = analysis.get("movement_speed")
+    unit = str(analysis.get("movement_speed_unit") or "").strip().lower()
+
+    if raw is None:
+        return None
+
+    try:
+        speed = float(raw)
+    except (TypeError, ValueError):
+        return None
+
+    # JMA commonly supplies movement speed in knots.
+    if (
+        "ノット" in unit
+        or "knot" in unit
+        or unit in {"kt", "kts"}
+    ):
+        return round(speed * 1.852, 1)
+
+    if (
+        "km/h" in unit
+        or "kmh" in unit
+        or "キロメートル毎時" in unit
+    ):
+        return round(speed, 1)
+
+    return None
+
+
 def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
     typhoons = jma.get("typhoons", [])
 
@@ -137,7 +176,12 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         "number": meta.get("number"),
-        "name": meta.get("name"),
+        "name": (
+            meta.get("name")
+            or meta.get("name_en")
+            or item.get("name")
+            or None
+        ),
         "current": {
             "time": analysis.get("time"),
             "lat": analysis.get("lat"),
@@ -146,7 +190,7 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
             "max_wind_mps": analysis.get("max_wind_mps"),
             "gust_mps": analysis.get("gust_mps"),
             "movement_direction": analysis.get("movement_direction"),
-            "movement_speed_kmh": analysis.get("movement_speed_kmh"),
+            "movement_speed_kmh": _movement_speed_kmh(analysis),
         },
         "forecast_track": forecast_points,
     }
