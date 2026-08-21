@@ -86,16 +86,16 @@
       "expected_departure_local": "23:10",
       "selected_scheduled_clock": "23:10",
       "schedule_match_difference_minutes": 0,
-      "selection_date_local_today": "2026-08-21",
+      "selection_date_local_today": "2026-08-22",
       "selected_flight_date": "2026-08-21",
-      "selected_date_distance_days": 0,
+      "selected_date_distance_days": -1,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "출발 예정"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "운항 중"
       },
       "departure": {
         "airport": "Seoul (Incheon)",
@@ -104,12 +104,12 @@
         "timezone_label_ko": "한국시간",
         "scheduled_raw": "2026-08-21T23:10:00+00:00",
         "estimated_raw": "2026-08-21T23:10:00+00:00",
-        "actual_raw": null,
+        "actual_raw": "2026-08-21T23:36:00+00:00",
         "scheduled_local": "2026-08-21T23:10:00+09:00",
         "estimated_local": "2026-08-21T23:10:00+09:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-21 23:10",
-        "calculated_delay_minutes": 0,
+        "actual_local": "2026-08-21T23:36:00+09:00",
+        "display_time_local": "2026-08-21 23:36",
+        "calculated_delay_minutes": 26,
         "api_delay_minutes": null,
         "terminal": null,
         "gate": null
@@ -144,9 +144,9 @@
       "expected_departure_local": "01:20",
       "selected_scheduled_clock": "02:00",
       "schedule_match_difference_minutes": 40,
-      "selection_date_local_today": "2026-08-21",
+      "selection_date_local_today": "2026-08-22",
       "selected_flight_date": "2026-08-22",
-      "selected_date_distance_days": 1,
+      "selected_date_distance_days": 0,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "scheduled",
@@ -202,9 +202,9 @@
       "expected_departure_local": "01:20",
       "selected_scheduled_clock": "01:50",
       "schedule_match_difference_minutes": 30,
-      "selection_date_local_today": "2026-08-21",
+      "selection_date_local_today": "2026-08-22",
       "selected_flight_date": "2026-08-21",
-      "selected_date_distance_days": 0,
+      "selected_date_distance_days": -1,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
       "status_raw": "landed",
@@ -439,5 +439,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-21T14:48:56.221656+00:00"
+  "generated_at_utc": "2026-08-21T15:42:39.972444+00:00"
 }
