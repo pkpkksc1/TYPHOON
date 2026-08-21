@@ -15,7 +15,7 @@
   "forecast_confidence": {
     "emoji": "🟢",
     "label_ko": "거의 일치",
-    "average_difference_km": 25
+    "average_difference_km": 38
   },
   "locations": {
     "SUZHOU": {
@@ -67,9 +67,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.51,
-        "current_wind_mps": 5.2,
-        "current_gust_mps": 6.8,
+        "current_rain_mm": 0.65,
+        "current_wind_mps": 5.3,
+        "current_gust_mps": 7.1,
         "max_72h_rain_mm": 1.49,
         "max_72h_rain_time": "2026-08-22 13:00",
         "max_72h_wind_mps": 7.9,
@@ -100,13 +100,13 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.17,
-        "current_wind_mps": 3.0,
-        "current_gust_mps": 4.0,
+        "current_rain_mm": 1.47,
+        "current_wind_mps": 3.6,
+        "current_gust_mps": 4.2,
         "max_72h_rain_mm": 10.89,
         "max_72h_rain_time": "2026-08-21 07:00",
         "max_72h_wind_mps": 3.6,
-        "max_72h_wind_time": "2026-08-21 13:00",
+        "max_72h_wind_time": "2026-08-21 13:30",
         "max_72h_gust_mps": 8.6,
         "max_72h_gust_time": "2026-08-23 16:00"
       },
@@ -133,9 +133,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.02,
-        "current_wind_mps": 7.2,
-        "current_gust_mps": 9.7,
+        "current_rain_mm": 0.05,
+        "current_wind_mps": 7.8,
+        "current_gust_mps": 10.3,
         "max_72h_rain_mm": 1.01,
         "max_72h_rain_time": "2026-08-23 20:00",
         "max_72h_wind_mps": 9.1,
@@ -166,9 +166,9 @@
         "trend_ko": "접근 중"
       },
       "weather": {
-        "current_rain_mm": 0.17,
-        "current_wind_mps": 4.8,
-        "current_gust_mps": 6.1,
+        "current_rain_mm": 0.05,
+        "current_wind_mps": 3.9,
+        "current_gust_mps": 5.0,
         "max_72h_rain_mm": 24.31,
         "max_72h_rain_time": "2026-08-22 04:00",
         "max_72h_wind_mps": 7.4,
@@ -200,12 +200,12 @@
       },
       "weather": {
         "current_rain_mm": 0.01,
-        "current_wind_mps": 7.1,
-        "current_gust_mps": 10.2,
+        "current_wind_mps": 7.5,
+        "current_gust_mps": 10.3,
         "max_72h_rain_mm": 1.5,
         "max_72h_rain_time": "2026-08-23 16:00",
         "max_72h_wind_mps": 7.5,
-        "max_72h_wind_time": "2026-08-21 12:00",
+        "max_72h_wind_time": "2026-08-21 12:30",
         "max_72h_gust_mps": 12.2,
         "max_72h_gust_time": "2026-08-23 10:00"
       },
@@ -298,5 +298,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-21T04:09:32.371809+00:00"
+  "generated_at_utc": "2026-08-21T05:03:32.765209+00:00"
 }
