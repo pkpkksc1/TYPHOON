@@ -890,7 +890,7 @@ td{
 
 
 /* ==========================================================
-   v8.58 - 헤더 새로고침 및 적용상태 문구 제거
+   v8.59 - 지도 예보 범위 회청색 + 하늘색 중심선
    낮음/주의/높음 색상과 72×30 형태 유지
    ========================================================== */
 .routes .route-card > .row{
@@ -1848,7 +1848,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.58</span>
+        <span>· v8.59</span>
       </div>
 
       <a
@@ -2166,11 +2166,35 @@ td{
         preserveAspectRatio="none"
       >
 
+        <!-- v8.59: 예보 범위 = 연한 회청색 반투명 + 밝은 회색 외곽 + 하늘색 중심선 -->
+        <polyline
+          id="trackOutline"
+          fill="none"
+          stroke="#e1eaf2"
+          stroke-opacity="0.72"
+          stroke-width="6.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
+        <polyline
+          id="trackBand"
+          fill="none"
+          stroke="#c7d3df"
+          stroke-opacity="0.29"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
         <polyline
           id="trackLine"
           fill="none"
-          stroke="#73b9ff"
-          stroke-width="6"
+          stroke="#7ad7ff"
+          stroke-opacity="0.96"
+          stroke-width="0.55"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -2591,27 +2615,12 @@ function color(
   hour
 ){
 
-  if(hour===0){
+  // 현재 위치만 빨간색, 모든 예보 지점은 밝은 하늘색
+  if(Number(hour)===0){
     return "#ff5b52";
   }
 
-  if(hour===24){
-    return "#ff8c1a";
-  }
-
-  if(hour===48){
-    return "#ffc82f";
-  }
-
-  if(hour===72){
-    return "#3dcc6b";
-  }
-
-  if(hour===96){
-    return "#1fd0dc";
-  }
-
-  return "#2381ff";
+  return "#7ad7ff";
 }
 
 
@@ -3316,11 +3325,21 @@ $("pressure")
   );
 
 
-  $("trackLine")
-    .setAttribute(
-      "points",
-      pts.join(" ")
-    );
+  [
+    "trackOutline",
+    "trackBand",
+    "trackLine"
+  ].forEach(
+    id => {
+      const el = $(id);
+      if(el){
+        el.setAttribute(
+          "points",
+          pts.join(" ")
+        );
+      }
+    }
+  );
 
 
   // ========================================
