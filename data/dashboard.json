@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-21T19:52:13.676545+00:00",
+  "generated_at_utc": "2026-08-21T20:34:53.108984+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-21T19:32:39.131785+00:00",
-    "weather": "2026-08-21T19:52:13.527173+00:00",
-    "risk": "2026-08-21T19:52:13.587561+00:00",
+    "weather": "2026-08-21T20:34:52.949814+00:00",
+    "risk": "2026-08-21T20:34:53.014361+00:00",
     "flights": "2026-08-21T17:01:44.249205+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-22T03:00:00+09:00",
     "jma_updated_at_utc": "2026-08-21T19:32:39.131785+00:00",
-    "weather_updated_at_utc": "2026-08-21T19:52:13.527173+00:00",
-    "impact_updated_at_utc": "2026-08-21T19:52:11.700859+00:00",
-    "risk_updated_at_utc": "2026-08-21T19:52:13.587561+00:00",
+    "weather_updated_at_utc": "2026-08-21T20:34:52.949814+00:00",
+    "impact_updated_at_utc": "2026-08-21T20:34:48.649409+00:00",
+    "risk_updated_at_utc": "2026-08-21T20:34:53.014361+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
@@ -100,16 +100,16 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 815 km",
-      "current_distance_km": 3157,
-      "closest_distance_km": 815,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "reason_ko": "태풍 최접근 809 km",
+      "current_distance_km": 3123,
+      "closest_distance_km": 809,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 03:45",
+        "last_updated": "2026-08-22 04:30",
         "rain_mm": 0.0,
         "wind_mps": 4.2
       },
@@ -127,18 +127,18 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 721 km",
-      "current_distance_km": 3044,
-      "closest_distance_km": 721,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "reason_ko": "태풍 최접근 705 km",
+      "current_distance_km": 3010,
+      "closest_distance_km": 705,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 03:45",
-        "rain_mm": 0.06,
-        "wind_mps": 3.3
+        "last_updated": "2026-08-22 04:30",
+        "rain_mm": 0.15,
+        "wind_mps": 3.4
       },
       "forecast_72h": {
         "max_rain_mm": 0.2,
@@ -155,17 +155,17 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 12.07 mm",
-      "current_distance_km": 3073,
-      "closest_distance_km": 1252,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "current_distance_km": 3047,
+      "closest_distance_km": 1156,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 04:45",
-        "rain_mm": 2.37,
-        "wind_mps": 1.4
+        "last_updated": "2026-08-22 05:15",
+        "rain_mm": 1.2,
+        "wind_mps": 2.2
       },
       "forecast_72h": {
         "max_rain_mm": 12.07,
@@ -182,17 +182,17 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 풍속 10.5 m/s",
-      "current_distance_km": 2867,
-      "closest_distance_km": 1424,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "current_distance_km": 2824,
+      "closest_distance_km": 1548,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 03:45",
+        "last_updated": "2026-08-22 04:15",
         "rain_mm": 0.07,
-        "wind_mps": 6.3
+        "wind_mps": 6.1
       },
       "forecast_72h": {
         "max_rain_mm": 1.47,
@@ -209,17 +209,17 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 14.47 mm",
-      "current_distance_km": 4412,
-      "closest_distance_km": 2185,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "current_distance_km": 4370,
+      "closest_distance_km": 2283,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 02:45",
-        "rain_mm": 8.75,
-        "wind_mps": 3.1
+        "last_updated": "2026-08-22 03:30",
+        "rain_mm": 1.91,
+        "wind_mps": 2.8
       },
       "forecast_72h": {
         "max_rain_mm": 14.47,
@@ -236,15 +236,15 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 3.26 mm",
-      "current_distance_km": 2904,
-      "closest_distance_km": 1376,
-      "closest_time": "2026-08-27T03:00:00+09:00",
+      "current_distance_km": 2862,
+      "closest_distance_km": 1502,
+      "closest_time": "2026-08-26T18:00:00Z",
       "closest_forecast_hour": 120,
-      "closest_source": "JMA_DISTANCE_FALLBACK",
-      "trend_ko": "JTWC 풍권 자료 없음",
+      "closest_source": "JTWC_WIND_RADII",
+      "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 03:45",
+        "last_updated": "2026-08-22 04:30",
         "rain_mm": 0.0,
         "wind_mps": 2.2
       },
@@ -295,7 +295,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 815 km)"
+      "reason_ko": "쑤저우 낮음 (태풍 최접근 809 km)"
     },
     {
       "code": "ICN_PVG",
