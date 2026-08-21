@@ -1,20 +1,20 @@
 {
   "source": "JMA/KMA + WeatherAPI.com",
   "product": "Combined Logistics Typhoon Risk",
-  "parser_version": "6.4",
+  "parser_version": "6.5-SAUDEL-GUARD",
   "status": "OK",
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-21T13:52:35.466978+00:00",
-    "weather": "2026-08-21T13:52:36.772611+00:00"
+    "impact": "2026-08-21T14:18:53.051620+00:00",
+    "weather": "2026-08-21T14:18:54.311873+00:00"
   },
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
     "jtwc_id": "17W",
-    "jtwc_warning_number": 12,
-    "jtwc_issue_time_utc": "2026-08-21T09:00:00Z"
+    "jtwc_warning_number": 13,
+    "jtwc_issue_time_utc": "2026-08-21T15:00:00Z"
   },
   "forecast_confidence": {
     "emoji": "🟢",
@@ -31,19 +31,19 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 853 km",
+      "reason_ko": "태풍 최접근 790 km",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 853,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 790,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 21:45",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 6.3,
+        "current_last_updated": "2026-08-21 22:00",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 3.8,
         "max_72h_rain_mm": 1.48,
         "max_72h_rain_time": "2026-08-22 10:00",
         "max_72h_wind_mps": 9.1,
@@ -58,32 +58,32 @@
     "PVG": {
       "code": "PVG",
       "name_ko": "푸동 국제공항",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 745 km",
+      "reason_ko": "태풍 최접근 684 km",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 745,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 684,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 21:45",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 5.3,
+        "current_last_updated": "2026-08-21 22:15",
+        "current_rain_mm": 0.07,
+        "current_wind_mps": 5.4,
         "max_72h_rain_mm": 0.74,
         "max_72h_rain_time": "2026-08-22 16:00",
         "max_72h_wind_mps": 7.5,
         "max_72h_wind_time": "2026-08-22 13:00"
       },
       "score_detail": {
-        "distance": 10,
+        "distance": 20,
         "rain": 8,
         "wind": 5
       }
@@ -100,16 +100,16 @@
       "reason_ko": "최대 시간당 강수 9.18 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 1140,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 1122,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 22:45",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 1.7,
+        "current_last_updated": "2026-08-21 23:15",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 1.4,
         "max_72h_rain_mm": 9.18,
         "max_72h_rain_time": "2026-08-22 12:00",
         "max_72h_wind_mps": 4.2,
@@ -133,16 +133,16 @@
       "reason_ko": "최대 풍속 10.5 m/s",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 1600,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 1578,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 21:45",
-        "current_rain_mm": 0.06,
-        "current_wind_mps": 6.6,
+        "current_last_updated": "2026-08-21 22:15",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 5.2,
         "max_72h_rain_mm": 1.41,
         "max_72h_rain_time": "2026-08-22 20:00",
         "max_72h_wind_mps": 10.5,
@@ -166,16 +166,16 @@
       "reason_ko": "최대 시간당 강수 8.75 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 2355,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 2290,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 20:30",
-        "current_rain_mm": 0.82,
-        "current_wind_mps": 2.2,
+        "current_last_updated": "2026-08-21 21:00",
+        "current_rain_mm": 2.24,
+        "current_wind_mps": 3.4,
         "max_72h_rain_mm": 8.75,
         "max_72h_rain_time": "2026-08-22 02:00",
         "max_72h_wind_mps": 5.4,
@@ -199,16 +199,16 @@
       "reason_ko": "최대 시간당 강수 2.07 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "closest_distance_km": 1556,
-        "closest_time": "2026-08-26T06:00:00Z",
+        "closest_distance_km": 1531,
+        "closest_time": "2026-08-26T12:00:00Z",
         "closest_forecast_hour": 120,
         "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-21 21:45",
+        "current_last_updated": "2026-08-21 22:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 3.1,
+        "current_wind_mps": 2.7,
         "max_72h_rain_mm": 2.07,
         "max_72h_rain_time": "2026-08-23 17:00",
         "max_72h_wind_mps": 7.8,
@@ -225,13 +225,13 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 853 km)",
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 684 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -241,13 +241,13 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 853 km)",
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 684 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -257,13 +257,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 853 km)",
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 684 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -273,13 +273,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 853 km)",
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 684 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -289,13 +289,13 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 23,
+      "score": 33,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 745 km)",
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 684 km)",
       "locations": [
         "ICN",
         "PVG"
@@ -303,5 +303,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-21T13:52:36.824856+00:00"
+  "generated_at_utc": "2026-08-21T14:18:54.374417+00:00"
 }

@@ -1,7 +1,7 @@
 {
   "source": "JMA + KMA",
   "product": "Typhoon Forecast Comparison",
-  "parser_version": "3.1-SAUDEL",
+  "parser_version": "3.2-SAUDEL-HARDLOCK",
   "status": "OK",
   "typhoon": {
     "number": "2618",
@@ -138,5 +138,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-21T13:52:29.057554+00:00"
+  "generated_at_utc": "2026-08-21T14:18:45.305418+00:00"
 }
