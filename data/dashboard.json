@@ -2,10 +2,10 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.3.3",
-  "generated_at_utc": "2026-08-21T11:34:38.416108+00:00",
+  "generated_at_utc": "2026-08-21T11:39:24.811469+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-21T10:39:02.326037+00:00",
-    "flights": "2026-08-21T10:51:43.851015+00:00"
+    "flights": "2026-08-21T11:39:24.763116+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-21T18:00:00+09:00",
@@ -409,7 +409,7 @@
       "route": "PVG → ICN",
       "status": {
         "emoji": "🟢",
-        "label_ko": "출발 예정"
+        "label_ko": "운항 중"
       },
       "departure": {
         "scheduled_local": "2026-08-21T18:35:00+08:00",
