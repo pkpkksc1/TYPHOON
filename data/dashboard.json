@@ -1,11 +1,17 @@
 {
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
-  "parser_version": "8.3.2",
-  "generated_at_utc": "2026-08-21T11:25:23.571012+00:00",
+  "parser_version": "8.3.3",
+  "generated_at_utc": "2026-08-21T11:30:57.585754+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-21T10:39:02.326037+00:00",
     "flights": "2026-08-21T10:51:43.851015+00:00"
+  },
+  "risk_meta": {
+    "typhoon_reference_time": "2026-08-21T18:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-21T10:39:02.326037+00:00",
+    "risk_updated_at_utc": "2026-08-21T10:56:40.590378+00:00",
+    "risk_version": "6.2"
   },
   "typhoon": {
     "number": "2618",
