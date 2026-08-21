@@ -1,7 +1,7 @@
 {
   "source": "Aviationstack",
   "product": "Manual Flight Status - 7 Representative Flights",
-  "parser_version": "8.1",
+  "parser_version": "8.2",
   "groups": {
     "WF수입": [
       "KE315",
@@ -91,11 +91,11 @@
       "selected_date_distance_days": 0,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
-      "status_raw": "scheduled",
+      "status_raw": "active",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "출발 예정"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "운항 중"
       },
       "departure": {
         "airport": "Seoul (Incheon)",
@@ -265,11 +265,11 @@
       "selected_date_distance_days": 0,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
-      "status_raw": "active",
+      "status_raw": "landed",
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "출발 18분 지연"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "도착 완료"
       },
       "departure": {
         "airport": "Shanghai Pudong International",
@@ -294,14 +294,14 @@
         "timezone": "Asia/Manila",
         "timezone_label_ko": "필리핀시간",
         "scheduled_raw": "2026-08-21T19:40:00+00:00",
-        "estimated_raw": "2026-08-21T19:18:00+00:00",
-        "actual_raw": null,
+        "estimated_raw": "2026-08-21T19:11:00+00:00",
+        "actual_raw": "2026-08-21T19:21:00+00:00",
         "scheduled_local": "2026-08-21T19:40:00+08:00",
-        "estimated_local": "2026-08-21T19:18:00+08:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-21 19:18",
-        "calculated_delay_minutes": -22,
-        "api_delay_minutes": 19,
+        "estimated_local": "2026-08-21T19:11:00+08:00",
+        "actual_local": "2026-08-21T19:21:00+08:00",
+        "display_time_local": "2026-08-21 19:21",
+        "calculated_delay_minutes": -19,
+        "api_delay_minutes": null,
         "terminal": "1",
         "gate": null
       },
@@ -394,11 +394,11 @@
       "selected_date_distance_days": 0,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
-      "status_raw": "active",
+      "status_raw": "landed",
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
-        "label_ko": "운항 중"
+        "label_ko": "도착 완료"
       },
       "departure": {
         "airport": "Shanghai Pudong International",
@@ -407,13 +407,13 @@
         "timezone_label_ko": "중국시간",
         "scheduled_raw": "2026-08-21T18:35:00+00:00",
         "estimated_raw": "2026-08-21T18:35:00+00:00",
-        "actual_raw": null,
+        "actual_raw": "2026-08-21T19:29:00+00:00",
         "scheduled_local": "2026-08-21T18:35:00+08:00",
         "estimated_local": "2026-08-21T18:35:00+08:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-21 18:35",
-        "calculated_delay_minutes": 0,
-        "api_delay_minutes": null,
+        "actual_local": "2026-08-21T19:29:00+08:00",
+        "display_time_local": "2026-08-21 19:29",
+        "calculated_delay_minutes": 54,
+        "api_delay_minutes": 22,
         "terminal": "2",
         "gate": null
       },
@@ -423,21 +423,21 @@
         "timezone": "Asia/Seoul",
         "timezone_label_ko": "한국시간",
         "scheduled_raw": "2026-08-21T21:40:00+00:00",
-        "estimated_raw": null,
-        "actual_raw": null,
+        "estimated_raw": "2026-08-21T22:00:00+00:00",
+        "actual_raw": "2026-08-21T22:02:00+00:00",
         "scheduled_local": "2026-08-21T21:40:00+09:00",
-        "estimated_local": null,
-        "actual_local": null,
-        "display_time_local": "2026-08-21 21:40",
-        "calculated_delay_minutes": null,
-        "api_delay_minutes": null,
+        "estimated_local": "2026-08-21T22:00:00+09:00",
+        "actual_local": "2026-08-21T22:02:00+09:00",
+        "display_time_local": "2026-08-21 22:02",
+        "calculated_delay_minutes": 22,
+        "api_delay_minutes": 22,
         "terminal": null,
         "gate": null
       },
-      "airline": "KlasJet",
+      "airline": "Air Zeta",
       "flight_date": "2026-08-21"
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-21T11:39:24.763116+00:00"
+  "generated_at_utc": "2026-08-21T13:52:38.252259+00:00"
 }

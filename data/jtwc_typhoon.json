@@ -1,6 +1,6 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-08-21T13:31:22.712543Z",
+  "generated_at_utc": "2026-08-21T13:52:33.184037Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 2,
@@ -8,7 +8,7 @@
     {
       "bulletin": "WTPN31",
       "issue_time_utc": "2026-08-21T09:00:00Z",
-      "age_hours": 4.5,
+      "age_hours": 4.9,
       "jtwc_id": "17W",
       "name": "SAUDEL",
       "storm_type": "TROPICAL STORM",
@@ -755,7 +755,7 @@
     {
       "bulletin": "WTPN32",
       "issue_time_utc": "2026-08-21T09:00:00Z",
-      "age_hours": 4.5,
+      "age_hours": 4.9,
       "jtwc_id": "18W",
       "name": "EIGHTEEN",
       "storm_type": "TROPICAL DEPRESSION",
