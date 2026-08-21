@@ -1784,7 +1784,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.49</span>
+        <span>· v8.50</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -2084,7 +2084,7 @@ td{
 <section class="panel track">
 
   <div class="kicker">
-    2일 예상 경로
+    5일 예상 경로
   </div>
 
   <h2>
@@ -3138,11 +3138,10 @@ $("pressure")
 
   const pts = [];
 
-  // 화면에는 현재 ~ 48시간(2일)까지만 표시
-  // 원본 dashboard.json의 5일 예보 데이터는 그대로 유지
+  // 화면에는 현재 ~ 120시간(5일)까지 표시
   const displayTrack =
     track.filter(
-      p => Number(p.forecast_hour || 0) <= 48
+      p => Number(p.forecast_hour || 0) <= 120
     );
 
 
@@ -3668,12 +3667,12 @@ $("pressure")
   );
 
 
-  // v8.49 적용 여부: 6개 거점에 현재거리 + 예보 최접근 값이 모두 전달됐는지 확인
+  // v8.50 적용 여부: 6개 거점 거리표시 + 5일(120시간) 경로 데이터 확인
   {
     const statusEl = $("distanceFeatureStatus");
     const locationItems = Object.values(d.locations || {});
     const expectedCount = 6;
-    const applied =
+    const distanceApplied =
       locationItems.length >= expectedCount &&
       locationItems.slice(0, expectedCount).every(
         item =>
@@ -3682,12 +3681,23 @@ $("pressure")
           item.closest_distance_km != null
       );
 
+    const hasFiveDayTrack =
+      Array.isArray(t.forecast_track) &&
+      t.forecast_track.some(
+        p => Number(p.forecast_hour || 0) >= 120
+      );
+
     if (statusEl) {
       statusEl.classList.remove("pending", "ok", "fail");
-      statusEl.classList.add(applied ? "ok" : "fail");
-      statusEl.textContent = applied
-        ? "· 거리표시 적용 ✓"
-        : "· 거리표시 미적용";
+      statusEl.classList.add(
+        distanceApplied && hasFiveDayTrack ? "ok" : "fail"
+      );
+      statusEl.textContent =
+        distanceApplied && hasFiveDayTrack
+          ? "· 거리·5일경로 적용 ✓"
+          : distanceApplied
+            ? "· 거리 적용 ✓ · 5일경로 데이터 부족"
+            : "· 거리표시 미적용";
     }
   }
 
