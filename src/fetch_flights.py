@@ -54,7 +54,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
 API_URL = "https://api.aviationstack.com/v1/flights"
-PARSER_VERSION = "8.1"
+PARSER_VERSION = "8.2"
 
 
 AIRPORTS = {
@@ -296,6 +296,37 @@ def normalize_airport_event(
     }
 
 
+
+def minutes_past_arrival_estimate(
+    arrival: Dict[str, Any],
+) -> Optional[int]:
+    """
+    Minutes past ETA (or scheduled arrival when ETA is absent)
+    in the arrival airport's local timezone.
+    """
+    target_text = (
+        arrival.get("estimated_local")
+        or arrival.get("scheduled_local")
+    )
+
+    if not target_text:
+        return None
+
+    try:
+        target = datetime.fromisoformat(str(target_text))
+    except (TypeError, ValueError):
+        return None
+
+    if target.tzinfo is None:
+        return None
+
+    now = datetime.now(timezone.utc).astimezone(target.tzinfo)
+
+    return round(
+        (now - target).total_seconds() / 60
+    )
+
+
 def make_status(
     flight_status: str,
     departure: Dict[str, Any],
@@ -319,37 +350,40 @@ def make_status(
         }
 
     dep_delay = departure.get("calculated_delay_minutes")
-    arr_delay = arrival.get("calculated_delay_minutes")
 
-    # Arrival complete has priority over previous departure delay.
+    # Actual arrival timestamp = arrival confirmed.
     if arrival.get("actual_raw"):
-        if isinstance(arr_delay, int) and arr_delay >= 10:
-            return {
-                "level": "YELLOW",
-                "emoji": "🟡",
-                "label_ko": f"도착 {arr_delay}분 지연",
-            }
-
         return {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "도착 완료",
         }
 
+    # After actual departure, stop showing departure delay as the main state.
     if departure.get("actual_raw"):
-        if isinstance(dep_delay, int) and dep_delay >= 10:
+
+        overdue_minutes = minutes_past_arrival_estimate(
+            arrival
+        )
+
+        # ETA + 30 minutes passed, but no actual arrival timestamp yet.
+        if (
+            isinstance(overdue_minutes, int)
+            and overdue_minutes >= 30
+        ):
             return {
                 "level": "YELLOW",
                 "emoji": "🟡",
-                "label_ko": f"출발 {dep_delay}분 지연",
+                "label_ko": "도착 확인 대기",
             }
 
         return {
-            "level": "GREEN",
-            "emoji": "🟢",
-            "label_ko": "출발 완료",
+            "level": "BLUE",
+            "emoji": "🔵",
+            "label_ko": "운항 중",
         }
 
+    # Before departure, show departure delay when meaningful.
     if isinstance(dep_delay, int) and dep_delay >= 10:
         return {
             "level": "YELLOW",
@@ -359,8 +393,8 @@ def make_status(
 
     if raw_status == "active":
         return {
-            "level": "GREEN",
-            "emoji": "🟢",
+            "level": "BLUE",
+            "emoji": "🔵",
             "label_ko": "운항 중",
         }
 

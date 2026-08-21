@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.5"
+PARSER_VERSION = "8.3.6"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -86,24 +86,36 @@ def simplify_flight(item: Dict[str, Any]) -> Dict[str, Any]:
     arr = item.get("arrival", {})
     status = item.get("status", {})
 
+    def display_label(event: Dict[str, Any], kind: str) -> str:
+        if event.get("actual_local"):
+            return f"실제 {kind}"
+        if event.get("estimated_local"):
+            return f"예상 {kind}"
+        return f"예정 {kind}"
+
     return {
         "flight_iata": item.get("flight_iata"),
         "route": item.get("route"),
         "status": {
+            "level": status.get("level"),
             "emoji": status.get("emoji"),
             "label_ko": status.get("label_ko"),
         },
         "departure": {
             "scheduled_local": dep.get("scheduled_local"),
+            "estimated_local": dep.get("estimated_local"),
             "actual_local": dep.get("actual_local"),
             "display_time_local": dep.get("display_time_local"),
+            "display_label_ko": display_label(dep, "출발"),
             "delay_minutes": dep.get("calculated_delay_minutes"),
             "timezone_label_ko": dep.get("timezone_label_ko"),
         },
         "arrival": {
             "scheduled_local": arr.get("scheduled_local"),
+            "estimated_local": arr.get("estimated_local"),
             "actual_local": arr.get("actual_local"),
             "display_time_local": arr.get("display_time_local"),
+            "display_label_ko": display_label(arr, "도착"),
             "delay_minutes": arr.get("calculated_delay_minutes"),
             "timezone_label_ko": arr.get("timezone_label_ko"),
         },
