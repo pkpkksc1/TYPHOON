@@ -1785,7 +1785,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.53</span>
+        <span>· v8.54</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -2593,6 +2593,29 @@ function label(
 }
 
 
+// 지도 표시용: 시간 대신 실제 예보 일자(M/D) 사용
+function mapDateLabel(p){
+  const hour = Number(p?.forecast_hour || 0);
+
+  if(hour === 0){
+    return "현재";
+  }
+
+  // 12시간 지점은 경로점으로 유지하되, 24시간 지점과 날짜가 겹쳐 라벨만 생략
+  if(hour === 12){
+    return "";
+  }
+
+  const time = String(p?.time || "");
+  const m = time.match(/^\d{4}-(\d{2})-(\d{2})/);
+  if(m){
+    return `${Number(m[1])}/${Number(m[2])}`;
+  }
+
+  return label(hour);
+}
+
+
 // ==========================================
 // 지도 좌표
 // ==========================================
@@ -3204,22 +3227,30 @@ $("pressure")
         `${a.y}%`;
 
 
-      pl.textContent =
-        label(
-          p.forecast_hour
-        );
+      const mapLabel = mapDateLabel(p);
+
+      pl.textContent = mapLabel;
 
       pl.title =
         `${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
 
+      const tooltipLabel =
+        mapLabel || (() => {
+          const time = String(p.time || "");
+          const m = time.match(/^\d{4}-(\d{2})-(\d{2})/);
+          return m ? `${Number(m[1])}/${Number(m[2])}` : label(p.forecast_hour);
+        })();
+
       dot.title =
-        `${label(p.forecast_hour)} · ${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+        `${tooltipLabel} · ${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
 
 
-      $("mapPoints")
-        .appendChild(
-          pl
-        );
+      if(mapLabel){
+        $("mapPoints")
+          .appendChild(
+            pl
+          );
+      }
 
 
       pts.push(`${a.x},${a.y}`);
@@ -3658,7 +3689,7 @@ $("pressure")
   );
 
 
-  // v8.53 적용 여부: 기능 적용 상태만 표시합니다.
+  // v8.54 적용 여부: 거리·5일경로 + 날짜 라벨 표시
   // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
   // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
   {
