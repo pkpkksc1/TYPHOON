@@ -38,8 +38,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "weather.json"
 
 API_URL = "https://api.weatherapi.com/v1/forecast.json"
-PARSER_VERSION = "5.1"
-USER_AGENT = "sblc-typhoon-dashboard/5.1"
+PARSER_VERSION = "5.2"
+USER_AGENT = "sblc-typhoon-dashboard/5.2"
 
 LOCATIONS = {
     "SUZHOU": {
@@ -172,27 +172,44 @@ def collect_location(api_key: str, code: str, meta: Dict[str, Any]) -> Dict[str,
 def semantic_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     clone = json.loads(json.dumps(data, ensure_ascii=False))
     clone.pop("generated_at_utc", None)
+    clone.pop("data_changed", None)
     return clone
 
 
-def write_if_changed(data: Dict[str, Any]) -> bool:
+def write_snapshot(data: Dict[str, Any]) -> bool:
+    """
+    Always save a successful WeatherAPI fetch time.
+
+    generated_at_utc = when our collector successfully finished.
+    current.last_updated = WeatherAPI's own observation/update time.
+
+    This makes it possible to distinguish:
+      1) collector did not run
+      2) collector ran, but WeatherAPI returned the same observation
+    """
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    changed = True
 
     if OUTPUT_PATH.exists():
         try:
             old = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
-            if semantic_payload(old) == semantic_payload(data):
-                print("No weather data change.")
-                return False
+            changed = semantic_payload(old) != semantic_payload(data)
         except Exception:
-            pass
+            changed = True
 
+    data["data_changed"] = changed
     data["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+
     OUTPUT_PATH.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Updated: {OUTPUT_PATH}")
+
+    print(
+        f"Updated: {OUTPUT_PATH} "
+        f"(weather values changed: {'YES' if changed else 'NO'})"
+    )
     return True
 
 
@@ -221,7 +238,7 @@ def main() -> int:
         "errors": errors,
     }
 
-    write_if_changed(output)
+    write_snapshot(output)
 
     if errors:
         print(f"Completed with {len(errors)} location error(s).")

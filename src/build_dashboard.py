@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.3"
+PARSER_VERSION = "8.3.4"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -63,8 +63,12 @@ def simplify_location(item: Dict[str, Any], code: str = "") -> Dict[str, Any]:
         "reason_ko": item.get("reason_ko"),
         "closest_distance_km": typhoon.get("closest_distance_km"),
         "closest_time": typhoon.get("closest_time"),
+        "closest_forecast_hour": typhoon.get("closest_forecast_hour"),
+        "closest_source": typhoon.get("source"),
         "trend_ko": typhoon.get("trend_ko"),
         "current_weather": {
+            "source": weather.get("source") or "WeatherAPI.com",
+            "last_updated": weather.get("current_last_updated"),
             "rain_mm": weather.get("current_rain_mm"),
             "wind_mps": weather.get("current_wind_mps"),
             "gust_mps": weather.get("current_gust_mps"),
@@ -245,6 +249,12 @@ def main() -> int:
         # dashboard for flights does not falsely make JMA look newer.
         "source_updated_at_utc": {
             "jma": jma.get("generated_at_utc"),
+            "weather": (
+                risk.get("source_updated_at_utc", {}).get("weather")
+                if isinstance(risk.get("source_updated_at_utc"), dict)
+                else None
+            ),
+            "risk": risk.get("generated_at_utc"),
             "flights": flights.get("generated_at_utc"),
         },
 
@@ -255,6 +265,16 @@ def main() -> int:
                 else None
             ),
             "jma_updated_at_utc": jma.get("generated_at_utc"),
+            "weather_updated_at_utc": (
+                risk.get("source_updated_at_utc", {}).get("weather")
+                if isinstance(risk.get("source_updated_at_utc"), dict)
+                else None
+            ),
+            "impact_updated_at_utc": (
+                risk.get("source_updated_at_utc", {}).get("impact")
+                if isinstance(risk.get("source_updated_at_utc"), dict)
+                else None
+            ),
             "risk_updated_at_utc": risk.get("generated_at_utc"),
             "risk_version": risk.get("parser_version"),
         },

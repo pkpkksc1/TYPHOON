@@ -38,7 +38,7 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.2"
+PARSER_VERSION = "6.3"
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
@@ -194,6 +194,8 @@ def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
             max_gust_time = tm
 
     return {
+        "source": "WeatherAPI.com",
+        "current_last_updated": current.get("last_updated"),
         "current_rain_mm": to_float(current.get("rain_mm")),
         "current_wind_mps": to_float(current.get("wind_mps")),
         "current_gust_mps": to_float(current.get("gust_mps")),
@@ -260,12 +262,14 @@ def make_location_risk(
         "risk": risk,
         "reason_ko": " / ".join(reasons),
         "typhoon": {
+            "source": impact_item.get("risk_source") or "JMA_FORECAST",
             "closest_distance_km": (
                 round(closest_distance)
                 if closest_distance is not None
                 else None
             ),
             "closest_time": impact_item.get("closest_time"),
+            "closest_forecast_hour": impact_item.get("closest_forecast_hour"),
             "trend_ko": impact_item.get("trend_ko"),
         },
         "weather": weather,
@@ -354,21 +358,27 @@ def make_route_risk(
 def semantic_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     clone = json.loads(json.dumps(data, ensure_ascii=False))
     clone.pop("generated_at_utc", None)
+    clone.pop("data_changed", None)
     return clone
 
 
-def write_if_changed(data: Dict[str, Any]) -> bool:
+def write_snapshot(data: Dict[str, Any]) -> bool:
+    """
+    Always record the time the risk calculation actually ran.
+    The risk score may remain unchanged even though it was recalculated.
+    """
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    changed = True
 
     if OUTPUT_PATH.exists():
         try:
             old = load_json(OUTPUT_PATH)
-            if semantic_payload(old) == semantic_payload(data):
-                print("No combined risk change.")
-                return False
+            changed = semantic_payload(old) != semantic_payload(data)
         except Exception:
-            pass
+            changed = True
 
+    data["data_changed"] = changed
     data["generated_at_utc"] = datetime.now(
         timezone.utc
     ).isoformat()
@@ -378,7 +388,10 @@ def write_if_changed(data: Dict[str, Any]) -> bool:
         encoding="utf-8",
     )
 
-    print(f"Updated: {OUTPUT_PATH}")
+    print(
+        f"Updated: {OUTPUT_PATH} "
+        f"(risk values changed: {'YES' if changed else 'NO'})"
+    )
     return True
 
 
@@ -434,6 +447,11 @@ def main() -> int:
             },
             "reason_ko": f"{' / '.join(missing)} 데이터 없음",
             "typhoon": {
+                "source": (
+                    impact_item.get("risk_source")
+                    if isinstance(impact_item, dict)
+                    else None
+                ),
                 "closest_distance_km": (
                     impact_item.get("closest_distance_km")
                     if isinstance(impact_item, dict)
@@ -441,6 +459,11 @@ def main() -> int:
                 ),
                 "closest_time": (
                     impact_item.get("closest_time")
+                    if isinstance(impact_item, dict)
+                    else None
+                ),
+                "closest_forecast_hour": (
+                    impact_item.get("closest_forecast_hour")
                     if isinstance(impact_item, dict)
                     else None
                 ),
@@ -453,6 +476,8 @@ def main() -> int:
             "weather": summarize_weather(weather_item)
             if isinstance(weather_item, dict)
             else {
+                "source": "WeatherAPI.com",
+                "current_last_updated": None,
                 "current_rain_mm": None,
                 "current_wind_mps": None,
                 "current_gust_mps": None,
@@ -486,6 +511,10 @@ def main() -> int:
             "공항 공식 결항/지연 기준이 아닙니다."
         ),
         "attribution": "Powered by WeatherAPI.com",
+        "source_updated_at_utc": {
+            "impact": impact.get("generated_at_utc"),
+            "weather": weather.get("generated_at_utc"),
+        },
         "typhoon": impact.get("typhoon"),
         "forecast_confidence": impact.get(
             "forecast_confidence"
@@ -494,7 +523,7 @@ def main() -> int:
         "routes": routes,
     }
 
-    write_if_changed(output)
+    write_snapshot(output)
 
     print("")
     print("=== COMBINED LOCATION RISK ===")
