@@ -1083,7 +1083,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.35</span>
+        <span>· v8.36</span>
       </div>
 
       <a
@@ -2571,22 +2571,17 @@ $("pressure")
 
 
     el.innerHTML = `
-      <strong>태풍</strong>
-      ${typhoonForecastSource}
-      · 최접근 ${closestTime}
+      태풍 예보
 
       &nbsp;|&nbsp;
 
       <strong>날씨</strong>
       ${safe(refWeather.source, "WeatherAPI.com")}
-      · 관측 ${weatherObservation}
 
       &nbsp;|&nbsp;
 
       태풍 기준 ${typhoonBase}
       · 위험도 계산 ${riskTime}
-      · <span class="${stateClass}">${stateText}</span>
-      · <span class="ver">Risk v${version}</span>
       · 중국시간
     `;
   }
