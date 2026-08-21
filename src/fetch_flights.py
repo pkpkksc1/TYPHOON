@@ -3,18 +3,16 @@
 
 """
 SBLC Typhoon Dashboard
-Flight Status Fetch v8.1 - 7 representative flights
+Flight Status Fetch v8.3 - 5 representative flights
 
 Aviationstack targets
 
 WF수입
-    KE315  ICN -> PVG  기준 출발 23:10
     KE249  ICN -> PVG  기준 출발 01:20
     KE335  ICN -> PVG  기준 출발 01:20
 
 수출
     PR337  PVG -> MNL  기준 출발 16:00
-    RW609  PVG -> CRK  기준 출발 16:30
     KJ948  PVG -> ICN  기준 출발 03:05
     KJ988  PVG -> ICN  기준 출발 19:20
 
@@ -54,7 +52,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
 API_URL = "https://api.aviationstack.com/v1/flights"
-PARSER_VERSION = "8.2"
+PARSER_VERSION = "8.3"
 
 
 AIRPORTS = {
@@ -83,13 +81,6 @@ AIRPORTS = {
 
 FLIGHT_CONFIGS = [
     {
-        "flight_iata": "KE315",
-        "group_ko": "WF수입",
-        "dep_iata": "ICN",
-        "arr_iata": "PVG",
-        "expected_departure_local": "23:10",
-    },
-    {
         "flight_iata": "KE249",
         "group_ko": "WF수입",
         "dep_iata": "ICN",
@@ -109,13 +100,6 @@ FLIGHT_CONFIGS = [
         "dep_iata": "PVG",
         "arr_iata": "MNL",
         "expected_departure_local": "16:00",
-    },
-    {
-        "flight_iata": "RW609",
-        "group_ko": "수출",
-        "dep_iata": "PVG",
-        "arr_iata": "CRK",
-        "expected_departure_local": "16:30",
     },
     {
         "flight_iata": "KJ948",
