@@ -107,6 +107,14 @@ jobs:
             echo "::warning::JTWC fetch failed/timed out. Previous JTWC data will be used."
           }
 
+      - name: Calculate historical typhoon similarity
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          timeout 90s python src/typhoon_similarity.py || {
+            echo "::warning::Historical similarity calculation failed. Previous similarity data will be used."
+          }
+
       - name: Calculate SAUDEL typhoon impact
         if: steps.mode.outputs.enabled == 'true'
         shell: bash
