@@ -73,7 +73,8 @@ h2{
 .flight-inline-meta{
   font-size:9px;
   color:var(--muted);
-  white-space:nowrap;
+  white-space:normal;
+  line-height:1.35;
 }
 
 .header-right{
@@ -1784,7 +1785,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.51</span>
+        <span>· v8.52</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -1934,7 +1935,7 @@ td{
       id="flightInlineMeta"
       class="flight-inline-meta"
     >
-      Aviationstack · 데이터 -
+      Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 -
     </div>
   </div>
 
@@ -3657,7 +3658,7 @@ $("pressure")
   );
 
 
-  // v8.51 적용 여부: 6개 거점 2x2 거리/날씨 표시 + 5일(120시간) 경로 데이터 확인
+  // v8.52 적용 여부: 6개 거점 2x2 거리/날씨 표시 + 5일(120시간) 경로 데이터 확인
   {
     const statusEl = $("distanceFeatureStatus");
     const locationItems = Object.values(d.locations || {});
@@ -3803,8 +3804,23 @@ $("pressure")
           )
         : "-";
 
+    const apiUsage =
+      (d.aviationstack_usage && typeof d.aviationstack_usage === "object")
+        ? d.aviationstack_usage
+        : {};
+
+    const apiUsed =
+      Number.isFinite(Number(apiUsage.monthly_requests))
+        ? Number(apiUsage.monthly_requests)
+        : "-";
+
+    const apiLimit =
+      Number.isFinite(Number(apiUsage.monthly_limit))
+        ? Number(apiUsage.monthly_limit)
+        : 100;
+
     flightInlineMeta.textContent =
-      `Aviationstack · 데이터 ${flightUpdated} 중국시간`;
+      `Aviationstack · 이번 달 호출 ${apiUsed}/${apiLimit}회 · 최근 조회 ${flightUpdated} 중국시간`;
   }
 
 
