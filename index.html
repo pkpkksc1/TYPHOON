@@ -260,16 +260,19 @@ button{
   overflow:hidden;
   border-radius:12px;
   border:1px solid var(--line);
+  background:#091728;
+}
 
-  /*
-    정확한 좌표 기준 정적 지도
-    범위: 100E~160E / 5N~45N
-  */
-  background-image:url("./assets/typhoon-map-clean.png");
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:100% 100%;
-  background-color:#091728;
+.map-bg{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  user-select:none;
+  pointer-events:none;
 }
 
 .map-label{
@@ -890,32 +893,40 @@ td{
 
 
 
-
-/* v8.22 - exact static map overlay */
+/* v8.23 - exact static map overlay */
 #trackSvg{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   z-index:2;
+  pointer-events:none;
 }
 
 #mapPoints{
   position:absolute;
   inset:0;
+  width:100%;
+  height:100%;
   z-index:3;
+  pointer-events:none;
 }
 
 .map::after{
   content:"";
   position:absolute;
   inset:0;
-  pointer-events:none;
   z-index:1;
-  background:rgba(2,10,20,.08);
+  pointer-events:none;
+  background:rgba(3,10,20,.05);
+}
+
+.point{
+  z-index:4;
 }
 
 .plabel{
+  z-index:5;
   text-shadow:0 1px 3px #000,0 0 4px #000;
 }
 
@@ -1102,28 +1113,12 @@ td{
 
     <div class="map" id="map">
 
-      <div class="map-label china">
-        CHINA
-      </div>
-
-      <div class="map-label korea">
-        KOREA
-      </div>
-
-      <div class="map-label japan">
-        JAPAN
-      </div>
-
-      <div class="map-label ph">
-        PHILIPPINES
-      </div>
-
-      <div class="map-label pacific">
-        PACIFIC
-      </div>
-
-
-      <svg
+      <img
+        class="map-bg"
+        src="./assets/typhoon-map-clean.png"
+        alt="동아시아 태풍 경로 지도"
+      >
+<svg
         id="trackSvg"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
@@ -1662,35 +1657,30 @@ function xy(
 ){
 
   /*
-    assets/typhoon-map-clean.png와 1:1 좌표 대응
+    assets/typhoon-map-clean.png 와 정확히 같은 지도 범위
 
-    지도 전체 범위:
-      경도 100E ~ 160E
-      위도   5N ~ 45N
+      왼쪽  : 100°E
+      오른쪽: 160°E
+      위쪽  : 45°N
+      아래쪽: 5°N
 
-    배경지도 자체가 동일한 경위도(Cylindrical) 투영이므로
-    별도의 추정 보정값을 사용하지 않는다.
+    dashboard.json의 JMA 위도/경도를
+    별도 추정값 없이 바로 % 좌표로 변환한다.
   */
 
-  const minLon = 100;
-  const maxLon = 160;
-  const minLat = 5;
-  const maxLat = 45;
+  const WEST  = 100;
+  const EAST  = 160;
+  const SOUTH = 5;
+  const NORTH = 45;
+
+  const nLat = Number(lat);
+  const nLon = Number(lon);
 
   const x =
-    (
-      (Number(lon)-minLon) /
-      (maxLon-minLon)
-    ) * 100;
+    ((nLon - WEST) / (EAST - WEST)) * 100;
 
   const y =
-    (
-      1 -
-      (
-        (Number(lat)-minLat) /
-        (maxLat-minLat)
-      )
-    ) * 100;
+    ((NORTH - nLat) / (NORTH - SOUTH)) * 100;
 
   return{
     x:Math.max(0,Math.min(100,x)),
@@ -1933,6 +1923,12 @@ $("pressure")
           p.forecast_hour
         );
 
+      pl.title =
+        `${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+
+      dot.title =
+        `${label(p.forecast_hour)} · ${Number(p.lat).toFixed(1)}°N / ${Number(p.lon).toFixed(1)}°E`;
+
 
       $("mapPoints")
         .appendChild(
@@ -1940,9 +1936,7 @@ $("pressure")
         );
 
 
-      pts.push(
-        `${a.x},${a.y}`
-      );
+      pts.push(`${a.x},${a.y}`);
 }
   );
 
