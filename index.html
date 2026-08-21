@@ -890,7 +890,7 @@ td{
 
 
 /* ==========================================================
-   v8.57 - 주요 노선 위험도 배지 테두리 고정
+   v8.58 - 헤더 새로고침 및 적용상태 문구 제거
    낮음/주의/높음 색상과 72×30 형태 유지
    ========================================================== */
 .routes .route-card > .row{
@@ -1848,8 +1848,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.57</span>
-        <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
+        <span>· v8.58</span>
       </div>
 
       <a
@@ -1883,10 +1882,6 @@ td{
       </div>
 
     </div>
-
-    <button id="refreshBtn">
-      새로고침
-    </button>
 
   </div>
 
@@ -3752,18 +3747,6 @@ $("pressure")
   );
 
 
-  // v8.57 적용 여부: v8.56 기능 유지 + 주요 노선 위험도 배지 테두리 고정
-  // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
-  // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
-  {
-    const statusEl = $("distanceFeatureStatus");
-    if (statusEl) {
-      statusEl.classList.remove("pending", "fail");
-      statusEl.classList.add("ok");
-      statusEl.textContent = "· 거리·5일경로 적용 ✓";
-    }
-  }
-
 
   // ========================================
   // 노선
@@ -4101,28 +4084,6 @@ $("pressure")
 
 }
 
-
-// ==========================================
-// 새로고침 버튼
-// ==========================================
-
-$("refreshBtn")
-  .addEventListener(
-    "click",
-    () => {
-
-      load()
-        .catch(
-          e => {
-
-            $("dataClock")
-              .textContent =
-                `데이터 로드 실패: ${e.message}`;
-          }
-        );
-
-    }
-  );
 
 
 // ==========================================
