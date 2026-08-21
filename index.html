@@ -887,6 +887,82 @@ td{
   min-height:72px;
 }
 
+/* v8.37 - 위험등급 기준 */
+.risk-guide-panel{
+  width:min(370px,100%);
+  align-self:flex-start;
+  padding:12px 13px;
+  background:linear-gradient(180deg,#0f1d30,#0b1828);
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.risk-guide-title{
+  margin:3px 0 9px;
+  font-size:15px;
+  font-weight:900;
+}
+
+.risk-guide-row{
+  display:grid;
+  grid-template-columns:62px minmax(0,1fr);
+  align-items:center;
+  gap:8px;
+  padding:5px 0;
+  border-top:1px solid rgba(90,120,155,.16);
+}
+
+.risk-guide-row:first-of-type{
+  border-top:0;
+}
+
+.risk-guide-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  padding:4px 7px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.risk-guide-badge.low{
+  color:#67e69b;
+  border:1px solid rgba(55,214,122,.45);
+  background:rgba(55,214,122,.08);
+}
+
+.risk-guide-badge.warn{
+  color:#ffd75e;
+  border:1px solid rgba(255,200,50,.45);
+  background:rgba(255,200,50,.08);
+}
+
+.risk-guide-badge.high{
+  color:#ff7b80;
+  border:1px solid rgba(255,90,95,.45);
+  background:rgba(255,90,95,.08);
+}
+
+.risk-guide-desc{
+  color:#d9e5f3;
+  font-size:9px;
+  line-height:1.45;
+}
+
+.risk-guide-logic{
+  margin-top:8px;
+  padding-top:7px;
+  border-top:1px dashed rgba(100,140,180,.28);
+  color:#8fa9c3;
+  font-size:8px;
+  line-height:1.5;
+}
+
+.risk-guide-logic strong{
+  color:#c7d9ec;
+}
+
 .track{
   grid-column:1/-1 !important;
   grid-row:auto !important;
@@ -1083,7 +1159,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.36</span>
+        <span>· v8.38</span>
       </div>
 
       <a
@@ -1259,6 +1335,52 @@ td{
     id="routesList"
     class="list"
   >
+  </div>
+
+</section>
+
+
+<section class="risk-guide-panel">
+
+  <div class="kicker">
+    위험등급 기준
+  </div>
+
+  <div class="risk-guide-title">
+    물류 위험도 판단
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge low">
+      🟢 낮음
+    </div>
+    <div class="risk-guide-desc">
+      태풍 최접근 거리가 <b>태풍 반경 밖</b>이고, 강수/풍속 영향도 작음
+    </div>
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge warn">
+      🟡 주의
+    </div>
+    <div class="risk-guide-desc">
+      태풍 최접근 거리가 <b>태풍 반경 근처</b>이거나, 강수/풍속 영향 가능성 있음
+    </div>
+  </div>
+
+  <div class="risk-guide-row">
+    <div class="risk-guide-badge high">
+      🔴 높음
+    </div>
+    <div class="risk-guide-desc">
+      태풍 최접근 거리가 <b>태풍 반경 안</b>이거나, 강수/풍속 영향이 큼
+    </div>
+  </div>
+
+  <div class="risk-guide-logic">
+    <strong>기준 로직</strong>:
+    태풍 <strong>최접근 거리 + 태풍 반경</strong>을 우선 비교하고,
+    <strong>강수(WeatherAPI) / 풍속(WeatherAPI)</strong>는 보조 판단 기준으로 사용
   </div>
 
 </section>
