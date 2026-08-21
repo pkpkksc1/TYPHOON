@@ -162,17 +162,17 @@
       "name_cn": "沙德尔",
       "state": "start",
       "current": {
-        "point_id": 3307298,
-        "time_utc": "202608211500",
+        "point_id": 3307621,
+        "time_utc": "202608211800",
         "grade": "TY",
         "grade_ko": "태풍",
-        "lon": 148,
-        "lat": 16.3,
+        "lon": 147.8,
+        "lat": 16.9,
         "pressure_hpa": 970,
         "max_wind_mps": 35,
         "movement_direction": "NW",
         "movement_direction_ko": "북서",
-        "movement_speed_kmh": 19,
+        "movement_speed_kmh": 22,
         "wind_radii": [
           {
             "label": "30KTS",
@@ -186,7 +186,7 @@
               350,
               230,
               250,
-              3307298
+              3307621
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -202,7 +202,7 @@
               80,
               80,
               150,
-              3307298
+              3307621
             ],
             "meaning_ko": "50kt 폭풍권"
           }
@@ -211,9 +211,9 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608211500",
-          "lon": 146.6,
-          "lat": 17.9,
+          "base_time_utc": "202608211800",
+          "lon": 146,
+          "lat": 18.5,
           "pressure_hpa": 965,
           "max_wind_mps": 38,
           "agency": "BABJ",
@@ -222,9 +222,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608211500",
-          "lon": 144.6,
-          "lat": 19.7,
+          "base_time_utc": "202608211800",
+          "lon": 144,
+          "lat": 20.3,
           "pressure_hpa": 950,
           "max_wind_mps": 45,
           "agency": "BABJ",
@@ -233,20 +233,20 @@
         },
         {
           "forecast_hour": 36,
-          "base_time_utc": "202608211500",
-          "lon": 142.1,
-          "lat": 21.3,
-          "pressure_hpa": 940,
-          "max_wind_mps": 50,
+          "base_time_utc": "202608211800",
+          "lon": 141.4,
+          "lat": 21.7,
+          "pressure_hpa": 935,
+          "max_wind_mps": 52,
           "agency": "BABJ",
-          "grade": "STY",
-          "grade_ko": "강한 태풍"
+          "grade": "SuperTY",
+          "grade_ko": "초강력 태풍"
         },
         {
           "forecast_hour": 48,
-          "base_time_utc": "202608211500",
-          "lon": 139.4,
-          "lat": 22.5,
+          "base_time_utc": "202608211800",
+          "lon": 138.7,
+          "lat": 23,
           "pressure_hpa": 925,
           "max_wind_mps": 58,
           "agency": "BABJ",
@@ -255,9 +255,9 @@
         },
         {
           "forecast_hour": 60,
-          "base_time_utc": "202608211500",
-          "lon": 136.6,
-          "lat": 23.6,
+          "base_time_utc": "202608211800",
+          "lon": 135.9,
+          "lat": 24.2,
           "pressure_hpa": 920,
           "max_wind_mps": 60,
           "agency": "BABJ",
@@ -266,9 +266,9 @@
         },
         {
           "forecast_hour": 72,
-          "base_time_utc": "202608211500",
-          "lon": 133,
-          "lat": 25,
+          "base_time_utc": "202608211800",
+          "lon": 132.9,
+          "lat": 25.3,
           "pressure_hpa": 925,
           "max_wind_mps": 58,
           "agency": "BABJ",
@@ -277,7 +277,7 @@
         },
         {
           "forecast_hour": 96,
-          "base_time_utc": "202608211500",
+          "base_time_utc": "202608211800",
           "lon": 129.9,
           "lat": 26.2,
           "pressure_hpa": 930,
@@ -288,9 +288,9 @@
         },
         {
           "forecast_hour": 120,
-          "base_time_utc": "202608211500",
-          "lon": 126.8,
-          "lat": 27.4,
+          "base_time_utc": "202608211800",
+          "lon": 126.7,
+          "lat": 27.3,
           "pressure_hpa": 930,
           "max_wind_mps": 55,
           "agency": "BABJ",
@@ -298,9 +298,9 @@
           "grade_ko": "초강력 태풍"
         }
       ],
-      "raw_point_count": 21
+      "raw_point_count": 22
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-21T17:59:02.486710+00:00"
+  "generated_at_utc": "2026-08-21T18:50:29.671634+00:00"
 }
