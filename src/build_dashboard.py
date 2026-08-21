@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.2"
+PARSER_VERSION = "8.3.3"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -232,6 +232,8 @@ def main() -> int:
         if x.get("flight_iata") in REPRESENTATIVE_FLIGHTS else 999
     )
 
+    typhoon_summary = get_typhoon_track(jma)
+
     output = {
         "source": "SBLC Typhoon Dashboard",
         "product": "Dashboard Summary",
@@ -246,7 +248,18 @@ def main() -> int:
             "flights": flights.get("generated_at_utc"),
         },
 
-        "typhoon": get_typhoon_track(jma),
+        "risk_meta": {
+            "typhoon_reference_time": (
+                typhoon_summary.get("current", {}).get("time")
+                if isinstance(typhoon_summary.get("current"), dict)
+                else None
+            ),
+            "jma_updated_at_utc": jma.get("generated_at_utc"),
+            "risk_updated_at_utc": risk.get("generated_at_utc"),
+            "risk_version": risk.get("parser_version"),
+        },
+
+        "typhoon": typhoon_summary,
         "forecast_comparison": {
             "emoji": compare_overall.get("emoji", "⚪"),
             "label_ko": compare_overall.get("label_ko", "비교자료 없음"),
