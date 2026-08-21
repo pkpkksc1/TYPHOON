@@ -15,7 +15,7 @@
   "forecast_confidence": {
     "emoji": "🟢",
     "label_ko": "거의 일치",
-    "average_difference_km": 43
+    "average_difference_km": 25
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -1629,5 +1629,5 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-20T22:03:22.531311+00:00"
+  "generated_at_utc": "2026-08-21T01:59:45.382662+00:00"
 }
