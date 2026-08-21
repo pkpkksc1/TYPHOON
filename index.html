@@ -1493,40 +1493,7 @@ td{
 
 
 /* ==========================================================
-   v8.48 - 현재 거리 + 5일 예보 내 최접근 거리 표시
-   ========================================================== */
-.distance-feature-status{
-  font-size:10px;
-  font-weight:900;
-  white-space:nowrap;
-}
-.distance-feature-status.ok{color:#37d67a;}
-.distance-feature-status.fail{color:#ff8a8f;}
-.distance-feature-status.pending{color:#f6c85f;}
-
-.locations .distance-stat{
-  grid-column:1 / -1;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  align-items:center;
-}
-.locations .distance-stat > div{
-  min-width:0;
-}
-.locations .distance-stat > div + div{
-  border-left:1px solid rgba(110,145,180,.20);
-  padding-left:10px;
-}
-.locations .distance-stat span,
-.locations .distance-stat b{
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-/* ==========================================================
-   v8.46 - 거점 카드 잘림 방지 + 비교 영역 간소화
+   v8.47 - 과거 태풍 유사도 참고 영역 추가
    계산 로직 변경 없음
    ========================================================== */
 
@@ -1669,6 +1636,131 @@ td{
   }
 }
 
+
+/* v8.47 - historical typhoon similarity reference */
+.historical-similarity{
+  grid-column:1/-1 !important;
+  width:100%;
+  padding:13px 15px;
+}
+
+.similarity-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:9px;
+}
+
+.similarity-title-wrap{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.similarity-title{
+  margin:0;
+  font-size:16px;
+  font-weight:900;
+}
+
+.similarity-reference-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:22px;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid rgba(115,185,255,.32);
+  background:rgba(56,162,255,.07);
+  color:#a9d2ff;
+  font-size:9px;
+  font-weight:800;
+}
+
+.similarity-note{
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.45;
+}
+
+.similarity-current{
+  margin-bottom:8px;
+  padding:7px 9px;
+  border:1px dashed rgba(100,140,180,.25);
+  border-radius:9px;
+  background:rgba(5,18,35,.22);
+  color:#b9cce0;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.similarity-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.similarity-card{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid rgba(96,129,166,.24);
+  border-radius:11px;
+  background:rgba(11,27,46,.68);
+}
+
+.similarity-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.similarity-name{
+  min-width:0;
+  color:#e9f3ff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.similarity-score{
+  flex:0 0 auto;
+  color:#73b9ff;
+  font-size:20px;
+  font-weight:900;
+}
+
+.similarity-details{
+  margin-top:6px;
+  color:#a9bdd2;
+  font-size:9px;
+  line-height:1.6;
+}
+
+.similarity-best{
+  margin-top:8px;
+  color:#c7d9eb;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.similarity-best b{
+  color:#ffffff;
+}
+
+@media(max-width:760px){
+  .similarity-grid{
+    grid-template-columns:1fr;
+  }
+  .similarity-head{
+    align-items:flex-start;
+  }
+  .similarity-score{
+    font-size:18px;
+  }
+}
+
 </style>
 </head>
 
@@ -1692,7 +1784,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.48</span>
+        <span>· v8.49</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -2043,9 +2135,33 @@ td{
 
 
 
+<section class="panel historical-similarity">
 
+  <div class="similarity-head">
+    <div class="similarity-title-wrap">
+      <h2 class="similarity-title">과거 태풍 유사도</h2>
+      <span class="similarity-reference-badge">참고용 · 실제 영향 예측 아님</span>
+    </div>
+    <div id="similarityStatus" class="similarity-note">
+      현재 예보값 기준 단순 비교
+    </div>
+  </div>
 
+  <div id="similarityCurrent" class="similarity-current">
+    현재 태풍 비교값 불러오는 중...
+  </div>
 
+  <div id="similarityCards" class="similarity-grid">
+    <div class="similarity-card">
+      <div class="similarity-name">과거 태풍 비교값 불러오는 중...</div>
+    </div>
+  </div>
+
+  <div id="similarityBest" class="similarity-best">
+    예보가 갱신되면 유사도도 함께 변경됩니다.
+  </div>
+
+</section>
 
 
 </main>
@@ -2073,6 +2189,9 @@ const DATA_URL =
 
 const AUTO_MODE_URL =
   "./data/typhoon_auto_mode.json";
+
+const SIMILARITY_URL =
+  "./data/typhoon_similarity.json";
 
 const $ =
   id =>
@@ -2701,6 +2820,154 @@ async function updateAutoModeBadge(){
       lastRun.textContent =
         "마지막 자동실행 확인불가";
     }
+  }
+}
+
+
+
+// ==========================================
+// 과거 태풍 유사도 · 참고용
+// ==========================================
+
+function similarityDisplayName(id,name){
+  const labels = {
+    INFA_2021:"2021 烟花 (IN-FA)",
+    DOLPHIN_2026:"2026 Dolphin"
+  };
+
+  return labels[id] || safe(name,"과거 태풍");
+}
+
+function similarityMetric(details,key){
+  const item = (details || {})[key] || {};
+  const value = item.similarity_pct;
+
+  return value===null || value===undefined
+    ? "-"
+    : `${Math.round(Number(value))}%`;
+}
+
+function similarityValue(value,suffix=""){
+  if(value===null || value===undefined || value===""){
+    return "-";
+  }
+
+  const n = Number(value);
+  if(Number.isFinite(n)){
+    const shown = Number.isInteger(n) ? n : Math.round(n * 10) / 10;
+    return `${shown}${suffix}`;
+  }
+
+  return `${value}${suffix}`;
+}
+
+async function loadHistoricalSimilarity(){
+  const statusEl = $("similarityStatus");
+  const currentEl = $("similarityCurrent");
+  const cardsEl = $("similarityCards");
+  const bestEl = $("similarityBest");
+
+  if(!statusEl || !currentEl || !cardsEl || !bestEl){
+    return;
+  }
+
+  try{
+    const res = await fetch(`${SIMILARITY_URL}?t=${Date.now()}`);
+
+    if(!res.ok){
+      throw new Error(`typhoon_similarity.json ${res.status}`);
+    }
+
+    const s = await res.json();
+
+    if(s.status === "NO_ACTIVE_TYPHOON"){
+      statusEl.textContent = "현재 비교할 활성 태풍 없음";
+      currentEl.textContent = safe(s.message_ko,"현재 비교할 태풍이 없습니다.");
+      cardsEl.innerHTML = "";
+      bestEl.textContent = "과거 태풍 기준값은 다음 활성 태풍 발생 시 다시 비교됩니다.";
+      return;
+    }
+
+    const ty = s.current_typhoon || {};
+    const m = s.current_metrics || {};
+    const provisional = s.status === "PROVISIONAL";
+
+    statusEl.textContent = provisional
+      ? "현재 예보 기준 · 최접근 확정 전"
+      : "현재 예보 기준";
+
+    currentEl.innerHTML = `
+      <b>${displayTyphoon(ty.number,ty.name)}</b>
+      · 최접근거리 ${similarityValue(m.closest_distance_km," km")}
+      · 강풍 영향 범위 ${similarityValue(m.wind_radius_34kt_km," km")}
+      · 강풍 영향 지속시간 ${similarityValue(m.strong_wind_impact_hours,"시간")}
+      · 최대풍속 ${similarityValue(m.max_wind_mps_at_closest," m/s")}
+      · 이동속도 ${similarityValue(m.movement_speed_kmh_at_closest," km/h")}
+    `;
+
+    const comparisons = Array.isArray(s.comparisons) ? [...s.comparisons] : [];
+    const displayOrder = {INFA_2021:1,DOLPHIN_2026:2};
+    comparisons.sort((a,b) =>
+      (displayOrder[a.benchmark_id] || 99) -
+      (displayOrder[b.benchmark_id] || 99)
+    );
+
+    cardsEl.innerHTML = "";
+
+    comparisons.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "similarity-card";
+
+      const score = item.similarity_pct;
+      const d = item.details || {};
+
+      card.innerHTML = `
+        <div class="similarity-card-top">
+          <div class="similarity-name">
+            ${similarityDisplayName(item.benchmark_id,item.benchmark_name)}
+          </div>
+          <div class="similarity-score">
+            ${score===null || score===undefined ? "-" : `${Number(score).toFixed(1)}%`}
+          </div>
+        </div>
+        <div class="similarity-details">
+          거리 ${similarityMetric(d,"closest_distance_km")}
+          · 강풍범위 ${similarityMetric(d,"wind_radius_34kt_km")}
+          · 영향시간 ${similarityMetric(d,"strong_wind_impact_hours")}
+          · 강도 ${similarityMetric(d,"max_wind_mps_at_closest")}
+          · 이동속도 ${similarityMetric(d,"movement_speed_kmh_at_closest")}
+        </div>
+      `;
+
+      cardsEl.appendChild(card);
+    });
+
+    if(!comparisons.length){
+      cardsEl.innerHTML = `
+        <div class="similarity-card">
+          <div class="similarity-name">비교 결과 없음</div>
+        </div>
+      `;
+    }
+
+    const best = s.most_similar || comparisons[0] || null;
+
+    if(best){
+      bestEl.innerHTML = `
+        가장 유사: <b>${similarityDisplayName(best.benchmark_id,best.benchmark_name)} ${similarityValue(best.similarity_pct,"%")}</b>
+        · 5개 기준 단순 수치 비교
+        · 예보 갱신 시 자동 변경
+      `;
+    }
+    else{
+      bestEl.textContent = "예보가 갱신되면 유사도도 함께 변경됩니다.";
+    }
+  }
+  catch(e){
+    statusEl.textContent = "참고 데이터 확인 불가";
+    currentEl.textContent = "과거 태풍 유사도 데이터를 불러오지 못했습니다.";
+    cardsEl.innerHTML = "";
+    bestEl.textContent = "기존 물류 위험도 계산에는 영향을 주지 않습니다.";
   }
 }
 
@@ -3401,7 +3668,7 @@ $("pressure")
   );
 
 
-  // v8.48 적용 여부: 6개 거점에 현재거리 + 예보 최접근 값이 모두 전달됐는지 확인
+  // v8.49 적용 여부: 6개 거점에 현재거리 + 예보 최접근 값이 모두 전달됐는지 확인
   {
     const statusEl = $("distanceFeatureStatus");
     const locationItems = Object.values(d.locations || {});
@@ -3739,6 +4006,9 @@ $("pressure")
           []
         ).join(" · ")
       }`;
+
+
+  await loadHistoricalSimilarity();
 
 
 }
