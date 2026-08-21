@@ -35,7 +35,10 @@ JMA_PATH = BASE_DIR / "data" / "jma_typhoon.json"
 KMA_PATH = BASE_DIR / "data" / "kma_typhoon.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 
-PARSER_VERSION = "3.0"
+TARGET_TYPHOON_NUMBER = "2618"
+TARGET_TYPHOON_NAME = "SAUDEL"
+
+PARSER_VERSION = "3.1-SAUDEL"
 
 # Simple thresholds for the dashboard.
 GREEN_MAX_KM = 50
@@ -149,12 +152,27 @@ def status_from_distance(distance_km: float) -> Dict[str, str]:
 
 
 def get_jma_primary_typhoon(data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Return ONLY JMA 2618 SAUDEL."""
     typhoons = data.get("typhoons", [])
 
-    if not isinstance(typhoons, list) or not typhoons:
+    if not isinstance(typhoons, list):
         return None
 
-    return typhoons[0]
+    for item in typhoons:
+        if not isinstance(item, dict):
+            continue
+
+        meta = item.get("typhoon") or {}
+
+        if (
+            str(meta.get("number") or "").strip()
+            == TARGET_TYPHOON_NUMBER
+            and str(meta.get("name") or "").strip().upper()
+            == TARGET_TYPHOON_NAME
+        ):
+            return item
+
+    return None
 
 
 def normalize_jma_forecasts(
@@ -292,7 +310,7 @@ def make_comparison(
     if not jma_typhoon:
         return {
             "status": "NO_JMA_TYPHOON",
-            "message_ko": "JMA 태풍 정보 없음",
+            "message_ko": "JMA 2618 SAUDEL 비교자료 없음",
             "comparisons": [],
         }
 

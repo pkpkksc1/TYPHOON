@@ -44,8 +44,14 @@ COMPARE_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 JTWC_PATH = BASE_DIR / "data" / "jtwc_typhoon.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.4"
+PARSER_VERSION = "4.5-SAUDEL"
 CAUTION_RADIUS_MULTIPLIER = 1.5
+
+# This dashboard is intentionally locked to Typhoon 2618 SAUDEL.
+# Other tropical cyclones may exist in source JSON files, but they
+# must never be used for logistics distance / wind-radius calculations.
+TARGET_TYPHOON_NUMBER = "2618"
+TARGET_TYPHOON_NAME = "SAUDEL"
 
 # Used only if JTWC radii are unavailable.
 FALLBACK_RED_MAX_KM = 300
@@ -362,10 +368,30 @@ def risk_rank(item: Dict[str, Any]) -> int:
 
 
 def get_primary_typhoon(jma: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Return ONLY JMA Typhoon 2618 SAUDEL.
+    Never fall back to another tropical system.
+    """
     typhoons = jma.get("typhoons", [])
-    if not isinstance(typhoons, list) or not typhoons:
+
+    if not isinstance(typhoons, list):
         return None
-    return typhoons[0]
+
+    for item in typhoons:
+        if not isinstance(item, dict):
+            continue
+
+        meta = item.get("typhoon") or {}
+        number = str(meta.get("number") or "").strip()
+        name = str(meta.get("name") or "").strip().upper()
+
+        if (
+            number == TARGET_TYPHOON_NUMBER
+            and name == TARGET_TYPHOON_NAME
+        ):
+            return item
+
+    return None
 
 
 def get_locations(jma: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
@@ -395,29 +421,40 @@ def find_matching_jtwc_storm(
     jtwc: Dict[str, Any],
     jma_typhoon: Dict[str, Any],
 ) -> Optional[Dict[str, Any]]:
-    storms = jtwc.get("storms", [])
-    if not isinstance(storms, list) or not storms:
+    """
+    Return ONLY JTWC SAUDEL.
+    No 'single active storm' fallback is allowed.
+    """
+    meta = jma_typhoon.get("typhoon") or {}
+
+    if (
+        str(meta.get("number") or "").strip()
+        != TARGET_TYPHOON_NUMBER
+        or str(meta.get("name") or "").strip().upper()
+        != TARGET_TYPHOON_NAME
+    ):
         return None
 
-    jma_name = str(
-        (jma_typhoon.get("typhoon") or {}).get("name") or ""
-    ).strip().upper()
+    storms = jtwc.get("storms", [])
+    if not isinstance(storms, list):
+        return None
 
-    if jma_name:
-        for storm in storms:
-            if (
-                isinstance(storm, dict)
-                and str(storm.get("name") or "").strip().upper()
-                == jma_name
-            ):
-                return storm
+    candidates = [
+        storm
+        for storm in storms
+        if isinstance(storm, dict)
+        and str(storm.get("name") or "").strip().upper()
+        == TARGET_TYPHOON_NAME
+    ]
 
-    # Safe fallback only when JTWC has exactly one active storm.
-    valid = [s for s in storms if isinstance(s, dict)]
-    if len(valid) == 1:
-        return valid[0]
+    if not candidates:
+        return None
 
-    return None
+    # If duplicate SAUDEL bulletins exist, use the newest warning.
+    return max(
+        candidates,
+        key=lambda storm: str(storm.get("issue_time_utc") or ""),
+    )
 
 
 def build_jtwc_timeline(storm: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -863,7 +900,7 @@ def main() -> int:
             "product": "Logistics Typhoon Impact",
             "parser_version": PARSER_VERSION,
             "status": "NO_TYPHOON",
-            "message_ko": "활동 중인 태풍 정보 없음",
+            "message_ko": "2618 SAUDEL 자료 없음 - 다른 태풍은 사용하지 않음",
             "locations": {},
             "routes": [],
         }

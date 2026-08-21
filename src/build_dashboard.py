@@ -31,7 +31,9 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.6"
+PARSER_VERSION = "8.3.7-SAUDEL"
+TARGET_TYPHOON_NUMBER = "2618"
+TARGET_TYPHOON_NAME = "SAUDEL"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -128,18 +130,23 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(typhoons, list) or not typhoons:
         return {}
 
-    # JMA feed can contain more than one tropical system.
-    # Prefer an officially numbered/named typhoon over an unnamed tropical depression.
+    # Dashboard is locked to 2618 SAUDEL.
+    # Never display another named typhoon or tropical depression.
     item = next(
         (
             t for t in typhoons
             if isinstance(t, dict)
             and isinstance(t.get("typhoon"), dict)
-            and t.get("typhoon", {}).get("number")
-            and t.get("typhoon", {}).get("name")
+            and str(t.get("typhoon", {}).get("number") or "").strip()
+                == TARGET_TYPHOON_NUMBER
+            and str(t.get("typhoon", {}).get("name") or "").strip().upper()
+                == TARGET_TYPHOON_NAME
         ),
-        typhoons[0],
+        None,
     )
+
+    if item is None:
+        return {}
 
     meta = item.get("typhoon", {})
     analysis = item.get("analysis", {}) or {}
