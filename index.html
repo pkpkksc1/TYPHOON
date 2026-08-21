@@ -430,6 +430,25 @@ td{
   font-size:12px;
 }
 
+.loc-source-line{
+  margin-top:7px;
+  padding-top:6px;
+  border-top:1px dashed rgba(120,150,185,.22);
+  color:#8fa8c2;
+  font-size:8px;
+  line-height:1.55;
+}
+
+.loc-source-line strong{
+  color:#bcd4ec;
+  font-weight:800;
+}
+
+.loc-source-line .stale{
+  color:#f1c15b;
+  font-weight:900;
+}
+
 .list{
   display:flex;
   flex-direction:column;
@@ -1050,7 +1069,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.30</span>
+        <span>· v8.31</span>
       </div>
 
       <a
@@ -2315,6 +2334,80 @@ $("pressure")
   }
 
 
+  function locationForecastSource(raw){
+
+    const s =
+      String(
+        raw || ""
+      ).toUpperCase();
+
+    if(
+      s.includes("JTWC")
+    ){
+      return "JTWC 예보";
+    }
+
+    if(
+      s.includes("JMA")
+    ){
+      return "JMA 예보";
+    }
+
+    return "태풍 예보";
+  }
+
+
+  function localWeatherTime(ts){
+
+    if(!ts){
+      return "-";
+    }
+
+    const s =
+      String(ts).trim();
+
+    const m =
+      s.match(
+        /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/
+      );
+
+    if(!m){
+      return s;
+    }
+
+    return `${m[2]}.${m[3]} ${m[4]}:${m[5]}`;
+  }
+
+
+  function weatherAgeClass(ts){
+
+    if(!ts){
+      return "";
+    }
+
+    const s =
+      String(ts).trim();
+
+    const m =
+      s.match(
+        /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/
+      );
+
+    if(!m){
+      return "";
+    }
+
+    /*
+      WeatherAPI current.last_updated is the local time of each hub.
+      We do not force a single timezone here; this class is only a
+      conservative visual warning. Exact source fetch time is shown
+      separately in the panel header.
+    */
+
+    return "";
+  }
+
+
   function renderLocationsMeta(){
 
     const el =
@@ -2335,6 +2428,12 @@ $("pressure")
       );
 
 
+    const weatherTime =
+      riskMetaTime(
+        m.weather_updated_at_utc
+      );
+
+
     const riskTime =
       riskMetaTime(
         m.risk_updated_at_utc
@@ -2344,6 +2443,12 @@ $("pressure")
     const jmaMs =
       Date.parse(
         m.jma_updated_at_utc || ""
+      );
+
+
+    const weatherMs =
+      Date.parse(
+        m.weather_updated_at_utc || ""
       );
 
 
@@ -2360,13 +2465,20 @@ $("pressure")
       "wait";
 
 
+    const latestInputMs =
+      Math.max(
+        Number.isFinite(jmaMs) ? jmaMs : 0,
+        Number.isFinite(weatherMs) ? weatherMs : 0
+      );
+
+
     if(
-      Number.isFinite(jmaMs) &&
+      latestInputMs > 0 &&
       Number.isFinite(riskMs)
     ){
 
       if(
-        riskMs >= jmaMs
+        riskMs >= latestInputMs
       ){
 
         stateText =
@@ -2396,7 +2508,8 @@ $("pressure")
 
     el.innerHTML = `
       태풍 기준 ${refTime}
-      · 위험도 갱신 ${riskTime}
+      · 날씨 수집 ${weatherTime}
+      · 위험도 계산 ${riskTime}
       · <span class="${stateClass}">${stateText}</span>
       · <span class="ver">Risk v${version}</span>
       · 중국시간
@@ -2552,6 +2665,27 @@ $("pressure")
                 )
               }
             </b>
+          </div>
+
+        </div>
+
+
+        <div class="loc-source-line">
+
+          <div>
+            <strong>태풍</strong>
+            · ${locationForecastSource(item.closest_source)}
+            · 최접근 ${
+              item.closest_time
+                ? riskMetaTime(item.closest_time)
+                : "-"
+            } 중국시간
+          </div>
+
+          <div>
+            <strong>날씨</strong>
+            · ${safe(w.source, "WeatherAPI.com")}
+            · 관측 ${localWeatherTime(w.last_updated)} 현지시각
           </div>
 
         </div>
