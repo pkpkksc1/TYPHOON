@@ -1490,6 +1490,152 @@ td{
   }
 }
 
+
+
+/* ==========================================================
+   v8.46 - 거점 카드 잘림 방지 + 비교 영역 간소화
+   계산 로직 변경 없음
+   ========================================================== */
+
+/* 6개 물류 거점 카드 외곽선/크기를 모두 동일하게 유지 */
+.locations .loc-grid{
+  grid-auto-rows:146px !important;
+  align-items:stretch !important;
+}
+
+.locations .loc-card{
+  height:146px !important;
+  min-height:146px !important;
+  max-height:146px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* 상단 제목/배지는 기존 고정값 유지 */
+.locations .loc-card > .row{
+  min-height:43px !important;
+  height:43px !important;
+}
+
+/* 풍속 줄까지 카드 안에 완전히 들어오도록 통계 영역 조정 */
+.locations .stats{
+  flex:1 1 auto !important;
+  margin-top:5px !important;
+  row-gap:5px !important;
+  align-content:start !important;
+  overflow:visible !important;
+}
+
+.locations .stat{
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+}
+
+/* 낮음/주의/높음 테두리는 v8.44 규격 그대로 고정 */
+.locations .pill{
+  width:72px !important;
+  min-width:72px !important;
+  max-width:72px !important;
+  height:30px !important;
+  min-height:30px !important;
+  max-height:30px !important;
+  white-space:nowrap !important;
+}
+
+/* JMA/KMA 위치 차이: 큰 2칸 영역 대신 한 줄 요약 */
+.compare-compact{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  min-width:0;
+  margin-top:7px;
+  padding:7px 9px;
+  box-sizing:border-box;
+  border:1px dashed rgba(100,140,180,.28);
+  border-radius:9px;
+  background:rgba(5,18,35,.22);
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:1.2;
+}
+
+.compare-compact-label{
+  color:#9fc2e8;
+  font-size:9px;
+  font-weight:800;
+  flex:0 0 auto;
+}
+
+.compare-compact-item{
+  color:#cbdcf0;
+  font-size:9px;
+  flex:0 0 auto;
+}
+
+.compare-compact-item b{
+  margin-left:2px;
+  color:#ffffff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.compare-compact-divider{
+  color:#56718e;
+  font-size:9px;
+  flex:0 0 auto;
+}
+
+/* 태풍 데이터 사용 현황 / 위험도 판단 외곽선 정렬 유지 */
+.bottom-info-row{
+  align-items:stretch !important;
+}
+
+.bottom-info-row > section{
+  height:100% !important;
+  align-self:stretch !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* 기존 비교영역이 줄어든 만큼 기관 패널 내부도 자연스럽게 채움 */
+.bottom-info-row .agency-inline{
+  justify-content:flex-start !important;
+}
+
+/* 모바일에서도 카드 테두리와 풍속 줄 유지 */
+@media(max-width:760px){
+  .locations .loc-grid{
+    grid-auto-rows:146px !important;
+  }
+
+  .locations .loc-card{
+    height:146px !important;
+    min-height:146px !important;
+    max-height:146px !important;
+  }
+
+  .compare-compact{
+    gap:5px;
+    padding:6px 7px;
+  }
+
+  .compare-compact-label,
+  .compare-compact-item,
+  .compare-compact-divider{
+    font-size:8px;
+  }
+
+  .compare-compact-item b{
+    font-size:10px;
+  }
+}
+
 </style>
 </head>
 
@@ -1513,7 +1659,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.45</span>
+        <span>· v8.46</span>
       </div>
 
       <a
@@ -1752,26 +1898,11 @@ td{
 
     </div>
 
-    <div class="compare-title">
-      예상경로 위치 차이 (JMA ↔ KMA)
-    </div>
-
-    <div class="compare-row">
-
-      <div class="compare-box">
-        <span>평균 위치 차이</span>
-        <b id="avgDiff">-</b>
-      </div>
-
-      <div class="compare-box">
-        <span>최대 위치 차이</span>
-        <b id="maxDiff">-</b>
-      </div>
-
-    </div>
-
-    <div class="compare-definition">
-      같은 예보 시각의 JMA·KMA 예상 태풍 중심 위치 간 거리
+    <div class="compare-compact">
+      <span class="compare-compact-label">예상경로 위치 차이</span>
+      <span class="compare-compact-item">평균 <b id="avgDiff">-</b></span>
+      <span class="compare-compact-divider">|</span>
+      <span class="compare-compact-item">최대 <b id="maxDiff">-</b></span>
     </div>
 
   </div>
