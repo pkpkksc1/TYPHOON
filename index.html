@@ -428,6 +428,11 @@ td{
   border-color:#b98d0a;
 }
 
+.flight-active{
+  color:#73b9ff;
+  border-color:#2f8bd5;
+}
+
 .high{
   color:var(--red);
   border-color:#bd3439;
@@ -1078,7 +1083,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.34</span>
+        <span>· v8.35</span>
       </div>
 
       <a
@@ -1735,9 +1740,17 @@ function flightClass(
 
 
   if(
-    t.includes("지연")
+    t.includes("지연") ||
+    t.includes("도착 확인 대기")
   ){
     return "warn";
+  }
+
+
+  if(
+    t.includes("운항 중")
+  ){
+    return "flight-active";
   }
 
 
@@ -2955,7 +2968,13 @@ $("pressure")
           <div class="timebox">
 
             <span>
-              출발 · ${
+              ${
+                safe(
+                  dep.display_label_ko,
+                  "출발"
+                )
+              }
+              · ${
                 safe(
                   dep.timezone_label_ko
                 )
@@ -2986,7 +3005,13 @@ $("pressure")
           <div class="timebox">
 
             <span>
-              도착 · ${
+              ${
+                safe(
+                  arr.display_label_ko,
+                  "도착"
+                )
+              }
+              · ${
                 safe(
                   arr.timezone_label_ko
                 )
