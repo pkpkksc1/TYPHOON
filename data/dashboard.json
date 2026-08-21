@@ -2,28 +2,28 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-21T21:35:15.894436+00:00",
+  "generated_at_utc": "2026-08-21T21:54:41.850948+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-21T19:32:39.131785+00:00",
-    "weather": "2026-08-21T21:35:15.743170+00:00",
-    "risk": "2026-08-21T21:35:15.803949+00:00",
+    "jma": "2026-08-21T21:52:34.113466+00:00",
+    "weather": "2026-08-21T21:54:41.690933+00:00",
+    "risk": "2026-08-21T21:54:41.756091+00:00",
     "flights": "2026-08-21T17:01:44.249205+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-08-22T03:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-21T19:32:39.131785+00:00",
-    "weather_updated_at_utc": "2026-08-21T21:35:15.743170+00:00",
-    "impact_updated_at_utc": "2026-08-21T21:35:14.208131+00:00",
-    "risk_updated_at_utc": "2026-08-21T21:35:15.803949+00:00",
+    "typhoon_reference_time": "2026-08-22T06:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-21T21:52:34.113466+00:00",
+    "weather_updated_at_utc": "2026-08-21T21:54:41.690933+00:00",
+    "impact_updated_at_utc": "2026-08-21T21:54:40.395397+00:00",
+    "risk_updated_at_utc": "2026-08-21T21:54:41.756091+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
     "current": {
-      "time": "2026-08-22T03:00:00+09:00",
-      "lat": 17.1,
-      "lon": 147.7,
+      "time": "2026-08-22T06:00:00+09:00",
+      "lat": 17.7,
+      "lon": 147.5,
       "pressure_hpa": 970.0,
       "max_wind_mps": 33.4,
       "movement_direction": "北北西",
@@ -32,24 +32,24 @@
     "forecast_track": [
       {
         "forecast_hour": 12,
-        "time": "2026-08-22T15:00:00+09:00",
-        "lat": 18.8,
-        "lon": 146.1,
+        "time": "2026-08-22T18:00:00+09:00",
+        "lat": 19.1,
+        "lon": 145.6,
         "pressure_hpa": 950.0,
         "max_wind_mps": 41.2,
         "movement_direction": "北西"
       },
       {
         "forecast_hour": 24,
-        "time": "2026-08-23T03:00:00+09:00",
-        "lat": 20.4,
-        "lon": 144.0,
+        "time": "2026-08-23T06:00:00+09:00",
+        "lat": 20.6,
+        "lon": 143.4,
         "pressure_hpa": 935.0,
         "max_wind_mps": 46.3,
         "movement_direction": "北西"
       },
       {
-        "forecast_hour": 48,
+        "forecast_hour": 45,
         "time": "2026-08-24T03:00:00+09:00",
         "lat": 23.0,
         "lon": 138.5,
@@ -58,7 +58,7 @@
         "movement_direction": "西北西"
       },
       {
-        "forecast_hour": 72,
+        "forecast_hour": 69,
         "time": "2026-08-25T03:00:00+09:00",
         "lat": 24.8,
         "lon": 133.3,
@@ -67,7 +67,7 @@
         "movement_direction": "西北西"
       },
       {
-        "forecast_hour": 96,
+        "forecast_hour": 93,
         "time": "2026-08-26T03:00:00+09:00",
         "lat": 26.1,
         "lon": 129.4,
@@ -76,7 +76,7 @@
         "movement_direction": "西北西"
       },
       {
-        "forecast_hour": 120,
+        "forecast_hour": 117,
         "time": "2026-08-27T03:00:00+09:00",
         "lat": 26.2,
         "lon": 126.6,
@@ -89,8 +89,8 @@
   "forecast_comparison": {
     "emoji": "🟢",
     "label_ko": "거의 일치",
-    "average_difference_km": 30,
-    "max_difference_km": 43
+    "average_difference_km": 28,
+    "max_difference_km": 39
   },
   "locations": {
     "SUZHOU": {
@@ -109,7 +109,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 05:30",
+        "last_updated": "2026-08-22 05:45",
         "rain_mm": 0.0,
         "wind_mps": 4.1
       },
@@ -136,7 +136,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 05:15",
+        "last_updated": "2026-08-22 05:45",
         "rain_mm": 0.06,
         "wind_mps": 3.9
       },
@@ -163,7 +163,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 06:30",
+        "last_updated": "2026-08-22 06:45",
         "rain_mm": 2.6,
         "wind_mps": 1.8
       },
@@ -190,7 +190,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 05:15",
+        "last_updated": "2026-08-22 05:45",
         "rain_mm": 0.1,
         "wind_mps": 6.1
       },
@@ -217,7 +217,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 04:30",
+        "last_updated": "2026-08-22 04:45",
         "rain_mm": 1.28,
         "wind_mps": 3.1
       },
@@ -244,7 +244,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 05:30",
+        "last_updated": "2026-08-22 05:45",
         "rain_mm": 0.0,
         "wind_mps": 2.3
       },
