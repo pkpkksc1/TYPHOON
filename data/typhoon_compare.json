@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 43,
-    "max_difference_km": 78,
+    "average_difference_km": 25,
+    "max_difference_km": 52,
     "overall": {
       "level": "GREEN",
       "emoji": "🟢",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-21T18:00:00+09:00",
-      "kma_time": "202608211500",
-      "time_gap_hours": 3.0,
+      "jma_time": "2026-08-21T21:00:00+09:00",
+      "kma_time": "202608212100",
+      "time_gap_hours": 0,
       "jma": {
-        "lat": 15.5,
-        "lon": 148.4
+        "lat": 16.0,
+        "lon": 148.0
       },
       "kma": {
-        "lat": 15.3,
-        "lon": 148.8
+        "lat": 16.0,
+        "lon": 148.0
       },
-      "difference_km": 48,
+      "difference_km": 0,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -39,18 +39,38 @@
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-22T06:00:00+09:00",
-      "kma_time": "202608220300",
-      "time_gap_hours": 3.0,
+      "jma_time": "2026-08-22T09:00:00+09:00",
+      "kma_time": "202608220900",
+      "time_gap_hours": 0,
       "jma": {
-        "lat": 17.3,
-        "lon": 147.1
+        "lat": 17.8,
+        "lon": 146.7
       },
       "kma": {
-        "lat": 16.9,
-        "lon": 147.7
+        "lat": 17.9,
+        "lon": 146.3
       },
-      "difference_km": 78,
+      "difference_km": 44,
+      "status": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
+      }
+    },
+    {
+      "forecast_hour": 48,
+      "jma_time": "2026-08-23T09:00:00+09:00",
+      "kma_time": "202608230900",
+      "time_gap_hours": 0,
+      "jma": {
+        "lat": 21.1,
+        "lon": 142.5
+      },
+      "kma": {
+        "lat": 21.1,
+        "lon": 142.0
+      },
+      "difference_km": 52,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -58,19 +78,19 @@
       }
     },
     {
-      "forecast_hour": 45,
-      "jma_time": "2026-08-23T03:00:00+09:00",
-      "kma_time": "202608230300",
+      "forecast_hour": 72,
+      "jma_time": "2026-08-24T09:00:00+09:00",
+      "kma_time": "202608240900",
       "time_gap_hours": 0,
       "jma": {
-        "lat": 20.2,
-        "lon": 144.0
+        "lat": 23.6,
+        "lon": 136.8
       },
       "kma": {
-        "lat": 20.1,
-        "lon": 144.0
+        "lat": 23.5,
+        "lon": 136.7
       },
-      "difference_km": 11,
+      "difference_km": 15,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -78,19 +98,19 @@
       }
     },
     {
-      "forecast_hour": 69,
-      "jma_time": "2026-08-24T03:00:00+09:00",
-      "kma_time": "202608240300",
+      "forecast_hour": 96,
+      "jma_time": "2026-08-25T09:00:00+09:00",
+      "kma_time": "202608250900",
       "time_gap_hours": 0,
       "jma": {
-        "lat": 22.9,
-        "lon": 138.3
+        "lat": 25.3,
+        "lon": 132.1
       },
       "kma": {
-        "lat": 22.8,
-        "lon": 138.7
+        "lat": 25.2,
+        "lon": 132.2
       },
-      "difference_km": 42,
+      "difference_km": 15,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -98,39 +118,19 @@
       }
     },
     {
-      "forecast_hour": 93,
-      "jma_time": "2026-08-25T03:00:00+09:00",
-      "kma_time": "202608250300",
+      "forecast_hour": 120,
+      "jma_time": "2026-08-26T09:00:00+09:00",
+      "kma_time": "202608260900",
       "time_gap_hours": 0,
       "jma": {
-        "lat": 24.9,
-        "lon": 133.3
+        "lat": 26.9,
+        "lon": 128.5
       },
       "kma": {
-        "lat": 24.7,
-        "lon": 133.7
+        "lat": 26.7,
+        "lon": 128.4
       },
-      "difference_km": 46,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 117,
-      "jma_time": "2026-08-26T03:00:00+09:00",
-      "kma_time": "202608260300",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 26.5,
-        "lon": 130.3
-      },
-      "kma": {
-        "lat": 26.2,
-        "lon": 130.3
-      },
-      "difference_km": 33,
+      "difference_km": 24,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -138,5 +138,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-20T22:01:59.944606+00:00"
+  "generated_at_utc": "2026-08-21T01:56:55.440587+00:00"
 }
