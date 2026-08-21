@@ -887,10 +887,26 @@ td{
   min-height:72px;
 }
 
+/* v8.41 - risk guide + agency status aligned row */
+.bottom-info-row{
+  display:grid;
+  grid-template-columns:minmax(300px,370px) minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+  width:100%;
+  min-width:0;
+}
+
+.bottom-info-row > section{
+  min-width:0;
+  height:100%;
+  box-sizing:border-box;
+}
+
 /* v8.40 - risk guide */
 .risk-guide-panel{
-  width:min(370px,100%);
-  align-self:flex-start;
+  width:100%;
+  align-self:stretch;
   box-sizing:border-box;
   overflow:hidden;
   padding:10px 13px;
@@ -965,6 +981,86 @@ td{
   color:#c7d9ec;
 }
 
+.agency-inline{
+  width:100%;
+  height:100%;
+  padding:10px 12px;
+  overflow:hidden;
+}
+
+.agency-inline .agency-left{
+  width:100%;
+  min-width:0;
+}
+
+.agency-inline .agency-status-title{
+  margin:0 0 7px;
+  font-size:15px;
+  font-weight:900;
+}
+
+.agency-inline .compact-left-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin-top:0;
+}
+
+.agency-inline .compact-left-grid .agency{
+  min-height:0;
+  padding:7px 8px;
+}
+
+.agency-inline .agency strong{
+  font-size:12px;
+}
+
+.agency-inline .agency-country,
+.agency-inline .agency-role,
+.agency-inline .agency-main{
+  font-size:7px;
+}
+
+.agency-inline .agency-role{
+  margin-top:4px;
+  padding-top:4px;
+  line-height:1.35;
+}
+
+.agency-inline .agency-main{
+  margin-top:4px;
+  padding:3px 4px;
+}
+
+.agency-inline .compare-title{
+  margin-top:7px;
+  font-size:9px;
+}
+
+.agency-inline .compare-row{
+  margin-top:5px;
+  gap:5px;
+}
+
+.agency-inline .compare-box{
+  padding:6px 8px;
+}
+
+.agency-inline .compare-box span{
+  font-size:8px;
+}
+
+.agency-inline .compare-box b{
+  margin-top:3px;
+  font-size:14px;
+}
+
+.agency-inline .compare-definition{
+  margin-top:5px;
+  padding:5px 7px;
+  font-size:8px;
+  line-height:1.4;
+}
+
 .track{
   grid-column:1/-1 !important;
   grid-row:auto !important;
@@ -973,18 +1069,11 @@ td{
 .track-wrap{display:block !important}
 .track-wrap .map{width:100%}
 
-.agency-bottom{
-  grid-column:1/-1 !important;
-  grid-row:auto !important;
-  width:100%;
-  display:block !important;
-}
-.agency-bottom .agency-left{width:100%}
-.agency-bottom .compact-left-grid{
-  grid-template-columns:repeat(4,minmax(0,1fr));
-}
-.agency-bottom .compare-row{
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+@media(max-width:1100px){
+  .bottom-info-row{
+    grid-template-columns:1fr;
+  }
 }
 
 @media(max-width:1200px){
@@ -1005,8 +1094,7 @@ td{
   }
   .left-stack,
   .right-stack,
-  .track,
-  .agency-bottom{
+  .track{
     grid-column:1/-1;
   }
   .left-stack,
@@ -1161,7 +1249,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.40</span>
+        <span>· v8.41</span>
       </div>
 
       <a
@@ -1342,6 +1430,8 @@ td{
 </section>
 
 
+<div class="bottom-info-row">
+
 <section class="risk-guide-panel">
 
   <div class="risk-guide-title">
@@ -1382,70 +1472,12 @@ td{
 
 </section>
 
-</div>
 
-
-<section class="panel track">
-
-  <div class="kicker">
-    2일 예상 경로
-  </div>
-
-  <h2>
-    태풍 이동 경로
-  </h2>
-
-
-  <div class="track-wrap">
-
-    <div class="map" id="map">
-
-      <img
-        class="map-bg"
-        src="./assets/typhoon-map-clean.png"
-        alt="동아시아 태풍 경로 지도"
-      >
-<svg
-        id="trackSvg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-
-        <polyline
-          id="trackLine"
-          fill="none"
-          stroke="#73b9ff"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-        </polyline>
-
-      </svg>
-
-
-      <div id="mapPoints">
-      </div>
-
-    </div>
-
-
-
-
-  </div>
-
-</section>
-
-
-
-
-
-
-<section class="panel compare agency-bottom">
+<section class="panel compare agency-inline">
 
 <div class="agency-left">
 
-    <div class="kicker">
+    <div class="agency-status-title">
       태풍 데이터 사용 현황
     </div>
 
@@ -1518,6 +1550,69 @@ td{
   </div>
 
 </section>
+
+</div>
+
+</div>
+
+
+<section class="panel track">
+
+  <div class="kicker">
+    2일 예상 경로
+  </div>
+
+  <h2>
+    태풍 이동 경로
+  </h2>
+
+
+  <div class="track-wrap">
+
+    <div class="map" id="map">
+
+      <img
+        class="map-bg"
+        src="./assets/typhoon-map-clean.png"
+        alt="동아시아 태풍 경로 지도"
+      >
+<svg
+        id="trackSvg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+
+        <polyline
+          id="trackLine"
+          fill="none"
+          stroke="#73b9ff"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+        </polyline>
+
+      </svg>
+
+
+      <div id="mapPoints">
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
 
 
 </main>
@@ -2174,80 +2269,6 @@ async function updateAutoModeBadge(){
         "마지막 자동실행 확인불가";
     }
   }
-}
-
-
-function alignRiskGuidePanel(){
-
-  const leftStack =
-    document.querySelector(
-      ".left-stack"
-    );
-
-  const guide =
-    document.querySelector(
-      ".risk-guide-panel"
-    );
-
-
-  if(
-    !leftStack ||
-    !guide
-  ){
-    return;
-  }
-
-
-  // 모바일은 자연 높이 사용
-  if(
-    window.innerWidth <= 760
-  ){
-
-    guide.style.height =
-      "auto";
-
-    return;
-  }
-
-
-  // 기존 계산값 제거 후 다시 측정
-  guide.style.height =
-    "auto";
-
-
-  requestAnimationFrame(
-    () => {
-
-      const leftRect =
-        leftStack.getBoundingClientRect();
-
-      const guideRect =
-        guide.getBoundingClientRect();
-
-
-      const targetHeight =
-        Math.round(
-          leftRect.bottom -
-          guideRect.top
-        );
-
-
-      // 왼쪽 물류거점 패널 하단과 위험도 박스 하단을 맞춤
-      if(
-        targetHeight >= 165
-      ){
-
-        guide.style.height =
-          `${targetHeight}px`;
-      }
-
-      else{
-
-        guide.style.height =
-          "auto";
-      }
-    }
-  );
 }
 
 
@@ -3252,9 +3273,6 @@ $("pressure")
       }`;
 
 
-  // 좌우 하단 레이아웃 선 정렬
-  alignRiskGuidePanel();
-
 }
 
 
@@ -3279,14 +3297,6 @@ $("refreshBtn")
 
     }
   );
-
-
-window.addEventListener(
-  "resize",
-  () => {
-    alignRiskGuidePanel();
-  }
-);
 
 
 // ==========================================
