@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.2"
+PARSER_VERSION = "8.3"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -225,6 +225,15 @@ def main() -> int:
         "product": "Dashboard Summary",
         "parser_version": PARSER_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+
+        # Source-specific refresh times.
+        # These remain tied to the source JSON itself, so rebuilding the
+        # dashboard for flights does not falsely make JMA look newer.
+        "source_updated_at_utc": {
+            "jma": jma.get("generated_at_utc"),
+            "flights": flights.get("generated_at_utc"),
+        },
+
         "typhoon": get_typhoon_track(jma),
         "forecast_comparison": {
             "emoji": compare_overall.get("emoji", "⚪"),
