@@ -1,0 +1,147 @@
+name: "TYPHOON AUTO UPDATE"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7,37 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: typhoon-auto-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout latest repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check AUTO mode
+        id: mode
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          p = Path("data/typhoon_auto_mode.json")
+          enabled = False
+
+          if p.exists():
+              try:
+                  enabled = bool(json.loads(p.read_text(encoding="utf-8")).get("enabled"))
+              except Exception:
+                  enabled = False
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"enabled={'true' if enabled else 'false'}\n")
+
+          print("AUTO MODE:", "ON" if enabled else "OFF")
+          PY
+
+      - name: AUTO mode is OFF
+        if: steps.mode.outputs.enabled != 'true'
+        run: |
+          echo "AUTO mode is OFF."
+          echo "No typhoon data will be updated."
+
+      - name: Set up Python
+        if: steps.mode.outputs.enabled == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        if: steps.mode.outputs.enabled == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Fetch JMA
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/fetch_jma_typhoon.py
+
+      - name: Fetch KMA
+        if: steps.mode.outputs.enabled == 'true'
+        env:
+          KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
+        run: python src/fetch_kma_typhoon.py
+
+      - name: Compare JMA KMA
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/compare_typhoon.py
+
+      - name: Fetch CMA
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/fetch_cma_typhoon.py
+
+      - name: Fetch JTWC
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/fetch_jtwc.py
+
+      - name: Calculate typhoon impact
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/typhoon_impact.py
+
+      - name: Add CMA impact cross-check
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          if [ -f src/add_cma_impact.py ]; then
+            python src/add_cma_impact.py
+          else
+            echo "src/add_cma_impact.py not found - skip"
+          fi
+
+      - name: Fetch hub weather
+        if: steps.mode.outputs.enabled == 'true'
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        run: python src/fetch_weather.py
+
+      - name: Calculate combined risk
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/typhoon_risk.py
+
+      - name: Fetch representative flights
+        if: steps.mode.outputs.enabled == 'true' && (github.event_name == 'workflow_dispatch' || github.event.schedule == '7 * * * *')
+        env:
+          AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
+        run: python src/fetch_flights.py
+
+      - name: Build dashboard
+        if: steps.mode.outputs.enabled == 'true'
+        run: python src/build_dashboard.py
+
+      - name: Commit latest data
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git commit -m "Auto update typhoon logistics data"
+
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin main; then
+              echo "Update completed."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          exit 1
