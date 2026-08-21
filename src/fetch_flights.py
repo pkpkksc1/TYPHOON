@@ -3,7 +3,7 @@
 
 """
 SBLC Typhoon Dashboard
-Flight Status Fetch v8.3 - 5 representative flights
+Flight Status Fetch v8.4 - 5 representative flights + monthly API counter
 
 Aviationstack targets
 
@@ -34,6 +34,11 @@ Selection / robustness updates in v8.1:
 
 Output:
     data/flights.json
+
+API usage counter:
+- Tracks requests made by this dashboard from the moment v8.4 is deployed.
+- Resets automatically when the Shanghai calendar month changes.
+- This is a local dashboard counter, not provider-side billing usage.
 """
 
 from __future__ import annotations
@@ -52,7 +57,9 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "flights.json"
 
 API_URL = "https://api.aviationstack.com/v1/flights"
-PARSER_VERSION = "8.3"
+PARSER_VERSION = "8.4"
+AVIATIONSTACK_MONTHLY_LIMIT = 100
+SHANGHAI_TZ = timezone(timedelta(hours=8))
 
 
 AIRPORTS = {
@@ -654,6 +661,34 @@ def load_flight(
     }
 
 
+
+def load_api_usage(now_utc: datetime) -> Dict[str, Any]:
+    """Load the locally persisted Aviationstack request counter."""
+    period = now_utc.astimezone(SHANGHAI_TZ).strftime("%Y-%m")
+    previous_count = 0
+    tracking_started_at_utc = now_utc.isoformat()
+
+    if OUTPUT_PATH.exists():
+        try:
+            previous = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+            usage = previous.get("api_usage") or {}
+
+            if str(usage.get("period") or "") == period:
+                previous_count = int(usage.get("monthly_requests") or 0)
+                tracking_started_at_utc = (
+                    usage.get("tracking_started_at_utc")
+                    or tracking_started_at_utc
+                )
+        except Exception:
+            # A damaged/old flights.json must never block flight fetching.
+            previous_count = 0
+
+    return {
+        "period": period,
+        "previous_count": max(previous_count, 0),
+        "tracking_started_at_utc": tracking_started_at_utc,
+    }
+
 def main() -> int:
     print(f"Flight fetch version: {PARSER_VERSION}")
 
@@ -667,8 +702,11 @@ def main() -> int:
             "AVIATIONSTACK_API_KEY secret is missing."
         )
 
+    usage_base = load_api_usage(datetime.now(timezone.utc))
+
     results: List[Dict[str, Any]] = []
     errors: List[Dict[str, str]] = []
+    run_request_count = 0
 
     for config in FLIGHT_CONFIGS:
         ident = config["flight_iata"]
@@ -680,12 +718,15 @@ def main() -> int:
         )
 
         try:
-            results.append(
-                load_flight(
-                    api_key,
-                    config,
-                )
+            result = load_flight(
+                api_key,
+                config,
             )
+            results.append(result)
+
+            # Aviationstack states that errored requests do not count toward
+            # monthly quota, so only a completed API response is counted here.
+            run_request_count += 1
         except Exception as exc:
             errors.append({
                 "flight_iata": ident,
@@ -695,10 +736,25 @@ def main() -> int:
             })
             print(f"ERROR {ident}: {exc}")
 
+    generated_at_utc = datetime.now(timezone.utc)
+    monthly_requests = usage_base["previous_count"] + run_request_count
+
+    api_usage = {
+        "provider": "Aviationstack",
+        "counter_type": "dashboard_local",
+        "period": usage_base["period"],
+        "monthly_requests": monthly_requests,
+        "monthly_limit": AVIATIONSTACK_MONTHLY_LIMIT,
+        "last_run_requests": run_request_count,
+        "last_fetch_at_utc": generated_at_utc.isoformat(),
+        "tracking_started_at_utc": usage_base["tracking_started_at_utc"],
+    }
+
     output = {
         "source": "Aviationstack",
-        "product": "Manual Flight Status - 7 Representative Flights",
+        "product": "Manual Flight Status - 5 Representative Flights",
         "parser_version": PARSER_VERSION,
+        "api_usage": api_usage,
 
         "groups": {
             "WF수입": [
@@ -722,9 +778,7 @@ def main() -> int:
         "flights": results,
         "errors": errors,
 
-        "generated_at_utc": datetime.now(
-            timezone.utc
-        ).isoformat(),
+        "generated_at_utc": generated_at_utc.isoformat(),
     }
 
     OUTPUT_PATH.parent.mkdir(
@@ -744,9 +798,14 @@ def main() -> int:
     print(f"Updated: {OUTPUT_PATH}")
     print(f"Flights returned: {len(results)}")
     print(f"Errors: {len(errors)}")
+    print(f"API requests this run: {run_request_count}")
+    print(
+        f"API requests this month: {monthly_requests} / "
+        f"{AVIATIONSTACK_MONTHLY_LIMIT}"
+    )
 
     # Do not fail the whole workflow when only one airline has no result.
-    # Fail only if all 7 API calls errored.
+    # Fail only if all configured API calls errored.
     return 1 if len(errors) == len(FLIGHT_CONFIGS) else 0
 
 

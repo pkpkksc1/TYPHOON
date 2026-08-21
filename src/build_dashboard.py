@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.4.1-CURRENT-DISTANCE-FLIGHT5"
+PARSER_VERSION = "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE"
 TARGET_TYPHOON_NUMBER = "2618"
 TARGET_TYPHOON_NAME = "SAUDEL"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
@@ -320,6 +320,7 @@ def main() -> int:
         "locations": locations,
         "routes": routes,
         "flights": flight_summaries,
+        "aviationstack_usage": flights.get("api_usage", {}),
         "attribution": [
             "Japan Meteorological Agency (JMA)",
             "Korea Meteorological Administration (KMA)",
