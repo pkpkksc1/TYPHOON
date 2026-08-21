@@ -887,18 +887,20 @@ td{
   min-height:72px;
 }
 
-/* v8.37 - 위험등급 기준 */
+/* v8.40 - risk guide */
 .risk-guide-panel{
   width:min(370px,100%);
   align-self:flex-start;
-  padding:12px 13px;
+  box-sizing:border-box;
+  overflow:hidden;
+  padding:10px 13px;
   background:linear-gradient(180deg,#0f1d30,#0b1828);
   border:1px solid var(--line);
   border-radius:14px;
 }
 
 .risk-guide-title{
-  margin:3px 0 9px;
+  margin:0 0 7px;
   font-size:15px;
   font-weight:900;
 }
@@ -908,7 +910,7 @@ td{
   grid-template-columns:62px minmax(0,1fr);
   align-items:center;
   gap:8px;
-  padding:5px 0;
+  padding:4px 0;
   border-top:1px solid rgba(90,120,155,.16);
 }
 
@@ -951,8 +953,8 @@ td{
 }
 
 .risk-guide-logic{
-  margin-top:8px;
-  padding-top:7px;
+  margin-top:6px;
+  padding-top:6px;
   border-top:1px dashed rgba(100,140,180,.28);
   color:#8fa9c3;
   font-size:8px;
@@ -1159,7 +1161,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.39</span>
+        <span>· v8.40</span>
       </div>
 
       <a
@@ -1341,10 +1343,6 @@ td{
 
 
 <section class="risk-guide-panel">
-
-  <div class="kicker">
-    위험등급 기준
-  </div>
 
   <div class="risk-guide-title">
     물류 위험도 판단
@@ -2177,6 +2175,81 @@ async function updateAutoModeBadge(){
     }
   }
 }
+
+
+function alignRiskGuidePanel(){
+
+  const leftStack =
+    document.querySelector(
+      ".left-stack"
+    );
+
+  const guide =
+    document.querySelector(
+      ".risk-guide-panel"
+    );
+
+
+  if(
+    !leftStack ||
+    !guide
+  ){
+    return;
+  }
+
+
+  // 모바일은 자연 높이 사용
+  if(
+    window.innerWidth <= 760
+  ){
+
+    guide.style.height =
+      "auto";
+
+    return;
+  }
+
+
+  // 기존 계산값 제거 후 다시 측정
+  guide.style.height =
+    "auto";
+
+
+  requestAnimationFrame(
+    () => {
+
+      const leftRect =
+        leftStack.getBoundingClientRect();
+
+      const guideRect =
+        guide.getBoundingClientRect();
+
+
+      const targetHeight =
+        Math.round(
+          leftRect.bottom -
+          guideRect.top
+        );
+
+
+      // 왼쪽 물류거점 패널 하단과 위험도 박스 하단을 맞춤
+      if(
+        targetHeight >= 165
+      ){
+
+        guide.style.height =
+          `${targetHeight}px`;
+      }
+
+      else{
+
+        guide.style.height =
+          "auto";
+      }
+    }
+  );
+}
+
 
 async function load(){
 
@@ -3178,6 +3251,10 @@ $("pressure")
         ).join(" · ")
       }`;
 
+
+  // 좌우 하단 레이아웃 선 정렬
+  alignRiskGuidePanel();
+
 }
 
 
@@ -3202,6 +3279,14 @@ $("refreshBtn")
 
     }
   );
+
+
+window.addEventListener(
+  "resize",
+  () => {
+    alignRiskGuidePanel();
+  }
+);
 
 
 // ==========================================
