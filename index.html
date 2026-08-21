@@ -995,7 +995,7 @@ td{
 }
 
 .agency-inline .agency-status-title{
-  margin:0 0 7px;
+  margin:0 0 5px;
   font-size:15px;
   font-weight:900;
 }
@@ -1012,24 +1012,31 @@ td{
 }
 
 .agency-inline .agency strong{
-  font-size:12px;
+  font-size:13px;
+  line-height:1.08;
 }
 
 .agency-inline .agency-country,
 .agency-inline .agency-role,
 .agency-inline .agency-main{
-  font-size:7px;
+  font-size:8px;
+}
+
+.agency-inline .agency-country{
+  margin-top:0;
+  line-height:1.08;
 }
 
 .agency-inline .agency-role{
-  margin-top:4px;
-  padding-top:4px;
-  line-height:1.35;
+  margin-top:1px;
+  padding-top:1px;
+  line-height:1.15;
 }
 
 .agency-inline .agency-main{
-  margin-top:4px;
-  padding:3px 4px;
+  margin-top:1px;
+  padding:1px 4px;
+  line-height:1.08;
 }
 
 .agency-inline .compare-title{
@@ -1423,12 +1430,12 @@ td{
 
 .bottom-info-row .agency-inline .agency{
   min-width:0;
-  height:62px;
-  min-height:62px;
-  max-height:62px;
+  height:64px;
+  min-height:64px;
+  max-height:64px;
   box-sizing:border-box;
   overflow:hidden;
-  padding:6px 7px;
+  padding:3px 7px;
 }
 
 .bottom-info-row .agency-inline .agency strong{
@@ -1438,8 +1445,8 @@ td{
 }
 
 .bottom-info-row .agency-inline .agency-role{
-  min-height:22px;
-  max-height:22px;
+  min-height:20px;
+  max-height:20px;
   overflow:hidden;
 }
 
@@ -1555,7 +1562,7 @@ td{
   gap:8px;
   width:100%;
   min-width:0;
-  margin-top:7px;
+  margin-top:5px;
   padding:7px 9px;
   box-sizing:border-box;
   border:1px dashed rgba(100,140,180,.28);
@@ -1785,7 +1792,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.55</span>
+        <span>· v8.56</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -3689,7 +3696,7 @@ $("pressure")
   );
 
 
-  // v8.55 적용 여부: 거리·5일경로 + 날짜 라벨 + 대표항공편 일 1회 조회
+  // v8.56 적용 여부: 거리·5일경로 + 날짜 라벨 + 대표항공편 일 1회 조회 + 기관정보 글자 확대
   // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
   // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
   {
