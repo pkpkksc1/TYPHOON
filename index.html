@@ -1060,7 +1060,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.32</span>
+        <span>· v8.32.1</span>
       </div>
 
       <a
@@ -2705,25 +2705,7 @@ $("pressure")
         </div>
 
 
-        <div class="loc-source-line">
 
-          <div>
-            <strong>태풍</strong>
-            · ${locationForecastSource(item.closest_source)}
-            · 최접근 ${
-              item.closest_time
-                ? riskMetaTime(item.closest_time)
-                : "-"
-            } 중국시간
-          </div>
-
-          <div>
-            <strong>날씨</strong>
-            · ${safe(w.source, "WeatherAPI.com")}
-            · 관측 ${localWeatherTime(w.last_updated)} 현지시각
-          </div>
-
-        </div>
 
       `;
 
