@@ -1784,7 +1784,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.50</span>
+        <span>· v8.51</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -3592,36 +3592,32 @@ $("pressure")
 
         <div class="stats">
 
-          <div class="stat distance-stat">
-            <div>
-              <span>현재 거리</span>
-              <b>
-                ${
-                  fmt(
-                    item.current_distance_km,
-                    " km"
-                  )
-                }
-              </b>
-            </div>
-            <div>
-              <span>5일 예보 내 최접근</span>
-              <b>
-                ${
-                  fmt(
-                    item.closest_distance_km,
-                    " km"
-                  )
-                }
-              </b>
-            </div>
+          <div class="stat">
+            <span>현재</span>
+            <b>
+              ${
+                fmt(
+                  item.current_distance_km,
+                  " km"
+                )
+              }
+            </b>
           </div>
 
+          <div class="stat">
+            <span>5일</span>
+            <b>
+              ${
+                fmt(
+                  item.closest_distance_km,
+                  " km"
+                )
+              }
+            </b>
+          </div>
 
           <div class="stat">
-            <span>
-              현재 강수
-            </span>
+            <span>강수</span>
             <b>
               ${
                 fmt(
@@ -3632,11 +3628,8 @@ $("pressure")
             </b>
           </div>
 
-
           <div class="stat">
-            <span>
-              풍속
-            </span>
+            <span>풍속</span>
             <b>
               ${
                 fmt(
@@ -3646,9 +3639,6 @@ $("pressure")
               }
             </b>
           </div>
-
-
-
 
         </div>
 
@@ -3667,7 +3657,7 @@ $("pressure")
   );
 
 
-  // v8.50 적용 여부: 6개 거점 거리표시 + 5일(120시간) 경로 데이터 확인
+  // v8.51 적용 여부: 6개 거점 2x2 거리/날씨 표시 + 5일(120시간) 경로 데이터 확인
   {
     const statusEl = $("distanceFeatureStatus");
     const locationItems = Object.values(d.locations || {});
