@@ -952,22 +952,52 @@ td{
 }
 
 
+.title-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.title-row h1{
+  margin:4px 0 0;
+}
+
 .dashboard-version{
-  position:fixed;
-  top:10px;
-  right:14px;
-  z-index:9999;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  margin-top:4px;
   font-size:11px;
-  font-weight:700;
+  font-weight:800;
   line-height:1;
   color:#d9e7f7;
-  background:rgba(7,24,43,.92);
-  border:1px solid rgba(140,170,205,.35);
+  background:rgba(18,42,68,.88);
+  border:1px solid rgba(140,170,205,.32);
   border-radius:8px;
-  padding:6px 10px;
-  box-shadow:0 4px 14px rgba(0,0,0,.22);
-  pointer-events:none;
-  user-select:none;
+  padding:6px 9px;
+  white-space:nowrap;
+}
+
+.auto-last-run{
+  margin-top:5px;
+  font-size:10px;
+  color:var(--muted);
+}
+
+.auto-dot{
+  display:inline-block;
+  width:12px;
+  text-align:center;
+  font-weight:900;
+}
+
+.auto-dot.on{
+  color:#37d67a;
+}
+
+.auto-dot.off{
+  color:#ff8a8f;
 }
 
 </style>
@@ -985,9 +1015,21 @@ td{
       SBLC · TYPHOON LOGISTICS CONTROL
     </div>
 
-    <h1>
-      태풍 물류 대시보드
-    </h1>
+    <div class="title-row">
+      <h1>
+        태풍 물류 대시보드
+      </h1>
+
+      <div id="dashboardVersion" class="dashboard-version">
+        <span id="autoModeDot" class="auto-dot off">○</span>
+        <span id="autoModeText">AUTO ?</span>
+        <span>· v8.29</span>
+      </div>
+    </div>
+
+    <div id="autoLastRun" class="auto-last-run">
+      마지막 자동실행 -
+    </div>
 
   </div>
 
@@ -1302,6 +1344,9 @@ td{
 
 const DATA_URL =
   "./data/dashboard.json";
+
+const AUTO_MODE_URL =
+  "./data/typhoon_auto_mode.json";
 
 const $ =
   id =>
@@ -1740,7 +1785,145 @@ function xy(
 // 데이터 로드
 // ==========================================
 
+
+async function updateAutoModeBadge(){
+
+  const dot =
+    $("autoModeDot");
+
+  const txt =
+    $("autoModeText");
+
+  const lastRun =
+    $("autoLastRun");
+
+  if(
+    !dot ||
+    !txt
+  ){
+    return;
+  }
+
+  try{
+
+    const res =
+      await fetch(
+        `${AUTO_MODE_URL}?t=${Date.now()}`
+      );
+
+    if(
+      !res.ok
+    ){
+      throw new Error(
+        `auto_mode ${res.status}`
+      );
+    }
+
+    const m =
+      await res.json();
+
+    const enabled =
+      !!(
+        m &&
+        m.enabled
+      );
+
+    dot.textContent =
+      enabled ? "●" : "○";
+
+    dot.className =
+      `auto-dot ${
+        enabled ? "on" : "off"
+      }`;
+
+    txt.textContent =
+      enabled ? "AUTO ON" : "AUTO OFF";
+
+
+    if(
+      lastRun
+    ){
+
+      if(
+        m.last_run_at_utc
+      ){
+
+        const runTime =
+          new Date(
+            m.last_run_at_utc
+          );
+
+        if(
+          !Number.isNaN(
+            runTime.getTime()
+          )
+        ){
+
+          const chinaRun =
+            runTime.toLocaleString(
+              "ko-KR",
+              {
+                timeZone:
+                  "Asia/Shanghai",
+
+                month:
+                  "2-digit",
+
+                day:
+                  "2-digit",
+
+                hour:
+                  "2-digit",
+
+                minute:
+                  "2-digit",
+
+                hour12:
+                  false
+              }
+            );
+
+          lastRun.textContent =
+            `마지막 자동실행 ${chinaRun} · 중국시간`;
+        }
+
+        else{
+          lastRun.textContent =
+            "마지막 자동실행 -";
+        }
+      }
+
+      else{
+        lastRun.textContent =
+          "마지막 자동실행 -";
+      }
+    }
+
+  }
+
+  catch(e){
+
+    dot.textContent =
+      "○";
+
+    dot.className =
+      "auto-dot off";
+
+    txt.textContent =
+      "AUTO ?";
+
+    if(
+      lastRun
+    ){
+      lastRun.textContent =
+        "마지막 자동실행 확인불가";
+    }
+  }
+}
+
 async function load(){
+
+  await updateAutoModeBadge();
 
   const res =
     await fetch(
@@ -2620,6 +2803,5 @@ load()
 </script>
 
 
-<div class="dashboard-version">Dashboard v8.26</div>
 </body>
 </html>
