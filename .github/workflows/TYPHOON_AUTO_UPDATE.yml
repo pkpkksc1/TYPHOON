@@ -107,13 +107,48 @@ jobs:
             echo "::warning::JTWC fetch failed/timed out. Previous JTWC data will be used."
           }
 
-      - name: Calculate typhoon impact
+      - name: Calculate SAUDEL typhoon impact
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: timeout 90s python src/typhoon_impact.py
+
+      - name: Verify SAUDEL impact hard lock
         if: steps.mode.outputs.enabled == 'true'
         shell: bash
         run: |
-          timeout 90s python src/typhoon_impact.py || {
-            echo "::warning::Typhoon impact failed. Previous impact data will be used."
-          }
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/typhoon_impact.json")
+
+          if not p.exists():
+              raise SystemExit("ERROR: data/typhoon_impact.json missing")
+
+          data = json.loads(p.read_text(encoding="utf-8"))
+          ty = data.get("typhoon") or {}
+
+          number = str(ty.get("number") or "").strip()
+          name = str(ty.get("name") or "").strip().upper()
+          parser = str(data.get("parser_version") or "")
+
+          print("Impact parser:", parser)
+          print("Impact typhoon:", number, name)
+
+          if number != "2618" or name != "SAUDEL":
+              raise SystemExit(
+                  "ERROR: SAUDEL HARD LOCK FAILED. "
+                  f"number={number!r}, name={name!r}"
+              )
+
+          if not parser.startswith("4.6-SAUDEL"):
+              raise SystemExit(
+                  "ERROR: old typhoon_impact.py is still running. "
+                  f"parser_version={parser!r}"
+              )
+
+          print("OK: impact is locked to 2618 SAUDEL")
+          PY
 
       - name: Add CMA impact cross-check
         if: steps.mode.outputs.enabled == 'true'
@@ -137,10 +172,36 @@ jobs:
             echo "::warning::WeatherAPI fetch failed/timed out. Previous weather data will be used."
           }
 
-      - name: Calculate combined risk
+      - name: Calculate SAUDEL combined risk
         if: steps.mode.outputs.enabled == 'true'
         shell: bash
         run: timeout 90s python src/typhoon_risk.py
+
+      - name: Verify SAUDEL risk hard lock
+        if: steps.mode.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/typhoon_risk.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          ty = data.get("typhoon") or {}
+
+          number = str(ty.get("number") or "").strip()
+          name = str(ty.get("name") or "").strip().upper()
+
+          print("Risk typhoon:", number, name)
+
+          if number != "2618" or name != "SAUDEL":
+              raise SystemExit(
+                  "ERROR: risk is not 2618 SAUDEL. "
+                  "Dashboard will NOT be rebuilt."
+              )
+
+          print("OK: risk is locked to 2618 SAUDEL")
+          PY
 
       - name: Fetch representative flights
         if: steps.mode.outputs.enabled == 'true' && (github.event_name == 'workflow_dispatch' || github.event.schedule == '7 * * * *')
