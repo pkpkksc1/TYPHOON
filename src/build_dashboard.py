@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.7-SAUDEL"
+PARSER_VERSION = "8.3.8-SAUDEL-HARDLOCK"
 TARGET_TYPHOON_NUMBER = "2618"
 TARGET_TYPHOON_NAME = "SAUDEL"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
@@ -188,6 +188,21 @@ def main() -> int:
     compare = load_json(COMPARE_PATH)
     risk = load_json(RISK_PATH)
     flights = load_json(FLIGHTS_PATH)
+
+    # HARD GUARD: dashboard must never render risk from another storm.
+    risk_typhoon = risk.get("typhoon") or {}
+    risk_number = str(risk_typhoon.get("number") or "").strip()
+    risk_name = str(risk_typhoon.get("name") or "").strip().upper()
+
+    if (
+        risk_number != TARGET_TYPHOON_NUMBER
+        or risk_name != TARGET_TYPHOON_NAME
+    ):
+        raise RuntimeError(
+            "SAUDEL HARD LOCK: typhoon_risk.json is not "
+            f"{TARGET_TYPHOON_NUMBER} {TARGET_TYPHOON_NAME}. "
+            "Dashboard build stopped."
+        )
 
     compare_summary = compare.get("summary", {})
     compare_overall = compare_summary.get("overall", {})

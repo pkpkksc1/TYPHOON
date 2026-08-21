@@ -44,7 +44,7 @@ COMPARE_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 JTWC_PATH = BASE_DIR / "data" / "jtwc_typhoon.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 
-PARSER_VERSION = "4.5-SAUDEL"
+PARSER_VERSION = "4.6-SAUDEL-HARDLOCK"
 CAUTION_RADIUS_MULTIPLIER = 1.5
 
 # This dashboard is intentionally locked to Typhoon 2618 SAUDEL.
@@ -900,7 +900,7 @@ def main() -> int:
             "product": "Logistics Typhoon Impact",
             "parser_version": PARSER_VERSION,
             "status": "NO_TYPHOON",
-            "message_ko": "2618 SAUDEL 자료 없음 - 다른 태풍은 사용하지 않음",
+            "message_ko": "2618 SAUDEL 자료 없음 - 다른 태풍 사용 금지",
             "locations": {},
             "routes": [],
         }

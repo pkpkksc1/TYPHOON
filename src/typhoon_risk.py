@@ -37,7 +37,10 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.4"
+PARSER_VERSION = "6.5-SAUDEL-GUARD"
+
+TARGET_TYPHOON_NUMBER = "2618"
+TARGET_TYPHOON_NAME = "SAUDEL"
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
@@ -369,6 +372,23 @@ def main() -> int:
 
     impact = load_json(IMPACT_PATH)
     weather = load_json(WEATHER_PATH)
+
+    # HARD GUARD:
+    # Never calculate logistics risk from another tropical system.
+    impact_typhoon = impact.get("typhoon") or {}
+    impact_number = str(impact_typhoon.get("number") or "").strip()
+    impact_name = str(impact_typhoon.get("name") or "").strip().upper()
+
+    if (
+        impact_number != TARGET_TYPHOON_NUMBER
+        or impact_name != TARGET_TYPHOON_NAME
+    ):
+        raise RuntimeError(
+            "SAUDEL HARD LOCK: typhoon_impact.json is not "
+            f"{TARGET_TYPHOON_NUMBER} {TARGET_TYPHOON_NAME}. "
+            f"Received number={impact_number!r}, name={impact_name!r}. "
+            "Risk calculation stopped."
+        )
 
     impact_locations = impact.get("locations", {})
     weather_locations = weather.get("locations", {})

@@ -38,7 +38,7 @@ OUTPUT_PATH = BASE_DIR / "data" / "typhoon_compare.json"
 TARGET_TYPHOON_NUMBER = "2618"
 TARGET_TYPHOON_NAME = "SAUDEL"
 
-PARSER_VERSION = "3.1-SAUDEL"
+PARSER_VERSION = "3.2-SAUDEL-HARDLOCK"
 
 # Simple thresholds for the dashboard.
 GREEN_MAX_KM = 50
