@@ -888,6 +888,62 @@ td{
   min-height:72px;
 }
 
+
+/* ==========================================================
+   v8.57 - 주요 노선 위험도 배지 테두리 고정
+   낮음/주의/높음 색상과 72×30 형태 유지
+   ========================================================== */
+.routes .route-card > .row{
+  min-width:0;
+}
+
+.routes .route-card > .row > div:first-child{
+  min-width:0;
+}
+
+.routes .pill{
+  width:72px;
+  min-width:72px;
+  max-width:72px;
+  height:30px;
+  min-height:30px;
+  max-height:30px;
+  box-sizing:border-box;
+  padding:0 7px;
+  margin:0;
+  flex:0 0 72px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  border-width:1px !important;
+  border-style:solid !important;
+  border-radius:999px;
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:28px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.routes .pill.low{
+  color:var(--green);
+  border-color:#1a9d54 !important;
+  background:rgba(55,214,122,.06);
+}
+
+.routes .pill.warn{
+  color:var(--yellow);
+  border-color:#b98d0a !important;
+  background:rgba(255,200,50,.06);
+}
+
+.routes .pill.high{
+  color:var(--red);
+  border-color:#bd3439 !important;
+  background:rgba(255,90,95,.06);
+}
+
 /* v8.41 - risk guide + agency status aligned row */
 .bottom-info-row{
   display:grid;
@@ -1792,7 +1848,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.56</span>
+        <span>· v8.57</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -3696,7 +3752,7 @@ $("pressure")
   );
 
 
-  // v8.56 적용 여부: 거리·5일경로 + 날짜 라벨 + 대표항공편 일 1회 조회 + 기관정보 글자 확대
+  // v8.57 적용 여부: v8.56 기능 유지 + 주요 노선 위험도 배지 테두리 고정
   // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
   // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
   {
