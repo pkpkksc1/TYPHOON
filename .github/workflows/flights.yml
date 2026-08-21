@@ -2,12 +2,17 @@ name: Flight Status Fetch
 
 on:
   workflow_dispatch:
+  schedule:
+    # 매시간 17분 실행
+    # GitHub Actions cron은 UTC 기준
+    # 중국시간 기준 매시간 xx:17에 해당
+    - cron: "17 * * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: manual-flight-status
+  group: hourly-flight-status
   cancel-in-progress: true
 
 jobs:
@@ -15,36 +20,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout latest repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Fetch ICN to PVG flights
+      - name: Fetch representative flight status
         env:
           AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
         run: python src/fetch_flights.py
 
-      - name: Commit flight status
+      - name: Rebuild dashboard with latest flights
+        run: python src/build_dashboard.py
+
+      - name: Commit flight and dashboard updates
         shell: bash
         run: |
+          set -e
+
           if [ ! -f data/flights.json ]; then
             echo "data/flights.json was not created."
             exit 1
           fi
 
-          git add data/flights.json
-
-          if git diff --cached --quiet; then
-            echo "No flight data change. Nothing to commit."
-            exit 0
+          if [ ! -f data/dashboard.json ]; then
+            echo "data/dashboard.json was not created."
+            exit 1
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git commit -m "Update manual flight status"
-          git push
+          git add data/flights.json data/dashboard.json
+
+          if git diff --cached --quiet; then
+            echo "No flight/dashboard data change. Nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "Update hourly flight status"
+
+          # 다른 태풍/날씨 workflow가 같은 시간에 push했을 경우 충돌 방지
+          git pull --rebase origin main
+          git push origin main
