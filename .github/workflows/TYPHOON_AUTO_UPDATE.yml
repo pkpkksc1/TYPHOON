@@ -3,18 +3,20 @@ name: "TYPHOON AUTO UPDATE"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "7 * * * *"
+    - cron: "37 * * * *"
 
 permissions:
   contents: write
 
 concurrency:
   group: typhoon-auto-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout latest repository
@@ -65,36 +67,62 @@ jobs:
 
       - name: Fetch JMA
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/fetch_jma_typhoon.py
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_jma_typhoon.py || {
+            echo "::warning::JMA fetch failed/timed out. Previous JMA data will be used."
+          }
 
       - name: Fetch KMA
         if: steps.mode.outputs.enabled == 'true'
         env:
           KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
-        run: python src/fetch_kma_typhoon.py
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_kma_typhoon.py || {
+            echo "::warning::KMA fetch failed/timed out. Previous KMA data will be used."
+          }
 
       - name: Compare JMA KMA
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/compare_typhoon.py
+        shell: bash
+        run: |
+          timeout 90s python src/compare_typhoon.py || {
+            echo "::warning::JMA/KMA compare failed. Previous comparison will be used."
+          }
 
       - name: Fetch CMA
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/fetch_cma_typhoon.py
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_cma_typhoon.py || {
+            echo "::warning::CMA fetch failed/timed out. Previous CMA data will be used."
+          }
 
       - name: Fetch JTWC
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/fetch_jtwc.py
+        shell: bash
+        run: |
+          timeout 120s python src/fetch_jtwc.py || {
+            echo "::warning::JTWC fetch failed/timed out. Previous JTWC data will be used."
+          }
 
       - name: Calculate typhoon impact
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/typhoon_impact.py
+        shell: bash
+        run: |
+          timeout 90s python src/typhoon_impact.py || {
+            echo "::warning::Typhoon impact failed. Previous impact data will be used."
+          }
 
       - name: Add CMA impact cross-check
         if: steps.mode.outputs.enabled == 'true'
         shell: bash
         run: |
           if [ -f src/add_cma_impact.py ]; then
-            python src/add_cma_impact.py
+            timeout 90s python src/add_cma_impact.py || {
+              echo "::warning::CMA impact cross-check failed/timed out. Continue."
+            }
           else
             echo "src/add_cma_impact.py not found - skip"
           fi
@@ -103,21 +131,31 @@ jobs:
         if: steps.mode.outputs.enabled == 'true'
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-        run: python src/fetch_weather.py
+        shell: bash
+        run: |
+          timeout 180s python src/fetch_weather.py || {
+            echo "::warning::WeatherAPI fetch failed/timed out. Previous weather data will be used."
+          }
 
       - name: Calculate combined risk
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/typhoon_risk.py
+        shell: bash
+        run: timeout 90s python src/typhoon_risk.py
 
       - name: Fetch representative flights
         if: steps.mode.outputs.enabled == 'true' && (github.event_name == 'workflow_dispatch' || github.event.schedule == '7 * * * *')
         env:
           AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
-        run: python src/fetch_flights.py
+        shell: bash
+        run: |
+          timeout 180s python src/fetch_flights.py || {
+            echo "::warning::Flight fetch failed/timed out. Previous flight data will be used."
+          }
 
       - name: Build dashboard
         if: steps.mode.outputs.enabled == 'true'
-        run: python src/build_dashboard.py
+        shell: bash
+        run: timeout 90s python src/build_dashboard.py
 
       - name: Record successful automatic run time
         if: steps.mode.outputs.enabled == 'true'
@@ -145,7 +183,7 @@ jobs:
               encoding="utf-8",
           )
 
-          print("Recorded last successful AUTO run:", data["last_run_at_utc"])
+          print("AUTO update completed:", data["last_run_at_utc"])
           PY
 
       - name: Commit latest data
