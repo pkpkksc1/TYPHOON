@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.8-SAUDEL-HARDLOCK"
+PARSER_VERSION = "8.4.0-CURRENT-DISTANCE"
 TARGET_TYPHOON_NUMBER = "2618"
 TARGET_TYPHOON_NAME = "SAUDEL"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
@@ -63,6 +63,7 @@ def simplify_location(item: Dict[str, Any], code: str = "") -> Dict[str, Any]:
             "label_ko": risk.get("label_ko"),
         },
         "reason_ko": item.get("reason_ko"),
+        "current_distance_km": typhoon.get("current_distance_km"),
         "closest_distance_km": typhoon.get("closest_distance_km"),
         "closest_time": typhoon.get("closest_time"),
         "closest_forecast_hour": typhoon.get("closest_forecast_hour"),

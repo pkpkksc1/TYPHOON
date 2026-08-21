@@ -37,7 +37,7 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.5-SAUDEL-GUARD"
+PARSER_VERSION = "6.6-CURRENT-DISTANCE"
 
 TARGET_TYPHOON_NUMBER = "2618"
 TARGET_TYPHOON_NAME = "SAUDEL"
@@ -194,6 +194,10 @@ def make_location_risk(
 ) -> Dict[str, Any]:
     weather = summarize_weather(weather_item)
 
+    current_distance = to_float(
+        impact_item.get("current_distance_km")
+    )
+
     closest_distance = to_float(
         impact_item.get("closest_distance_km")
     )
@@ -236,6 +240,11 @@ def make_location_risk(
         "reason_ko": " / ".join(reasons),
         "typhoon": {
             "source": impact_item.get("risk_source") or "JMA_FORECAST",
+            "current_distance_km": (
+                round(current_distance)
+                if current_distance is not None
+                else None
+            ),
             "closest_distance_km": (
                 round(closest_distance)
                 if closest_distance is not None
