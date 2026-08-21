@@ -58,6 +58,24 @@ h2{
   font-size:18px;
 }
 
+.panel-title-row{
+  display:flex;
+  align-items:baseline;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.panel-title-row h2{
+  margin:4px 0 0;
+}
+
+.flight-inline-meta{
+  font-size:9px;
+  color:var(--muted);
+  white-space:nowrap;
+}
+
 .header-right{
   display:flex;
   align-items:center;
@@ -1060,7 +1078,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.32.1</span>
+        <span>· v8.32.2</span>
       </div>
 
       <a
@@ -1200,9 +1218,18 @@ td{
     항공편 운항 현황
   </div>
 
-  <h2>
-    대표 항공편
-  </h2>
+  <div class="panel-title-row">
+    <h2>
+      대표 항공편
+    </h2>
+
+    <div
+      id="flightInlineMeta"
+      class="flight-inline-meta"
+    >
+      Aviationstack · 데이터 -
+    </div>
+  </div>
 
   <div
     id="flightsList"
@@ -2807,6 +2834,32 @@ $("pressure")
 
     }
   );
+
+
+  // ========================================
+  // 대표 항공편 데이터 수집 시각
+  // ========================================
+
+  const flightInlineMeta =
+    $("flightInlineMeta");
+
+  if(
+    flightInlineMeta
+  ){
+
+    const flightUpdated =
+      (
+        d.source_updated_at_utc &&
+        d.source_updated_at_utc.flights
+      )
+        ? riskMetaTime(
+            d.source_updated_at_utc.flights
+          )
+        : "-";
+
+    flightInlineMeta.textContent =
+      `Aviationstack · 데이터 ${flightUpdated} 중국시간`;
+  }
 
 
   // ========================================
