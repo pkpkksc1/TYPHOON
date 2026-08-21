@@ -965,7 +965,7 @@ td{
 
 .risk-guide-desc{
   color:#d9e5f3;
-  font-size:9px;
+  font-size:10px;
   line-height:1.45;
 }
 
@@ -974,7 +974,7 @@ td{
   padding-top:6px;
   border-top:1px dashed rgba(100,140,180,.28);
   color:#8fa9c3;
-  font-size:8px;
+  font-size:9px;
   line-height:1.5;
 }
 
@@ -1785,7 +1785,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.52</span>
+        <span>· v8.53</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -3658,37 +3658,15 @@ $("pressure")
   );
 
 
-  // v8.52 적용 여부: 6개 거점 2x2 거리/날씨 표시 + 5일(120시간) 경로 데이터 확인
+  // v8.53 적용 여부: 기능 적용 상태만 표시합니다.
+  // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
+  // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
   {
     const statusEl = $("distanceFeatureStatus");
-    const locationItems = Object.values(d.locations || {});
-    const expectedCount = 6;
-    const distanceApplied =
-      locationItems.length >= expectedCount &&
-      locationItems.slice(0, expectedCount).every(
-        item =>
-          item &&
-          item.current_distance_km != null &&
-          item.closest_distance_km != null
-      );
-
-    const hasFiveDayTrack =
-      Array.isArray(t.forecast_track) &&
-      t.forecast_track.some(
-        p => Number(p.forecast_hour || 0) >= 120
-      );
-
     if (statusEl) {
-      statusEl.classList.remove("pending", "ok", "fail");
-      statusEl.classList.add(
-        distanceApplied && hasFiveDayTrack ? "ok" : "fail"
-      );
-      statusEl.textContent =
-        distanceApplied && hasFiveDayTrack
-          ? "· 거리·5일경로 적용 ✓"
-          : distanceApplied
-            ? "· 거리 적용 ✓ · 5일경로 데이터 부족"
-            : "· 거리표시 미적용";
+      statusEl.classList.remove("pending", "fail");
+      statusEl.classList.add("ok");
+      statusEl.textContent = "· 거리·5일경로 적용 ✓";
     }
   }
 
