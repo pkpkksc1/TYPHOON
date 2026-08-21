@@ -19,7 +19,6 @@ Risk inputs:
 1) Typhoon closest distance
 2) Hourly rain
 3) Wind
-4) Gust
 
 Uses Python standard library only.
 """
@@ -38,7 +37,7 @@ IMPACT_PATH = BASE_DIR / "data" / "typhoon_impact.json"
 WEATHER_PATH = BASE_DIR / "data" / "weather.json"
 OUTPUT_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 
-PARSER_VERSION = "6.3"
+PARSER_VERSION = "6.4"
 
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 
@@ -147,19 +146,6 @@ def wind_score(wind_mps: float) -> int:
     return 0
 
 
-def gust_score(gust_mps: float) -> int:
-    if gust_mps >= 30:
-        return 25
-    if gust_mps >= 25:
-        return 20
-    if gust_mps >= 20:
-        return 15
-    if gust_mps >= 15:
-        return 10
-    if gust_mps >= 10:
-        return 5
-    return 0
-
 
 def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
     current = location.get("current", {})
@@ -167,10 +153,8 @@ def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
 
     max_rain = to_float(current.get("rain_mm")) or 0.0
     max_wind = to_float(current.get("wind_mps")) or 0.0
-    max_gust = to_float(current.get("gust_mps")) or 0.0
     max_rain_time = current.get("last_updated")
     max_wind_time = current.get("last_updated")
-    max_gust_time = current.get("last_updated")
 
     for item in hourly:
         if not isinstance(item, dict):
@@ -178,7 +162,6 @@ def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
 
         rain = to_float(item.get("rain_mm")) or 0.0
         wind = to_float(item.get("wind_mps")) or 0.0
-        gust = to_float(item.get("gust_mps")) or 0.0
         tm = item.get("time")
 
         if rain > max_rain:
@@ -189,22 +172,15 @@ def summarize_weather(location: Dict[str, Any]) -> Dict[str, Any]:
             max_wind = wind
             max_wind_time = tm
 
-        if gust > max_gust:
-            max_gust = gust
-            max_gust_time = tm
-
     return {
         "source": "WeatherAPI.com",
         "current_last_updated": current.get("last_updated"),
         "current_rain_mm": to_float(current.get("rain_mm")),
         "current_wind_mps": to_float(current.get("wind_mps")),
-        "current_gust_mps": to_float(current.get("gust_mps")),
         "max_72h_rain_mm": round(max_rain, 2),
         "max_72h_rain_time": max_rain_time,
         "max_72h_wind_mps": round(max_wind, 1),
         "max_72h_wind_time": max_wind_time,
-        "max_72h_gust_mps": round(max_gust, 1),
-        "max_72h_gust_time": max_gust_time,
     }
 
 
@@ -222,9 +198,8 @@ def make_location_risk(
     d_score = distance_score(closest_distance)
     r_score = rain_score(weather["max_72h_rain_mm"])
     w_score = wind_score(weather["max_72h_wind_mps"])
-    g_score = gust_score(weather["max_72h_gust_mps"])
 
-    total = min(100, d_score + r_score + w_score + g_score)
+    total = min(100, d_score + r_score + w_score)
     risk = risk_label(total)
 
     reasons: List[str] = []
@@ -242,11 +217,6 @@ def make_location_risk(
     if w_score >= 10:
         reasons.append(
             f"최대 풍속 {weather['max_72h_wind_mps']} m/s"
-        )
-
-    if g_score >= 10:
-        reasons.append(
-            f"최대 돌풍 {weather['max_72h_gust_mps']} m/s"
         )
 
     if not reasons:
@@ -277,7 +247,6 @@ def make_location_risk(
             "distance": d_score,
             "rain": r_score,
             "wind": w_score,
-            "gust": g_score,
         },
     }
 
@@ -480,19 +449,15 @@ def main() -> int:
                 "current_last_updated": None,
                 "current_rain_mm": None,
                 "current_wind_mps": None,
-                "current_gust_mps": None,
                 "max_72h_rain_mm": 0.0,
                 "max_72h_rain_time": None,
                 "max_72h_wind_mps": 0.0,
                 "max_72h_wind_time": None,
-                "max_72h_gust_mps": 0.0,
-                "max_72h_gust_time": None,
             },
             "score_detail": {
                 "distance": 0,
                 "rain": 0,
                 "wind": 0,
-                "gust": 0,
             },
         }
 

@@ -31,7 +31,7 @@ RISK_PATH = BASE_DIR / "data" / "typhoon_risk.json"
 FLIGHTS_PATH = BASE_DIR / "data" / "flights.json"
 OUTPUT_PATH = BASE_DIR / "data" / "dashboard.json"
 
-PARSER_VERSION = "8.3.4"
+PARSER_VERSION = "8.3.5"
 LOCATION_ORDER = ["SUZHOU", "PVG", "ICN", "MNL", "HAN", "CRK"]
 REPRESENTATIVE_FLIGHTS = ["KE249", "KE335", "PR337", "RW609", "KJ948", "KJ988"]
 LOCATION_NAME_OVERRIDES = {
@@ -71,15 +71,12 @@ def simplify_location(item: Dict[str, Any], code: str = "") -> Dict[str, Any]:
             "last_updated": weather.get("current_last_updated"),
             "rain_mm": weather.get("current_rain_mm"),
             "wind_mps": weather.get("current_wind_mps"),
-            "gust_mps": weather.get("current_gust_mps"),
         },
         "forecast_72h": {
             "max_rain_mm": weather.get("max_72h_rain_mm"),
             "max_rain_time": weather.get("max_72h_rain_time"),
             "max_wind_mps": weather.get("max_72h_wind_mps"),
             "max_wind_time": weather.get("max_72h_wind_time"),
-            "max_gust_mps": weather.get("max_72h_gust_mps"),
-            "max_gust_time": weather.get("max_72h_gust_time"),
         },
     }
 
@@ -160,7 +157,6 @@ def get_typhoon_track(jma: Dict[str, Any]) -> Dict[str, Any]:
             "lon": analysis.get("lon"),
             "pressure_hpa": analysis.get("pressure_hpa"),
             "max_wind_mps": analysis.get("max_wind_mps"),
-            "gust_mps": analysis.get("gust_mps"),
             "movement_direction": analysis.get("movement_direction"),
             "movement_speed_kmh": analysis.get("movement_speed_kmh"),
         },

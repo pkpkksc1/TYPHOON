@@ -15,7 +15,7 @@ Locations:
     SUZHOU / PVG / ICN / MNL / HAN / CRK
 
 Collects:
-    current rain, wind, gust
+    current rain and wind
     hourly forecast up to 72 hours
 
 Uses Python standard library only.
@@ -38,8 +38,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = BASE_DIR / "data" / "weather.json"
 
 API_URL = "https://api.weatherapi.com/v1/forecast.json"
-PARSER_VERSION = "5.2"
-USER_AGENT = "sblc-typhoon-dashboard/5.2"
+PARSER_VERSION = "5.3"
+USER_AGENT = "sblc-typhoon-dashboard/5.3"
 
 LOCATIONS = {
     "SUZHOU": {
@@ -137,7 +137,6 @@ def collect_location(api_key: str, code: str, meta: Dict[str, Any]) -> Dict[str,
                 "rain_mm": hour.get("precip_mm"),
                 "chance_of_rain_pct": hour.get("chance_of_rain"),
                 "wind_mps": kmh_to_mps(hour.get("wind_kph")),
-                "gust_mps": kmh_to_mps(hour.get("gust_kph")),
                 "wind_dir": hour.get("wind_dir"),
                 "condition": hour.get("condition", {}).get("text"),
             })
@@ -161,7 +160,6 @@ def collect_location(api_key: str, code: str, meta: Dict[str, Any]) -> Dict[str,
             "last_updated": current.get("last_updated"),
             "rain_mm": current.get("precip_mm"),
             "wind_mps": kmh_to_mps(current.get("wind_kph")),
-            "gust_mps": kmh_to_mps(current.get("gust_kph")),
             "wind_dir": current.get("wind_dir"),
             "condition": current.get("condition", {}).get("text"),
         },
