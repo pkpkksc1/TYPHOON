@@ -127,6 +127,27 @@ button{
   font-size:11px;
 }
 
+.locations-meta{
+  margin:-6px 0 11px;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.45;
+}
+
+.locations-meta .ok{
+  color:#73d69a;
+  font-weight:800;
+}
+
+.locations-meta .wait{
+  color:#f1c15b;
+  font-weight:800;
+}
+
+.locations-meta .ver{
+  opacity:.78;
+}
+
 .metrics{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -1031,6 +1052,13 @@ td{
   <h2>
     물류 거점 상태
   </h2>
+
+  <div
+    id="locationsMeta"
+    class="locations-meta"
+  >
+    태풍 기준 - · 위험도 갱신 - · 업데이트 확인중 · Risk v-
+  </div>
 
   <div
     id="locationsGrid"
@@ -1951,6 +1979,144 @@ $("pressure")
       "points",
       pts.join(" ")
     );
+
+
+  // ========================================
+  // 거점 위험도 기준 / 갱신 상태
+  // ========================================
+
+  function riskMetaTime(ts){
+
+    if(!ts){
+      return "-";
+    }
+
+    const dt =
+      new Date(ts);
+
+    if(
+      Number.isNaN(
+        dt.getTime()
+      )
+    ){
+      return "-";
+    }
+
+    return dt.toLocaleString(
+      "ko-KR",
+      {
+        timeZone:
+          "Asia/Shanghai",
+
+        month:
+          "2-digit",
+
+        day:
+          "2-digit",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit",
+
+        hour12:
+          false
+      }
+    );
+  }
+
+
+  function renderLocationsMeta(){
+
+    const el =
+      $("locationsMeta");
+
+    if(!el){
+      return;
+    }
+
+
+    const m =
+      d.risk_meta || {};
+
+
+    const refTime =
+      riskMetaTime(
+        m.typhoon_reference_time
+      );
+
+
+    const riskTime =
+      riskMetaTime(
+        m.risk_updated_at_utc
+      );
+
+
+    const jmaMs =
+      Date.parse(
+        m.jma_updated_at_utc || ""
+      );
+
+
+    const riskMs =
+      Date.parse(
+        m.risk_updated_at_utc || ""
+      );
+
+
+    let stateText =
+      "업데이트 확인불가";
+
+    let stateClass =
+      "wait";
+
+
+    if(
+      Number.isFinite(jmaMs) &&
+      Number.isFinite(riskMs)
+    ){
+
+      if(
+        riskMs >= jmaMs
+      ){
+
+        stateText =
+          "최신 반영";
+
+        stateClass =
+          "ok";
+      }
+
+      else{
+
+        stateText =
+          "재계산 대기";
+
+        stateClass =
+          "wait";
+      }
+    }
+
+
+    const version =
+      safe(
+        m.risk_version,
+        "-"
+      );
+
+
+    el.innerHTML = `
+      태풍 기준 ${refTime}
+      · 위험도 갱신 ${riskTime}
+      · <span class="${stateClass}">${stateText}</span>
+      · <span class="ver">Risk v${version}</span>
+      · 중국시간
+    `;
+  }
+
+
+  renderLocationsMeta();
 
 
   // ========================================
