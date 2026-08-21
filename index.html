@@ -1785,7 +1785,7 @@ td{
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.54</span>
+        <span>· v8.55</span>
         <span id="distanceFeatureStatus" class="distance-feature-status pending">· 거리표시 확인중</span>
       </div>
 
@@ -1935,7 +1935,7 @@ td{
       id="flightInlineMeta"
       class="flight-inline-meta"
     >
-      Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 -
+      Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 - · 자동 조회 매일 23:00 한국시간 · 5편(5 API)
     </div>
   </div>
 
@@ -3689,7 +3689,7 @@ $("pressure")
   );
 
 
-  // v8.54 적용 여부: 거리·5일경로 + 날짜 라벨 표시
+  // v8.55 적용 여부: 거리·5일경로 + 날짜 라벨 + 대표항공편 일 1회 조회
   // 실제 5일 예보 데이터 유무는 경로 영역 자체에서 확인하므로
   // 상단에서는 "데이터 부족" 오탐 문구를 표시하지 않습니다.
   {
@@ -3829,7 +3829,7 @@ $("pressure")
         : 100;
 
     flightInlineMeta.textContent =
-      `Aviationstack · 이번 달 호출 ${apiUsed}/${apiLimit}회 · 최근 조회 ${flightUpdated} 중국시간`;
+      `Aviationstack · 이번 달 호출 ${apiUsed}/${apiLimit}회 · 최근 조회 ${flightUpdated} 중국시간 · 자동 조회 매일 23:00 한국시간 · 5편(5 API)`;
   }
 
 
