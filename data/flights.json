@@ -1,37 +1,26 @@
 {
   "source": "Aviationstack",
   "product": "Manual Flight Status - 7 Representative Flights",
-  "parser_version": "8.2",
+  "parser_version": "8.3",
   "groups": {
     "WF수입": [
-      "KE315",
       "KE249",
       "KE335"
     ],
     "수출": [
       "PR337",
-      "RW609",
       "KJ948",
       "KJ988"
     ]
   },
   "tracked_flights": [
-    "KE315",
     "KE249",
     "KE335",
     "PR337",
-    "RW609",
     "KJ948",
     "KJ988"
   ],
   "flight_config": [
-    {
-      "flight_iata": "KE315",
-      "group_ko": "WF수입",
-      "dep_iata": "ICN",
-      "arr_iata": "PVG",
-      "expected_departure_local": "23:10"
-    },
     {
       "flight_iata": "KE249",
       "group_ko": "WF수입",
@@ -54,13 +43,6 @@
       "expected_departure_local": "16:00"
     },
     {
-      "flight_iata": "RW609",
-      "group_ko": "수출",
-      "dep_iata": "PVG",
-      "arr_iata": "CRK",
-      "expected_departure_local": "16:30"
-    },
-    {
       "flight_iata": "KJ948",
       "group_ko": "수출",
       "dep_iata": "PVG",
@@ -77,64 +59,6 @@
   ],
   "flights": [
     {
-      "flight_iata": "KE315",
-      "flight_number": "315",
-      "group_ko": "WF수입",
-      "route": "ICN → PVG",
-      "dep_iata": "ICN",
-      "arr_iata": "PVG",
-      "expected_departure_local": "23:10",
-      "selected_scheduled_clock": "23:10",
-      "schedule_match_difference_minutes": 0,
-      "selection_date_local_today": "2026-08-22",
-      "selected_flight_date": "2026-08-21",
-      "selected_date_distance_days": -1,
-      "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
-      "found": true,
-      "status_raw": "active",
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
-      },
-      "departure": {
-        "airport": "Seoul (Incheon)",
-        "iata": "ICN",
-        "timezone": "Asia/Seoul",
-        "timezone_label_ko": "한국시간",
-        "scheduled_raw": "2026-08-21T23:10:00+00:00",
-        "estimated_raw": "2026-08-21T23:10:00+00:00",
-        "actual_raw": "2026-08-21T23:36:00+00:00",
-        "scheduled_local": "2026-08-21T23:10:00+09:00",
-        "estimated_local": "2026-08-21T23:10:00+09:00",
-        "actual_local": "2026-08-21T23:36:00+09:00",
-        "display_time_local": "2026-08-21 23:36",
-        "calculated_delay_minutes": 26,
-        "api_delay_minutes": null,
-        "terminal": "2",
-        "gate": null
-      },
-      "arrival": {
-        "airport": "Shanghai Pudong International",
-        "iata": "PVG",
-        "timezone": "Asia/Shanghai",
-        "timezone_label_ko": "중국시간",
-        "scheduled_raw": "2026-08-22T00:20:00+00:00",
-        "estimated_raw": "2026-08-22T00:00:00+00:00",
-        "actual_raw": "2026-08-21T23:58:00+00:00",
-        "scheduled_local": "2026-08-22T00:20:00+08:00",
-        "estimated_local": "2026-08-22T00:00:00+08:00",
-        "actual_local": "2026-08-21T23:58:00+08:00",
-        "display_time_local": "2026-08-21 23:58",
-        "calculated_delay_minutes": -22,
-        "api_delay_minutes": 26,
-        "terminal": "1",
-        "gate": null
-      },
-      "airline": "Korean Air",
-      "flight_date": "2026-08-21"
-    },
-    {
       "flight_iata": "KE249",
       "flight_number": "249",
       "group_ko": "WF수입",
@@ -149,11 +73,11 @@
       "selected_date_distance_days": 0,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
-      "status_raw": "active",
+      "status_raw": "scheduled",
       "status": {
-        "level": "BLUE",
-        "emoji": "🔵",
-        "label_ko": "운항 중"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "출발 예정"
       },
       "departure": {
         "airport": "Seoul (Incheon)",
@@ -186,7 +110,7 @@
         "display_time_local": "2026-08-22 03:10",
         "calculated_delay_minutes": null,
         "api_delay_minutes": null,
-        "terminal": null,
+        "terminal": "1",
         "gate": null
       },
       "airline": "Korean Air",
@@ -309,19 +233,6 @@
       "flight_date": "2026-08-21"
     },
     {
-      "flight_iata": "RW609",
-      "group_ko": "수출",
-      "route": "PVG → CRK",
-      "expected_departure_local": "16:30",
-      "found": false,
-      "status": {
-        "level": "NO_DATA",
-        "emoji": "⚪",
-        "label_ko": "조회 결과 없음",
-        "note_ko": "API에 운항편 데이터가 없으며 오류로 처리하지 않음"
-      }
-    },
-    {
       "flight_iata": "KJ948",
       "flight_number": "948",
       "group_ko": "수출",
@@ -394,7 +305,7 @@
       "selected_date_distance_days": -1,
       "selection_rule_ko": "오늘 운항편 우선 → 다음 운항일 → 출발시간 근접도",
       "found": true,
-      "status_raw": "landed",
+      "status_raw": "active",
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -423,14 +334,14 @@
         "timezone": "Asia/Seoul",
         "timezone_label_ko": "한국시간",
         "scheduled_raw": "2026-08-21T21:40:00+00:00",
-        "estimated_raw": "2026-08-21T22:00:00+00:00",
+        "estimated_raw": null,
         "actual_raw": "2026-08-21T22:02:00+00:00",
         "scheduled_local": "2026-08-21T21:40:00+09:00",
-        "estimated_local": "2026-08-21T22:00:00+09:00",
+        "estimated_local": null,
         "actual_local": "2026-08-21T22:02:00+09:00",
         "display_time_local": "2026-08-21 22:02",
         "calculated_delay_minutes": 22,
-        "api_delay_minutes": 22,
+        "api_delay_minutes": 54,
         "terminal": null,
         "gate": null
       },
@@ -439,5 +350,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-21T16:40:10.819913+00:00"
+  "generated_at_utc": "2026-08-21T17:01:44.249205+00:00"
 }
