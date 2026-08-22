@@ -1857,91 +1857,9 @@ td{
 
 </style>
 
-<style id="v868-control-center">
-/* v8.68 CONTROL CENTER THEME */
-:root{
-  --bg:#081522;
-  --panel:#0F2238;
-  --panel2:#132D46;
-  --line:#294B68;
-  --text:#FFFFFF;
-  --muted:#A9C0D6;
-  --blue:#55C8FF;
-}
-
-body{
-  background:linear-gradient(180deg,#081522,#050D18) !important;
-  color:#FFFFFF !important;
-}
-
-.panel,
-.risk-guide-panel,
-.card,
-.box,
-.section,
-.metric-card,
-.location-card{
-  background:#0F2238 !important;
-  color:#FFFFFF !important;
-  border-color:#294B68 !important;
-}
-
-.metric,
-.loc-card,
-.route-card,
-.flight-card,
-.agency,
-.routes-side,
-.stat,
-.timebox,
-.compare-box,
-.similarity-card{
-  background:#132D46 !important;
-  color:#FFFFFF !important;
-  border-color:#294B68 !important;
-}
-
-h1,h2,
-.typhoon-title,
-.name,
-.flight-no,
-.similarity-name{
-  color:#FFFFFF !important;
-}
-
-.sub,
-.code,
-.reason,
-.metric span,
-.stat span,
-.timebox span,
-.agency-country,
-.agency-role,
-.flight-inline-meta,
-.data-time,
-.auto-last-run{
-  color:#A9C0D6 !important;
-}
-
-.metric b,
-.stat b,
-.timebox b,
-.compare-box b,
-.similarity-score{
-  color:#55C8FF !important;
-}
-
-.locations-meta,
-.risk-guide-panel{
-  background:#0F2238 !important;
-  color:#D9E5F3 !important;
-}
-
-.agency-main,
-.flight-group{
-  background:rgba(85,200,255,.12) !important;
-  color:#9FDFFF !important;
-}
+<style id="v865-theme">
+body { background:#172333 !important; color:#f4f8ff; }
+.card, .panel, .box, .section, .metric-card, .location-card { background:#ffffff !important; color:#1f2937 !important; border-color:#d6dde8 !important; }
 </style>
 </head>
 
@@ -2117,7 +2035,7 @@ h1,h2,
       class="flight-inline-meta"
       data-i18n="flightMetaPlaceholder"
     >
-      Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 - · 자동 조회 매일 23:00 한국시간 · 5편(5 API)
+      Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 - · 자동 조회 매일 07:00 한국시간 · 5편(5 API)
     </div>
   </div>
 
@@ -2433,7 +2351,7 @@ const I18N = {
     similarityTitle:"과거 태풍 유사도", similarityBadge:"참고용 · 실제 영향 예측 아님",
     lastAutoPlaceholder:"마지막 자동실행 -", currentTimePlaceholder:"현재시간 -", jmaUpdatedPlaceholder:"JMA 갱신 -", baseTimePlaceholder:"기준 시각 -",
     locationsMetaPlaceholder:"태풍 예보 · 날씨 관측 · 위험도 기준 확인중",
-    flightMetaPlaceholder:"Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 - · 자동 조회 매일 23:00 한국시간 · 5편(5 API)",
+    flightMetaPlaceholder:"Aviationstack · 이번 달 호출 - / 100회 · 최근 조회 - · 자동 조회 매일 07:00 한국시간 · 5편(5 API)",
     similarityStatusPlaceholder:"현재 예보값 기준 단순 비교", similarityCurrentPlaceholder:"현재 태풍 비교값 불러오는 중...",
     similarityCardPlaceholder:"과거 태풍 비교값 불러오는 중...", similarityBestPlaceholder:"예보가 갱신되면 유사도도 함께 변경됩니다.",
     footerUpdatedPlaceholder:"최종 업데이트 -", sourcesPlaceholder:"데이터 출처 -"
@@ -4258,7 +4176,7 @@ $("pressure")
 
     flightInlineMeta.textContent = isZh()
       ? `Aviationstack · 本月调用 ${apiUsed}/${apiLimit}次 · 最近查询 ${flightUpdated} 中国时间 · 自动查询 每天23:00韩国时间 · 5个航班(5 API)`
-      : `Aviationstack · 이번 달 호출 ${apiUsed}/${apiLimit}회 · 최근 조회 ${flightUpdated} 중국시간 · 자동 조회 매일 23:00 한국시간 · 5편(5 API)`;
+      : `Aviationstack · 이번 달 호출 ${apiUsed}/${apiLimit}회 · 최근 조회 ${flightUpdated} 중국시간 · 자동 조회 매일 07:00 한국시간 · 5편(5 API)`;
   }
 
 
