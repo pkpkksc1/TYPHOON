@@ -342,6 +342,14 @@ def make_status(
 
     dep_delay = departure.get("calculated_delay_minutes")
 
+    # Active flight should be shown as operating, even if estimated data exists.
+    if raw_status == "active":
+        return {
+            "level": "YELLOW",
+            "emoji": "🟡",
+            "label_ko": "운항 중",
+        }
+
     # Actual arrival timestamp = arrival confirmed.
     if arrival.get("actual_raw"):
         return {
@@ -357,7 +365,6 @@ def make_status(
             arrival
         )
 
-        # ETA + 30 minutes passed, but no actual arrival timestamp yet.
         if (
             isinstance(overdue_minutes, int)
             and overdue_minutes >= 30
@@ -374,7 +381,6 @@ def make_status(
             "label_ko": "운항 중",
         }
 
-    # Before departure, show departure delay when meaningful.
     if isinstance(dep_delay, int) and dep_delay >= 10:
         return {
             "level": "YELLOW",
@@ -382,16 +388,9 @@ def make_status(
             "label_ko": f"출발 예정 {dep_delay}분 지연",
         }
 
-    if raw_status == "active":
-        return {
-            "level": "BLUE",
-            "emoji": "🔵",
-            "label_ko": "운항 중",
-        }
-
     return {
-        "level": "GREEN",
-        "emoji": "🟢",
+        "level": "BLUE",
+        "emoji": "🔵",
         "label_ko": "출발 예정",
     }
 
