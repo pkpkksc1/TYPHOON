@@ -18,14 +18,14 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-22 11:52"
+        "localtime": "2026-08-22 12:08"
       },
       "current": {
-        "last_updated": "2026-08-22 11:45",
-        "rain_mm": 0.17,
-        "wind_mps": 5.9,
+        "last_updated": "2026-08-22 12:00",
+        "rain_mm": 0.1,
+        "wind_mps": 6.0,
         "wind_dir": "ESE",
-        "condition": "Light rain shower"
+        "condition": "Thundery outbreaks in nearby"
       },
       "hourly_forecast": [
         {
@@ -619,14 +619,14 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-22 11:52"
+        "localtime": "2026-08-22 12:08"
       },
       "current": {
-        "last_updated": "2026-08-22 11:45",
-        "rain_mm": 0.48,
-        "wind_mps": 5.8,
+        "last_updated": "2026-08-22 12:00",
+        "rain_mm": 0.11,
+        "wind_mps": 6.0,
         "wind_dir": "ESE",
-        "condition": "Light rain shower"
+        "condition": "Thundery outbreaks in nearby"
       },
       "hourly_forecast": [
         {
@@ -1220,14 +1220,14 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-22 12:52"
+        "localtime": "2026-08-22 13:08"
       },
       "current": {
-        "last_updated": "2026-08-22 12:45",
-        "rain_mm": 20.64,
-        "wind_mps": 2.4,
-        "wind_dir": "NE",
-        "condition": "Heavy rain"
+        "last_updated": "2026-08-22 13:00",
+        "rain_mm": 5.0,
+        "wind_mps": 2.0,
+        "wind_dir": "SSE",
+        "condition": "Moderate or heavy rain shower"
       },
       "hourly_forecast": [
         {
@@ -1816,19 +1816,19 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Almanza",
+        "name": "Airport Village",
         "region": "Rizal",
         "country": "Philippines",
-        "lat": 14.483,
-        "lon": 120.983,
-        "localtime": "2026-08-22 11:52"
+        "lat": 14.508,
+        "lon": 121.007,
+        "localtime": "2026-08-22 12:08"
       },
       "current": {
-        "last_updated": "2026-08-22 11:45",
-        "rain_mm": 0.0,
-        "wind_mps": 8.4,
+        "last_updated": "2026-08-22 12:00",
+        "rain_mm": 0.16,
+        "wind_mps": 8.1,
         "wind_dir": "WSW",
-        "condition": "Cloudy"
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1930,7 +1930,7 @@
         {
           "time": "2026-08-22 12:00",
           "rain_mm": 0.16,
-          "chance_of_rain_pct": 24,
+          "chance_of_rain_pct": 22,
           "wind_mps": 8.1,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -1962,7 +1962,7 @@
         {
           "time": "2026-08-22 16:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 13,
+          "chance_of_rain_pct": 14,
           "wind_mps": 8.3,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2417,17 +2417,17 @@
         "lon": 105.807
       },
       "resolved_location": {
-        "name": "Thuy Ha",
+        "name": "Noi Bai",
         "region": "",
         "country": "Vietnam",
-        "lat": 21.183,
-        "lon": 105.8,
-        "localtime": "2026-08-22 10:52"
+        "lat": 21.217,
+        "lon": 105.817,
+        "localtime": "2026-08-22 11:08"
       },
       "current": {
-        "last_updated": "2026-08-22 10:45",
-        "rain_mm": 5.66,
-        "wind_mps": 3.0,
+        "last_updated": "2026-08-22 11:00",
+        "rain_mm": 2.76,
+        "wind_mps": 2.7,
         "wind_dir": "W",
         "condition": "Moderate or heavy rain shower"
       },
@@ -3023,12 +3023,12 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-22 11:52"
+        "localtime": "2026-08-22 12:08"
       },
       "current": {
-        "last_updated": "2026-08-22 11:45",
-        "rain_mm": 0.02,
-        "wind_mps": 6.3,
+        "last_updated": "2026-08-22 12:00",
+        "rain_mm": 0.09,
+        "wind_mps": 5.9,
         "wind_dir": "WSW",
         "condition": "Patchy rain nearby"
       },
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T03:52:10.653340+00:00"
+  "generated_at_utc": "2026-08-22T04:08:36.577012+00:00"
 }
