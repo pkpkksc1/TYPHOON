@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-23 02:42"
+        "localtime": "2026-08-23 03:00"
       },
       "current": {
-        "last_updated": "2026-08-23 02:30",
+        "last_updated": "2026-08-23 02:45",
         "rain_mm": 0.1,
         "wind_mps": 5.3,
         "wind_dir": "E",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-23 02:42"
+        "localtime": "2026-08-23 03:00"
       },
       "current": {
-        "last_updated": "2026-08-23 02:30",
+        "last_updated": "2026-08-23 02:45",
         "rain_mm": 0.04,
         "wind_mps": 6.8,
         "wind_dir": "ESE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-23 03:42"
+        "localtime": "2026-08-23 04:00"
       },
       "current": {
-        "last_updated": "2026-08-23 03:30",
+        "last_updated": "2026-08-23 03:45",
         "rain_mm": 0.0,
         "wind_mps": 1.5,
         "wind_dir": "ENE",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Airport Village",
+        "name": "Paranaque",
         "region": "Rizal",
         "country": "Philippines",
-        "lat": 14.508,
-        "lon": 121.007,
-        "localtime": "2026-08-23 02:42"
+        "lat": 14.509,
+        "lon": 120.993,
+        "localtime": "2026-08-23 03:00"
       },
       "current": {
-        "last_updated": "2026-08-23 02:30",
+        "last_updated": "2026-08-23 02:45",
         "rain_mm": 0.54,
         "wind_mps": 6.6,
         "wind_dir": "SW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-23 01:42"
+        "localtime": "2026-08-23 02:00"
       },
       "current": {
-        "last_updated": "2026-08-23 01:30",
+        "last_updated": "2026-08-23 01:45",
         "rain_mm": 4.28,
         "wind_mps": 3.7,
         "wind_dir": "W",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Mamatitang",
         "region": "Pampanga",
         "country": "Philippines",
-        "lat": 15.183,
+        "lat": 15.233,
         "lon": 120.567,
-        "localtime": "2026-08-23 02:42"
+        "localtime": "2026-08-23 03:00"
       },
       "current": {
-        "last_updated": "2026-08-23 02:30",
+        "last_updated": "2026-08-23 02:45",
         "rain_mm": 0.01,
         "wind_mps": 2.3,
         "wind_dir": "SW",
@@ -3500,7 +3500,7 @@
         {
           "time": "2026-08-25 10:00",
           "rain_mm": 0.32,
-          "chance_of_rain_pct": 45,
+          "chance_of_rain_pct": 44,
           "wind_mps": 6.1,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T18:42:49.689952+00:00"
+  "generated_at_utc": "2026-08-22T19:00:18.685474+00:00"
 }
