@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-22 17:36"
+        "localtime": "2026-08-22 17:55"
       },
       "current": {
-        "last_updated": "2026-08-22 17:30",
+        "last_updated": "2026-08-22 17:45",
         "rain_mm": 0.05,
         "wind_mps": 8.1,
         "wind_dir": "ESE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-22 17:36"
+        "localtime": "2026-08-22 17:55"
       },
       "current": {
-        "last_updated": "2026-08-22 17:30",
+        "last_updated": "2026-08-22 17:45",
         "rain_mm": 0.18,
         "wind_mps": 6.5,
         "wind_dir": "ESE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-22 18:36"
+        "localtime": "2026-08-22 18:55"
       },
       "current": {
-        "last_updated": "2026-08-22 18:30",
+        "last_updated": "2026-08-22 18:45",
         "rain_mm": 0.0,
         "wind_mps": 2.0,
         "wind_dir": "ENE",
@@ -1821,10 +1821,10 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-22 17:36"
+        "localtime": "2026-08-22 17:55"
       },
       "current": {
-        "last_updated": "2026-08-22 17:30",
+        "last_updated": "2026-08-22 17:45",
         "rain_mm": 0.35,
         "wind_mps": 7.6,
         "wind_dir": "WSW",
@@ -2417,15 +2417,15 @@
         "lon": 105.807
       },
       "resolved_location": {
-        "name": "Noi Bai",
+        "name": "Ninh Bac",
         "region": "",
         "country": "Vietnam",
-        "lat": 21.217,
-        "lon": 105.817,
-        "localtime": "2026-08-22 16:36"
+        "lat": 21.233,
+        "lon": 105.8,
+        "localtime": "2026-08-22 16:55"
       },
       "current": {
-        "last_updated": "2026-08-22 16:15",
+        "last_updated": "2026-08-22 16:45",
         "rain_mm": 9.34,
         "wind_mps": 5.4,
         "wind_dir": "WNW",
@@ -3023,10 +3023,10 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-22 17:36"
+        "localtime": "2026-08-22 17:55"
       },
       "current": {
-        "last_updated": "2026-08-22 17:30",
+        "last_updated": "2026-08-22 17:45",
         "rain_mm": 0.95,
         "wind_mps": 3.7,
         "wind_dir": "WSW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T09:36:04.484035+00:00"
+  "generated_at_utc": "2026-08-22T09:55:32.092983+00:00"
 }

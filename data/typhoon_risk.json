@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-22T09:36:02.618847+00:00",
-    "weather": "2026-08-22T09:36:04.484035+00:00"
+    "impact": "2026-08-22T09:55:30.782518+00:00",
+    "weather": "2026-08-22T09:55:32.092983+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -19,7 +19,7 @@
   "forecast_confidence": {
     "emoji": "🔴",
     "label_ko": "차이 큼",
-    "average_difference_km": 1879
+    "average_difference_km": 1818
   },
   "locations": {
     "SUZHOU": {
@@ -42,7 +42,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 17:30",
+        "current_last_updated": "2026-08-22 17:45",
         "current_rain_mm": 0.05,
         "current_wind_mps": 8.1,
         "max_72h_rain_mm": 0.82,
@@ -76,7 +76,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 17:30",
+        "current_last_updated": "2026-08-22 17:45",
         "current_rain_mm": 0.18,
         "current_wind_mps": 6.5,
         "max_72h_rain_mm": 1.36,
@@ -110,7 +110,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 18:30",
+        "current_last_updated": "2026-08-22 18:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 2.0,
         "max_72h_rain_mm": 10.28,
@@ -144,7 +144,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 17:30",
+        "current_last_updated": "2026-08-22 17:45",
         "current_rain_mm": 0.35,
         "current_wind_mps": 7.6,
         "max_72h_rain_mm": 1.4,
@@ -178,7 +178,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 16:15",
+        "current_last_updated": "2026-08-22 16:45",
         "current_rain_mm": 9.34,
         "current_wind_mps": 5.4,
         "max_72h_rain_mm": 27.28,
@@ -212,7 +212,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-22 17:30",
+        "current_last_updated": "2026-08-22 17:45",
         "current_rain_mm": 0.95,
         "current_wind_mps": 3.7,
         "max_72h_rain_mm": 1.57,
@@ -309,5 +309,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T09:36:04.545946+00:00"
+  "generated_at_utc": "2026-08-22T09:55:32.158624+00:00"
 }
