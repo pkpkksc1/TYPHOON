@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-22T13:11:32.323309+00:00",
+  "generated_at_utc": "2026-08-22T13:39:10.214300+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-22T13:11:18.378167+00:00",
-    "weather": "2026-08-22T13:11:32.163237+00:00",
-    "risk": "2026-08-22T13:11:32.227951+00:00",
+    "jma": "2026-08-22T13:38:58.425246+00:00",
+    "weather": "2026-08-22T13:39:09.897184+00:00",
+    "risk": "2026-08-22T13:39:10.043852+00:00",
     "flights": "2026-08-22T10:07:11.477984+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-22T21:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-22T13:11:18.378167+00:00",
-    "weather_updated_at_utc": "2026-08-22T13:11:32.163237+00:00",
-    "impact_updated_at_utc": "2026-08-22T13:11:30.672403+00:00",
-    "risk_updated_at_utc": "2026-08-22T13:11:32.227951+00:00",
+    "jma_updated_at_utc": "2026-08-22T13:38:58.425246+00:00",
+    "weather_updated_at_utc": "2026-08-22T13:39:09.897184+00:00",
+    "impact_updated_at_utc": "2026-08-22T13:39:08.538930+00:00",
+    "risk_updated_at_utc": "2026-08-22T13:39:10.043852+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
@@ -87,10 +87,10 @@
     ]
   },
   "forecast_comparison": {
-    "emoji": "🟢",
-    "label_ko": "거의 일치",
-    "average_difference_km": 31,
-    "max_difference_km": 69
+    "emoji": "🔴",
+    "label_ko": "차이 큼",
+    "average_difference_km": 2888,
+    "max_difference_km": 3581
   },
   "locations": {
     "SUZHOU": {
@@ -109,15 +109,15 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 21:00",
+        "last_updated": "2026-08-22 21:30",
         "rain_mm": 0.0,
         "wind_mps": 7.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.82,
         "max_rain_time": "2026-08-22 11:00",
-        "max_wind_mps": 9.7,
-        "max_wind_time": "2026-08-23 06:00"
+        "max_wind_mps": 9.2,
+        "max_wind_time": "2026-08-23 11:00"
       }
     },
     "PVG": {
@@ -136,15 +136,15 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 21:00",
-        "rain_mm": 0.06,
-        "wind_mps": 6.3
+        "last_updated": "2026-08-22 21:30",
+        "rain_mm": 0.03,
+        "wind_mps": 5.7
       },
       "forecast_72h": {
         "max_rain_mm": 1.36,
         "max_rain_time": "2026-08-22 13:00",
-        "max_wind_mps": 7.7,
-        "max_wind_time": "2026-08-23 11:00"
+        "max_wind_mps": 7.8,
+        "max_wind_time": "2026-08-23 10:00"
       }
     },
     "ICN": {
@@ -163,9 +163,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 22:00",
-        "rain_mm": 0.02,
-        "wind_mps": 1.6
+        "last_updated": "2026-08-22 22:30",
+        "rain_mm": 0.0,
+        "wind_mps": 1.8
       },
       "forecast_72h": {
         "max_rain_mm": 10.28,
@@ -176,12 +176,12 @@
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 18,
+      "score": 25,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 풍속 10.4 m/s",
+      "reason_ko": "최대 시간당 강수 2.36 mm / 최대 풍속 10.4 m/s",
       "current_distance_km": 2678,
       "closest_distance_km": 1444,
       "closest_time": "2026-08-27T06:00:00Z",
@@ -190,13 +190,13 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 21:00",
-        "rain_mm": 0.43,
-        "wind_mps": 6.9
+        "last_updated": "2026-08-22 21:30",
+        "rain_mm": 0.11,
+        "wind_mps": 6.2
       },
       "forecast_72h": {
-        "max_rain_mm": 1.4,
-        "max_rain_time": "2026-08-23 15:00",
+        "max_rain_mm": 2.36,
+        "max_rain_time": "2026-08-23 21:00",
         "max_wind_mps": 10.4,
         "max_wind_time": "2026-08-24 14:00"
       }
@@ -208,7 +208,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 시간당 강수 27.28 mm",
+      "reason_ko": "최대 시간당 강수 14.3 mm",
       "current_distance_km": 4181,
       "closest_distance_km": 2091,
       "closest_time": "2026-08-27T06:00:00Z",
@@ -217,13 +217,13 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 20:00",
+        "last_updated": "2026-08-22 20:30",
         "rain_mm": 13.03,
         "wind_mps": 5.3
       },
       "forecast_72h": {
-        "max_rain_mm": 27.28,
-        "max_rain_time": "2026-08-23 06:00",
+        "max_rain_mm": 14.3,
+        "max_rain_time": "2026-08-22 14:00",
         "max_wind_mps": 8.2,
         "max_wind_time": "2026-08-22 13:00"
       }
@@ -244,13 +244,13 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 21:00",
-        "rain_mm": 0.02,
-        "wind_mps": 2.0
+        "last_updated": "2026-08-22 21:30",
+        "rain_mm": 0.0,
+        "wind_mps": 2.6
       },
       "forecast_72h": {
-        "max_rain_mm": 1.57,
-        "max_rain_time": "2026-08-23 13:00",
+        "max_rain_mm": 1.12,
+        "max_rain_time": "2026-08-24 22:00",
         "max_wind_mps": 7.8,
         "max_wind_time": "2026-08-24 16:00"
       }
