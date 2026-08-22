@@ -4,20 +4,14 @@ on:
   workflow_dispatch:
 
   schedule:
-    # 매일 한국시간 06:00 실행
-    # GitHub Actions cron은 UTC 기준
-    # KST 06:00 = UTC 21:00
     - cron: "0 21 * * *"
-
 
 permissions:
   contents: write
 
-
 concurrency:
   group: daily-flight-status
   cancel-in-progress: false
-
 
 jobs:
 
@@ -25,43 +19,37 @@ jobs:
 
     runs-on: ubuntu-latest
 
-
     steps:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
-
-      # 1단계
-      # 항공 API 조회
+      # Aviationstack flight status
       - name: Fetch flight status
         env:
           AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
-
         run: |
           python src/fetch_flights.py
 
+      # FlightAware temporarily disabled
+      # API approval pending
+      - name: Fetch FlightAware status (Disabled)
+        run: |
+          echo "FlightAware API pending approval - skipped"
 
-      # 2단계
-      # 대시보드 데이터 재생성
       - name: Build dashboard data
         run: |
           python src/build_dashboard.py
 
-
-      # 3단계
-      # 생성 데이터 확인
       - name: Check updated data
         run: |
           echo "===== Flight Data ====="
@@ -70,23 +58,15 @@ jobs:
           echo "===== Dashboard Data ====="
           cat data/dashboard.json
 
-
-      # 4단계
-      # GitHub 저장
       - name: Commit updated data
-
         run: |
 
           git config user.name "github-actions"
-
           git config user.email "github-actions@github.com"
-
 
           git add data/flights.json
           git add data/dashboard.json
 
-
           git diff --cached --quiet || git commit -m "Update flight dashboard v8.69.1"
-
 
           git push
