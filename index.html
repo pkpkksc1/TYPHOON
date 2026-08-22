@@ -2017,6 +2017,37 @@ h1,h2,h3,.typhoon-title,.flight-no{
 .language-switch{
   background:#10243a !important;
 }
+
+/* v8.69.9 flight control improvements */
+.flight-status-legend{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-left:10px;
+  font-size:10px;
+  color:#b8c7d9;
+}
+.flight-status-legend span{
+  padding:3px 7px;
+  border-radius:999px;
+  border:1px solid #29445f;
+  background:#10243a;
+  font-weight:800;
+}
+.flight-group{
+  display:inline-flex !important;
+  align-items:center;
+}
+.flight-group.import{
+  color:#9fd2ff !important;
+  border:1px solid rgba(94,200,255,.35);
+}
+.flight-group.export{
+  color:#c7d9ec !important;
+  border:1px solid rgba(199,217,236,.25);
+}
+
 </style>
 
 </head>
@@ -4349,6 +4380,15 @@ $("pressure")
   (
     d.flights || []
   )
+  .sort((a,b)=>{
+    const order = {
+      "문제":0,
+      "운항 중":1,
+      "출발 예정":2,
+      "도착 완료":3
+    };
+    return (order[a.status?.label_ko] ?? 9) - (order[b.status?.label_ko] ?? 9);
+  })
   .forEach(
     f => {
 
@@ -4396,7 +4436,9 @@ $("pressure")
               }
             </div>
 
-            <div class="flight-group">
+            <div class="flight-group ${
+                (f.group_ko || "").includes("수입") ? "import" : "export"
+              }">
               ${
                 flightGroupText(
                   f.group_ko,
