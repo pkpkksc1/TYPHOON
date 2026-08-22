@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SBLC Typhoon Logistics Dashboard</title>
+<title>SESS 태풍 물류 현황판</title>
 
 <style>
 :root{
@@ -1872,7 +1872,7 @@ td{
 
     <div class="title-row">
       <h1 data-i18n="dashboardTitle">
-        태풍 물류 대시보드
+        SESS 태풍 물류 현황판
       </h1>
 
       <div id="dashboardVersion" class="dashboard-version">
@@ -2324,7 +2324,7 @@ const $ =
 
 const I18N = {
   ko:{
-    dashboardTitle:"태풍 물류 대시보드",
+    dashboardTitle:"SESS 태풍 물류 현황판",
     currentTyphoon:"현재 태풍", pressure:"중심기압", maxWind:"최대풍속", direction:"이동방향", speed:"이동속도",
     hubRisk:"주요 거점 위험도", hubStatus:"물류 거점 상태",
     flightStatus:"항공편 운항 현황", representativeFlights:"대표 항공편",
@@ -2397,7 +2397,7 @@ function tr(key){ return (I18N[currentLang] && I18N[currentLang][key]) || (I18N.
 
 function applyStaticLanguage(){
   document.documentElement.lang = isZh() ? "zh-CN" : "ko";
-  document.title = isZh() ? "SBLC 台风物流仪表板" : "SBLC Typhoon Logistics Dashboard";
+  document.title = isZh() ? "SESS 台风物流现况板" : "SESS 태풍 물류 현황판";
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     el.textContent = tr(el.dataset.i18n);
