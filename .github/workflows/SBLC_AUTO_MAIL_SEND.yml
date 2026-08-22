@@ -1,0 +1,43 @@
+name: "🌐 SBLC 자동 태풍 대시보드 메일"
+
+on:
+  schedule:
+    # KST 01:00 / 07:00 / 13:00 / 19:00
+    # UTC 16:00 / 22:00 / 04:00 / 10:00
+    - cron: "0 4,10,16,22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send-mail:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Build offline dashboard
+        run: python src/build_offline_dashboard.py
+
+      - name: Capture dashboard screenshot
+        run: python src/capture_dashboard.py
+
+      - name: Send dashboard email
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python src/send_dashboard_email.py
