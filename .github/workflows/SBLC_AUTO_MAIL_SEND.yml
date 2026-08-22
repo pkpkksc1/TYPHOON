@@ -9,7 +9,6 @@ on:
     # 한국시간(KST)
     # 01:00 / 07:00 / 13:00 / 19:00
     # GitHub Actions UTC 기준
-    # KST - 9시간
     - cron: "0 4,10,16,22 * * *"
 
 
@@ -44,15 +43,21 @@ jobs:
 
 
 
-      # 1단계
-      # 최신 항공/태풍 데이터 기준 dashboard 생성
+      # 캡처용 브라우저 환경 설치
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
+
+
+
+      # 최신 데이터 기준 dashboard 생성
       - name: Build dashboard data v8.69.2
         run: |
           python src/build_dashboard.py
 
 
 
-      # 2단계
       # 메일용 오프라인 HTML 생성
       - name: Build offline dashboard
         run: |
@@ -60,15 +65,13 @@ jobs:
 
 
 
-      # 3단계
-      # 화면 캡처 이미지 생성
+      # 대시보드 화면 캡처
       - name: Capture dashboard image
         run: |
           python src/capture_dashboard.py
 
 
 
-      # 4단계
       # 메일 발송
       - name: Send dashboard email
         env:
@@ -82,8 +85,7 @@ jobs:
 
 
 
-      # 5단계
-      # dashboard 데이터 저장
+      # 변경 데이터 저장
       - name: Commit dashboard data
 
         run: |
