@@ -18,287 +18,287 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-23 03:00"
+        "localtime": "2026-08-23 03:29"
       },
       "current": {
-        "last_updated": "2026-08-23 02:45",
-        "rain_mm": 0.1,
-        "wind_mps": 5.3,
+        "last_updated": "2026-08-23 03:15",
+        "rain_mm": 0.02,
+        "wind_mps": 5.5,
         "wind_dir": "E",
         "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
           "time": "2026-08-23 00:00",
-          "rain_mm": 0.03,
-          "chance_of_rain_pct": 31,
-          "wind_mps": 5.4,
-          "wind_dir": "E",
-          "condition": "Patchy rain nearby"
+          "rain_mm": 0.01,
+          "chance_of_rain_pct": 26,
+          "wind_mps": 6.1,
+          "wind_dir": "ESE",
+          "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 01:00",
+          "rain_mm": 0.01,
+          "chance_of_rain_pct": 25,
+          "wind_mps": 6.2,
+          "wind_dir": "ESE",
+          "condition": "Thundery outbreaks in nearby"
+        },
+        {
+          "time": "2026-08-23 02:00",
+          "rain_mm": 0.01,
+          "chance_of_rain_pct": 27,
+          "wind_mps": 6.0,
+          "wind_dir": "ESE",
+          "condition": "Patchy rain nearby"
+        },
+        {
+          "time": "2026-08-23 03:00",
           "rain_mm": 0.02,
           "chance_of_rain_pct": 29,
+          "wind_mps": 5.5,
+          "wind_dir": "E",
+          "condition": "Patchy rain nearby"
+        },
+        {
+          "time": "2026-08-23 04:00",
+          "rain_mm": 0.05,
+          "chance_of_rain_pct": 34,
           "wind_mps": 5.4,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
         },
         {
-          "time": "2026-08-23 02:00",
-          "rain_mm": 0.1,
-          "chance_of_rain_pct": 38,
+          "time": "2026-08-23 05:00",
+          "rain_mm": 0.05,
+          "chance_of_rain_pct": 34,
           "wind_mps": 5.3,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
         },
         {
-          "time": "2026-08-23 03:00",
-          "rain_mm": 0.4,
-          "chance_of_rain_pct": 56,
-          "wind_mps": 5.4,
-          "wind_dir": "E",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 04:00",
-          "rain_mm": 0.23,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 5.5,
-          "wind_dir": "E",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 05:00",
-          "rain_mm": 0.06,
-          "chance_of_rain_pct": 36,
-          "wind_mps": 6.0,
-          "wind_dir": "ESE",
-          "condition": "Thundery outbreaks in nearby"
-        },
-        {
           "time": "2026-08-23 06:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 31,
-          "wind_mps": 5.6,
-          "wind_dir": "SE",
-          "condition": "Thundery outbreaks in nearby"
+          "rain_mm": 0.07,
+          "chance_of_rain_pct": 37,
+          "wind_mps": 5.8,
+          "wind_dir": "ESE",
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 07:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 29,
-          "wind_mps": 5.6,
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 33,
+          "wind_mps": 6.3,
           "wind_dir": "SE",
-          "condition": "Thundery outbreaks in nearby"
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 08:00",
-          "rain_mm": 0.09,
-          "chance_of_rain_pct": 34,
-          "wind_mps": 7.2,
+          "rain_mm": 0.05,
+          "chance_of_rain_pct": 31,
+          "wind_mps": 6.9,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 09:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 21,
-          "wind_mps": 8.3,
+          "chance_of_rain_pct": 22,
+          "wind_mps": 7.5,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 10:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 15,
-          "wind_mps": 9.1,
+          "rain_mm": 0.01,
+          "chance_of_rain_pct": 19,
+          "wind_mps": 7.5,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 11:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 13,
-          "wind_mps": 9.2,
+          "rain_mm": 0.05,
+          "chance_of_rain_pct": 21,
+          "wind_mps": 8.2,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 12:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
+          "rain_mm": 0.13,
+          "chance_of_rain_pct": 30,
           "wind_mps": 8.9,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 13:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
-          "wind_mps": 8.5,
+          "rain_mm": 0.05,
+          "chance_of_rain_pct": 23,
+          "wind_mps": 9.2,
           "wind_dir": "SE",
-          "condition": "Patchy rain nearby"
+          "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 14:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 8,
-          "wind_mps": 8.8,
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 21,
+          "wind_mps": 8.9,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 15:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 7,
-          "wind_mps": 8.6,
+          "chance_of_rain_pct": 18,
+          "wind_mps": 8.8,
           "wind_dir": "SE",
           "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 16:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 8,
-          "wind_mps": 8.2,
+          "chance_of_rain_pct": 18,
+          "wind_mps": 8.4,
           "wind_dir": "SE",
-          "condition": "Sunny"
+          "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 17:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 9,
-          "wind_mps": 8.0,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 15,
+          "wind_mps": 8.5,
+          "wind_dir": "SE",
+          "condition": "Thundery outbreaks in nearby"
         },
         {
           "time": "2026-08-23 18:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 11,
-          "wind_mps": 7.7,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "wind_mps": 8.6,
+          "wind_dir": "SE",
+          "condition": "Sunny"
         },
         {
           "time": "2026-08-23 19:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 7.2,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 10,
+          "wind_mps": 8.0,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-23 20:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 12,
-          "wind_mps": 7.0,
-          "wind_dir": "ESE",
+          "chance_of_rain_pct": 11,
+          "wind_mps": 7.8,
+          "wind_dir": "SE",
           "condition": "Clear"
         },
         {
           "time": "2026-08-23 21:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 13,
-          "wind_mps": 7.2,
-          "wind_dir": "ESE",
-          "condition": "Clear"
+          "chance_of_rain_pct": 14,
+          "wind_mps": 7.4,
+          "wind_dir": "SE",
+          "condition": "Partly Cloudy"
         },
         {
           "time": "2026-08-23 22:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 15,
-          "wind_mps": 6.9,
-          "wind_dir": "ESE",
+          "chance_of_rain_pct": 13,
+          "wind_mps": 7.4,
+          "wind_dir": "SE",
           "condition": "Partly Cloudy"
         },
         {
           "time": "2026-08-23 23:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 18,
-          "wind_mps": 6.8,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 12,
+          "wind_mps": 7.4,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 00:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 20,
-          "wind_mps": 6.2,
-          "wind_dir": "ESE",
-          "condition": "Cloudy"
+          "chance_of_rain_pct": 13,
+          "wind_mps": 7.1,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 01:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 24,
-          "wind_mps": 6.1,
-          "wind_dir": "ESE",
-          "condition": "Cloudy"
+          "chance_of_rain_pct": 12,
+          "wind_mps": 6.9,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 02:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 28,
-          "wind_mps": 5.9,
-          "wind_dir": "ESE",
-          "condition": "Overcast"
+          "chance_of_rain_pct": 13,
+          "wind_mps": 7.0,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 03:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 28,
-          "wind_mps": 5.7,
-          "wind_dir": "ESE",
-          "condition": "Overcast"
+          "chance_of_rain_pct": 12,
+          "wind_mps": 6.7,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 04:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 5.3,
-          "wind_dir": "ESE",
-          "condition": "Clear"
+          "chance_of_rain_pct": 20,
+          "wind_mps": 6.6,
+          "wind_dir": "SE",
+          "condition": "Partly Cloudy"
         },
         {
           "time": "2026-08-24 05:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 19,
-          "wind_mps": 5.3,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 13,
+          "wind_mps": 6.0,
+          "wind_dir": "SE",
+          "condition": "Clear"
         },
         {
           "time": "2026-08-24 06:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 17,
-          "wind_mps": 5.1,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 13,
+          "wind_mps": 5.8,
+          "wind_dir": "SE",
+          "condition": "Sunny"
         },
         {
           "time": "2026-08-24 07:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 16,
-          "wind_mps": 5.3,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 14,
+          "wind_mps": 6.1,
+          "wind_dir": "SE",
+          "condition": "Sunny"
         },
         {
           "time": "2026-08-24 08:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 12,
-          "wind_mps": 6.3,
-          "wind_dir": "ESE",
-          "condition": "Partly Cloudy"
+          "chance_of_rain_pct": 9,
+          "wind_mps": 7.0,
+          "wind_dir": "SE",
+          "condition": "Sunny"
         },
         {
           "time": "2026-08-24 09:00",
-          "rain_mm": 0.02,
-          "chance_of_rain_pct": 18,
-          "wind_mps": 6.5,
-          "wind_dir": "ESE",
-          "condition": "Patchy rain nearby"
+          "rain_mm": 0.0,
+          "chance_of_rain_pct": 7,
+          "wind_mps": 7.3,
+          "wind_dir": "SE",
+          "condition": "Sunny"
         },
         {
           "time": "2026-08-24 10:00",
@@ -319,7 +319,7 @@
         {
           "time": "2026-08-24 12:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 10,
+          "chance_of_rain_pct": 12,
           "wind_mps": 6.5,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -335,7 +335,7 @@
         {
           "time": "2026-08-24 14:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
+          "chance_of_rain_pct": 10,
           "wind_mps": 6.7,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -415,7 +415,7 @@
         {
           "time": "2026-08-25 00:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 26,
           "wind_mps": 3.8,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
@@ -423,7 +423,7 @@
         {
           "time": "2026-08-25 01:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 23,
+          "chance_of_rain_pct": 24,
           "wind_mps": 3.5,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
@@ -511,8 +511,8 @@
         {
           "time": "2026-08-25 12:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 2,
-          "wind_mps": 5.3,
+          "chance_of_rain_pct": 3,
+          "wind_mps": 4.3,
           "wind_dir": "ESE",
           "condition": "Sunny"
         },
@@ -619,13 +619,13 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-23 03:00"
+        "localtime": "2026-08-23 03:29"
       },
       "current": {
-        "last_updated": "2026-08-23 02:45",
-        "rain_mm": 0.04,
-        "wind_mps": 6.8,
-        "wind_dir": "ESE",
+        "last_updated": "2026-08-23 03:15",
+        "rain_mm": 0.03,
+        "wind_mps": 6.9,
+        "wind_dir": "SE",
         "condition": "Thundery outbreaks in nearby"
       },
       "hourly_forecast": [
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-23 04:00"
+        "localtime": "2026-08-23 04:29"
       },
       "current": {
-        "last_updated": "2026-08-23 03:45",
+        "last_updated": "2026-08-23 04:15",
         "rain_mm": 0.0,
         "wind_mps": 1.5,
         "wind_dir": "ENE",
@@ -1816,16 +1816,16 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Paranaque",
-        "region": "Rizal",
+        "name": "Moonwalk Ii",
+        "region": "Misamis Oriental",
         "country": "Philippines",
-        "lat": 14.509,
-        "lon": 120.993,
-        "localtime": "2026-08-23 03:00"
+        "lat": 14.5,
+        "lon": 121.019,
+        "localtime": "2026-08-23 03:29"
       },
       "current": {
-        "last_updated": "2026-08-23 02:45",
-        "rain_mm": 0.54,
+        "last_updated": "2026-08-23 03:15",
+        "rain_mm": 0.29,
         "wind_mps": 6.6,
         "wind_dir": "SW",
         "condition": "Light rain shower"
@@ -1833,273 +1833,273 @@
       "hourly_forecast": [
         {
           "time": "2026-08-23 00:00",
-          "rain_mm": 0.36,
-          "chance_of_rain_pct": 48,
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 28,
+          "wind_mps": 6.7,
+          "wind_dir": "WSW",
+          "condition": "Patchy rain nearby"
+        },
+        {
+          "time": "2026-08-23 01:00",
+          "rain_mm": 0.58,
+          "chance_of_rain_pct": 57,
           "wind_mps": 6.7,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
-          "time": "2026-08-23 01:00",
-          "rain_mm": 0.33,
-          "chance_of_rain_pct": 46,
-          "wind_mps": 6.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
           "time": "2026-08-23 02:00",
-          "rain_mm": 0.54,
-          "chance_of_rain_pct": 56,
+          "rain_mm": 0.72,
+          "chance_of_rain_pct": 61,
           "wind_mps": 6.6,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 03:00",
-          "rain_mm": 0.11,
-          "chance_of_rain_pct": 35,
+          "rain_mm": 0.29,
+          "chance_of_rain_pct": 44,
           "wind_mps": 6.6,
           "wind_dir": "SW",
-          "condition": "Patchy rain nearby"
+          "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 04:00",
-          "rain_mm": 0.59,
-          "chance_of_rain_pct": 58,
-          "wind_mps": 7.0,
+          "rain_mm": 0.39,
+          "chance_of_rain_pct": 50,
+          "wind_mps": 6.6,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 05:00",
-          "rain_mm": 0.41,
-          "chance_of_rain_pct": 52,
-          "wind_mps": 7.1,
+          "rain_mm": 0.55,
+          "chance_of_rain_pct": 58,
+          "wind_mps": 6.5,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 06:00",
-          "rain_mm": 0.02,
+          "rain_mm": 0.03,
           "chance_of_rain_pct": 27,
-          "wind_mps": 7.0,
+          "wind_mps": 6.6,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 07:00",
-          "rain_mm": 0.29,
-          "chance_of_rain_pct": 45,
-          "wind_mps": 7.1,
+          "rain_mm": 0.3,
+          "chance_of_rain_pct": 44,
+          "wind_mps": 6.4,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 08:00",
-          "rain_mm": 0.2,
-          "chance_of_rain_pct": 37,
-          "wind_mps": 7.7,
+          "rain_mm": 0.23,
+          "chance_of_rain_pct": 39,
+          "wind_mps": 6.8,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 09:00",
-          "rain_mm": 0.41,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 8.3,
+          "rain_mm": 0.37,
+          "chance_of_rain_pct": 39,
+          "wind_mps": 7.8,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 10:00",
-          "rain_mm": 0.39,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 8.8,
+          "rain_mm": 0.43,
+          "chance_of_rain_pct": 36,
+          "wind_mps": 8.2,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 11:00",
-          "rain_mm": 0.2,
-          "chance_of_rain_pct": 36,
-          "wind_mps": 9.0,
+          "rain_mm": 0.72,
+          "chance_of_rain_pct": 51,
+          "wind_mps": 8.6,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 12:00",
-          "rain_mm": 0.38,
-          "chance_of_rain_pct": 40,
-          "wind_mps": 8.9,
+          "rain_mm": 0.59,
+          "chance_of_rain_pct": 50,
+          "wind_mps": 8.5,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 13:00",
-          "rain_mm": 0.93,
-          "chance_of_rain_pct": 60,
-          "wind_mps": 8.9,
+          "rain_mm": 0.56,
+          "chance_of_rain_pct": 45,
+          "wind_mps": 8.8,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 14:00",
-          "rain_mm": 0.84,
-          "chance_of_rain_pct": 57,
-          "wind_mps": 8.7,
+          "rain_mm": 0.53,
+          "chance_of_rain_pct": 48,
+          "wind_mps": 8.6,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 15:00",
-          "rain_mm": 1.05,
-          "chance_of_rain_pct": 66,
-          "wind_mps": 8.4,
+          "rain_mm": 0.29,
+          "chance_of_rain_pct": 38,
+          "wind_mps": 8.5,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 16:00",
-          "rain_mm": 1.1,
-          "chance_of_rain_pct": 68,
-          "wind_mps": 8.3,
+          "rain_mm": 0.32,
+          "chance_of_rain_pct": 41,
+          "wind_mps": 8.4,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 17:00",
-          "rain_mm": 1.56,
-          "chance_of_rain_pct": 73,
-          "wind_mps": 8.1,
+          "rain_mm": 0.43,
+          "chance_of_rain_pct": 50,
+          "wind_mps": 8.0,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 18:00",
-          "rain_mm": 1.32,
-          "chance_of_rain_pct": 72,
+          "rain_mm": 0.81,
+          "chance_of_rain_pct": 63,
           "wind_mps": 7.7,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 19:00",
-          "rain_mm": 1.45,
-          "chance_of_rain_pct": 74,
-          "wind_mps": 7.7,
+          "rain_mm": 1.56,
+          "chance_of_rain_pct": 72,
+          "wind_mps": 7.3,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 20:00",
-          "rain_mm": 1.95,
-          "chance_of_rain_pct": 79,
-          "wind_mps": 7.7,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 21:00",
-          "rain_mm": 2.36,
-          "chance_of_rain_pct": 82,
-          "wind_mps": 7.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 22:00",
-          "rain_mm": 1.66,
-          "chance_of_rain_pct": 78,
+          "rain_mm": 0.69,
+          "chance_of_rain_pct": 61,
           "wind_mps": 7.1,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
+          "time": "2026-08-23 21:00",
+          "rain_mm": 1.09,
+          "chance_of_rain_pct": 69,
+          "wind_mps": 6.7,
+          "wind_dir": "WSW",
+          "condition": "Light rain shower"
+        },
+        {
+          "time": "2026-08-23 22:00",
+          "rain_mm": 0.92,
+          "chance_of_rain_pct": 66,
+          "wind_mps": 6.2,
+          "wind_dir": "WSW",
+          "condition": "Light rain shower"
+        },
+        {
           "time": "2026-08-23 23:00",
-          "rain_mm": 1.93,
-          "chance_of_rain_pct": 80,
-          "wind_mps": 6.9,
+          "rain_mm": 0.78,
+          "chance_of_rain_pct": 63,
+          "wind_mps": 5.5,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 00:00",
-          "rain_mm": 1.65,
-          "chance_of_rain_pct": 78,
-          "wind_mps": 6.9,
+          "rain_mm": 0.55,
+          "chance_of_rain_pct": 58,
+          "wind_mps": 5.2,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 01:00",
-          "rain_mm": 1.42,
-          "chance_of_rain_pct": 76,
-          "wind_mps": 6.9,
+          "rain_mm": 0.69,
+          "chance_of_rain_pct": 61,
+          "wind_mps": 5.3,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 02:00",
-          "rain_mm": 1.0,
-          "chance_of_rain_pct": 74,
-          "wind_mps": 6.4,
-          "wind_dir": "WSW",
+          "rain_mm": 0.28,
+          "chance_of_rain_pct": 44,
+          "wind_mps": 4.9,
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 03:00",
-          "rain_mm": 1.25,
-          "chance_of_rain_pct": 76,
-          "wind_mps": 6.3,
-          "wind_dir": "WSW",
+          "rain_mm": 0.35,
+          "chance_of_rain_pct": 48,
+          "wind_mps": 5.3,
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 04:00",
-          "rain_mm": 0.36,
-          "chance_of_rain_pct": 44,
-          "wind_mps": 8.3,
+          "rain_mm": 0.35,
+          "chance_of_rain_pct": 48,
+          "wind_mps": 5.1,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 05:00",
-          "rain_mm": 0.4,
-          "chance_of_rain_pct": 50,
-          "wind_mps": 8.3,
+          "rain_mm": 0.52,
+          "chance_of_rain_pct": 58,
+          "wind_mps": 4.4,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 06:00",
-          "rain_mm": 0.82,
-          "chance_of_rain_pct": 64,
-          "wind_mps": 8.3,
+          "rain_mm": 0.35,
+          "chance_of_rain_pct": 48,
+          "wind_mps": 3.6,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 07:00",
-          "rain_mm": 0.51,
-          "chance_of_rain_pct": 55,
-          "wind_mps": 8.5,
+          "rain_mm": 0.08,
+          "chance_of_rain_pct": 33,
+          "wind_mps": 3.7,
           "wind_dir": "SW",
-          "condition": "Light rain shower"
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 08:00",
-          "rain_mm": 0.51,
-          "chance_of_rain_pct": 54,
-          "wind_mps": 8.5,
+          "rain_mm": 0.29,
+          "chance_of_rain_pct": 44,
+          "wind_mps": 4.7,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 09:00",
-          "rain_mm": 0.54,
-          "chance_of_rain_pct": 55,
-          "wind_mps": 8.7,
+          "rain_mm": 0.32,
+          "chance_of_rain_pct": 44,
+          "wind_mps": 6.0,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
@@ -2122,7 +2122,7 @@
         {
           "time": "2026-08-24 12:00",
           "rain_mm": 0.57,
-          "chance_of_rain_pct": 46,
+          "chance_of_rain_pct": 44,
           "wind_mps": 10.0,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2313,9 +2313,9 @@
         },
         {
           "time": "2026-08-25 12:00",
-          "rain_mm": 0.59,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 10.1,
+          "rain_mm": 0.43,
+          "chance_of_rain_pct": 52,
+          "wind_mps": 8.1,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
@@ -2422,14 +2422,14 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-23 02:00"
+        "localtime": "2026-08-23 02:29"
       },
       "current": {
-        "last_updated": "2026-08-23 01:45",
-        "rain_mm": 4.28,
-        "wind_mps": 3.7,
+        "last_updated": "2026-08-23 02:15",
+        "rain_mm": 10.26,
+        "wind_mps": 4.4,
         "wind_dir": "W",
-        "condition": "Moderate or heavy rain shower"
+        "condition": "Heavy rain"
       },
       "hourly_forecast": [
         {
@@ -3018,44 +3018,44 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Mamatitang",
+        "name": "Culayo",
         "region": "Pampanga",
         "country": "Philippines",
-        "lat": 15.233,
+        "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-23 03:00"
+        "localtime": "2026-08-23 03:29"
       },
       "current": {
-        "last_updated": "2026-08-23 02:45",
-        "rain_mm": 0.01,
-        "wind_mps": 2.3,
+        "last_updated": "2026-08-23 03:15",
+        "rain_mm": 0.0,
+        "wind_mps": 2.6,
         "wind_dir": "SW",
-        "condition": "Patchy rain nearby"
+        "condition": "Overcast"
       },
       "hourly_forecast": [
         {
           "time": "2026-08-23 00:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 29,
-          "wind_mps": 2.5,
+          "wind_mps": 2.3,
           "wind_dir": "WSW",
           "condition": "Overcast"
         },
         {
           "time": "2026-08-23 01:00",
-          "rain_mm": 0.07,
-          "chance_of_rain_pct": 36,
-          "wind_mps": 2.4,
+          "rain_mm": 0.0,
+          "chance_of_rain_pct": 29,
+          "wind_mps": 2.2,
           "wind_dir": "SW",
-          "condition": "Patchy rain nearby"
+          "condition": "Overcast"
         },
         {
           "time": "2026-08-23 02:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 31,
-          "wind_mps": 2.3,
+          "rain_mm": 0.0,
+          "chance_of_rain_pct": 29,
+          "wind_mps": 2.5,
           "wind_dir": "SW",
-          "condition": "Patchy rain nearby"
+          "condition": "Overcast"
         },
         {
           "time": "2026-08-23 03:00",
@@ -3067,242 +3067,242 @@
         },
         {
           "time": "2026-08-23 04:00",
-          "rain_mm": 0.04,
-          "chance_of_rain_pct": 34,
-          "wind_mps": 1.9,
+          "rain_mm": 0.01,
+          "chance_of_rain_pct": 30,
+          "wind_mps": 2.1,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 05:00",
-          "rain_mm": 0.07,
-          "chance_of_rain_pct": 37,
-          "wind_mps": 1.5,
+          "rain_mm": 0.03,
+          "chance_of_rain_pct": 32,
+          "wind_mps": 2.0,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 06:00",
-          "rain_mm": 0.12,
-          "chance_of_rain_pct": 42,
-          "wind_mps": 1.6,
-          "wind_dir": "SSW",
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 33,
+          "wind_mps": 1.8,
+          "wind_dir": "SW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 07:00",
-          "rain_mm": 0.21,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 1.5,
-          "wind_dir": "SW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 08:00",
-          "rain_mm": 0.1,
-          "chance_of_rain_pct": 39,
-          "wind_mps": 1.7,
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 30,
+          "wind_mps": 1.2,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
         },
         {
+          "time": "2026-08-23 08:00",
+          "rain_mm": 0.02,
+          "chance_of_rain_pct": 24,
+          "wind_mps": 1.6,
+          "wind_dir": "WSW",
+          "condition": "Patchy rain nearby"
+        },
+        {
           "time": "2026-08-23 09:00",
-          "rain_mm": 0.09,
-          "chance_of_rain_pct": 36,
-          "wind_mps": 2.1,
+          "rain_mm": 0.07,
+          "chance_of_rain_pct": 22,
+          "wind_mps": 2.8,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 10:00",
-          "rain_mm": 0.13,
-          "chance_of_rain_pct": 35,
-          "wind_mps": 3.9,
+          "rain_mm": 0.04,
+          "chance_of_rain_pct": 16,
+          "wind_mps": 4.6,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 11:00",
           "rain_mm": 0.04,
-          "chance_of_rain_pct": 24,
+          "chance_of_rain_pct": 19,
           "wind_mps": 5.9,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 12:00",
-          "rain_mm": 0.12,
-          "chance_of_rain_pct": 35,
-          "wind_mps": 4.9,
-          "wind_dir": "W",
+          "rain_mm": 0.11,
+          "chance_of_rain_pct": 26,
+          "wind_mps": 6.5,
+          "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 13:00",
-          "rain_mm": 0.16,
-          "chance_of_rain_pct": 39,
-          "wind_mps": 5.0,
+          "rain_mm": 0.1,
+          "chance_of_rain_pct": 26,
+          "wind_mps": 6.9,
           "wind_dir": "WSW",
-          "condition": "Light rain shower"
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 14:00",
-          "rain_mm": 0.14,
-          "chance_of_rain_pct": 38,
-          "wind_mps": 4.4,
+          "rain_mm": 0.12,
+          "chance_of_rain_pct": 31,
+          "wind_mps": 5.6,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-23 15:00",
-          "rain_mm": 0.18,
-          "chance_of_rain_pct": 41,
-          "wind_mps": 3.9,
+          "rain_mm": 0.35,
+          "chance_of_rain_pct": 49,
+          "wind_mps": 3.2,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 16:00",
-          "rain_mm": 0.14,
-          "chance_of_rain_pct": 39,
-          "wind_mps": 3.1,
+          "rain_mm": 0.54,
+          "chance_of_rain_pct": 59,
+          "wind_mps": 2.9,
           "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
+          "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 17:00",
-          "rain_mm": 0.29,
-          "chance_of_rain_pct": 50,
-          "wind_mps": 2.1,
+          "rain_mm": 0.58,
+          "chance_of_rain_pct": 62,
+          "wind_mps": 1.9,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 18:00",
-          "rain_mm": 1.05,
-          "chance_of_rain_pct": 75,
+          "rain_mm": 0.71,
+          "chance_of_rain_pct": 67,
           "wind_mps": 1.7,
-          "wind_dir": "WSW",
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 19:00",
-          "rain_mm": 0.38,
-          "chance_of_rain_pct": 57,
-          "wind_mps": 1.8,
-          "wind_dir": "WSW",
+          "rain_mm": 0.33,
+          "chance_of_rain_pct": 54,
+          "wind_mps": 1.9,
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 20:00",
-          "rain_mm": 0.42,
-          "chance_of_rain_pct": 59,
-          "wind_mps": 1.8,
-          "wind_dir": "WSW",
+          "rain_mm": 0.65,
+          "chance_of_rain_pct": 67,
+          "wind_mps": 2.0,
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 21:00",
-          "rain_mm": 0.33,
-          "chance_of_rain_pct": 55,
+          "rain_mm": 0.56,
+          "chance_of_rain_pct": 65,
           "wind_mps": 2.0,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-23 22:00",
-          "rain_mm": 0.69,
-          "chance_of_rain_pct": 69,
-          "wind_mps": 1.9,
-          "wind_dir": "SW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-23 23:00",
-          "rain_mm": 0.39,
-          "chance_of_rain_pct": 59,
-          "wind_mps": 1.8,
-          "wind_dir": "SSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-24 00:00",
-          "rain_mm": 0.3,
-          "chance_of_rain_pct": 54,
-          "wind_mps": 1.8,
-          "wind_dir": "SSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-24 01:00",
-          "rain_mm": 0.24,
-          "chance_of_rain_pct": 50,
+          "rain_mm": 0.66,
+          "chance_of_rain_pct": 68,
           "wind_mps": 2.0,
           "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
-          "time": "2026-08-24 02:00",
-          "rain_mm": 0.02,
-          "chance_of_rain_pct": 33,
-          "wind_mps": 1.8,
+          "time": "2026-08-23 23:00",
+          "rain_mm": 0.58,
+          "chance_of_rain_pct": 66,
+          "wind_mps": 1.9,
           "wind_dir": "SW",
+          "condition": "Light rain shower"
+        },
+        {
+          "time": "2026-08-24 00:00",
+          "rain_mm": 0.2,
+          "chance_of_rain_pct": 48,
+          "wind_mps": 2.1,
+          "wind_dir": "SSW",
+          "condition": "Light rain shower"
+        },
+        {
+          "time": "2026-08-24 01:00",
+          "rain_mm": 0.43,
+          "chance_of_rain_pct": 60,
+          "wind_mps": 1.8,
+          "wind_dir": "SSW",
+          "condition": "Light rain shower"
+        },
+        {
+          "time": "2026-08-24 02:00",
+          "rain_mm": 0.07,
+          "chance_of_rain_pct": 39,
+          "wind_mps": 1.6,
+          "wind_dir": "SSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 03:00",
-          "rain_mm": 0.02,
-          "chance_of_rain_pct": 33,
-          "wind_mps": 2.1,
-          "wind_dir": "SW",
+          "rain_mm": 0.06,
+          "chance_of_rain_pct": 38,
+          "wind_mps": 1.7,
+          "wind_dir": "SSW",
           "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 04:00",
-          "rain_mm": 0.8,
-          "chance_of_rain_pct": 68,
-          "wind_mps": 4.7,
+          "rain_mm": 0.06,
+          "chance_of_rain_pct": 37,
+          "wind_mps": 1.9,
           "wind_dir": "SW",
-          "condition": "Light rain shower"
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 05:00",
-          "rain_mm": 0.88,
-          "chance_of_rain_pct": 69,
-          "wind_mps": 5.0,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
+          "rain_mm": 0.02,
+          "chance_of_rain_pct": 33,
+          "wind_mps": 2.1,
+          "wind_dir": "SSW",
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 06:00",
-          "rain_mm": 0.18,
-          "chance_of_rain_pct": 43,
-          "wind_mps": 4.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
+          "rain_mm": 0.06,
+          "chance_of_rain_pct": 37,
+          "wind_mps": 2.1,
+          "wind_dir": "SSW",
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 07:00",
-          "rain_mm": 0.62,
-          "chance_of_rain_pct": 63,
-          "wind_mps": 4.9,
-          "wind_dir": "WSW",
+          "rain_mm": 0.41,
+          "chance_of_rain_pct": 60,
+          "wind_mps": 2.1,
+          "wind_dir": "SSW",
           "condition": "Light rain shower"
         },
         {
           "time": "2026-08-24 08:00",
-          "rain_mm": 0.63,
-          "chance_of_rain_pct": 62,
-          "wind_mps": 5.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
+          "rain_mm": 0.14,
+          "chance_of_rain_pct": 44,
+          "wind_mps": 2.3,
+          "wind_dir": "SSW",
+          "condition": "Patchy rain nearby"
         },
         {
           "time": "2026-08-24 09:00",
-          "rain_mm": 0.42,
-          "chance_of_rain_pct": 53,
-          "wind_mps": 6.2,
-          "wind_dir": "WSW",
+          "rain_mm": 0.3,
+          "chance_of_rain_pct": 50,
+          "wind_mps": 3.2,
+          "wind_dir": "SW",
           "condition": "Light rain shower"
         },
         {
@@ -3500,7 +3500,7 @@
         {
           "time": "2026-08-25 10:00",
           "rain_mm": 0.32,
-          "chance_of_rain_pct": 44,
+          "chance_of_rain_pct": 45,
           "wind_mps": 6.1,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
@@ -3515,9 +3515,9 @@
         },
         {
           "time": "2026-08-25 12:00",
-          "rain_mm": 0.41,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 6.2,
+          "rain_mm": 0.84,
+          "chance_of_rain_pct": 61,
+          "wind_mps": 4.5,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
         },
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T19:00:18.685474+00:00"
+  "generated_at_utc": "2026-08-22T19:29:53.345296+00:00"
 }
