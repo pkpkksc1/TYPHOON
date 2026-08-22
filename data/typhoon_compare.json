@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 2764,
-    "max_difference_km": 3452,
+    "average_difference_km": 2728,
+    "max_difference_km": 3378,
     "overall": {
       "level": "RED",
       "emoji": "🔴",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-23T15:00:00+09:00",
+      "jma_time": "2026-08-23T18:00:00+09:00",
       "kma_time": "202608231500",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
-        "lat": 21.7,
-        "lon": 141.2
+        "lat": 22.0,
+        "lon": 140.5
       },
       "kma": {
         "lat": 20.4,
         "lon": 107.9
       },
-      "difference_km": 3452,
+      "difference_km": 3378,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -39,18 +39,18 @@
     },
     {
       "forecast_hour": 24,
-      "jma_time": "2026-08-24T03:00:00+09:00",
+      "jma_time": "2026-08-24T06:00:00+09:00",
       "kma_time": "202608240300",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
-        "lat": 22.9,
-        "lon": 138.3
+        "lat": 23.2,
+        "lon": 137.6
       },
       "kma": {
         "lat": 20.3,
         "lon": 108.5
       },
-      "difference_km": 3089,
+      "difference_km": 3018,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -58,7 +58,7 @@
       }
     },
     {
-      "forecast_hour": 48,
+      "forecast_hour": 45,
       "jma_time": "2026-08-25T03:00:00+09:00",
       "kma_time": "202608250300",
       "time_gap_hours": 0,
@@ -78,7 +78,7 @@
       }
     },
     {
-      "forecast_hour": 72,
+      "forecast_hour": 69,
       "jma_time": "2026-08-26T03:00:00+09:00",
       "kma_time": "202608260300",
       "time_gap_hours": 0,
@@ -98,7 +98,7 @@
       }
     },
     {
-      "forecast_hour": 96,
+      "forecast_hour": 93,
       "jma_time": "2026-08-27T03:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -108,7 +108,7 @@
       "time_gap_hours": 24.0
     },
     {
-      "forecast_hour": 120,
+      "forecast_hour": 117,
       "jma_time": "2026-08-28T03:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -118,5 +118,5 @@
       "time_gap_hours": 48.0
     }
   ],
-  "generated_at_utc": "2026-08-22T19:29:43.815146+00:00"
+  "generated_at_utc": "2026-08-22T21:52:09.807845+00:00"
 }
