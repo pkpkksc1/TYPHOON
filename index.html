@@ -1856,7 +1856,7 @@ td{
 }
 
 
-/* v8.69.6 AIR CONTROL CENTER DARK THEME */
+/* v8.69.7 AIR CONTROL CENTER DARK THEME */
 .v865-theme,
 body {
   background: #08111d !important;
@@ -1892,7 +1892,7 @@ small,
 }
 
 
-/* v8.69.6 EXTRA DARK CONTROL CENTER */
+/* v8.69.7 EXTRA DARK CONTROL CENTER */
 html, body {
   background: #050b12 !important;
 }
@@ -1955,10 +1955,70 @@ button {
 
 </style>
 
-<style id="v865-theme">
-body { background:#172333 !important; color:#f4f8ff; }
-.card, .panel, .box, .section, .metric-card, .location-card { background:#ffffff !important; color:#1f2937 !important; border-color:#d6dde8 !important; }
+
+
+<style id="v8697-dark-color-only">
+/* v8.69.7 : color only - keep layout unchanged */
+:root{
+  --bg:#08111d;
+  --panel:#101d2c;
+  --panel2:#14263a;
+  --line:#29445f;
+  --text:#f4f8ff;
+  --muted:#b8c7d9;
+}
+
+body{
+  background:linear-gradient(180deg,#08111d,#050b12) !important;
+  color:#f4f8ff !important;
+}
+
+.panel{
+  background:#101d2c !important;
+  color:#f4f8ff !important;
+  border-color:#29445f !important;
+}
+
+.locations-meta,
+.risk-guide-panel{
+  background:#0d1a29 !important;
+  color:#c5d6e8 !important;
+}
+
+.metric,
+.agency,
+.loc-card,
+.route-card,
+.flight-card,
+.stat,
+.timebox,
+.routes-side,
+.compare-box{
+  background:#14263a !important;
+  color:#f4f8ff !important;
+  border-color:#29445f !important;
+}
+
+.flight-group,
+.agency-main{
+  background:#16304d !important;
+  color:#9fd2ff !important;
+}
+
+h1,h2,h3,.typhoon-title,.flight-no{
+  color:#ffffff !important;
+}
+
+.sub,.code,.reason,.flight-inline-meta{
+  color:#b8c7d9 !important;
+}
+
+.dashboard-version,
+.language-switch{
+  background:#10243a !important;
+}
 </style>
+
 </head>
 
 <body>
@@ -1981,7 +2041,7 @@ body { background:#172333 !important; color:#f4f8ff; }
       <div id="dashboardVersion" class="dashboard-version">
         <span id="autoModeDot" class="auto-dot off">○</span>
         <span id="autoModeText">AUTO ?</span>
-        <span>· v8.69.6</span>
+        <span>· v8.69.7</span>
       </div>
 
       <a
