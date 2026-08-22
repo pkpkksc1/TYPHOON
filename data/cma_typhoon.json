@@ -7,8 +7,8 @@
     {
       "id": 3304364,
       "number": 2619,
-      "name_en": "NAMELESS",
-      "name_cn": null,
+      "name_en": "NARRA",
+      "name_cn": "紫檀",
       "state": "start",
       "current": {
         "point_id": 3308542,
@@ -318,5 +318,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-22T01:46:35.929883+00:00"
+  "generated_at_utc": "2026-08-22T02:00:42.410497+00:00"
 }
