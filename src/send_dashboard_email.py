@@ -13,7 +13,7 @@ if not (ROOT / "output").exists():
 
 OFFLINE_HTML = ROOT / "output" / "typhoon_dashboard_offline.html"
 CAPTURE_PNG = ROOT / "output" / "typhoon_dashboard_capture.png"
-SUBJECT = "[물류] SBLC 태풍 물류대시보드"
+SUBJECT = "[물류] SBLC 태풍 물류대시보드 | {time}"
 PLAIN_BODY = """안녕하세요.
 
 SBLC 태풍 물류대시보드를 보내드립니다.
@@ -59,6 +59,18 @@ def build_html_body() -> str:
               </div>
             </td>
           </tr>
+
+          <tr>
+            <td style="padding:0 20px 20px 20px;">
+              <div style="padding:12px 14px;background:#0e2034;border:1px solid #24415c;border-radius:10px;font-size:12px;line-height:1.8;color:#b8c9da;">
+                <b style="color:#ffffff;">■ 항공 현황</b><br>
+                🟡 운항 중 / 🔵 출발 예정 / 🟢 도착 완료 / 🔴 문제<br><br>
+                <b style="color:#ffffff;">■ 업데이트</b><br>
+                중국시간 기준 최신 대시보드
+              </div>
+            </td>
+          </tr>
+
           <tr>
             <td style="padding:0 20px 20px 20px;">
               <img src="cid:dashboard_capture" alt="SBLC 태풍 물류대시보드" style="display:block;width:100%;height:auto;border:1px solid #2a415a;border-radius:12px;background:#081321;">
@@ -98,6 +110,8 @@ def main() -> int:
         return 4
 
     china_now = datetime.now(ZoneInfo("Asia/Shanghai"))
+    global SUBJECT
+    SUBJECT = SUBJECT.format(time=china_now.strftime("%Y-%m-%d %H:%M"))
     attachment_name = f"SBLC_태풍_물류대시보드_{china_now:%Y%m%d_%H%M}_CN.html"
 
     msg = EmailMessage()
