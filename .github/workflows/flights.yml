@@ -1,4 +1,4 @@
-name: Flight Status Update
+name: Flight Status Update v8.69.1
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
   schedule:
     # 매일 한국시간 06:00 실행
     # GitHub Actions cron은 UTC 기준
-    # KST 06:00 = UTC 21:00 (전날)
+    # KST 06:00 = UTC 21:00
     - cron: "0 21 * * *"
 
 
@@ -20,6 +20,7 @@ concurrency:
 
 
 jobs:
+
   fetch-flight-status:
 
     runs-on: ubuntu-latest
@@ -42,6 +43,8 @@ jobs:
           pip install -r requirements.txt
 
 
+      # 1단계
+      # 항공 API 조회
       - name: Fetch flight status
         env:
           AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
@@ -50,12 +53,27 @@ jobs:
           python src/fetch_flights.py
 
 
-      - name: Check flight data
+      # 2단계
+      # 대시보드 데이터 재생성
+      - name: Build dashboard data
         run: |
+          python src/build_dashboard.py
+
+
+      # 3단계
+      # 생성 데이터 확인
+      - name: Check updated data
+        run: |
+          echo "===== Flight Data ====="
           cat data/flights.json
 
+          echo "===== Dashboard Data ====="
+          cat data/dashboard.json
 
-      - name: Commit flight data
+
+      # 4단계
+      # GitHub 저장
+      - name: Commit updated data
 
         run: |
 
@@ -65,9 +83,10 @@ jobs:
 
 
           git add data/flights.json
+          git add data/dashboard.json
 
 
-          git diff --cached --quiet || git commit -m "Update daily flight status"
+          git diff --cached --quiet || git commit -m "Update flight dashboard v8.69.1"
 
 
           git push
