@@ -44,14 +44,8 @@ jobs:
 
 
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-
-
-
       # 1단계
-      # 최신 데이터 기준 dashboard 생성
+      # 최신 항공/태풍 데이터 기준 dashboard 생성
       - name: Build dashboard data v8.69.2
         run: |
           python src/build_dashboard.py
@@ -89,7 +83,7 @@ jobs:
 
 
       # 5단계
-      # 변경 데이터 저장
+      # dashboard 데이터 저장
       - name: Commit dashboard data
 
         run: |
