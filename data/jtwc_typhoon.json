@@ -1,6 +1,6 @@
 {
   "parser_version": "1.0",
-  "generated_at_utc": "2026-08-22T23:29:32.764732Z",
+  "generated_at_utc": "2026-08-22T23:49:29.606775Z",
   "source": "NOAA/NWS public relay of JTWC tropical cyclone warnings",
   "source_note": "JTWC maximum sustained winds are one-minute averages. JTWC wind radii are valid over open water only.",
   "active_count": 3,
@@ -8,7 +8,7 @@
     {
       "bulletin": "WTPN31",
       "issue_time_utc": "2026-08-22T21:00:00Z",
-      "age_hours": 2.5,
+      "age_hours": 2.8,
       "jtwc_id": "17W",
       "name": "SAUDEL",
       "storm_type": "TYPHOON",
@@ -779,7 +779,7 @@
     {
       "bulletin": "WTPN32",
       "issue_time_utc": "2026-08-22T21:00:00Z",
-      "age_hours": 2.5,
+      "age_hours": 2.8,
       "jtwc_id": "18W",
       "name": "NARRA",
       "storm_type": "TROPICAL DEPRESSION",
@@ -957,7 +957,7 @@
     {
       "bulletin": "WTPN33",
       "issue_time_utc": "2026-08-22T21:00:00Z",
-      "age_hours": 2.5,
+      "age_hours": 2.8,
       "jtwc_id": "19W",
       "name": "NINETEEN",
       "storm_type": "TROPICAL DEPRESSION",
