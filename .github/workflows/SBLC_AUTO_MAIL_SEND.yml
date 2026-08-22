@@ -1,4 +1,4 @@
-name: SBLC Auto Mail Send v8.69.2
+name: SBLC Auto Mail Send v8.69.3
 
 
 on:
@@ -43,6 +43,15 @@ jobs:
 
 
 
+
+      # 한글/중문 캡처용 폰트 설치
+      - name: Install fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            fonts-noto-cjk \
+            fonts-noto-cjk-extra
+
       # 캡처용 브라우저 환경 설치
       - name: Install Playwright
         run: |
@@ -52,7 +61,7 @@ jobs:
 
 
       # 최신 데이터 기준 dashboard 생성
-      - name: Build dashboard data v8.69.2
+      - name: Build dashboard data v8.69.3
         run: |
           python src/build_dashboard.py
 
@@ -98,7 +107,7 @@ jobs:
           git add data/dashboard.json
 
 
-          git diff --cached --quiet || git commit -m "Update dashboard mail v8.69.2"
+          git diff --cached --quiet || git commit -m "Update dashboard mail v8.69.3"
 
 
           git push
