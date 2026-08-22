@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-22 11:04"
+        "localtime": "2026-08-22 11:22"
       },
       "current": {
-        "last_updated": "2026-08-22 11:00",
+        "last_updated": "2026-08-22 11:15",
         "rain_mm": 0.17,
         "wind_mps": 5.9,
         "wind_dir": "ESE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-22 11:04"
+        "localtime": "2026-08-22 11:22"
       },
       "current": {
-        "last_updated": "2026-08-22 11:00",
+        "last_updated": "2026-08-22 11:15",
         "rain_mm": 0.48,
         "wind_mps": 5.8,
         "wind_dir": "ESE",
@@ -1215,15 +1215,15 @@
         "lon": 126.4407
       },
       "resolved_location": {
-        "name": "Namni",
+        "name": "Sammok",
         "region": "",
         "country": "South Korea",
-        "lat": 37.45,
-        "lon": 126.417,
-        "localtime": "2026-08-22 12:04"
+        "lat": 37.483,
+        "lon": 126.466,
+        "localtime": "2026-08-22 12:22"
       },
       "current": {
-        "last_updated": "2026-08-22 12:00",
+        "last_updated": "2026-08-22 12:15",
         "rain_mm": 20.64,
         "wind_mps": 2.4,
         "wind_dir": "NE",
@@ -1821,10 +1821,10 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-22 11:04"
+        "localtime": "2026-08-22 11:22"
       },
       "current": {
-        "last_updated": "2026-08-22 11:00",
+        "last_updated": "2026-08-22 11:15",
         "rain_mm": 0.0,
         "wind_mps": 8.4,
         "wind_dir": "WSW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-22 10:04"
+        "localtime": "2026-08-22 10:22"
       },
       "current": {
-        "last_updated": "2026-08-22 10:00",
+        "last_updated": "2026-08-22 10:15",
         "rain_mm": 5.66,
         "wind_mps": 3.0,
         "wind_dir": "W",
@@ -3023,10 +3023,10 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-22 11:04"
+        "localtime": "2026-08-22 11:22"
       },
       "current": {
-        "last_updated": "2026-08-22 11:00",
+        "last_updated": "2026-08-22 11:15",
         "rain_mm": 0.02,
         "wind_mps": 6.3,
         "wind_dir": "WSW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-22T03:04:43.042253+00:00"
+  "generated_at_utc": "2026-08-22T03:22:53.477084+00:00"
 }
