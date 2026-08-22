@@ -1,70 +1,73 @@
-name: Flight Status Fetch
+name: Flight Status Update
 
 on:
   workflow_dispatch:
+
   schedule:
-    # 매시간 17분 실행
+    # 매일 한국시간 06:00 실행
     # GitHub Actions cron은 UTC 기준
-    # 중국시간 기준 매시간 xx:17에 해당
-    - cron: "17 * * * *"
+    # KST 06:00 = UTC 21:00 (전날)
+    - cron: "0 21 * * *"
+
 
 permissions:
   contents: write
 
+
 concurrency:
-  group: hourly-flight-status
-  cancel-in-progress: true
+  group: daily-flight-status
+  cancel-in-progress: false
+
 
 jobs:
-  fetch:
+  fetch-flight-status:
+
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout latest repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Set up Python
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Fetch representative flight status
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+
+      - name: Fetch flight status
         env:
           AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
-        run: python src/fetch_flights.py
 
-      - name: Rebuild dashboard with latest flights
-        run: python src/build_dashboard.py
-
-      - name: Commit flight and dashboard updates
-        shell: bash
         run: |
-          set -e
+          python src/fetch_flights.py
 
-          if [ ! -f data/flights.json ]; then
-            echo "data/flights.json was not created."
-            exit 1
-          fi
 
-          if [ ! -f data/dashboard.json ]; then
-            echo "data/dashboard.json was not created."
-            exit 1
-          fi
+      - name: Check flight data
+        run: |
+          cat data/flights.json
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/flights.json data/dashboard.json
+      - name: Commit flight data
 
-          if git diff --cached --quiet; then
-            echo "No flight/dashboard data change. Nothing to commit."
-            exit 0
-          fi
+        run: |
 
-          git commit -m "Update hourly flight status"
+          git config user.name "github-actions"
 
-          # 다른 태풍/날씨 workflow가 같은 시간에 push했을 경우 충돌 방지
-          git pull --rebase origin main
-          git push origin main
+          git config user.email "github-actions@github.com"
+
+
+          git add data/flights.json
+
+
+          git diff --cached --quiet || git commit -m "Update daily flight status"
+
+
+          git push
