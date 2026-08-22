@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-22T16:35:13.323685+00:00",
+  "generated_at_utc": "2026-08-22T16:53:51.458427+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-22T16:34:59.155522+00:00",
-    "weather": "2026-08-22T16:35:13.166746+00:00",
-    "risk": "2026-08-22T16:35:13.229689+00:00",
+    "weather": "2026-08-22T16:53:51.295033+00:00",
+    "risk": "2026-08-22T16:53:51.360914+00:00",
     "flights": "2026-08-22T14:27:12.524872+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-23T00:00:00+09:00",
     "jma_updated_at_utc": "2026-08-22T16:34:59.155522+00:00",
-    "weather_updated_at_utc": "2026-08-22T16:35:13.166746+00:00",
-    "impact_updated_at_utc": "2026-08-22T16:35:11.770160+00:00",
-    "risk_updated_at_utc": "2026-08-22T16:35:13.229689+00:00",
+    "weather_updated_at_utc": "2026-08-22T16:53:51.295033+00:00",
+    "impact_updated_at_utc": "2026-08-22T16:53:47.022209+00:00",
+    "risk_updated_at_utc": "2026-08-22T16:53:51.360914+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
@@ -109,7 +109,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 00:15",
+        "last_updated": "2026-08-23 00:45",
         "rain_mm": 0.02,
         "wind_mps": 5.4
       },
@@ -136,7 +136,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 00:30",
+        "last_updated": "2026-08-23 00:45",
         "rain_mm": 0.03,
         "wind_mps": 6.1
       },
@@ -163,13 +163,13 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 01:30",
+        "last_updated": "2026-08-23 01:45",
         "rain_mm": 0.0,
         "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-08-23 01:30",
+        "max_rain_time": "2026-08-23 01:45",
         "max_wind_mps": 4.3,
         "max_wind_time": "2026-08-25 15:00"
       }
@@ -190,7 +190,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 00:30",
+        "last_updated": "2026-08-23 00:45",
         "rain_mm": 0.33,
         "wind_mps": 6.8
       },
@@ -217,7 +217,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-22 23:15",
+        "last_updated": "2026-08-22 23:45",
         "rain_mm": 2.8,
         "wind_mps": 5.8
       },
@@ -244,7 +244,7 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 00:30",
+        "last_updated": "2026-08-23 00:45",
         "rain_mm": 0.07,
         "wind_mps": 2.4
       },
