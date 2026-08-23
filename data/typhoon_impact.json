@@ -15,7 +15,7 @@
   "forecast_confidence": {
     "emoji": "🔴",
     "label_ko": "차이 큼",
-    "average_difference_km": 2728
+    "average_difference_km": 2626
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -2022,7 +2022,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-22T23:49:33.373529+00:00",
+  "generated_at_utc": "2026-08-23T01:57:15.885085+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
