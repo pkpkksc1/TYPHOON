@@ -13,15 +13,15 @@
         "lon": 120.5853
       },
       "resolved_location": {
-        "name": "Yangchiatsun",
+        "name": "Suzhou",
         "region": "Jiangsu",
         "country": "China",
-        "lat": 31.285,
-        "lon": 120.596,
-        "localtime": "2026-08-23 19:29"
+        "lat": 31.311,
+        "lon": 120.618,
+        "localtime": "2026-08-23 19:50"
       },
       "current": {
-        "last_updated": "2026-08-23 19:15",
+        "last_updated": "2026-08-23 19:45",
         "rain_mm": 0.0,
         "wind_mps": 7.2,
         "wind_dir": "ESE",
@@ -415,7 +415,7 @@
         {
           "time": "2026-08-25 00:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 27,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.2,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -423,7 +423,7 @@
         {
           "time": "2026-08-25 01:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 30,
+          "chance_of_rain_pct": 29,
           "wind_mps": 3.9,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -431,7 +431,7 @@
         {
           "time": "2026-08-25 02:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 29,
+          "chance_of_rain_pct": 28,
           "wind_mps": 3.8,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
@@ -479,7 +479,7 @@
         {
           "time": "2026-08-25 08:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 22,
+          "chance_of_rain_pct": 19,
           "wind_mps": 5.4,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -511,7 +511,7 @@
         {
           "time": "2026-08-25 12:00",
           "rain_mm": 0.04,
-          "chance_of_rain_pct": 14,
+          "chance_of_rain_pct": 13,
           "wind_mps": 4.8,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -527,7 +527,7 @@
         {
           "time": "2026-08-25 14:00",
           "rain_mm": 0.03,
-          "chance_of_rain_pct": 10,
+          "chance_of_rain_pct": 11,
           "wind_mps": 5.1,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-23 19:29"
+        "localtime": "2026-08-23 19:50"
       },
       "current": {
-        "last_updated": "2026-08-23 19:15",
+        "last_updated": "2026-08-23 19:45",
         "rain_mm": 0.0,
         "wind_mps": 5.2,
         "wind_dir": "SE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-23 20:29"
+        "localtime": "2026-08-23 20:50"
       },
       "current": {
-        "last_updated": "2026-08-23 20:15",
+        "last_updated": "2026-08-23 20:45",
         "rain_mm": 0.0,
         "wind_mps": 1.6,
         "wind_dir": "WNW",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Moonwalk Ii",
-        "region": "Misamis Oriental",
+        "name": "Pildira",
+        "region": "Rizal",
         "country": "Philippines",
-        "lat": 14.5,
-        "lon": 121.019,
-        "localtime": "2026-08-23 19:29"
+        "lat": 14.517,
+        "lon": 121.0,
+        "localtime": "2026-08-23 19:50"
       },
       "current": {
-        "last_updated": "2026-08-23 19:15",
+        "last_updated": "2026-08-23 19:45",
         "rain_mm": 1.13,
         "wind_mps": 7.3,
         "wind_dir": "SW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-23 18:29"
+        "localtime": "2026-08-23 18:50"
       },
       "current": {
-        "last_updated": "2026-08-23 18:15",
+        "last_updated": "2026-08-23 18:30",
         "rain_mm": 0.54,
         "wind_mps": 4.1,
         "wind_dir": "NW",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Mamatitang",
         "region": "Pampanga",
         "country": "Philippines",
-        "lat": 15.183,
+        "lat": 15.233,
         "lon": 120.567,
-        "localtime": "2026-08-23 19:29"
+        "localtime": "2026-08-23 19:50"
       },
       "current": {
-        "last_updated": "2026-08-23 19:15",
+        "last_updated": "2026-08-23 19:45",
         "rain_mm": 0.81,
         "wind_mps": 1.7,
         "wind_dir": "WSW",
@@ -3116,7 +3116,7 @@
         {
           "time": "2026-08-23 10:00",
           "rain_mm": 0.07,
-          "chance_of_rain_pct": 30,
+          "chance_of_rain_pct": 29,
           "wind_mps": 3.8,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -3476,7 +3476,7 @@
         {
           "time": "2026-08-25 07:00",
           "rain_mm": 0.66,
-          "chance_of_rain_pct": 68,
+          "chance_of_rain_pct": 67,
           "wind_mps": 1.8,
           "wind_dir": "SW",
           "condition": "Light rain shower"
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-23T11:29:16.791448+00:00"
+  "generated_at_utc": "2026-08-23T11:50:35.579225+00:00"
 }
