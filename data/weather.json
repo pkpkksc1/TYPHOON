@@ -18,12 +18,12 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-23 11:33"
+        "localtime": "2026-08-23 12:11"
       },
       "current": {
-        "last_updated": "2026-08-23 11:30",
-        "rain_mm": 0.03,
-        "wind_mps": 9.5,
+        "last_updated": "2026-08-23 12:00",
+        "rain_mm": 0.13,
+        "wind_mps": 8.9,
         "wind_dir": "SE",
         "condition": "Thundery outbreaks in nearby"
       },
@@ -619,11 +619,11 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-23 11:33"
+        "localtime": "2026-08-23 12:11"
       },
       "current": {
-        "last_updated": "2026-08-23 11:15",
-        "rain_mm": 0.11,
+        "last_updated": "2026-08-23 12:00",
+        "rain_mm": 0.07,
         "wind_mps": 7.8,
         "wind_dir": "SE",
         "condition": "Thundery outbreaks in nearby"
@@ -1220,14 +1220,14 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-23 12:33"
+        "localtime": "2026-08-23 13:11"
       },
       "current": {
-        "last_updated": "2026-08-23 12:15",
+        "last_updated": "2026-08-23 13:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.8,
+        "wind_mps": 3.0,
         "wind_dir": "SW",
-        "condition": "Sunny"
+        "condition": "Overcast"
       },
       "hourly_forecast": [
         {
@@ -1821,12 +1821,12 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-23 11:33"
+        "localtime": "2026-08-23 12:11"
       },
       "current": {
-        "last_updated": "2026-08-23 11:30",
-        "rain_mm": 0.3,
-        "wind_mps": 8.7,
+        "last_updated": "2026-08-23 12:00",
+        "rain_mm": 0.59,
+        "wind_mps": 8.5,
         "wind_dir": "WSW",
         "condition": "Light rain shower"
       },
@@ -2422,13 +2422,13 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-23 10:33"
+        "localtime": "2026-08-23 11:11"
       },
       "current": {
-        "last_updated": "2026-08-23 10:15",
-        "rain_mm": 2.2,
-        "wind_mps": 4.0,
-        "wind_dir": "WNW",
+        "last_updated": "2026-08-23 11:00",
+        "rain_mm": 1.45,
+        "wind_mps": 2.4,
+        "wind_dir": "NW",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -3023,14 +3023,14 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-23 11:33"
+        "localtime": "2026-08-23 12:11"
       },
       "current": {
-        "last_updated": "2026-08-23 11:15",
-        "rain_mm": 0.0,
-        "wind_mps": 2.2,
-        "wind_dir": "SW",
-        "condition": "Overcast"
+        "last_updated": "2026-08-23 12:00",
+        "rain_mm": 0.11,
+        "wind_mps": 6.5,
+        "wind_dir": "WSW",
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-23T03:33:24.738609+00:00"
+  "generated_at_utc": "2026-08-23T04:11:33.443667+00:00"
 }
