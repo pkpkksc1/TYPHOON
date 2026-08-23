@@ -96,8 +96,8 @@
       "name_cn": "紫檀",
       "state": "start",
       "current": {
-        "point_id": 3312179,
-        "time_utc": "202608230400",
+        "point_id": 3312202,
+        "time_utc": "202608230500",
         "grade": "TS",
         "grade_ko": "열대폭풍",
         "lon": 108.1,
@@ -120,7 +120,7 @@
               120,
               150,
               100,
-              3312179
+              3312202
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -129,20 +129,20 @@
       "forecast": [
         {
           "forecast_hour": 6,
-          "base_time_utc": "202608230400",
+          "base_time_utc": "202608230500",
           "lon": 108,
-          "lat": 20.4833,
+          "lat": 20.4667,
           "pressure_hpa": 990,
-          "max_wind_mps": 23,
+          "max_wind_mps": 25,
           "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
+          "grade": "STS",
+          "grade_ko": "강한 열대폭풍"
         },
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608230400",
+          "base_time_utc": "202608230500",
           "lon": 108,
-          "lat": 20.3833,
+          "lat": 20.3667,
           "pressure_hpa": 985,
           "max_wind_mps": 28,
           "agency": "BABJ",
@@ -151,9 +151,9 @@
         },
         {
           "forecast_hour": 18,
-          "base_time_utc": "202608230400",
-          "lon": 108.0167,
-          "lat": 20.2833,
+          "base_time_utc": "202608230500",
+          "lon": 108.0333,
+          "lat": 20.2667,
           "pressure_hpa": 982,
           "max_wind_mps": 30,
           "agency": "BABJ",
@@ -162,9 +162,9 @@
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608230400",
-          "lon": 108.125,
-          "lat": 20.1917,
+          "base_time_utc": "202608230500",
+          "lon": 108.15,
+          "lat": 20.1833,
           "pressure_hpa": 980,
           "max_wind_mps": 33,
           "agency": "BABJ",
@@ -173,9 +173,9 @@
         },
         {
           "forecast_hour": 36,
-          "base_time_utc": "202608230400",
-          "lon": 108.4417,
-          "lat": 20.1083,
+          "base_time_utc": "202608230500",
+          "lon": 108.4833,
+          "lat": 20.1167,
           "pressure_hpa": 975,
           "max_wind_mps": 33,
           "agency": "BABJ",
@@ -184,9 +184,9 @@
         },
         {
           "forecast_hour": 48,
-          "base_time_utc": "202608230400",
-          "lon": 108.9417,
-          "lat": 20.25,
+          "base_time_utc": "202608230500",
+          "lon": 108.9833,
+          "lat": 20.3,
           "pressure_hpa": 980,
           "max_wind_mps": 33,
           "agency": "BABJ",
@@ -195,20 +195,20 @@
         },
         {
           "forecast_hour": 60,
-          "base_time_utc": "202608230400",
-          "lon": 109.3917,
-          "lat": 20.8833,
+          "base_time_utc": "202608230500",
+          "lon": 109.3833,
+          "lat": 20.9667,
           "pressure_hpa": 990,
-          "max_wind_mps": 28,
+          "max_wind_mps": 25,
           "agency": "BABJ",
           "grade": "STS",
           "grade_ko": "강한 열대폭풍"
         },
         {
           "forecast_hour": 72,
-          "base_time_utc": "202608230400",
-          "lon": 109.2583,
-          "lat": 21.85,
+          "base_time_utc": "202608230500",
+          "lon": 109.2167,
+          "lat": 21.9,
           "pressure_hpa": 995,
           "max_wind_mps": 20,
           "agency": "BABJ",
@@ -217,9 +217,9 @@
         },
         {
           "forecast_hour": 96,
-          "base_time_utc": "202608230400",
-          "lon": 108.2583,
-          "lat": 23.05,
+          "base_time_utc": "202608230500",
+          "lon": 108.2167,
+          "lat": 23.1,
           "pressure_hpa": 998,
           "max_wind_mps": 15,
           "agency": "BABJ",
@@ -227,7 +227,7 @@
           "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 60
+      "raw_point_count": 61
     },
     {
       "id": 3304099,
@@ -392,5 +392,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-23T04:47:33.776552+00:00"
+  "generated_at_utc": "2026-08-23T05:04:21.583663+00:00"
 }
