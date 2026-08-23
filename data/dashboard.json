@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-23T13:58:08.265072+00:00",
+  "generated_at_utc": "2026-08-23T14:29:22.542606+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-23T13:39:29.485819+00:00",
-    "weather": "2026-08-23T13:58:08.112171+00:00",
-    "risk": "2026-08-23T13:58:08.172807+00:00",
-    "flights": "2026-08-22T21:13:07.486838+00:00"
+    "weather": "2026-08-23T14:29:21.099873+00:00",
+    "risk": "2026-08-23T14:29:21.161208+00:00",
+    "flights": "2026-08-23T14:29:22.487430+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-23T21:00:00+09:00",
     "jma_updated_at_utc": "2026-08-23T13:39:29.485819+00:00",
-    "weather_updated_at_utc": "2026-08-23T13:58:08.112171+00:00",
-    "impact_updated_at_utc": "2026-08-23T13:58:06.746953+00:00",
-    "risk_updated_at_utc": "2026-08-23T13:58:08.172807+00:00",
+    "weather_updated_at_utc": "2026-08-23T14:29:21.099873+00:00",
+    "impact_updated_at_utc": "2026-08-23T14:29:19.312270+00:00",
+    "risk_updated_at_utc": "2026-08-23T14:29:21.161208+00:00",
     "risk_version": "6.6-CURRENT-DISTANCE"
   },
   "typhoon": {
@@ -100,18 +100,18 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 556 km",
-      "current_distance_km": 2269,
-      "closest_distance_km": 556,
-      "closest_time": "2026-08-28T06:00:00Z",
-      "closest_forecast_hour": 120,
+      "reason_ko": "태풍 최접근 527 km",
+      "current_distance_km": 2096,
+      "closest_distance_km": 527,
+      "closest_time": "2026-08-27T12:00:00Z",
+      "closest_forecast_hour": 96,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 21:45",
+        "last_updated": "2026-08-23 22:15",
         "rain_mm": 0.0,
-        "wind_mps": 8.5
+        "wind_mps": 8.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.05,
@@ -127,18 +127,18 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 511 km",
-      "current_distance_km": 2155,
-      "closest_distance_km": 511,
-      "closest_time": "2026-08-27T06:00:00Z",
+      "reason_ko": "태풍 최접근 467 km",
+      "current_distance_km": 1983,
+      "closest_distance_km": 467,
+      "closest_time": "2026-08-27T12:00:00Z",
       "closest_forecast_hour": 96,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 21:45",
+        "last_updated": "2026-08-23 22:15",
         "rain_mm": 0.0,
-        "wind_mps": 6.1
+        "wind_mps": 5.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.07,
@@ -155,15 +155,15 @@
         "label_ko": "낮음"
       },
       "reason_ko": "특이 위험요소 낮음",
-      "current_distance_km": 2218,
-      "closest_distance_km": 1130,
-      "closest_time": "2026-08-26T06:00:00Z",
+      "current_distance_km": 2066,
+      "closest_distance_km": 1099,
+      "closest_time": "2026-08-26T12:00:00Z",
       "closest_forecast_hour": 72,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 22:45",
+        "last_updated": "2026-08-23 23:15",
         "rain_mm": 0.0,
         "wind_mps": 1.0
       },
@@ -182,17 +182,17 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 2.44 mm",
-      "current_distance_km": 2252,
-      "closest_distance_km": 1312,
-      "closest_time": "2026-08-28T06:00:00Z",
+      "current_distance_km": 2134,
+      "closest_distance_km": 1315,
+      "closest_time": "2026-08-28T12:00:00Z",
       "closest_forecast_hour": 120,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 21:45",
-        "rain_mm": 0.08,
-        "wind_mps": 5.7
+        "last_updated": "2026-08-23 22:15",
+        "rain_mm": 0.24,
+        "wind_mps": 4.9
       },
       "forecast_72h": {
         "max_rain_mm": 2.44,
@@ -209,17 +209,17 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 25.69 mm",
-      "current_distance_km": 3622,
-      "closest_distance_km": 1607,
-      "closest_time": "2026-08-28T06:00:00Z",
+      "current_distance_km": 3462,
+      "closest_distance_km": 1461,
+      "closest_time": "2026-08-28T12:00:00Z",
       "closest_forecast_hour": 120,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 20:45",
-        "rain_mm": 3.52,
-        "wind_mps": 1.3
+        "last_updated": "2026-08-23 21:15",
+        "rain_mm": 4.14,
+        "wind_mps": 2.5
       },
       "forecast_72h": {
         "max_rain_mm": 25.69,
@@ -236,16 +236,16 @@
         "label_ko": "낮음"
       },
       "reason_ko": "최대 시간당 강수 11.27 mm",
-      "current_distance_km": 2268,
-      "closest_distance_km": 1236,
-      "closest_time": "2026-08-28T06:00:00Z",
+      "current_distance_km": 2144,
+      "closest_distance_km": 1234,
+      "closest_time": "2026-08-28T12:00:00Z",
       "closest_forecast_hour": 120,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-23 21:45",
-        "rain_mm": 0.01,
+        "last_updated": "2026-08-23 22:15",
+        "rain_mm": 0.02,
         "wind_mps": 1.8
       },
       "forecast_72h": {
@@ -265,7 +265,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 556 km)"
+      "reason_ko": "쑤저우 낮음 (태풍 최접근 527 km)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
@@ -285,7 +285,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 556 km)"
+      "reason_ko": "쑤저우 낮음 (태풍 최접근 527 km)"
     },
     {
       "code": "SUZHOU_PVG_MNL",
@@ -295,7 +295,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "쑤저우 낮음 (태풍 최접근 556 km)"
+      "reason_ko": "쑤저우 낮음 (태풍 최접근 527 km)"
     },
     {
       "code": "ICN_PVG",
@@ -305,7 +305,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 511 km)"
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 467 km)"
     }
   ],
   "flights": [
@@ -313,26 +313,26 @@
       "flight_iata": "KE249",
       "route": "ICN → PVG",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "출발 예정"
       },
       "departure": {
-        "scheduled_local": "2026-08-22T02:00:00+09:00",
-        "estimated_local": "2026-08-22T02:00:00+09:00",
-        "actual_local": "2026-08-22T01:53:00+09:00",
-        "display_time_local": "2026-08-22 01:53",
-        "display_label_ko": "실제 출발",
-        "delay_minutes": -7,
+        "scheduled_local": "2026-08-24T02:00:00+09:00",
+        "estimated_local": "2026-08-24T02:00:00+09:00",
+        "actual_local": null,
+        "display_time_local": "2026-08-24 02:00",
+        "display_label_ko": "예상 출발",
+        "delay_minutes": 0,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-22T03:10:00+08:00",
-        "estimated_local": "2026-08-22T02:13:00+08:00",
-        "actual_local": "2026-08-22T02:20:00+08:00",
-        "display_time_local": "2026-08-22 02:20",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": -50,
+        "scheduled_local": "2026-08-24T03:10:00+08:00",
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": "2026-08-24 03:10",
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
         "timezone_label_ko": "중국시간"
       }
     },
@@ -340,53 +340,53 @@
       "flight_iata": "KE335",
       "route": "ICN → PVG",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "조회 결과 없음"
       },
       "departure": {
-        "scheduled_local": "2026-08-21T01:50:00+09:00",
-        "estimated_local": "2026-08-21T01:50:00+09:00",
-        "actual_local": "2026-08-21T01:43:00+09:00",
-        "display_time_local": "2026-08-21 01:43",
-        "display_label_ko": "실제 출발",
-        "delay_minutes": -7,
-        "timezone_label_ko": "한국시간"
+        "scheduled_local": null,
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": null,
+        "display_label_ko": "예정 출발",
+        "delay_minutes": null,
+        "timezone_label_ko": null
       },
       "arrival": {
-        "scheduled_local": "2026-08-21T03:00:00+08:00",
-        "estimated_local": "2026-08-21T02:02:00+08:00",
-        "actual_local": "2026-08-21T02:06:00+08:00",
-        "display_time_local": "2026-08-21 02:06",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": -54,
-        "timezone_label_ko": "중국시간"
+        "scheduled_local": null,
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": null,
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
+        "timezone_label_ko": null
       }
     },
     {
       "flight_iata": "PR337",
       "route": "PVG → MNL",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "운항 중"
       },
       "departure": {
-        "scheduled_local": "2026-08-22T16:00:00+08:00",
-        "estimated_local": "2026-08-22T16:00:00+08:00",
-        "actual_local": "2026-08-22T17:01:00+08:00",
-        "display_time_local": "2026-08-22 17:01",
+        "scheduled_local": "2026-08-23T16:00:00+08:00",
+        "estimated_local": "2026-08-23T16:00:00+08:00",
+        "actual_local": "2026-08-23T18:21:00+08:00",
+        "display_time_local": "2026-08-23 18:21",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 61,
+        "delay_minutes": 141,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-22T19:40:00+08:00",
-        "estimated_local": "2026-08-22T19:54:00+08:00",
-        "actual_local": "2026-08-22T19:57:00+08:00",
-        "display_time_local": "2026-08-22 19:57",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": 17,
+        "scheduled_local": "2026-08-23T19:40:00+08:00",
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": "2026-08-23 19:40",
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
         "timezone_label_ko": "필리핀시간"
       }
     },
@@ -394,9 +394,9 @@
       "flight_iata": "KJ948",
       "route": "PVG → ICN",
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "운항 중"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "도착 완료"
       },
       "departure": {
         "scheduled_local": "2026-08-23T03:05:00+08:00",
@@ -409,11 +409,11 @@
       },
       "arrival": {
         "scheduled_local": "2026-08-23T06:10:00+09:00",
-        "estimated_local": "2026-08-23T06:00:00+09:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-23 06:00",
-        "display_label_ko": "예상 도착",
-        "delay_minutes": -10,
+        "estimated_local": "2026-08-23T05:59:00+09:00",
+        "actual_local": "2026-08-23T06:01:00+09:00",
+        "display_time_local": "2026-08-23 06:01",
+        "display_label_ko": "실제 도착",
+        "delay_minutes": -9,
         "timezone_label_ko": "한국시간"
       }
     },
@@ -421,27 +421,27 @@
       "flight_iata": "KJ988",
       "route": "PVG → ICN",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "조회 결과 없음"
       },
       "departure": {
-        "scheduled_local": "2026-08-21T18:35:00+08:00",
-        "estimated_local": "2026-08-21T18:35:00+08:00",
-        "actual_local": "2026-08-21T19:29:00+08:00",
-        "display_time_local": "2026-08-21 19:29",
-        "display_label_ko": "실제 출발",
-        "delay_minutes": 54,
-        "timezone_label_ko": "중국시간"
+        "scheduled_local": null,
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": null,
+        "display_label_ko": "예정 출발",
+        "delay_minutes": null,
+        "timezone_label_ko": null
       },
       "arrival": {
-        "scheduled_local": "2026-08-21T21:40:00+09:00",
-        "estimated_local": "2026-08-21T22:00:00+09:00",
-        "actual_local": "2026-08-21T22:02:00+09:00",
-        "display_time_local": "2026-08-21 22:02",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": 22,
-        "timezone_label_ko": "한국시간"
+        "scheduled_local": null,
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": null,
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
+        "timezone_label_ko": null
       }
     }
   ],
@@ -449,10 +449,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-08",
-    "monthly_requests": 20,
+    "monthly_requests": 25,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-08-22T21:13:07.486838+00:00",
+    "last_fetch_at_utc": "2026-08-23T14:29:22.487430+00:00",
     "tracking_started_at_utc": "2026-08-22T09:33:34.625601+00:00"
   },
   "attribution": [
