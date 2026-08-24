@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-24T05:47:59.180878+00:00",
-    "weather": "2026-08-24T05:48:00.473155+00:00"
+    "impact": "2026-08-24T06:06:09.574849+00:00",
+    "weather": "2026-08-24T06:06:10.894408+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -42,9 +42,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 13:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 7.9,
+        "current_last_updated": "2026-08-24 14:00",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 8.0,
         "max_72h_rain_mm": 0.03,
         "max_72h_rain_time": "2026-08-24 06:00",
         "max_72h_wind_mps": 8.0,
@@ -76,9 +76,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 13:30",
+        "current_last_updated": "2026-08-24 14:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 5.9,
+        "current_wind_mps": 5.8,
         "max_72h_rain_mm": 0.02,
         "max_72h_rain_time": "2026-08-24 05:00",
         "max_72h_wind_mps": 6.0,
@@ -110,9 +110,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 14:30",
+        "current_last_updated": "2026-08-24 15:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.6,
+        "current_wind_mps": 4.8,
         "max_72h_rain_mm": 0.89,
         "max_72h_rain_time": "2026-08-25 07:00",
         "max_72h_wind_mps": 4.8,
@@ -144,9 +144,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 13:30",
-        "current_rain_mm": 0.03,
-        "current_wind_mps": 8.9,
+        "current_last_updated": "2026-08-24 14:00",
+        "current_rain_mm": 0.09,
+        "current_wind_mps": 9.4,
         "max_72h_rain_mm": 0.85,
         "max_72h_rain_time": "2026-08-25 14:00",
         "max_72h_wind_mps": 10.2,
@@ -178,9 +178,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 12:30",
-        "current_rain_mm": 0.45,
-        "current_wind_mps": 6.3,
+        "current_last_updated": "2026-08-24 13:00",
+        "current_rain_mm": 0.83,
+        "current_wind_mps": 5.4,
         "max_72h_rain_mm": 2.18,
         "max_72h_rain_time": "2026-08-24 15:00",
         "max_72h_wind_mps": 7.1,
@@ -212,8 +212,8 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 13:45",
-        "current_rain_mm": 0.46,
+        "current_last_updated": "2026-08-24 14:00",
+        "current_rain_mm": 0.28,
         "current_wind_mps": 5.7,
         "max_72h_rain_mm": 1.45,
         "max_72h_rain_time": "2026-08-24 02:00",
@@ -309,5 +309,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T05:48:00.526216+00:00"
+  "generated_at_utc": "2026-08-24T06:06:10.959012+00:00"
 }
