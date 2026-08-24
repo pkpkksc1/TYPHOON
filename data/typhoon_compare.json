@@ -8,255 +8,35 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 86,
-    "max_difference_km": 247,
+    "average_difference_km": 861,
+    "max_difference_km": 861,
     "overall": {
-      "level": "YELLOW",
-      "emoji": "🟡",
-      "label_ko": "차이 있음"
+      "level": "RED",
+      "emoji": "🔴",
+      "label_ko": "차이 큼"
     }
   },
   "comparisons": [
     {
       "forecast_hour": 1,
-      "jma_time": "2026-08-24T22:00:00+09:00",
+      "jma_time": "2026-08-24T23:00:00+09:00",
       "kma_time": "202608250900",
-      "time_gap_hours": 11.0,
+      "time_gap_hours": 10.0,
       "jma": {
-        "lat": 25.0,
-        "lon": 133.4
+        "lat": 25.1,
+        "lon": 133.0
       },
       "kma": {
-        "lat": 26.0,
-        "lon": 131.2
+        "lat": 18.9,
+        "lon": 138.0
       },
-      "difference_km": 247,
+      "difference_km": 861,
       "status": {
         "level": "RED",
         "emoji": "🔴",
         "label_ko": "차이 큼"
-      }
-    },
-    {
-      "forecast_hour": 3,
-      "jma_time": "2026-08-25T00:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 9.0,
-      "jma": {
-        "lat": 25.2,
-        "lon": 132.9
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 192,
-      "status": {
-        "level": "RED",
-        "emoji": "🔴",
-        "label_ko": "차이 큼"
-      }
-    },
-    {
-      "forecast_hour": 6,
-      "jma_time": "2026-08-25T03:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 6.0,
-      "jma": {
-        "lat": 25.5,
-        "lon": 132.2
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 115,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 9,
-      "jma_time": "2026-08-25T06:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 3.0,
-      "jma": {
-        "lat": 25.7,
-        "lon": 131.7
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 60,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 12,
-      "jma_time": "2026-08-25T09:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 0,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 15,
-      "jma_time": "2026-08-25T12:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 3.0,
-      "jma": {
-        "lat": 26.3,
-        "lon": 130.7
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 60,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 18,
-      "jma_time": "2026-08-25T15:00:00+09:00",
-      "kma_time": "202608250900",
-      "time_gap_hours": 6.0,
-      "jma": {
-        "lat": 26.6,
-        "lon": 130.1
-      },
-      "kma": {
-        "lat": 26.0,
-        "lon": 131.2
-      },
-      "difference_km": 128,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 21,
-      "jma_time": "2026-08-25T18:00:00+09:00",
-      "kma_time": "202608252100",
-      "time_gap_hours": 3.0,
-      "jma": {
-        "lat": 26.8,
-        "lon": 129.6
-      },
-      "kma": {
-        "lat": 26.9,
-        "lon": 129.0
-      },
-      "difference_km": 61,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 24,
-      "jma_time": "2026-08-25T21:00:00+09:00",
-      "kma_time": "202608252100",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 27.0,
-        "lon": 129.1
-      },
-      "kma": {
-        "lat": 26.9,
-        "lon": 129.0
-      },
-      "difference_km": 15,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 48,
-      "jma_time": "2026-08-26T21:00:00+09:00",
-      "kma_time": "202608262100",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 27.8,
-        "lon": 125.6
-      },
-      "kma": {
-        "lat": 27.5,
-        "lon": 125.6
-      },
-      "difference_km": 33,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 72,
-      "jma_time": "2026-08-27T21:00:00+09:00",
-      "kma_time": "202608272100",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 26.8,
-        "lon": 122.8
-      },
-      "kma": {
-        "lat": 26.7,
-        "lon": 122.7
-      },
-      "difference_km": 15,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 96,
-      "jma_time": "2026-08-28T21:00:00+09:00",
-      "kma_time": "202608282100",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 25.5,
-        "lon": 117.2
-      },
-      "kma": {
-        "lat": 25.5,
-        "lon": 118.2
-      },
-      "difference_km": 100,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
       }
     }
   ],
-  "generated_at_utc": "2026-08-24T13:07:04.043727+00:00"
+  "generated_at_utc": "2026-08-24T13:59:11.551470+00:00"
 }
