@@ -3,7 +3,7 @@
   "product": "Current + 72-hour Hourly Forecast",
   "parser_version": "5.3",
   "attribution": "Powered by WeatherAPI.com",
-  "location_count": 6,
+  "location_count": 5,
   "locations": {
     "SUZHOU": {
       "code": "SUZHOU",
@@ -13,17 +13,17 @@
         "lon": 120.5853
       },
       "resolved_location": {
-        "name": "Yangchiatsun",
+        "name": "Suzhou",
         "region": "Jiangsu",
         "country": "China",
-        "lat": 31.285,
-        "lon": 120.596,
-        "localtime": "2026-08-25 04:41"
+        "lat": 31.311,
+        "lon": 120.618,
+        "localtime": "2026-08-25 05:03"
       },
       "current": {
-        "last_updated": "2026-08-25 04:30",
+        "last_updated": "2026-08-25 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 4.4,
+        "wind_mps": 4.7,
         "wind_dir": "E",
         "condition": "Partly Cloudy"
       },
@@ -87,7 +87,7 @@
         {
           "time": "2026-08-25 07:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 28,
+          "chance_of_rain_pct": 27,
           "wind_mps": 4.6,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
@@ -111,7 +111,7 @@
         {
           "time": "2026-08-25 10:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 15,
+          "chance_of_rain_pct": 14,
           "wind_mps": 5.8,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -119,7 +119,7 @@
         {
           "time": "2026-08-25 11:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
+          "chance_of_rain_pct": 13,
           "wind_mps": 5.8,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -127,7 +127,7 @@
         {
           "time": "2026-08-25 12:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 11,
+          "chance_of_rain_pct": 10,
           "wind_mps": 5.5,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -183,7 +183,7 @@
         {
           "time": "2026-08-25 19:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 19,
+          "chance_of_rain_pct": 17,
           "wind_mps": 4.1,
           "wind_dir": "SE",
           "condition": "Patchy rain nearby"
@@ -191,7 +191,7 @@
         {
           "time": "2026-08-25 20:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 22,
+          "chance_of_rain_pct": 25,
           "wind_mps": 3.7,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -287,7 +287,7 @@
         {
           "time": "2026-08-26 08:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 9,
+          "chance_of_rain_pct": 8,
           "wind_mps": 3.9,
           "wind_dir": "ESE",
           "condition": "Sunny"
@@ -619,12 +619,12 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-25 04:41"
+        "localtime": "2026-08-25 05:03"
       },
       "current": {
-        "last_updated": "2026-08-25 04:30",
+        "last_updated": "2026-08-25 05:00",
         "rain_mm": 0.0,
-        "wind_mps": 2.7,
+        "wind_mps": 2.8,
         "wind_dir": "ESE",
         "condition": "Clear"
       },
@@ -1220,14 +1220,14 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-25 05:41"
+        "localtime": "2026-08-25 06:03"
       },
       "current": {
-        "last_updated": "2026-08-25 05:30",
-        "rain_mm": 0.14,
+        "last_updated": "2026-08-25 06:00",
+        "rain_mm": 0.55,
         "wind_mps": 2.0,
-        "wind_dir": "SW",
-        "condition": "Patchy rain nearby"
+        "wind_dir": "WSW",
+        "condition": "Moderate rain at times"
       },
       "hourly_forecast": [
         {
@@ -1808,607 +1808,6 @@
         }
       ]
     },
-    "MNL": {
-      "code": "MNL",
-      "name_ko": "마닐라 국제공항",
-      "requested_coordinate": {
-        "lat": 14.5086,
-        "lon": 121.0198
-      },
-      "resolved_location": {
-        "name": "Moonwalk Ii",
-        "region": "Misamis Oriental",
-        "country": "Philippines",
-        "lat": 14.5,
-        "lon": 121.019,
-        "localtime": "2026-08-25 04:41"
-      },
-      "current": {
-        "last_updated": "2026-08-25 04:30",
-        "rain_mm": 0.0,
-        "wind_mps": 4.2,
-        "wind_dir": "SW",
-        "condition": "Overcast"
-      },
-      "hourly_forecast": [
-        {
-          "time": "2026-08-25 00:00",
-          "rain_mm": 0.43,
-          "chance_of_rain_pct": 58,
-          "wind_mps": 5.2,
-          "wind_dir": "SW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 01:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 21,
-          "wind_mps": 3.3,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-25 02:00",
-          "rain_mm": 0.04,
-          "chance_of_rain_pct": 23,
-          "wind_mps": 3.6,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-25 03:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 20,
-          "wind_mps": 3.6,
-          "wind_dir": "SW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 04:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 20,
-          "wind_mps": 4.2,
-          "wind_dir": "SW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 05:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 20,
-          "wind_mps": 3.5,
-          "wind_dir": "SW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 06:00",
-          "rain_mm": 0.26,
-          "chance_of_rain_pct": 46,
-          "wind_mps": 5.8,
-          "wind_dir": "SW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 07:00",
-          "rain_mm": 0.03,
-          "chance_of_rain_pct": 30,
-          "wind_mps": 5.6,
-          "wind_dir": "SW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-25 08:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 15,
-          "wind_mps": 3.0,
-          "wind_dir": "SW",
-          "condition": "Cloudy"
-        },
-        {
-          "time": "2026-08-25 09:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 16,
-          "wind_mps": 4.3,
-          "wind_dir": "SW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 10:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 15,
-          "wind_mps": 5.7,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 11:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 7.1,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 12:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 7.8,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 13:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 8.0,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 14:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 8.1,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 15:00",
-          "rain_mm": 0.0,
-          "chance_of_rain_pct": 14,
-          "wind_mps": 8.2,
-          "wind_dir": "WSW",
-          "condition": "Overcast"
-        },
-        {
-          "time": "2026-08-25 16:00",
-          "rain_mm": 0.25,
-          "chance_of_rain_pct": 30,
-          "wind_mps": 8.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 17:00",
-          "rain_mm": 0.07,
-          "chance_of_rain_pct": 22,
-          "wind_mps": 7.6,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-25 18:00",
-          "rain_mm": 0.01,
-          "chance_of_rain_pct": 18,
-          "wind_mps": 7.2,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-25 19:00",
-          "rain_mm": 0.4,
-          "chance_of_rain_pct": 49,
-          "wind_mps": 7.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 20:00",
-          "rain_mm": 0.45,
-          "chance_of_rain_pct": 52,
-          "wind_mps": 7.4,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 21:00",
-          "rain_mm": 0.41,
-          "chance_of_rain_pct": 50,
-          "wind_mps": 7.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 22:00",
-          "rain_mm": 0.5,
-          "chance_of_rain_pct": 55,
-          "wind_mps": 7.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-25 23:00",
-          "rain_mm": 0.19,
-          "chance_of_rain_pct": 38,
-          "wind_mps": 7.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 00:00",
-          "rain_mm": 0.03,
-          "chance_of_rain_pct": 26,
-          "wind_mps": 7.4,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-26 01:00",
-          "rain_mm": 0.37,
-          "chance_of_rain_pct": 47,
-          "wind_mps": 7.4,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 02:00",
-          "rain_mm": 0.81,
-          "chance_of_rain_pct": 63,
-          "wind_mps": 7.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 03:00",
-          "rain_mm": 0.68,
-          "chance_of_rain_pct": 60,
-          "wind_mps": 7.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 04:00",
-          "rain_mm": 0.85,
-          "chance_of_rain_pct": 63,
-          "wind_mps": 8.0,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 05:00",
-          "rain_mm": 0.52,
-          "chance_of_rain_pct": 57,
-          "wind_mps": 8.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 06:00",
-          "rain_mm": 0.24,
-          "chance_of_rain_pct": 42,
-          "wind_mps": 8.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 07:00",
-          "rain_mm": 0.3,
-          "chance_of_rain_pct": 37,
-          "wind_mps": 8.4,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 08:00",
-          "rain_mm": 0.35,
-          "chance_of_rain_pct": 43,
-          "wind_mps": 8.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 09:00",
-          "rain_mm": 0.44,
-          "chance_of_rain_pct": 49,
-          "wind_mps": 9.0,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 10:00",
-          "rain_mm": 1.12,
-          "chance_of_rain_pct": 67,
-          "wind_mps": 9.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 11:00",
-          "rain_mm": 0.2,
-          "chance_of_rain_pct": 38,
-          "wind_mps": 9.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 12:00",
-          "rain_mm": 0.63,
-          "chance_of_rain_pct": 57,
-          "wind_mps": 9.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 13:00",
-          "rain_mm": 0.09,
-          "chance_of_rain_pct": 28,
-          "wind_mps": 9.8,
-          "wind_dir": "WSW",
-          "condition": "Patchy rain nearby"
-        },
-        {
-          "time": "2026-08-26 14:00",
-          "rain_mm": 0.44,
-          "chance_of_rain_pct": 48,
-          "wind_mps": 10.0,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 15:00",
-          "rain_mm": 0.68,
-          "chance_of_rain_pct": 59,
-          "wind_mps": 9.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 16:00",
-          "rain_mm": 0.54,
-          "chance_of_rain_pct": 58,
-          "wind_mps": 9.0,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 17:00",
-          "rain_mm": 0.68,
-          "chance_of_rain_pct": 60,
-          "wind_mps": 9.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 18:00",
-          "rain_mm": 0.48,
-          "chance_of_rain_pct": 55,
-          "wind_mps": 8.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 19:00",
-          "rain_mm": 0.75,
-          "chance_of_rain_pct": 61,
-          "wind_mps": 8.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 20:00",
-          "rain_mm": 0.68,
-          "chance_of_rain_pct": 59,
-          "wind_mps": 7.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 21:00",
-          "rain_mm": 0.91,
-          "chance_of_rain_pct": 66,
-          "wind_mps": 7.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 22:00",
-          "rain_mm": 1.63,
-          "chance_of_rain_pct": 73,
-          "wind_mps": 8.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-26 23:00",
-          "rain_mm": 1.17,
-          "chance_of_rain_pct": 71,
-          "wind_mps": 8.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 00:00",
-          "rain_mm": 1.62,
-          "chance_of_rain_pct": 74,
-          "wind_mps": 8.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 01:00",
-          "rain_mm": 0.6,
-          "chance_of_rain_pct": 61,
-          "wind_mps": 8.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 02:00",
-          "rain_mm": 0.6,
-          "chance_of_rain_pct": 59,
-          "wind_mps": 8.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 03:00",
-          "rain_mm": 0.42,
-          "chance_of_rain_pct": 54,
-          "wind_mps": 8.7,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 04:00",
-          "rain_mm": 0.68,
-          "chance_of_rain_pct": 62,
-          "wind_mps": 8.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 05:00",
-          "rain_mm": 0.53,
-          "chance_of_rain_pct": 60,
-          "wind_mps": 8.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 06:00",
-          "rain_mm": 0.77,
-          "chance_of_rain_pct": 53,
-          "wind_mps": 8.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 07:00",
-          "rain_mm": 0.86,
-          "chance_of_rain_pct": 67,
-          "wind_mps": 8.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 08:00",
-          "rain_mm": 0.86,
-          "chance_of_rain_pct": 66,
-          "wind_mps": 8.6,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 09:00",
-          "rain_mm": 0.56,
-          "chance_of_rain_pct": 57,
-          "wind_mps": 9.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 10:00",
-          "rain_mm": 0.51,
-          "chance_of_rain_pct": 45,
-          "wind_mps": 9.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 11:00",
-          "rain_mm": 0.49,
-          "chance_of_rain_pct": 45,
-          "wind_mps": 9.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 12:00",
-          "rain_mm": 0.64,
-          "chance_of_rain_pct": 51,
-          "wind_mps": 10.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 13:00",
-          "rain_mm": 0.71,
-          "chance_of_rain_pct": 53,
-          "wind_mps": 10.2,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 14:00",
-          "rain_mm": 0.39,
-          "chance_of_rain_pct": 41,
-          "wind_mps": 10.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 15:00",
-          "rain_mm": 0.81,
-          "chance_of_rain_pct": 61,
-          "wind_mps": 10.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 16:00",
-          "rain_mm": 0.66,
-          "chance_of_rain_pct": 61,
-          "wind_mps": 9.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 17:00",
-          "rain_mm": 0.99,
-          "chance_of_rain_pct": 71,
-          "wind_mps": 9.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 18:00",
-          "rain_mm": 1.22,
-          "chance_of_rain_pct": 73,
-          "wind_mps": 9.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 19:00",
-          "rain_mm": 1.07,
-          "chance_of_rain_pct": 73,
-          "wind_mps": 8.8,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 20:00",
-          "rain_mm": 1.28,
-          "chance_of_rain_pct": 74,
-          "wind_mps": 8.7,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 21:00",
-          "rain_mm": 1.65,
-          "chance_of_rain_pct": 77,
-          "wind_mps": 8.5,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 22:00",
-          "rain_mm": 2.29,
-          "chance_of_rain_pct": 81,
-          "wind_mps": 8.1,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        },
-        {
-          "time": "2026-08-27 23:00",
-          "rain_mm": 2.15,
-          "chance_of_rain_pct": 80,
-          "wind_mps": 8.3,
-          "wind_dir": "WSW",
-          "condition": "Light rain shower"
-        }
-      ]
-    },
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
@@ -2422,14 +1821,14 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-25 03:41"
+        "localtime": "2026-08-25 04:03"
       },
       "current": {
-        "last_updated": "2026-08-25 03:30",
-        "rain_mm": 0.0,
-        "wind_mps": 2.5,
+        "last_updated": "2026-08-25 04:00",
+        "rain_mm": 1.02,
+        "wind_mps": 2.4,
         "wind_dir": "NW",
-        "condition": "Overcast"
+        "condition": "Light rain shower"
       },
       "hourly_forecast": [
         {
@@ -3023,10 +2422,10 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-25 04:41"
+        "localtime": "2026-08-25 05:03"
       },
       "current": {
-        "last_updated": "2026-08-25 04:30",
+        "last_updated": "2026-08-25 04:45",
         "rain_mm": 0.01,
         "wind_mps": 1.2,
         "wind_dir": "SW",
@@ -3612,7 +3011,12 @@
       ]
     }
   },
-  "errors": [],
+  "errors": [
+    {
+      "code": "MNL",
+      "error": "WeatherAPI HTTP 408: <html><body><h1>408 Request Time-out</h1>\nYour browser didn't send a complete request in time.\n</body></html>\n"
+    }
+  ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T20:41:05.635862+00:00"
+  "generated_at_utc": "2026-08-24T21:03:41.275579+00:00"
 }

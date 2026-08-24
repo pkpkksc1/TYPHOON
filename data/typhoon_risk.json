@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-24T20:41:04.271048+00:00",
-    "weather": "2026-08-24T20:41:05.635862+00:00"
+    "impact": "2026-08-24T21:03:37.377117+00:00",
+    "weather": "2026-08-24T21:03:41.275579+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -42,9 +42,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 04:30",
+        "current_last_updated": "2026-08-25 05:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.4,
+        "current_wind_mps": 4.7,
         "max_72h_rain_mm": 0.02,
         "max_72h_rain_time": "2026-08-25 03:00",
         "max_72h_wind_mps": 5.8,
@@ -76,9 +76,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 04:30",
+        "current_last_updated": "2026-08-25 05:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.7,
+        "current_wind_mps": 2.8,
         "max_72h_rain_mm": 0.03,
         "max_72h_rain_time": "2026-08-25 07:00",
         "max_72h_wind_mps": 5.6,
@@ -110,8 +110,8 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 05:30",
-        "current_rain_mm": 0.14,
+        "current_last_updated": "2026-08-25 06:00",
+        "current_rain_mm": 0.55,
         "current_wind_mps": 2.0,
         "max_72h_rain_mm": 5.67,
         "max_72h_rain_time": "2026-08-26 13:00",
@@ -127,16 +127,15 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 25,
+      "score": null,
       "risk": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "낮음"
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "자료 없음"
       },
-      "reason_ko": "최대 시간당 강수 2.29 mm / 최대 풍속 10.3 m/s",
+      "reason_ko": "날씨 데이터 없음",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
-        "current_distance_km": 1704,
         "closest_distance_km": 1358,
         "closest_time": "2026-08-28T18:00:00Z",
         "closest_forecast_hour": 96,
@@ -144,18 +143,18 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 04:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 4.2,
-        "max_72h_rain_mm": 2.29,
-        "max_72h_rain_time": "2026-08-27 22:00",
-        "max_72h_wind_mps": 10.3,
-        "max_72h_wind_time": "2026-08-27 14:00"
+        "current_last_updated": null,
+        "current_rain_mm": null,
+        "current_wind_mps": null,
+        "max_72h_rain_mm": 0.0,
+        "max_72h_rain_time": null,
+        "max_72h_wind_mps": 0.0,
+        "max_72h_wind_time": null
       },
       "score_detail": {
         "distance": 0,
-        "rain": 15,
-        "wind": 10
+        "rain": 0,
+        "wind": 0
       }
     },
     "HAN": {
@@ -178,9 +177,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 03:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 2.5,
+        "current_last_updated": "2026-08-25 04:00",
+        "current_rain_mm": 1.02,
+        "current_wind_mps": 2.4,
         "max_72h_rain_mm": 2.64,
         "max_72h_rain_time": "2026-08-25 17:00",
         "max_72h_wind_mps": 4.6,
@@ -212,7 +211,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 04:30",
+        "current_last_updated": "2026-08-25 04:45",
         "current_rain_mm": 0.01,
         "current_wind_mps": 1.2,
         "max_72h_rain_mm": 2.53,
@@ -279,13 +278,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 25,
+      "score": 23,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (최대 시간당 강수 2.29 mm / 최대 풍속 10.3 m/s)",
+      "reason_ko": "쑤저우 낮음 (태풍 최접근 463 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -309,5 +308,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T20:41:05.702843+00:00"
+  "generated_at_utc": "2026-08-24T21:03:41.342132+00:00"
 }
