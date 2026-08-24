@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-24 12:24"
+        "localtime": "2026-08-24 12:55"
       },
       "current": {
-        "last_updated": "2026-08-24 12:15",
+        "last_updated": "2026-08-24 12:45",
         "rain_mm": 0.02,
         "wind_mps": 7.8,
         "wind_dir": "SE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-24 12:24"
+        "localtime": "2026-08-24 12:55"
       },
       "current": {
-        "last_updated": "2026-08-24 12:15",
+        "last_updated": "2026-08-24 12:45",
         "rain_mm": 0.0,
         "wind_mps": 5.9,
         "wind_dir": "SE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-24 13:24"
+        "localtime": "2026-08-24 13:56"
       },
       "current": {
-        "last_updated": "2026-08-24 13:15",
+        "last_updated": "2026-08-24 13:45",
         "rain_mm": 0.0,
         "wind_mps": 4.2,
         "wind_dir": "WSW",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Moonwalk Ii",
-        "region": "Misamis Oriental",
+        "name": "Paranaque",
+        "region": "Rizal",
         "country": "Philippines",
-        "lat": 14.5,
-        "lon": 121.019,
-        "localtime": "2026-08-24 12:24"
+        "lat": 14.509,
+        "lon": 120.993,
+        "localtime": "2026-08-24 12:56"
       },
       "current": {
-        "last_updated": "2026-08-24 12:15",
+        "last_updated": "2026-08-24 12:45",
         "rain_mm": 0.02,
         "wind_mps": 9.0,
         "wind_dir": "WSW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-24 11:24"
+        "localtime": "2026-08-24 11:56"
       },
       "current": {
-        "last_updated": "2026-08-24 11:15",
+        "last_updated": "2026-08-24 11:45",
         "rain_mm": 0.13,
         "wind_mps": 6.6,
         "wind_dir": "NW",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Mamatitang",
         "region": "Pampanga",
         "country": "Philippines",
-        "lat": 15.183,
+        "lat": 15.233,
         "lon": 120.567,
-        "localtime": "2026-08-24 12:24"
+        "localtime": "2026-08-24 12:56"
       },
       "current": {
-        "last_updated": "2026-08-24 12:15",
+        "last_updated": "2026-08-24 12:45",
         "rain_mm": 0.43,
         "wind_mps": 5.3,
         "wind_dir": "SW",
@@ -3308,7 +3308,7 @@
         {
           "time": "2026-08-25 10:00",
           "rain_mm": 0.06,
-          "chance_of_rain_pct": 35,
+          "chance_of_rain_pct": 34,
           "wind_mps": 2.1,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
@@ -3532,7 +3532,7 @@
         {
           "time": "2026-08-26 14:00",
           "rain_mm": 0.06,
-          "chance_of_rain_pct": 18,
+          "chance_of_rain_pct": 19,
           "wind_mps": 6.9,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T04:24:19.785262+00:00"
+  "generated_at_utc": "2026-08-24T04:56:00.688350+00:00"
 }
