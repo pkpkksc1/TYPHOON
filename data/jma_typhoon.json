@@ -54,21 +54,21 @@
       "slot": "VPTW60",
       "event_id": "TC2621",
       "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
-      "feed_updated": "2026-08-24T16:35:46Z",
-      "report_time": "2026-08-25T01:40:00+09:00",
-      "target_time": "2026-08-25T01:00:00+09:00",
-      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260824163546_0_VPTW60_010000.xml",
+      "feed_updated": "2026-08-24T17:37:52Z",
+      "report_time": "2026-08-25T02:40:00+09:00",
+      "target_time": "2026-08-25T02:00:00+09:00",
+      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260824173753_0_VPTW60_010000.xml",
       "typhoon": {
         "number": "2618",
         "name": "SAUDEL",
         "kana": "ソウデル"
       },
       "analysis": {
-        "time": "2026-08-25T01:00:00+09:00",
+        "time": "2026-08-25T02:00:00+09:00",
         "time_type": "実況",
-        "lat": 25.3,
-        "lon": 132.7,
-        "raw_coordinate": "+25.3+132.7/",
+        "lat": 25.4,
+        "lon": 132.5,
+        "raw_coordinate": "+25.4+132.5/",
         "area": "熱帯低気圧",
         "pressure_hpa": 940.0,
         "max_wind_source_value": 90.0,
@@ -219,21 +219,21 @@
           "issues": []
         },
         "distances_km": {
-          "SUZHOU": 1359,
-          "PVG": 1248,
-          "ICN": 1476,
-          "MNL": 1710,
-          "HAN": 2780,
-          "CRK": 1692
+          "SUZHOU": 1337,
+          "PVG": 1226,
+          "ICN": 1458,
+          "MNL": 1703,
+          "HAN": 2760,
+          "CRK": 1683
         }
       },
       "forecast": [
         {
-          "time": "2026-08-25T02:00:00+09:00",
+          "time": "2026-08-25T03:00:00+09:00",
           "time_type": "推定　１時間後",
-          "lat": 25.4,
-          "lon": 132.5,
-          "raw_coordinate": "+25.4+132.5/",
+          "lat": 25.5,
+          "lon": 132.3,
+          "raw_coordinate": "+25.5+132.3/",
           "area": "熱帯低気圧",
           "pressure_hpa": 940.0,
           "max_wind_source_value": 90.0,
@@ -385,12 +385,12 @@
           },
           "forecast_hour": 1,
           "distances_km": {
-            "SUZHOU": 1337,
-            "PVG": 1226,
-            "ICN": 1458,
-            "MNL": 1703,
-            "HAN": 2760,
-            "CRK": 1683
+            "SUZHOU": 1314,
+            "PVG": 1203,
+            "ICN": 1440,
+            "MNL": 1696,
+            "HAN": 2741,
+            "CRK": 1675
           }
         }
       ]
@@ -1438,5 +1438,5 @@
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-08-24T16:49:13.310279+00:00"
+  "generated_at_utc": "2026-08-24T17:38:52.246412+00:00"
 }
