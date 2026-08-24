@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-24 19:06"
+        "localtime": "2026-08-24 19:37"
       },
       "current": {
-        "last_updated": "2026-08-24 19:00",
+        "last_updated": "2026-08-24 19:30",
         "rain_mm": 0.0,
         "wind_mps": 6.0,
         "wind_dir": "ESE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-24 19:06"
+        "localtime": "2026-08-24 19:37"
       },
       "current": {
-        "last_updated": "2026-08-24 19:00",
+        "last_updated": "2026-08-24 19:30",
         "rain_mm": 0.0,
         "wind_mps": 4.1,
         "wind_dir": "ESE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-24 20:06"
+        "localtime": "2026-08-24 20:37"
       },
       "current": {
-        "last_updated": "2026-08-24 20:00",
+        "last_updated": "2026-08-24 20:30",
         "rain_mm": 0.0,
         "wind_mps": 2.8,
         "wind_dir": "W",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Tambo",
-        "region": "Rizal",
+        "name": "Moonwalk Ii",
+        "region": "Misamis Oriental",
         "country": "Philippines",
-        "lat": 14.52,
-        "lon": 120.992,
-        "localtime": "2026-08-24 19:06"
+        "lat": 14.5,
+        "lon": 121.019,
+        "localtime": "2026-08-24 19:37"
       },
       "current": {
-        "last_updated": "2026-08-24 19:00",
+        "last_updated": "2026-08-24 19:30",
         "rain_mm": 0.42,
         "wind_mps": 6.9,
         "wind_dir": "SW",
@@ -2422,14 +2422,14 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-24 18:06"
+        "localtime": "2026-08-24 18:37"
       },
       "current": {
-        "last_updated": "2026-08-24 18:00",
+        "last_updated": "2026-08-24 18:30",
         "rain_mm": 2.61,
         "wind_mps": 6.2,
         "wind_dir": "NNE",
-        "condition": "Sunny"
+        "condition": "Moderate or heavy rain shower"
       },
       "hourly_forecast": [
         {
@@ -2582,7 +2582,7 @@
           "chance_of_rain_pct": 82,
           "wind_mps": 6.2,
           "wind_dir": "NNE",
-          "condition": "Sunny"
+          "condition": "Moderate or heavy rain shower"
         },
         {
           "time": "2026-08-24 19:00",
@@ -3023,10 +3023,10 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-24 19:06"
+        "localtime": "2026-08-24 19:37"
       },
       "current": {
-        "last_updated": "2026-08-24 19:00",
+        "last_updated": "2026-08-24 19:30",
         "rain_mm": 1.33,
         "wind_mps": 1.8,
         "wind_dir": "SSW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T11:06:29.461497+00:00"
+  "generated_at_utc": "2026-08-24T11:37:52.677978+00:00"
 }
