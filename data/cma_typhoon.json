@@ -2,7 +2,7 @@
   "source": "CMA / NMC",
   "product": "China Typhoon Track and Forecast",
   "parser_version": "1.1",
-  "active_count": 4,
+  "active_count": 3,
   "typhoons": [
     {
       "id": 3314447,
@@ -66,29 +66,6 @@
         }
       ],
       "raw_point_count": 7
-    },
-    {
-      "id": 3308554,
-      "number": 2620,
-      "name_en": "GAENARI",
-      "name_cn": "简拉维",
-      "state": "start",
-      "current": {
-        "point_id": 3315378,
-        "time_utc": "202608240900",
-        "grade": "TD",
-        "grade_ko": "열대저압부",
-        "lon": 118.7,
-        "lat": 25.3,
-        "pressure_hpa": 999,
-        "max_wind_mps": 14,
-        "movement_direction": "NW",
-        "movement_direction_ko": "북서",
-        "movement_speed_kmh": 15,
-        "wind_radii": []
-      },
-      "forecast": [],
-      "raw_point_count": 45
     },
     {
       "id": 3304364,
@@ -204,14 +181,14 @@
       "name_cn": "沙德尔",
       "state": "start",
       "current": {
-        "point_id": 3316253,
-        "time_utc": "202608241800",
-        "grade": "SuperTY",
-        "grade_ko": "초강력 태풍",
-        "lon": 132.3,
-        "lat": 25.5,
-        "pressure_hpa": 935,
-        "max_wind_mps": 52,
+        "point_id": 3316495,
+        "time_utc": "202608242100",
+        "grade": "STY",
+        "grade_ko": "강한 태풍",
+        "lon": 131.7,
+        "lat": 25.8,
+        "pressure_hpa": 945,
+        "max_wind_mps": 48,
         "movement_direction": "WNW",
         "movement_direction_ko": "서북서",
         "movement_speed_kmh": 21,
@@ -228,7 +205,7 @@
               380,
               350,
               380,
-              3316253
+              3316495
             ],
             "meaning_ko": "30kt 풍권"
           },
@@ -244,7 +221,7 @@
               120,
               120,
               150,
-              3316253
+              3316495
             ],
             "meaning_ko": "50kt 폭풍권"
           },
@@ -260,7 +237,7 @@
               50,
               50,
               60,
-              3316253
+              3316495
             ],
             "meaning_ko": "64kt 매우 강한 폭풍권"
           }
@@ -269,41 +246,19 @@
       "forecast": [
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608241800",
-          "lon": 130.1,
-          "lat": 26.4,
-          "pressure_hpa": 935,
-          "max_wind_mps": 52,
-          "agency": "BABJ",
-          "grade": "SuperTY",
-          "grade_ko": "초강력 태풍"
-        },
-        {
-          "forecast_hour": 24,
-          "base_time_utc": "202608241800",
-          "lon": 128.3,
-          "lat": 27.3,
-          "pressure_hpa": 935,
-          "max_wind_mps": 52,
-          "agency": "BABJ",
-          "grade": "SuperTY",
-          "grade_ko": "초강력 태풍"
-        },
-        {
-          "forecast_hour": 36,
-          "base_time_utc": "202608241800",
-          "lon": 126.3,
-          "lat": 27.8,
-          "pressure_hpa": 940,
-          "max_wind_mps": 50,
+          "base_time_utc": "202608242100",
+          "lon": 129.5,
+          "lat": 26.9,
+          "pressure_hpa": 945,
+          "max_wind_mps": 48,
           "agency": "BABJ",
           "grade": "STY",
           "grade_ko": "강한 태풍"
         },
         {
-          "forecast_hour": 48,
-          "base_time_utc": "202608241800",
-          "lon": 124.5,
+          "forecast_hour": 24,
+          "base_time_utc": "202608242100",
+          "lon": 127.6,
           "lat": 27.6,
           "pressure_hpa": 945,
           "max_wind_mps": 48,
@@ -312,10 +267,10 @@
           "grade_ko": "강한 태풍"
         },
         {
-          "forecast_hour": 60,
-          "base_time_utc": "202608241800",
-          "lon": 122.5,
-          "lat": 26.9,
+          "forecast_hour": 36,
+          "base_time_utc": "202608242100",
+          "lon": 126,
+          "lat": 28.2,
           "pressure_hpa": 950,
           "max_wind_mps": 45,
           "agency": "BABJ",
@@ -323,10 +278,32 @@
           "grade_ko": "강한 태풍"
         },
         {
+          "forecast_hour": 48,
+          "base_time_utc": "202608242100",
+          "lon": 125,
+          "lat": 28,
+          "pressure_hpa": 950,
+          "max_wind_mps": 45,
+          "agency": "BABJ",
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
+        },
+        {
+          "forecast_hour": 60,
+          "base_time_utc": "202608242100",
+          "lon": 123.6,
+          "lat": 27.5,
+          "pressure_hpa": 955,
+          "max_wind_mps": 42,
+          "agency": "BABJ",
+          "grade": "STY",
+          "grade_ko": "강한 태풍"
+        },
+        {
           "forecast_hour": 72,
-          "base_time_utc": "202608241800",
-          "lon": 120.1,
-          "lat": 26.2,
+          "base_time_utc": "202608242100",
+          "lon": 121.6,
+          "lat": 26.9,
           "pressure_hpa": 955,
           "max_wind_mps": 42,
           "agency": "BABJ",
@@ -335,30 +312,30 @@
         },
         {
           "forecast_hour": 96,
-          "base_time_utc": "202608241800",
-          "lon": 117.7,
-          "lat": 25.5,
-          "pressure_hpa": 980,
-          "max_wind_mps": 30,
-          "agency": "BABJ",
-          "grade": "STS",
-          "grade_ko": "강한 열대폭풍"
-        },
-        {
-          "forecast_hour": 120,
-          "base_time_utc": "202608241800",
-          "lon": 115,
-          "lat": 24.8,
+          "base_time_utc": "202608242100",
+          "lon": 116.1,
+          "lat": 25.9,
           "pressure_hpa": 998,
           "max_wind_mps": 18,
           "agency": "BABJ",
           "grade": "TS",
           "grade_ko": "열대폭풍"
+        },
+        {
+          "forecast_hour": 120,
+          "base_time_utc": "202608242100",
+          "lon": 111.8,
+          "lat": 25,
+          "pressure_hpa": 1002,
+          "max_wind_mps": 12,
+          "agency": "BABJ",
+          "grade": "TD",
+          "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 46
+      "raw_point_count": 47
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-24T21:38:15.304363+00:00"
+  "generated_at_utc": "2026-08-24T21:56:11.141887+00:00"
 }
