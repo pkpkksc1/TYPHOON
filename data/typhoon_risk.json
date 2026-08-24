@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-24T06:06:09.574849+00:00",
-    "weather": "2026-08-24T06:06:10.894408+00:00"
+    "impact": "2026-08-24T07:14:30.224466+00:00",
+    "weather": "2026-08-24T07:14:31.563554+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -17,9 +17,9 @@
     "jtwc_issue_time_utc": "2026-08-24T03:00:00Z"
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 1401
+    "emoji": "🟢",
+    "label_ko": "거의 일치",
+    "average_difference_km": 35
   },
   "locations": {
     "SUZHOU": {
@@ -42,13 +42,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 14:00",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 8.0,
-        "max_72h_rain_mm": 0.03,
-        "max_72h_rain_time": "2026-08-24 06:00",
-        "max_72h_wind_mps": 8.0,
-        "max_72h_wind_time": "2026-08-24 14:00"
+        "current_last_updated": "2026-08-24 15:00",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 7.5,
+        "max_72h_rain_mm": 0.19,
+        "max_72h_rain_time": "2026-08-25 10:00",
+        "max_72h_wind_mps": 8.1,
+        "max_72h_wind_time": "2026-08-24 12:00"
       },
       "score_detail": {
         "distance": 20,
@@ -76,13 +76,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 14:00",
+        "current_last_updated": "2026-08-24 15:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 5.8,
-        "max_72h_rain_mm": 0.02,
-        "max_72h_rain_time": "2026-08-24 05:00",
-        "max_72h_wind_mps": 6.0,
-        "max_72h_wind_time": "2026-08-24 16:00"
+        "current_wind_mps": 6.1,
+        "max_72h_rain_mm": 0.04,
+        "max_72h_rain_time": "2026-08-25 09:00",
+        "max_72h_wind_mps": 6.2,
+        "max_72h_wind_time": "2026-08-24 12:00"
       },
       "score_detail": {
         "distance": 20,
@@ -93,13 +93,13 @@
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "score": 8,
+      "score": 20,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "최대 시간당 강수 5.67 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
         "current_distance_km": 1776,
@@ -110,17 +110,17 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 15:00",
+        "current_last_updated": "2026-08-24 16:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.8,
-        "max_72h_rain_mm": 0.89,
-        "max_72h_rain_time": "2026-08-25 07:00",
-        "max_72h_wind_mps": 4.8,
-        "max_72h_wind_time": "2026-08-24 15:00"
+        "current_wind_mps": 4.3,
+        "max_72h_rain_mm": 5.67,
+        "max_72h_rain_time": "2026-08-26 13:00",
+        "max_72h_wind_mps": 5.7,
+        "max_72h_wind_time": "2026-08-26 13:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 8,
+        "rain": 20,
         "wind": 0
       }
     },
@@ -133,7 +133,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 풍속 10.2 m/s",
+      "reason_ko": "최대 풍속 10.0 m/s",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
         "current_distance_km": 1912,
@@ -144,13 +144,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 14:00",
-        "current_rain_mm": 0.09,
-        "current_wind_mps": 9.4,
-        "max_72h_rain_mm": 0.85,
-        "max_72h_rain_time": "2026-08-25 14:00",
-        "max_72h_wind_mps": 10.2,
-        "max_72h_wind_time": "2026-08-26 13:00"
+        "current_last_updated": "2026-08-24 15:00",
+        "current_rain_mm": 0.49,
+        "current_wind_mps": 8.1,
+        "max_72h_rain_mm": 1.63,
+        "max_72h_rain_time": "2026-08-26 22:00",
+        "max_72h_wind_mps": 10.0,
+        "max_72h_wind_time": "2026-08-26 14:00"
       },
       "score_detail": {
         "distance": 0,
@@ -167,7 +167,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "최대 시간당 강수 2.18 mm",
+      "reason_ko": "최대 시간당 강수 4.61 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
         "current_distance_km": 3139,
@@ -178,13 +178,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 13:00",
-        "current_rain_mm": 0.83,
-        "current_wind_mps": 5.4,
-        "max_72h_rain_mm": 2.18,
-        "max_72h_rain_time": "2026-08-24 15:00",
+        "current_last_updated": "2026-08-24 14:00",
+        "current_rain_mm": 1.86,
+        "current_wind_mps": 4.4,
+        "max_72h_rain_mm": 4.61,
+        "max_72h_rain_time": "2026-08-24 10:00",
         "max_72h_wind_mps": 7.1,
-        "max_72h_wind_time": "2026-08-24 10:00"
+        "max_72h_wind_time": "2026-08-24 09:00"
       },
       "score_detail": {
         "distance": 0,
@@ -195,7 +195,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 13,
+      "score": 8,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -212,18 +212,18 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-24 14:00",
-        "current_rain_mm": 0.28,
-        "current_wind_mps": 5.7,
-        "max_72h_rain_mm": 1.45,
-        "max_72h_rain_time": "2026-08-24 02:00",
-        "max_72h_wind_mps": 7.1,
+        "current_last_updated": "2026-08-24 15:00",
+        "current_rain_mm": 0.64,
+        "current_wind_mps": 2.2,
+        "max_72h_rain_mm": 1.34,
+        "max_72h_rain_time": "2026-08-24 17:00",
+        "max_72h_wind_mps": 6.1,
         "max_72h_wind_time": "2026-08-26 13:00"
       },
       "score_detail": {
         "distance": 0,
         "rain": 8,
-        "wind": 5
+        "wind": 0
       }
     }
   },
@@ -309,5 +309,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T06:06:10.959012+00:00"
+  "generated_at_utc": "2026-08-24T07:14:31.625493+00:00"
 }
