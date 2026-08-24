@@ -13,17 +13,17 @@
         "lon": 120.5853
       },
       "resolved_location": {
-        "name": "Suzhou",
+        "name": "Yangchiatsun",
         "region": "Jiangsu",
         "country": "China",
-        "lat": 31.311,
-        "lon": 120.618,
-        "localtime": "2026-08-24 19:57"
+        "lat": 31.285,
+        "lon": 120.596,
+        "localtime": "2026-08-24 21:07"
       },
       "current": {
-        "last_updated": "2026-08-24 19:45",
+        "last_updated": "2026-08-24 21:00",
         "rain_mm": 0.0,
-        "wind_mps": 6.0,
+        "wind_mps": 5.6,
         "wind_dir": "ESE",
         "condition": "Clear"
       },
@@ -279,7 +279,7 @@
         {
           "time": "2026-08-25 07:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 26,
+          "chance_of_rain_pct": 28,
           "wind_mps": 4.6,
           "wind_dir": "E",
           "condition": "Patchy rain nearby"
@@ -287,7 +287,7 @@
         {
           "time": "2026-08-25 08:00",
           "rain_mm": 0.03,
-          "chance_of_rain_pct": 21,
+          "chance_of_rain_pct": 23,
           "wind_mps": 5.3,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -383,7 +383,7 @@
         {
           "time": "2026-08-25 20:00",
           "rain_mm": 0.01,
-          "chance_of_rain_pct": 24,
+          "chance_of_rain_pct": 21,
           "wind_mps": 3.7,
           "wind_dir": "ESE",
           "condition": "Patchy rain nearby"
@@ -479,7 +479,7 @@
         {
           "time": "2026-08-26 08:00",
           "rain_mm": 0.0,
-          "chance_of_rain_pct": 8,
+          "chance_of_rain_pct": 9,
           "wind_mps": 3.9,
           "wind_dir": "ESE",
           "condition": "Sunny"
@@ -619,14 +619,14 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-24 19:57"
+        "localtime": "2026-08-24 21:07"
       },
       "current": {
-        "last_updated": "2026-08-24 19:45",
+        "last_updated": "2026-08-24 21:00",
         "rain_mm": 0.0,
-        "wind_mps": 4.1,
+        "wind_mps": 3.7,
         "wind_dir": "ESE",
-        "condition": "Clear"
+        "condition": "Partly Cloudy"
       },
       "hourly_forecast": [
         {
@@ -1220,14 +1220,14 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-24 20:57"
+        "localtime": "2026-08-24 22:07"
       },
       "current": {
-        "last_updated": "2026-08-24 20:45",
-        "rain_mm": 0.0,
-        "wind_mps": 2.8,
-        "wind_dir": "W",
-        "condition": "Overcast"
+        "last_updated": "2026-08-24 22:00",
+        "rain_mm": 0.05,
+        "wind_mps": 1.3,
+        "wind_dir": "NW",
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1821,13 +1821,13 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-24 19:57"
+        "localtime": "2026-08-24 21:07"
       },
       "current": {
-        "last_updated": "2026-08-24 19:45",
-        "rain_mm": 0.42,
-        "wind_mps": 6.9,
-        "wind_dir": "SW",
+        "last_updated": "2026-08-24 21:00",
+        "rain_mm": 1.15,
+        "wind_mps": 5.8,
+        "wind_dir": "WSW",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -2422,13 +2422,13 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-24 18:57"
+        "localtime": "2026-08-24 20:07"
       },
       "current": {
-        "last_updated": "2026-08-24 18:45",
-        "rain_mm": 2.61,
-        "wind_mps": 6.2,
-        "wind_dir": "NNE",
+        "last_updated": "2026-08-24 20:00",
+        "rain_mm": 0.16,
+        "wind_mps": 4.1,
+        "wind_dir": "NE",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -2582,7 +2582,7 @@
           "chance_of_rain_pct": 82,
           "wind_mps": 6.2,
           "wind_dir": "NNE",
-          "condition": "Light rain shower"
+          "condition": "Moderate or heavy rain shower"
         },
         {
           "time": "2026-08-24 19:00",
@@ -3023,12 +3023,12 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-24 19:57"
+        "localtime": "2026-08-24 21:07"
       },
       "current": {
-        "last_updated": "2026-08-24 19:45",
-        "rain_mm": 1.33,
-        "wind_mps": 1.8,
+        "last_updated": "2026-08-24 21:00",
+        "rain_mm": 0.23,
+        "wind_mps": 2.0,
         "wind_dir": "SSW",
         "condition": "Light rain shower"
       },
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-24T11:57:12.881314+00:00"
+  "generated_at_utc": "2026-08-24T13:07:21.235818+00:00"
 }
