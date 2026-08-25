@@ -5,8 +5,6 @@ on:
   schedule:
     - cron: "7 * * * *"
     - cron: "37 * * * *"
-    # Representative flights: once daily at 23:00 KST (14:00 UTC)
-    - cron: "0 14 * * *"
 
 permissions:
   contents: write
@@ -205,15 +203,6 @@ jobs:
           print("OK: risk is locked to 2618 SAUDEL")
           PY
 
-      - name: Fetch representative flights
-        if: steps.mode.outputs.enabled == 'true' && github.event.schedule == '0 14 * * *'
-        env:
-          AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
-        shell: bash
-        run: |
-          timeout 180s python src/fetch_flights.py || {
-            echo "::warning::Flight fetch failed/timed out. Previous flight data will be used."
-          }
 
       - name: Build dashboard
         if: steps.mode.outputs.enabled == 'true'
