@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 934,
-    "max_difference_km": 934,
+    "average_difference_km": 979,
+    "max_difference_km": 979,
     "overall": {
       "level": "RED",
       "emoji": "🔴",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 1,
-      "jma_time": "2026-08-25T09:00:00+09:00",
+      "jma_time": "2026-08-25T11:00:00+09:00",
       "kma_time": "202608251500",
-      "time_gap_hours": 6.0,
+      "time_gap_hours": 4.0,
       "jma": {
-        "lat": 26.1,
-        "lon": 131.1
+        "lat": 26.3,
+        "lon": 130.7
       },
       "kma": {
         "lat": 20.1,
         "lon": 137.5
       },
-      "difference_km": 934,
+      "difference_km": 979,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -38,5 +38,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-24T23:50:27.100178+00:00"
+  "generated_at_utc": "2026-08-25T01:46:22.752693+00:00"
 }
