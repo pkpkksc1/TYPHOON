@@ -2,7 +2,7 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-25T11:40:13.310549+00:00",
+  "generated_at_utc": "2026-08-25T11:54:07.475773+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-25T10:42:39.041645+00:00",
     "weather": "2026-08-25T11:37:11.719913+00:00",
@@ -404,7 +404,7 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-08",
-    "monthly_requests": 30,
+    "monthly_requests": 5,
     "monthly_limit": 100,
     "last_run_requests": 5,
     "last_fetch_at_utc": "2026-08-25T11:40:13.251828+00:00",
