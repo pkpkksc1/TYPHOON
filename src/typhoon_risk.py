@@ -275,31 +275,19 @@ def make_route_risk(
     route: Dict[str, Any],
     locations: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
-    route_locations = [
-        locations[code]
-        for code in route["locations"]
-        if code in locations
-    ]
+    # 주요 노선 카드는 공통 경유지(PVG)의 최악값을 복사하지 않고,
+    # 각 노선의 최종 목적지 거점 자체의 위험도를 사용한다.
+    #
+    # 예:
+    # SUZHOU -> PVG -> ICN : ICN 기준
+    # SUZHOU -> PVG -> HAN : HAN 기준
+    # SUZHOU -> PVG -> CRK : CRK 기준
+    # SUZHOU -> PVG -> MNL : MNL 기준
+    # ICN -> PVG           : PVG 기준
+    destination_code = route["locations"][-1]
+    destination = locations.get(destination_code)
 
-    if not route_locations:
-        return {
-            "code": route["code"],
-            "name_ko": route["name_ko"],
-            "score": 0,
-            "risk": {
-                "level": "NO_DATA",
-                "emoji": "⚪",
-                "label_ko": "자료 없음",
-            },
-            "reason_ko": "자료 없음",
-        }
-
-    valid_route_locations = [
-        x for x in route_locations
-        if x.get("risk", {}).get("level") != "NO_DATA"
-    ]
-
-    if not valid_route_locations:
+    if not destination or destination.get("risk", {}).get("level") == "NO_DATA":
         return {
             "code": route["code"],
             "name_ko": route["name_ko"],
@@ -309,30 +297,23 @@ def make_route_risk(
                 "emoji": "⚪",
                 "label_ko": "자료 없음",
             },
-            "reason_ko": "노선 거점 데이터 없음",
+            "reason_ko": f"{destination_code} 거점 데이터 없음",
             "locations": route["locations"],
+            "risk_location": destination_code,
         }
 
-    worst = max(
-        valid_route_locations,
-        key=lambda x: (
-            risk_rank(x["risk"]["level"]),
-            x.get("score") or 0,
-        ),
-    )
-
-    # Route score uses worst hub score.
     return {
         "code": route["code"],
         "name_ko": route["name_ko"],
-        "score": worst["score"],
-        "risk": worst["risk"],
+        "score": destination["score"],
+        "risk": destination["risk"],
         "reason_ko": (
-            f"{worst['name_ko']} "
-            f"{worst['risk']['label_ko']} "
-            f"({worst['reason_ko']})"
+            f"{destination['name_ko']} "
+            f"{destination['risk']['label_ko']} "
+            f"({destination['reason_ko']})"
         ),
         "locations": route["locations"],
+        "risk_location": destination_code,
     }
 
 
