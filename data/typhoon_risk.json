@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-25T01:46:31.312093+00:00",
-    "weather": "2026-08-25T01:46:32.564746+00:00"
+    "impact": "2026-08-25T02:05:32.802740+00:00",
+    "weather": "2026-08-25T02:05:34.070620+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -42,11 +42,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 09:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 5.5,
+        "current_last_updated": "2026-08-25 10:00",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 5.6,
         "max_72h_rain_mm": 0.02,
-        "max_72h_rain_time": "2026-08-25 03:00",
+        "max_72h_rain_time": "2026-08-25 10:00",
         "max_72h_wind_mps": 7.5,
         "max_72h_wind_time": "2026-08-27 14:00"
       },
@@ -76,9 +76,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 09:30",
+        "current_last_updated": "2026-08-25 10:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.6,
+        "current_wind_mps": 4.7,
         "max_72h_rain_mm": 0.06,
         "max_72h_rain_time": "2026-08-27 23:00",
         "max_72h_wind_mps": 7.0,
@@ -110,9 +110,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 10:30",
+        "current_last_updated": "2026-08-25 11:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.5,
+        "current_wind_mps": 3.0,
         "max_72h_rain_mm": 1.94,
         "max_72h_rain_time": "2026-08-25 02:00",
         "max_72h_wind_mps": 4.1,
@@ -144,9 +144,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 09:30",
+        "current_last_updated": "2026-08-25 10:00",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.2,
+        "current_wind_mps": 5.6,
         "max_72h_rain_mm": 1.07,
         "max_72h_rain_time": "2026-08-27 08:00",
         "max_72h_wind_mps": 9.5,
@@ -167,7 +167,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 893 km / 최대 시간당 강수 2.64 mm",
+      "reason_ko": "태풍 최접근 893 km / 최대 시간당 강수 3.13 mm",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
         "current_distance_km": 2627,
@@ -178,13 +178,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 08:30",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 3.9,
-        "max_72h_rain_mm": 2.64,
-        "max_72h_rain_time": "2026-08-25 17:00",
+        "current_last_updated": "2026-08-25 09:00",
+        "current_rain_mm": 0.39,
+        "current_wind_mps": 3.7,
+        "max_72h_rain_mm": 3.13,
+        "max_72h_rain_time": "2026-08-25 23:00",
         "max_72h_wind_mps": 4.6,
-        "max_72h_wind_time": "2026-08-26 08:00"
+        "max_72h_wind_time": "2026-08-27 11:00"
       },
       "score_detail": {
         "distance": 10,
@@ -212,9 +212,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-25 09:30",
+        "current_last_updated": "2026-08-25 10:00",
         "current_rain_mm": 0.06,
-        "current_wind_mps": 3.8,
+        "current_wind_mps": 4.4,
         "max_72h_rain_mm": 1.81,
         "max_72h_rain_time": "2026-08-27 08:00",
         "max_72h_wind_mps": 7.3,
@@ -309,5 +309,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T01:46:32.624903+00:00"
+  "generated_at_utc": "2026-08-25T02:05:34.134615+00:00"
 }
