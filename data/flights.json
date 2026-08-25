@@ -6,7 +6,7 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-08",
-    "monthly_requests": 30,
+    "monthly_requests": 5,
     "monthly_limit": 100,
     "last_run_requests": 5,
     "last_fetch_at_utc": "2026-08-25T11:40:13.251828+00:00",
