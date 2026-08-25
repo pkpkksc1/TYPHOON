@@ -18,14 +18,14 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-25 18:03"
+        "localtime": "2026-08-25 18:44"
       },
       "current": {
-        "last_updated": "2026-08-25 17:45",
-        "rain_mm": 0.08,
-        "wind_mps": 5.3,
+        "last_updated": "2026-08-25 18:30",
+        "rain_mm": 0.0,
+        "wind_mps": 5.0,
         "wind_dir": "ESE",
-        "condition": "Patchy rain nearby"
+        "condition": "Sunny"
       },
       "hourly_forecast": [
         {
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-25 18:03"
+        "localtime": "2026-08-25 18:44"
       },
       "current": {
-        "last_updated": "2026-08-25 18:00",
+        "last_updated": "2026-08-25 18:30",
         "rain_mm": 0.0,
         "wind_mps": 3.5,
         "wind_dir": "ESE",
@@ -1215,18 +1215,18 @@
         "lon": 126.4407
       },
       "resolved_location": {
-        "name": "Namni",
+        "name": "Sammok",
         "region": "",
         "country": "South Korea",
-        "lat": 37.45,
-        "lon": 126.417,
-        "localtime": "2026-08-25 19:03"
+        "lat": 37.483,
+        "lon": 126.466,
+        "localtime": "2026-08-25 19:44"
       },
       "current": {
-        "last_updated": "2026-08-25 18:45",
+        "last_updated": "2026-08-25 19:30",
         "rain_mm": 0.0,
-        "wind_mps": 3.4,
-        "wind_dir": "WNW",
+        "wind_mps": 2.6,
+        "wind_dir": "W",
         "condition": "Sunny"
       },
       "hourly_forecast": [
@@ -1821,10 +1821,10 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-25 18:03"
+        "localtime": "2026-08-25 18:44"
       },
       "current": {
-        "last_updated": "2026-08-25 18:00",
+        "last_updated": "2026-08-25 18:30",
         "rain_mm": 0.03,
         "wind_mps": 7.3,
         "wind_dir": "WSW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-25 17:03"
+        "localtime": "2026-08-25 17:44"
       },
       "current": {
-        "last_updated": "2026-08-25 17:00",
+        "last_updated": "2026-08-25 17:30",
         "rain_mm": 3.26,
         "wind_mps": 1.0,
         "wind_dir": "N",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Camp Stolsenburg",
         "region": "Pampanga",
         "country": "Philippines",
         "lat": 15.183,
-        "lon": 120.567,
-        "localtime": "2026-08-25 18:03"
+        "lon": 120.517,
+        "localtime": "2026-08-25 18:44"
       },
       "current": {
-        "last_updated": "2026-08-25 18:00",
+        "last_updated": "2026-08-25 18:30",
         "rain_mm": 0.17,
         "wind_mps": 1.5,
         "wind_dir": "WSW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T10:03:19.776231+00:00"
+  "generated_at_utc": "2026-08-25T10:44:50.489812+00:00"
 }
