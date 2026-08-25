@@ -2,12 +2,12 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-25T20:57:53.989981+00:00",
+  "generated_at_utc": "2026-08-25T21:18:58.384425+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-25T20:57:41.548889+00:00",
     "weather": "2026-08-25T20:57:53.872700+00:00",
     "risk": "2026-08-25T20:57:53.921556+00:00",
-    "flights": "2026-08-25T11:40:13.251828+00:00"
+    "flights": "2026-08-25T21:18:58.308738+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T05:00:00+09:00",
@@ -381,21 +381,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-08-25T01:50:00+09:00",
-        "estimated_local": "2026-08-25T01:50:00+09:00",
-        "actual_local": "2026-08-25T01:33:00+09:00",
-        "display_time_local": "2026-08-25 01:33",
+        "scheduled_local": "2026-08-26T01:50:00+09:00",
+        "estimated_local": "2026-08-26T01:50:00+09:00",
+        "actual_local": "2026-08-26T02:11:00+09:00",
+        "display_time_local": "2026-08-26 02:11",
         "display_label_ko": "실제 출발",
-        "delay_minutes": -17,
+        "delay_minutes": 21,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-25T03:00:00+08:00",
-        "estimated_local": "2026-08-25T01:56:00+08:00",
-        "actual_local": "2026-08-25T02:02:00+08:00",
-        "display_time_local": "2026-08-25 02:02",
+        "scheduled_local": "2026-08-26T03:00:00+08:00",
+        "estimated_local": "2026-08-26T02:31:00+08:00",
+        "actual_local": "2026-08-26T02:34:00+08:00",
+        "display_time_local": "2026-08-26 02:34",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -58,
+        "delay_minutes": -26,
         "timezone_label_ko": "중국시간"
       }
     },
@@ -403,9 +403,9 @@
       "flight_iata": "PR337",
       "route": "PVG → MNL",
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "운항 중"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "도착 완료"
       },
       "departure": {
         "scheduled_local": "2026-08-25T16:00:00+08:00",
@@ -418,11 +418,11 @@
       },
       "arrival": {
         "scheduled_local": "2026-08-25T19:40:00+08:00",
-        "estimated_local": "2026-08-25T19:16:00+08:00",
-        "actual_local": null,
-        "display_time_local": "2026-08-25 19:16",
-        "display_label_ko": "예상 도착",
-        "delay_minutes": -24,
+        "estimated_local": "2026-08-25T19:21:00+08:00",
+        "actual_local": "2026-08-25T19:32:00+08:00",
+        "display_time_local": "2026-08-25 19:32",
+        "display_label_ko": "실제 도착",
+        "delay_minutes": -8,
         "timezone_label_ko": "필리핀시간"
       }
     },
@@ -430,27 +430,27 @@
       "flight_iata": "KJ948",
       "route": "PVG → ICN",
       "status": {
-        "level": "NO_DATA",
-        "emoji": "⚪",
-        "label_ko": "조회 결과 없음"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "운항 중"
       },
       "departure": {
-        "scheduled_local": null,
-        "estimated_local": null,
-        "actual_local": null,
-        "display_time_local": null,
-        "display_label_ko": "예정 출발",
-        "delay_minutes": null,
-        "timezone_label_ko": null
+        "scheduled_local": "2026-08-26T03:05:00+08:00",
+        "estimated_local": "2026-08-26T03:05:00+08:00",
+        "actual_local": "2026-08-26T03:29:00+08:00",
+        "display_time_local": "2026-08-26 03:29",
+        "display_label_ko": "실제 출발",
+        "delay_minutes": 24,
+        "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": null,
-        "estimated_local": null,
+        "scheduled_local": "2026-08-26T06:10:00+09:00",
+        "estimated_local": "2026-08-26T06:02:00+09:00",
         "actual_local": null,
-        "display_time_local": null,
-        "display_label_ko": "예정 도착",
-        "delay_minutes": null,
-        "timezone_label_ko": null
+        "display_time_local": "2026-08-26 06:02",
+        "display_label_ko": "예상 도착",
+        "delay_minutes": -8,
+        "timezone_label_ko": "한국시간"
       }
     },
     {
@@ -485,10 +485,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-08",
-    "monthly_requests": 5,
+    "monthly_requests": 10,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-08-25T11:40:13.251828+00:00",
+    "last_fetch_at_utc": "2026-08-25T21:18:58.308738+00:00",
     "tracking_started_at_utc": "2026-08-22T09:33:34.625601+00:00"
   },
   "attribution": [
