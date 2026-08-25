@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-25 23:24"
+        "localtime": "2026-08-25 23:53"
       },
       "current": {
-        "last_updated": "2026-08-25 23:15",
+        "last_updated": "2026-08-25 23:45",
         "rain_mm": 0.0,
         "wind_mps": 3.9,
         "wind_dir": "ESE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-25 23:24"
+        "localtime": "2026-08-25 23:53"
       },
       "current": {
-        "last_updated": "2026-08-25 23:15",
+        "last_updated": "2026-08-25 23:45",
         "rain_mm": 0.0,
         "wind_mps": 2.9,
         "wind_dir": "ESE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-26 00:24"
+        "localtime": "2026-08-26 00:53"
       },
       "current": {
-        "last_updated": "2026-08-26 00:15",
+        "last_updated": "2026-08-26 00:45",
         "rain_mm": 0.0,
         "wind_mps": 1.0,
         "wind_dir": "W",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "San Dionisio",
-        "region": "Rizal",
+        "name": "Moonwalk Ii",
+        "region": "Misamis Oriental",
         "country": "Philippines",
-        "lat": 14.492,
-        "lon": 120.988,
-        "localtime": "2026-08-25 23:24"
+        "lat": 14.5,
+        "lon": 121.019,
+        "localtime": "2026-08-25 23:53"
       },
       "current": {
-        "last_updated": "2026-08-25 23:15",
+        "last_updated": "2026-08-25 23:45",
         "rain_mm": 0.1,
         "wind_mps": 6.3,
         "wind_dir": "WSW",
@@ -2066,7 +2066,7 @@
         {
           "time": "2026-08-26 05:00",
           "rain_mm": 0.08,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 21,
           "wind_mps": 5.0,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2082,7 +2082,7 @@
         {
           "time": "2026-08-26 07:00",
           "rain_mm": 0.05,
-          "chance_of_rain_pct": 19,
+          "chance_of_rain_pct": 20,
           "wind_mps": 4.0,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
@@ -2178,7 +2178,7 @@
         {
           "time": "2026-08-26 19:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 19,
+          "chance_of_rain_pct": 20,
           "wind_mps": 8.0,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2186,7 +2186,7 @@
         {
           "time": "2026-08-26 20:00",
           "rain_mm": 0.02,
-          "chance_of_rain_pct": 18,
+          "chance_of_rain_pct": 20,
           "wind_mps": 7.7,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2194,7 +2194,7 @@
         {
           "time": "2026-08-26 21:00",
           "rain_mm": 0.14,
-          "chance_of_rain_pct": 26,
+          "chance_of_rain_pct": 27,
           "wind_mps": 7.5,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2202,7 +2202,7 @@
         {
           "time": "2026-08-26 22:00",
           "rain_mm": 0.13,
-          "chance_of_rain_pct": 25,
+          "chance_of_rain_pct": 29,
           "wind_mps": 7.1,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-25 22:24"
+        "localtime": "2026-08-25 22:53"
       },
       "current": {
-        "last_updated": "2026-08-25 22:15",
+        "last_updated": "2026-08-25 22:30",
         "rain_mm": 0.0,
         "wind_mps": 1.7,
         "wind_dir": "SE",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Camp Stolsenburg",
+        "name": "Culayo",
         "region": "Pampanga",
         "country": "Philippines",
         "lat": 15.183,
-        "lon": 120.517,
-        "localtime": "2026-08-25 23:24"
+        "lon": 120.567,
+        "localtime": "2026-08-25 23:53"
       },
       "current": {
-        "last_updated": "2026-08-25 23:15",
+        "last_updated": "2026-08-25 23:45",
         "rain_mm": 0.01,
         "wind_mps": 1.6,
         "wind_dir": "WSW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T15:24:19.040722+00:00"
+  "generated_at_utc": "2026-08-25T15:53:44.693252+00:00"
 }
