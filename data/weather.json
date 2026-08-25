@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-25 15:04"
+        "localtime": "2026-08-25 15:27"
       },
       "current": {
-        "last_updated": "2026-08-25 15:00",
+        "last_updated": "2026-08-25 15:15",
         "rain_mm": 0.13,
         "wind_mps": 5.2,
         "wind_dir": "ESE",
@@ -619,14 +619,14 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-25 15:04"
+        "localtime": "2026-08-25 15:27"
       },
       "current": {
-        "last_updated": "2026-08-25 14:45",
-        "rain_mm": 0.03,
-        "wind_mps": 5.1,
+        "last_updated": "2026-08-25 15:15",
+        "rain_mm": 0.0,
+        "wind_mps": 5.0,
         "wind_dir": "E",
-        "condition": "Patchy rain nearby"
+        "condition": "Partly Cloudy"
       },
       "hourly_forecast": [
         {
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-25 16:04"
+        "localtime": "2026-08-25 16:27"
       },
       "current": {
-        "last_updated": "2026-08-25 16:00",
+        "last_updated": "2026-08-25 16:15",
         "rain_mm": 0.0,
         "wind_mps": 3.6,
         "wind_dir": "W",
@@ -1816,15 +1816,15 @@
         "lon": 121.0198
       },
       "resolved_location": {
-        "name": "Merville Subdivision",
-        "region": "Northern Samar",
+        "name": "Moonwalk Ii",
+        "region": "Misamis Oriental",
         "country": "Philippines",
-        "lat": 14.503,
-        "lon": 121.027,
-        "localtime": "2026-08-25 15:04"
+        "lat": 14.5,
+        "lon": 121.019,
+        "localtime": "2026-08-25 15:27"
       },
       "current": {
-        "last_updated": "2026-08-25 15:00",
+        "last_updated": "2026-08-25 15:15",
         "rain_mm": 0.0,
         "wind_mps": 8.9,
         "wind_dir": "WSW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-25 14:04"
+        "localtime": "2026-08-25 14:27"
       },
       "current": {
-        "last_updated": "2026-08-25 14:00",
+        "last_updated": "2026-08-25 14:15",
         "rain_mm": 0.0,
         "wind_mps": 3.4,
         "wind_dir": "NW",
@@ -3023,10 +3023,10 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-08-25 15:04"
+        "localtime": "2026-08-25 15:27"
       },
       "current": {
-        "last_updated": "2026-08-25 15:00",
+        "last_updated": "2026-08-25 15:15",
         "rain_mm": 0.12,
         "wind_mps": 3.0,
         "wind_dir": "SW",
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T07:04:28.848870+00:00"
+  "generated_at_utc": "2026-08-25T07:27:24.958168+00:00"
 }
