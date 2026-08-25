@@ -11,13 +11,13 @@
       "name_cn": "紫檀",
       "state": "start",
       "current": {
-        "point_id": 3317153,
-        "time_utc": "202608250700",
+        "point_id": 3317167,
+        "time_utc": "202608250800",
         "grade": "TS",
         "grade_ko": "열대폭풍",
-        "lon": 108.3,
-        "lat": 19.3,
-        "pressure_hpa": 995,
+        "lon": 108.4,
+        "lat": 19.4,
+        "pressure_hpa": 992,
         "max_wind_mps": 20,
         "movement_direction": "NE",
         "movement_direction_ko": "북동",
@@ -35,7 +35,7 @@
               120,
               150,
               100,
-              3317153
+              3317167
             ],
             "meaning_ko": "30kt 풍권"
           }
@@ -44,9 +44,9 @@
       "forecast": [
         {
           "forecast_hour": 6,
-          "base_time_utc": "202608250700",
-          "lon": 108.85,
-          "lat": 19.6333,
+          "base_time_utc": "202608250800",
+          "lon": 109,
+          "lat": 19.7667,
           "pressure_hpa": 995,
           "max_wind_mps": 20,
           "agency": "BABJ",
@@ -55,9 +55,9 @@
         },
         {
           "forecast_hour": 12,
-          "base_time_utc": "202608250700",
-          "lon": 109.65,
-          "lat": 20.4167,
+          "base_time_utc": "202608250800",
+          "lon": 109.7,
+          "lat": 20.5333,
           "pressure_hpa": 998,
           "max_wind_mps": 20,
           "agency": "BABJ",
@@ -66,20 +66,20 @@
         },
         {
           "forecast_hour": 18,
-          "base_time_utc": "202608250700",
-          "lon": 109.9667,
-          "lat": 21.1333,
+          "base_time_utc": "202608250800",
+          "lon": 110.0333,
+          "lat": 21.2667,
           "pressure_hpa": 998,
-          "max_wind_mps": 18,
+          "max_wind_mps": 16,
           "agency": "BABJ",
-          "grade": "TS",
-          "grade_ko": "열대폭풍"
+          "grade": "TD",
+          "grade_ko": "열대저압부"
         },
         {
           "forecast_hour": 24,
-          "base_time_utc": "202608250700",
-          "lon": 110.2417,
-          "lat": 21.8583,
+          "base_time_utc": "202608250800",
+          "lon": 110.1833,
+          "lat": 21.9167,
           "pressure_hpa": 998,
           "max_wind_mps": 15,
           "agency": "BABJ",
@@ -88,9 +88,9 @@
         },
         {
           "forecast_hour": 36,
-          "base_time_utc": "202608250700",
-          "lon": 109.5417,
-          "lat": 22.5583,
+          "base_time_utc": "202608250800",
+          "lon": 109.4833,
+          "lat": 22.6167,
           "pressure_hpa": 998,
           "max_wind_mps": 12,
           "agency": "BABJ",
@@ -98,7 +98,7 @@
           "grade_ko": "열대저압부"
         }
       ],
-      "raw_point_count": 111
+      "raw_point_count": 112
     },
     {
       "id": 3304099,
@@ -252,5 +252,5 @@
     }
   ],
   "errors": [],
-  "generated_at_utc": "2026-08-25T07:52:28.328568+00:00"
+  "generated_at_utc": "2026-08-25T08:11:01.456346+00:00"
 }
