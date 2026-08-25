@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-25T17:07:47.677832+00:00",
-    "weather": "2026-08-25T17:07:49.496344+00:00"
+    "impact": "2026-08-25T17:41:24.093175+00:00",
+    "weather": "2026-08-25T17:41:25.419991+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -42,7 +42,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 01:00",
+        "current_last_updated": "2026-08-26 01:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 3.7,
         "max_72h_rain_mm": 1.69,
@@ -76,7 +76,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 01:00",
+        "current_last_updated": "2026-08-26 01:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.8,
         "max_72h_rain_mm": 0.77,
@@ -110,7 +110,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 02:00",
+        "current_last_updated": "2026-08-26 02:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.2,
@@ -144,7 +144,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 01:00",
+        "current_last_updated": "2026-08-26 01:30",
         "current_rain_mm": 0.05,
         "current_wind_mps": 5.9,
         "max_72h_rain_mm": 29.8,
@@ -178,7 +178,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 00:00",
+        "current_last_updated": "2026-08-26 00:30",
         "current_rain_mm": 0.82,
         "current_wind_mps": 2.5,
         "max_72h_rain_mm": 1.79,
@@ -212,7 +212,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 01:00",
+        "current_last_updated": "2026-08-26 01:30",
         "current_rain_mm": 0.05,
         "current_wind_mps": 2.2,
         "max_72h_rain_mm": 31.93,
@@ -314,5 +314,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-25T17:21:25.920861+00:00"
+  "generated_at_utc": "2026-08-25T17:41:25.459340+00:00"
 }
