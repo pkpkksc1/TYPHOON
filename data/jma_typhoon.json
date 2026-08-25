@@ -4,7 +4,7 @@
   "parser_version": "1.3-JMA-CURRENT-LONG-MERGE",
   "feed_high": "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
   "feed_long": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
-  "active_count": 3,
+  "active_count": 2,
   "locations": {
     "SUZHOU": {
       "name": "Suzhou",
@@ -2308,78 +2308,11 @@
         "merged_horizon_hour": 72,
         "used_previous_output": false
       }
-    },
-    {
-      "slot": "VPTW63",
-      "event_id": "TC2624",
-      "information_title": "台風解析・予報情報（５日予報）（Ｈ３０）",
-      "feed_updated": "2026-08-25T01:14:24Z",
-      "report_time": "2026-08-25T10:15:00+09:00",
-      "target_time": "2026-08-25T09:00:00+09:00",
-      "source_url": "https://www.data.jma.go.jp/developer/xml/data/20260825011425_0_VPTW63_010000.xml",
-      "typhoon": {
-        "number": "2621",
-        "name": "ATSANI",
-        "kana": "アッサニー"
-      },
-      "analysis": {
-        "time": "2026-08-25T09:00:00+09:00",
-        "time_type": "実況",
-        "lat": 19.0,
-        "lon": 138.0,
-        "raw_coordinate": "+19.0+138.0/",
-        "area": "熱帯低気圧",
-        "pressure_hpa": 1000.0,
-        "max_wind_source_value": null,
-        "max_wind_source_unit": null,
-        "max_wind_mps": null,
-        "gust_source_value": null,
-        "gust_source_unit": null,
-        "gust_mps": null,
-        "movement_direction": "北北東",
-        "movement_speed": 10.0,
-        "movement_speed_unit": "ノット",
-        "movement_speed_kmh": 18.5,
-        "forecast_circle_radius": null,
-        "forecast_circle_radius_unit": null,
-        "forecast_circle_radius_km": null,
-        "radius_details": [],
-        "radius_groups": {
-          "forecast_circle": [],
-          "storm_wind_area": [],
-          "gale_wind_area": [],
-          "storm_warning_area": [],
-          "other": []
-        },
-        "data_quality": {
-          "status": "OK",
-          "issues": []
-        },
-        "distances_km": {
-          "SUZHOU": 2218,
-          "PVG": 2113,
-          "ICN": 2340,
-          "MNL": 1875,
-          "HAN": 3365,
-          "CRK": 1900
-        }
-      },
-      "forecast": [],
-      "forecast_source_report_time": "2026-08-25T10:15:00+09:00",
-      "forecast_source_url": "https://www.data.jma.go.jp/developer/xml/data/20260825011425_0_VPTW63_010000.xml",
-      "forecast_merge_mode": "BEST_AVAILABLE_SHORT",
-      "forecast_max_hour": 0,
-      "forecast_quality": {
-        "status": "SHORT_ONLY",
-        "current_bulletin_horizon_hour": 0,
-        "merged_horizon_hour": 0,
-        "used_previous_output": false
-      }
     }
   ],
   "warnings": {
     "feed_errors": [],
     "xml_errors": []
   },
-  "generated_at_utc": "2026-08-25T13:04:49.528445+00:00"
+  "generated_at_utc": "2026-08-25T13:31:33.637693+00:00"
 }
