@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-08-26T08:11:07.174426+00:00",
-    "weather": "2026-08-26T08:11:08.450791+00:00"
+    "impact": "2026-08-26T08:55:46.161212+00:00",
+    "weather": "2026-08-26T08:55:48.140983+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -42,7 +42,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 16:00",
+        "current_last_updated": "2026-08-26 16:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 4.3,
         "max_72h_rain_mm": 0.06,
@@ -76,7 +76,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 16:00",
+        "current_last_updated": "2026-08-26 16:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 4.9,
         "max_72h_rain_mm": 0.48,
@@ -110,7 +110,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 17:00",
+        "current_last_updated": "2026-08-26 17:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 3.6,
         "max_72h_rain_mm": 0.02,
@@ -144,7 +144,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 16:00",
+        "current_last_updated": "2026-08-26 16:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 8.9,
         "max_72h_rain_mm": 5.83,
@@ -178,7 +178,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 15:00",
+        "current_last_updated": "2026-08-26 15:45",
         "current_rain_mm": 0.0,
         "current_wind_mps": 2.2,
         "max_72h_rain_mm": 1.68,
@@ -212,7 +212,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-08-26 16:00",
+        "current_last_updated": "2026-08-26 16:45",
         "current_rain_mm": 0.13,
         "current_wind_mps": 5.4,
         "max_72h_rain_mm": 61.82,
@@ -314,5 +314,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-08-26T08:11:08.511594+00:00"
+  "generated_at_utc": "2026-08-26T08:55:48.200417+00:00"
 }

@@ -18,10 +18,10 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-08-26 16:11"
+        "localtime": "2026-08-26 16:55"
       },
       "current": {
-        "last_updated": "2026-08-26 16:00",
+        "last_updated": "2026-08-26 16:45",
         "rain_mm": 0.0,
         "wind_mps": 4.3,
         "wind_dir": "ENE",
@@ -619,10 +619,10 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-08-26 16:11"
+        "localtime": "2026-08-26 16:55"
       },
       "current": {
-        "last_updated": "2026-08-26 16:00",
+        "last_updated": "2026-08-26 16:45",
         "rain_mm": 0.0,
         "wind_mps": 4.9,
         "wind_dir": "NE",
@@ -1220,10 +1220,10 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-08-26 17:11"
+        "localtime": "2026-08-26 17:55"
       },
       "current": {
-        "last_updated": "2026-08-26 17:00",
+        "last_updated": "2026-08-26 17:45",
         "rain_mm": 0.0,
         "wind_mps": 3.6,
         "wind_dir": "NW",
@@ -1821,10 +1821,10 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-08-26 16:11"
+        "localtime": "2026-08-26 16:55"
       },
       "current": {
-        "last_updated": "2026-08-26 16:00",
+        "last_updated": "2026-08-26 16:45",
         "rain_mm": 0.0,
         "wind_mps": 8.9,
         "wind_dir": "WSW",
@@ -2422,10 +2422,10 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-08-26 15:11"
+        "localtime": "2026-08-26 15:55"
       },
       "current": {
-        "last_updated": "2026-08-26 15:00",
+        "last_updated": "2026-08-26 15:45",
         "rain_mm": 0.0,
         "wind_mps": 2.2,
         "wind_dir": "NW",
@@ -3018,15 +3018,15 @@
         "lon": 120.5603
       },
       "resolved_location": {
-        "name": "Culayo",
+        "name": "Mamatitang",
         "region": "Pampanga",
         "country": "Philippines",
-        "lat": 15.183,
+        "lat": 15.233,
         "lon": 120.567,
-        "localtime": "2026-08-26 16:11"
+        "localtime": "2026-08-26 16:55"
       },
       "current": {
-        "last_updated": "2026-08-26 16:00",
+        "last_updated": "2026-08-26 16:45",
         "rain_mm": 0.13,
         "wind_mps": 5.4,
         "wind_dir": "WSW",
@@ -3108,7 +3108,7 @@
         {
           "time": "2026-08-26 09:00",
           "rain_mm": 0.03,
-          "chance_of_rain_pct": 16,
+          "chance_of_rain_pct": 15,
           "wind_mps": 3.7,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
@@ -3140,7 +3140,7 @@
         {
           "time": "2026-08-26 13:00",
           "rain_mm": 0.03,
-          "chance_of_rain_pct": 15,
+          "chance_of_rain_pct": 16,
           "wind_mps": 6.0,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
@@ -3148,7 +3148,7 @@
         {
           "time": "2026-08-26 14:00",
           "rain_mm": 0.05,
-          "chance_of_rain_pct": 18,
+          "chance_of_rain_pct": 17,
           "wind_mps": 6.0,
           "wind_dir": "SW",
           "condition": "Patchy rain nearby"
@@ -3156,7 +3156,7 @@
         {
           "time": "2026-08-26 15:00",
           "rain_mm": 0.04,
-          "chance_of_rain_pct": 20,
+          "chance_of_rain_pct": 16,
           "wind_mps": 6.0,
           "wind_dir": "WSW",
           "condition": "Patchy rain nearby"
@@ -3508,7 +3508,7 @@
         {
           "time": "2026-08-28 11:00",
           "rain_mm": 1.78,
-          "chance_of_rain_pct": 78,
+          "chance_of_rain_pct": 77,
           "wind_mps": 4.0,
           "wind_dir": "WSW",
           "condition": "Light rain shower"
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-08-26T08:11:08.450791+00:00"
+  "generated_at_utc": "2026-08-26T08:55:48.140983+00:00"
 }
