@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-26T14:22:14.976674+00:00",
+  "generated_at_utc": "2026-08-26T14:54:55.960188+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-26T13:36:42.774393+00:00",
-    "weather": "2026-08-26T13:36:59.056421+00:00",
-    "risk": "2026-08-26T13:36:59.122636+00:00",
+    "weather": "2026-08-26T14:54:55.802843+00:00",
+    "risk": "2026-08-26T14:54:55.866660+00:00",
     "flights": "2026-08-25T21:18:58.308738+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-26T21:00:00+09:00",
     "jma_updated_at_utc": "2026-08-26T13:36:42.774393+00:00",
-    "weather_updated_at_utc": "2026-08-26T13:36:59.056421+00:00",
-    "impact_updated_at_utc": "2026-08-26T13:36:54.687591+00:00",
-    "risk_updated_at_utc": "2026-08-26T13:36:59.122636+00:00",
+    "weather_updated_at_utc": "2026-08-26T14:54:55.802843+00:00",
+    "impact_updated_at_utc": "2026-08-26T14:54:54.315765+00:00",
+    "risk_updated_at_utc": "2026-08-26T14:54:55.866660+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -73,18 +73,18 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 358 km",
-      "current_distance_km": 661,
-      "closest_distance_km": 358,
-      "closest_time": "2026-08-27T18:00:00Z",
+      "reason_ko": "태풍 최접근 350 km",
+      "current_distance_km": 593,
+      "closest_distance_km": 350,
+      "closest_time": "2026-08-28T00:00:00Z",
       "closest_forecast_hour": 36,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 21:30",
+        "last_updated": "2026-08-26 22:45",
         "rain_mm": 0.0,
-        "wind_mps": 3.8
+        "wind_mps": 3.3
       },
       "forecast_72h": {
         "max_rain_mm": 2.23,
@@ -100,24 +100,24 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 307 km",
-      "current_distance_km": 552,
-      "closest_distance_km": 307,
-      "closest_time": "2026-08-27T18:00:00Z",
+      "reason_ko": "태풍 최접근 333 km",
+      "current_distance_km": 485,
+      "closest_distance_km": 333,
+      "closest_time": "2026-08-28T00:00:00Z",
       "closest_forecast_hour": 36,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 21:30",
+        "last_updated": "2026-08-26 22:45",
         "rain_mm": 0.0,
-        "wind_mps": 3.3
+        "wind_mps": 3.7
       },
       "forecast_72h": {
-        "max_rain_mm": 0.48,
-        "max_rain_time": "2026-08-28 05:00",
-        "max_wind_mps": 6.7,
-        "max_wind_time": "2026-08-27 12:00"
+        "max_rain_mm": 1.28,
+        "max_rain_time": "2026-08-28 09:00",
+        "max_wind_mps": 7.3,
+        "max_wind_time": "2026-08-27 14:00"
       }
     },
     "ICN": {
@@ -127,50 +127,50 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 992 km",
-      "current_distance_km": 1019,
-      "closest_distance_km": 992,
-      "closest_time": "2026-08-26T18:00:00Z",
-      "closest_forecast_hour": 12,
+      "reason_ko": "태풍 최접근 986 km",
+      "current_distance_km": 986,
+      "closest_distance_km": 986,
+      "closest_time": "2026-08-26T12:00:00Z",
+      "closest_forecast_hour": 0,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 22:30",
+        "last_updated": "2026-08-26 23:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.0
+        "wind_mps": 1.8
       },
       "forecast_72h": {
-        "max_rain_mm": 0.02,
-        "max_rain_time": "2026-08-28 14:00",
+        "max_rain_mm": 0.49,
+        "max_rain_time": "2026-08-28 19:00",
         "max_wind_mps": 4.2,
         "max_wind_time": "2026-08-26 15:00"
       }
     },
     "MNL": {
       "name_ko": "마닐라 국제공항",
-      "score": 5,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
       "reason_ko": "특이 위험요소 낮음",
-      "current_distance_km": 1634,
-      "closest_distance_km": 1486,
-      "closest_time": "2026-08-29T06:00:00Z",
-      "closest_forecast_hour": 72,
+      "current_distance_km": 1646,
+      "closest_distance_km": 1510,
+      "closest_time": "2026-08-28T12:00:00Z",
+      "closest_forecast_hour": 48,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 21:30",
+        "last_updated": "2026-08-26 22:45",
         "rain_mm": 0.0,
-        "wind_mps": 7.1
+        "wind_mps": 6.9
       },
       "forecast_72h": {
-        "max_rain_mm": 5.83,
-        "max_rain_time": "2026-08-28 22:00",
-        "max_wind_mps": 10.8,
+        "max_rain_mm": 6.45,
+        "max_rain_time": "2026-08-28 20:00",
+        "max_wind_mps": 10.2,
         "max_wind_time": "2026-08-28 15:00"
       }
     },
@@ -182,50 +182,50 @@
         "label_ko": "낮음"
       },
       "reason_ko": "특이 위험요소 낮음",
-      "current_distance_km": 2229,
-      "closest_distance_km": 1154,
-      "closest_time": "2026-08-29T06:00:00Z",
-      "closest_forecast_hour": 72,
+      "current_distance_km": 2182,
+      "closest_distance_km": 1225,
+      "closest_time": "2026-08-29T00:00:00Z",
+      "closest_forecast_hour": 60,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 20:30",
+        "last_updated": "2026-08-26 21:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.0
+        "wind_mps": 1.2
       },
       "forecast_72h": {
         "max_rain_mm": 1.68,
         "max_rain_time": "2026-08-26 02:00",
         "max_wind_mps": 4.1,
-        "max_wind_time": "2026-08-27 15:00"
+        "max_wind_time": "2026-08-27 13:00"
       }
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
       },
       "reason_ko": "특이 위험요소 낮음",
-      "current_distance_km": 1581,
-      "closest_distance_km": 1398,
-      "closest_time": "2026-08-29T06:00:00Z",
-      "closest_forecast_hour": 72,
+      "current_distance_km": 1589,
+      "closest_distance_km": 1428,
+      "closest_time": "2026-08-28T12:00:00Z",
+      "closest_forecast_hour": 48,
       "closest_source": "JTWC_WIND_RADII",
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-26 21:30",
-        "rain_mm": 0.01,
-        "wind_mps": 2.6
+        "last_updated": "2026-08-26 22:45",
+        "rain_mm": 0.0,
+        "wind_mps": 2.3
       },
       "forecast_72h": {
-        "max_rain_mm": 61.82,
+        "max_rain_mm": 24.55,
         "max_rain_time": "2026-08-28 18:00",
-        "max_wind_mps": 8.0,
-        "max_wind_time": "2026-08-27 11:00"
+        "max_wind_mps": 7.8,
+        "max_wind_time": "2026-08-27 13:00"
       }
     }
   },
@@ -238,7 +238,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "인천 국제공항 낮음 (태풍 최접근 992 km)"
+      "reason_ko": "인천 국제공항 낮음 (태풍 최접근 986 km)"
     },
     {
       "code": "SUZHOU_PVG_HAN",
@@ -253,7 +253,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -263,7 +263,7 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 5,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -278,7 +278,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 307 km)"
+      "reason_ko": "푸동 국제공항 낮음 (태풍 최접근 333 km)"
     }
   ],
   "flights": [
