@@ -8,7 +8,7 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 49,
+    "average_difference_km": 43,
     "max_difference_km": 90,
     "overall": {
       "level": "GREEN",
@@ -19,38 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-08-27T03:00:00+09:00",
+      "jma_time": "2026-08-27T06:00:00+09:00",
       "kma_time": "202608270300",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
         "lat": 28.6,
-        "lon": 125.3
+        "lon": 125.0
       },
       "kma": {
         "lat": 28.3,
         "lon": 124.9
       },
-      "difference_km": 51,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
-      "forecast_hour": 24,
-      "jma_time": "2026-08-27T15:00:00+09:00",
-      "kma_time": "202608271500",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 28.4,
-        "lon": 124.1
-      },
-      "kma": {
-        "lat": 28.2,
-        "lon": 123.9
-      },
-      "difference_km": 30,
+      "difference_km": 35,
       "status": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -58,7 +38,27 @@
       }
     },
     {
-      "forecast_hour": 48,
+      "forecast_hour": 24,
+      "jma_time": "2026-08-27T18:00:00+09:00",
+      "kma_time": "202608271500",
+      "time_gap_hours": 3.0,
+      "jma": {
+        "lat": 28.3,
+        "lon": 123.7
+      },
+      "kma": {
+        "lat": 28.2,
+        "lon": 123.9
+      },
+      "difference_km": 23,
+      "status": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
+      }
+    },
+    {
+      "forecast_hour": 45,
       "jma_time": "2026-08-28T15:00:00+09:00",
       "kma_time": "202608281500",
       "time_gap_hours": 0,
@@ -78,7 +78,7 @@
       }
     },
     {
-      "forecast_hour": 72,
+      "forecast_hour": 69,
       "jma_time": "2026-08-29T15:00:00+09:00",
       "kma_time": "202608291500",
       "time_gap_hours": 0,
@@ -98,5 +98,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-26T07:02:36.847952+00:00"
+  "generated_at_utc": "2026-08-26T09:52:32.499535+00:00"
 }
