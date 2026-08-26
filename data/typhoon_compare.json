@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 1734,
-    "max_difference_km": 1809,
+    "average_difference_km": 1729,
+    "max_difference_km": 1785,
     "overall": {
       "level": "RED",
       "emoji": "🔴",
@@ -19,18 +19,18 @@
   "comparisons": [
     {
       "forecast_hour": 1,
-      "jma_time": "2026-08-26T09:00:00+09:00",
+      "jma_time": "2026-08-26T11:00:00+09:00",
       "kma_time": "202608261500",
-      "time_gap_hours": 6.0,
+      "time_gap_hours": 4.0,
       "jma": {
-        "lat": 27.9,
-        "lon": 127.1
+        "lat": 28.0,
+        "lon": 126.8
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1809,
+      "difference_km": 1785,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -38,19 +38,19 @@
       }
     },
     {
-      "forecast_hour": 4,
+      "forecast_hour": 2,
       "jma_time": "2026-08-26T12:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 3.0,
       "jma": {
-        "lat": 28.3,
+        "lat": 28.2,
         "lon": 126.7
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1787,
+      "difference_km": 1783,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -58,19 +58,19 @@
       }
     },
     {
-      "forecast_hour": 7,
+      "forecast_hour": 5,
       "jma_time": "2026-08-26T15:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 0,
       "jma": {
-        "lat": 28.4,
+        "lat": 28.3,
         "lon": 126.4
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1763,
+      "difference_km": 1759,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -78,19 +78,19 @@
       }
     },
     {
-      "forecast_hour": 10,
+      "forecast_hour": 8,
       "jma_time": "2026-08-26T18:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 3.0,
       "jma": {
-        "lat": 28.5,
+        "lat": 28.3,
         "lon": 126.1
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1740,
+      "difference_km": 1732,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -98,19 +98,19 @@
       }
     },
     {
-      "forecast_hour": 13,
+      "forecast_hour": 11,
       "jma_time": "2026-08-26T21:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 6.0,
       "jma": {
-        "lat": 28.5,
+        "lat": 28.4,
         "lon": 125.8
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1712,
+      "difference_km": 1708,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -118,19 +118,19 @@
       }
     },
     {
-      "forecast_hour": 16,
+      "forecast_hour": 14,
       "jma_time": "2026-08-27T00:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 9.0,
       "jma": {
-        "lat": 28.5,
-        "lon": 125.4
+        "lat": 28.4,
+        "lon": 125.5
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1676,
+      "difference_km": 1681,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -138,19 +138,19 @@
       }
     },
     {
-      "forecast_hour": 19,
+      "forecast_hour": 17,
       "jma_time": "2026-08-27T03:00:00+09:00",
       "kma_time": "202608261500",
       "time_gap_hours": 12.0,
       "jma": {
         "lat": 28.5,
-        "lon": 125.1
+        "lon": 125.2
       },
       "kma": {
         "lat": 21.9,
         "lon": 110.4
       },
-      "difference_km": 1649,
+      "difference_km": 1658,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -158,7 +158,7 @@
       }
     },
     {
-      "forecast_hour": 22,
+      "forecast_hour": 20,
       "jma_time": "2026-08-27T06:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -168,25 +168,35 @@
       "time_gap_hours": 15.0
     },
     {
-      "forecast_hour": 43,
-      "jma_time": "2026-08-28T03:00:00+09:00",
+      "forecast_hour": 23,
+      "jma_time": "2026-08-27T09:00:00+09:00",
       "status": {
         "level": "NO_DATA",
         "emoji": "⚪",
         "label_ko": "KMA 비교자료 없음"
       },
-      "time_gap_hours": 36.0
+      "time_gap_hours": 18.0
     },
     {
-      "forecast_hour": 67,
-      "jma_time": "2026-08-29T03:00:00+09:00",
+      "forecast_hour": 47,
+      "jma_time": "2026-08-28T09:00:00+09:00",
       "status": {
         "level": "NO_DATA",
         "emoji": "⚪",
         "label_ko": "KMA 비교자료 없음"
       },
-      "time_gap_hours": 60.0
+      "time_gap_hours": 42.0
+    },
+    {
+      "forecast_hour": 71,
+      "jma_time": "2026-08-29T09:00:00+09:00",
+      "status": {
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "KMA 비교자료 없음"
+      },
+      "time_gap_hours": 66.0
     }
   ],
-  "generated_at_utc": "2026-08-25T23:51:34.262835+00:00"
+  "generated_at_utc": "2026-08-26T01:51:56.782425+00:00"
 }
