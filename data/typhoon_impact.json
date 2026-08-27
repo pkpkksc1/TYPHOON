@@ -15,7 +15,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 86
+    "average_difference_km": 83
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -274,15 +274,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 446,
-          "bearing_deg": 315,
+          "center_distance_km": 442,
+          "bearing_deg": 320,
           "quadrant": "NW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 300,
-          "distance_to_30kt_boundary_km": 146,
-          "distance_to_30kt_radius_ratio": 1.49,
-          "boundary_status_ko": "CMA 강풍 영향권까지 146 km"
+          "distance_to_30kt_boundary_km": 142,
+          "distance_to_30kt_radius_ratio": 1.47,
+          "boundary_status_ko": "CMA 강풍 영향권까지 142 km"
         }
       }
     },
@@ -532,15 +532,15 @@
           "basis": "CMA 강풍 영향권 반경의 1.5배 이내"
         },
         "cma": {
-          "center_distance_km": 357,
-          "bearing_deg": 326,
+          "center_distance_km": 360,
+          "bearing_deg": 332,
           "quadrant": "NW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 300,
-          "distance_to_30kt_boundary_km": 57,
-          "distance_to_30kt_radius_ratio": 1.19,
-          "boundary_status_ko": "CMA 강풍 영향권까지 57 km"
+          "distance_to_30kt_boundary_km": 60,
+          "distance_to_30kt_radius_ratio": 1.2,
+          "boundary_status_ko": "CMA 강풍 영향권까지 60 km"
         }
       }
     },
@@ -790,15 +790,15 @@
           "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 1024,
-          "bearing_deg": 13,
+          "center_distance_km": 1052,
+          "bearing_deg": 14,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 300,
-          "distance_to_30kt_boundary_km": 724,
-          "distance_to_30kt_radius_ratio": 3.41,
-          "boundary_status_ko": "CMA 강풍 영향권까지 724 km"
+          "distance_to_30kt_boundary_km": 752,
+          "distance_to_30kt_radius_ratio": 3.51,
+          "boundary_status_ko": "CMA 강풍 영향권까지 752 km"
         }
       }
     },
@@ -1228,15 +1228,15 @@
           "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 1994,
+          "center_distance_km": 1959,
           "bearing_deg": 250,
           "quadrant": "SW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 250,
-          "distance_to_30kt_boundary_km": 1744,
-          "distance_to_30kt_radius_ratio": 7.97,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1744 km"
+          "distance_to_30kt_boundary_km": 1709,
+          "distance_to_30kt_radius_ratio": 7.83,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1709 km"
         }
       }
     },
@@ -1486,15 +1486,15 @@
           "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 1520,
-          "bearing_deg": 194,
+          "center_distance_km": 1491,
+          "bearing_deg": 193,
           "quadrant": "SW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 250,
-          "distance_to_30kt_boundary_km": 1270,
-          "distance_to_30kt_radius_ratio": 6.08,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1270 km"
+          "distance_to_30kt_boundary_km": 1241,
+          "distance_to_30kt_radius_ratio": 5.97,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1241 km"
         }
       }
     }
@@ -1590,7 +1590,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-08-27T09:29:36.709401+00:00",
+  "generated_at_utc": "2026-08-27T11:57:45.720588+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
@@ -1603,16 +1603,16 @@
     "name_en": "SAUDEL",
     "name_cn": "沙德尔",
     "number": 2618,
-    "time_utc": "202608270900",
+    "time_utc": "202608271100",
     "grade": "STY",
     "grade_ko": "강한 태풍",
     "pressure_hpa": 950,
     "max_wind_mps": 45,
-    "lat": 28.5,
-    "lon": 123.9,
-    "movement_direction": "WSW",
-    "movement_direction_ko": "서남서",
-    "movement_speed_kmh": 15,
+    "lat": 28.3,
+    "lon": 123.6,
+    "movement_direction": "W",
+    "movement_direction_ko": "서",
+    "movement_speed_kmh": 19,
     "wind_radii": [
       {
         "label": "30KTS",
@@ -1626,7 +1626,7 @@
           300,
           250,
           300,
-          3320159
+          3320335
         ],
         "meaning_ko": "30kt 풍권"
       },
@@ -1642,7 +1642,7 @@
           100,
           100,
           120,
-          3320159
+          3320335
         ],
         "meaning_ko": "50kt 폭풍권"
       },
@@ -1658,7 +1658,7 @@
           50,
           50,
           60,
-          3320159
+          3320335
         ],
         "meaning_ko": "64kt 매우 강한 폭풍권"
       }
@@ -1666,12 +1666,12 @@
   },
   "agency_time_comparison": {
     "jtwc_time_utc": "2026-08-27T09:00:00+00:00",
-    "cma_time_utc": "2026-08-27T09:00:00+00:00",
+    "cma_time_utc": "2026-08-27T11:00:00+00:00",
     "jtwc_time_china": "08/27 17:00",
-    "cma_time_china": "08/27 17:00",
-    "difference_hours": 0.0,
-    "label_ko": "기관 발표시각 차이 0시간",
-    "same_issue_time": true,
+    "cma_time_china": "08/27 19:00",
+    "difference_hours": 2.0,
+    "label_ko": "기관 발표시각 차이 2시간",
+    "same_issue_time": false,
     "jtwc_time_source": "typhoon.jtwc_issue_time_utc",
     "cma_time_source": "cma.current.time_utc",
     "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지"
