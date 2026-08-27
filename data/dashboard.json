@@ -2,75 +2,57 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-27T00:21:09.006502+00:00",
+  "generated_at_utc": "2026-08-27T01:02:31.719368+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-26T22:27:56.168939+00:00",
-    "weather": "2026-08-26T23:20:56.598271+00:00",
-    "risk": "2026-08-26T23:58:24.063364+00:00",
+    "jma": "2026-08-27T01:00:25.810722+00:00",
+    "weather": "2026-08-27T01:02:31.567055+00:00",
+    "risk": "2026-08-27T01:02:31.629328+00:00",
     "flights": "2026-08-27T00:21:08.952501+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-08-27T06:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-26T22:27:56.168939+00:00",
-    "weather_updated_at_utc": "2026-08-26T23:20:56.598271+00:00",
-    "impact_updated_at_utc": "2026-08-26T23:20:55.265076+00:00",
-    "risk_updated_at_utc": "2026-08-26T23:58:24.063364+00:00",
+    "typhoon_reference_time": "2026-08-27T09:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-27T01:00:25.810722+00:00",
+    "weather_updated_at_utc": "2026-08-27T01:02:31.567055+00:00",
+    "impact_updated_at_utc": "2026-08-27T01:02:30.869927+00:00",
+    "risk_updated_at_utc": "2026-08-27T01:02:31.629328+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
     "current": {
-      "time": "2026-08-27T06:00:00+09:00",
-      "lat": 28.6,
-      "lon": 125.1,
+      "time": "2026-08-27T09:00:00+09:00",
+      "lat": 28.7,
+      "lon": 124.8,
       "pressure_hpa": 960.0,
       "max_wind_mps": 38.6,
-      "movement_direction": "西南西",
+      "movement_direction": "西",
       "movement_speed_kmh": null
     },
     "forecast_track": [
       {
-        "forecast_hour": 9,
-        "time": "2026-08-27T15:00:00+09:00",
-        "lat": 28.5,
-        "lon": 124.3,
-        "pressure_hpa": 965.0,
-        "max_wind_mps": 36.0,
-        "movement_direction": "西"
-      },
-      {
         "forecast_hour": 12,
-        "time": "2026-08-27T18:00:00+09:00",
-        "lat": 28.4,
-        "lon": 124.0,
-        "pressure_hpa": 965.0,
-        "max_wind_mps": 36.0,
-        "movement_direction": "西"
-      },
-      {
-        "forecast_hour": 21,
-        "time": "2026-08-28T03:00:00+09:00",
-        "lat": 28.2,
-        "lon": 122.7,
-        "pressure_hpa": 970.0,
-        "max_wind_mps": 33.4,
-        "movement_direction": "西"
+        "time": "2026-08-27T21:00:00+09:00",
+        "lat": 28.3,
+        "lon": 123.6,
+        "pressure_hpa": 960.0,
+        "max_wind_mps": 38.6,
+        "movement_direction": "西南西"
       },
       {
         "forecast_hour": 24,
-        "time": "2026-08-28T06:00:00+09:00",
-        "lat": 28.1,
-        "lon": 122.2,
+        "time": "2026-08-28T09:00:00+09:00",
+        "lat": 28.0,
+        "lon": 121.6,
         "pressure_hpa": 970.0,
         "max_wind_mps": 33.4,
         "movement_direction": "西"
       },
       {
-        "forecast_hour": 45,
-        "time": "2026-08-29T03:00:00+09:00",
-        "lat": 27.3,
-        "lon": 117.1,
+        "forecast_hour": 48,
+        "time": "2026-08-29T09:00:00+09:00",
+        "lat": 27.4,
+        "lon": 116.3,
         "pressure_hpa": 996.0,
         "max_wind_mps": 0.0,
         "movement_direction": "西"
@@ -78,10 +60,10 @@
     ]
   },
   "forecast_comparison": {
-    "emoji": "🟢",
-    "label_ko": "거의 일치",
-    "average_difference_km": 28,
-    "max_difference_km": 41
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 77,
+    "max_difference_km": 98
   },
   "locations": {
     "SUZHOU": {
@@ -100,9 +82,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 07:15",
+        "last_updated": "2026-08-27 09:00",
         "rain_mm": 0.0,
-        "wind_mps": 3.9
+        "wind_mps": 5.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.87,
@@ -127,9 +109,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 07:15",
+        "last_updated": "2026-08-27 08:45",
         "rain_mm": 0.01,
-        "wind_mps": 4.6
+        "wind_mps": 5.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.99,
@@ -154,9 +136,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 08:15",
+        "last_updated": "2026-08-27 09:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.2
+        "wind_mps": 1.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.72,
@@ -181,9 +163,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 07:15",
-        "rain_mm": 0.93,
-        "wind_mps": 8.3
+        "last_updated": "2026-08-27 08:45",
+        "rain_mm": 0.54,
+        "wind_mps": 8.1
       },
       "forecast_72h": {
         "max_rain_mm": 24.96,
@@ -194,7 +176,7 @@
     },
     "HAN": {
       "name_ko": "하노이 노이바이 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -208,9 +190,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 06:15",
-        "rain_mm": 0.01,
-        "wind_mps": 1.4
+        "last_updated": "2026-08-27 07:45",
+        "rain_mm": 0.0,
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 5.97,
@@ -235,9 +217,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-08-27 07:15",
-        "rain_mm": 0.03,
-        "wind_mps": 1.4
+        "last_updated": "2026-08-27 09:00",
+        "rain_mm": 0.36,
+        "wind_mps": 3.7
       },
       "forecast_72h": {
         "max_rain_mm": 20.7,
@@ -261,7 +243,7 @@
     {
       "code": "SUZHOU_PVG_HAN",
       "name_ko": "쑤저우 → PVG → 하노이",
-      "score": 3,
+      "score": 0,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
