@@ -8,49 +8,49 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 102,
-    "max_difference_km": 181,
+    "average_difference_km": 5139,
+    "max_difference_km": 5258,
     "overall": {
-      "level": "YELLOW",
-      "emoji": "🟡",
-      "label_ko": "차이 있음"
+      "level": "RED",
+      "emoji": "🔴",
+      "label_ko": "차이 큼"
     }
   },
   "comparisons": [
     {
       "forecast_hour": 12,
       "jma_time": "2026-08-29T00:00:00+09:00",
-      "kma_time": "202608290300",
-      "time_gap_hours": 3.0,
+      "kma_time": "202608290000",
+      "time_gap_hours": 0,
       "jma": {
         "lat": 27.5,
         "lon": 117.6
       },
       "kma": {
-        "lat": 27.6,
-        "lon": 117.4
+        "lat": 20.4,
+        "lon": 166.7
       },
-      "difference_km": 23,
+      "difference_km": 5020,
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
+        "level": "RED",
+        "emoji": "🔴",
+        "label_ko": "차이 큼"
       }
     },
     {
       "forecast_hour": 24,
       "jma_time": "2026-08-29T12:00:00+09:00",
-      "kma_time": "202608290300",
-      "time_gap_hours": 9.0,
+      "kma_time": "202608291200",
+      "time_gap_hours": 0,
       "jma": {
         "lat": 27.3,
         "lon": 115.6
       },
       "kma": {
-        "lat": 27.6,
-        "lon": 117.4
+        "lat": 23.0,
+        "lon": 168.0
       },
-      "difference_km": 181,
+      "difference_km": 5258,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -58,5 +58,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-08-28T05:19:36.847573+00:00"
+  "generated_at_utc": "2026-08-28T06:15:43.392120+00:00"
 }
