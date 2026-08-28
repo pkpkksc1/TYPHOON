@@ -2,16 +2,16 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-28T06:15:50.459183+00:00",
+  "generated_at_utc": "2026-08-28T11:16:04.315845+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-28T05:17:36.764976+00:00",
+    "jma": "2026-08-28T11:16:04.249127+00:00",
     "weather": "2026-08-28T06:15:50.311832+00:00",
     "risk": "2026-08-28T06:15:50.372258+00:00",
     "flights": "2026-08-28T05:01:50.679957+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-08-28T12:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-28T05:17:36.764976+00:00",
+    "typhoon_reference_time": "2026-08-28T18:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-28T11:16:04.249127+00:00",
     "weather_updated_at_utc": "2026-08-28T06:15:50.311832+00:00",
     "impact_updated_at_utc": "2026-08-28T06:15:49.036918+00:00",
     "risk_updated_at_utc": "2026-08-28T06:15:50.372258+00:00",
@@ -21,30 +21,30 @@
     "number": "2618",
     "name": "SAUDEL",
     "current": {
-      "time": "2026-08-28T12:00:00+09:00",
-      "lat": 27.9,
-      "lon": 120.1,
-      "pressure_hpa": 980.0,
-      "max_wind_mps": 28.3,
-      "movement_direction": "西",
-      "movement_speed_kmh": 37.0
+      "time": "2026-08-28T18:00:00+09:00",
+      "lat": 27.1,
+      "lon": 118.4,
+      "pressure_hpa": 990.0,
+      "max_wind_mps": 23.1,
+      "movement_direction": "西南西",
+      "movement_speed_kmh": 31.5
     },
     "forecast_track": [
       {
         "forecast_hour": 12,
-        "time": "2026-08-29T00:00:00+09:00",
-        "lat": 27.5,
-        "lon": 117.6,
+        "time": "2026-08-29T06:00:00+09:00",
+        "lat": 27.4,
+        "lon": 116.4,
         "pressure_hpa": 994.0,
         "max_wind_mps": 0.0,
         "movement_direction": "西"
       },
       {
         "forecast_hour": 24,
-        "time": "2026-08-29T12:00:00+09:00",
-        "lat": 27.3,
-        "lon": 115.6,
-        "pressure_hpa": 998.0,
+        "time": "2026-08-29T18:00:00+09:00",
+        "lat": 27.0,
+        "lon": 114.6,
+        "pressure_hpa": 996.0,
         "max_wind_mps": 0.0,
         "movement_direction": "西"
       }
