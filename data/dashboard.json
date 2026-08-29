@@ -2,12 +2,12 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-29T02:24:57.519317+00:00",
+  "generated_at_utc": "2026-08-29T02:57:13.100430+00:00",
   "source_updated_at_utc": {
     "jma": "2026-08-29T02:05:04.622660+00:00",
     "weather": "2026-08-29T02:24:57.369569+00:00",
     "risk": "2026-08-29T02:24:57.429738+00:00",
-    "flights": "2026-08-28T05:01:50.679957+00:00"
+    "flights": "2026-08-29T02:57:13.030297+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-08-29T03:00:00+09:00",
@@ -282,21 +282,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-08-27T02:00:00+09:00",
-        "estimated_local": "2026-08-27T02:00:00+09:00",
-        "actual_local": "2026-08-27T01:39:00+09:00",
-        "display_time_local": "2026-08-27 01:39",
+        "scheduled_local": "2026-08-29T02:00:00+09:00",
+        "estimated_local": "2026-08-29T02:00:00+09:00",
+        "actual_local": "2026-08-29T01:41:00+09:00",
+        "display_time_local": "2026-08-29 01:41",
         "display_label_ko": "실제 출발",
-        "delay_minutes": -21,
+        "delay_minutes": -19,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-27T03:10:00+08:00",
-        "estimated_local": "2026-08-27T02:01:00+08:00",
-        "actual_local": "2026-08-27T01:57:00+08:00",
-        "display_time_local": "2026-08-27 01:57",
+        "scheduled_local": "2026-08-29T03:10:00+08:00",
+        "estimated_local": "2026-08-29T02:00:00+08:00",
+        "actual_local": "2026-08-29T02:08:00+08:00",
+        "display_time_local": "2026-08-29 02:08",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -73,
+        "delay_minutes": -62,
         "timezone_label_ko": "중국시간"
       }
     },
@@ -336,19 +336,19 @@
         "label_ko": "출발 예정"
       },
       "departure": {
-        "scheduled_local": "2026-08-28T16:00:00+08:00",
-        "estimated_local": "2026-08-28T16:00:00+08:00",
+        "scheduled_local": "2026-08-29T16:00:00+08:00",
+        "estimated_local": "2026-08-29T16:00:00+08:00",
         "actual_local": null,
-        "display_time_local": "2026-08-28 16:00",
+        "display_time_local": "2026-08-29 16:00",
         "display_label_ko": "예상 출발",
         "delay_minutes": 0,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-28T19:40:00+08:00",
+        "scheduled_local": "2026-08-29T19:40:00+08:00",
         "estimated_local": null,
         "actual_local": null,
-        "display_time_local": "2026-08-28 19:40",
+        "display_time_local": "2026-08-29 19:40",
         "display_label_ko": "예정 도착",
         "delay_minutes": null,
         "timezone_label_ko": "필리핀시간"
@@ -360,7 +360,7 @@
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
-        "label_ko": "운항 중"
+        "label_ko": "도착 확인 대기"
       },
       "departure": {
         "scheduled_local": "2026-08-28T05:05:00+08:00",
@@ -373,11 +373,11 @@
       },
       "arrival": {
         "scheduled_local": "2026-08-28T08:10:00+09:00",
-        "estimated_local": null,
+        "estimated_local": "2026-08-28T09:06:00+09:00",
         "actual_local": null,
-        "display_time_local": "2026-08-28 08:10",
-        "display_label_ko": "예정 도착",
-        "delay_minutes": null,
+        "display_time_local": "2026-08-28 09:06",
+        "display_label_ko": "예상 도착",
+        "delay_minutes": 56,
         "timezone_label_ko": "한국시간"
       }
     },
@@ -413,10 +413,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-08",
-    "monthly_requests": 20,
+    "monthly_requests": 25,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-08-28T05:01:50.679957+00:00",
+    "last_fetch_at_utc": "2026-08-29T02:57:13.030297+00:00",
     "tracking_started_at_utc": "2026-08-22T09:33:34.625601+00:00"
   },
   "attribution": [
