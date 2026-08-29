@@ -2,54 +2,22 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-29T03:21:21.969966+00:00",
+  "generated_at_utc": "2026-08-29T10:24:15.097275+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-29T02:05:04.622660+00:00",
+    "jma": "2026-08-29T10:24:14.863796+00:00",
     "weather": "2026-08-29T02:24:57.369569+00:00",
-    "risk": "2026-08-29T02:24:57.429738+00:00",
+    "risk": "2026-08-29T09:15:07.060071+00:00",
     "flights": "2026-08-29T02:57:13.030297+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-08-29T03:00:00+09:00",
-    "jma_updated_at_utc": "2026-08-29T02:05:04.622660+00:00",
+    "typhoon_reference_time": null,
+    "jma_updated_at_utc": "2026-08-29T10:24:14.863796+00:00",
     "weather_updated_at_utc": "2026-08-29T02:24:57.369569+00:00",
     "impact_updated_at_utc": "2026-08-29T02:24:55.922435+00:00",
-    "risk_updated_at_utc": "2026-08-29T02:24:57.429738+00:00",
+    "risk_updated_at_utc": "2026-08-29T09:15:07.060071+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
-  "typhoon": {
-    "number": "2618",
-    "name": "SAUDEL",
-    "current": {
-      "time": "2026-08-29T03:00:00+09:00",
-      "lat": 27.0,
-      "lon": 116.0,
-      "pressure_hpa": 996.0,
-      "max_wind_mps": null,
-      "movement_direction": "西",
-      "movement_speed_kmh": 27.8
-    },
-    "forecast_track": [
-      {
-        "forecast_hour": 9,
-        "time": "2026-08-29T12:00:00+09:00",
-        "lat": 27.2,
-        "lon": 115.5,
-        "pressure_hpa": 996.0,
-        "max_wind_mps": 0.0,
-        "movement_direction": "西"
-      },
-      {
-        "forecast_hour": 21,
-        "time": "2026-08-30T00:00:00+09:00",
-        "lat": 26.4,
-        "lon": 113.0,
-        "pressure_hpa": 998.0,
-        "max_wind_mps": 0.0,
-        "movement_direction": "西南西"
-      }
-    ]
-  },
+  "typhoon": {},
   "forecast_comparison": {
     "emoji": "🔴",
     "label_ko": "차이 큼",
