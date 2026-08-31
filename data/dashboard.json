@@ -2,22 +2,72 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-08-31T13:35:41.636042+00:00",
+  "generated_at_utc": "2026-08-31T19:38:52.054617+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-08-31T13:35:41.574245+00:00",
+    "jma": "2026-08-31T19:38:52.000509+00:00",
     "weather": "2026-08-29T02:24:57.369569+00:00",
-    "risk": "2026-08-31T07:16:23.439583+00:00",
+    "risk": "2026-08-31T15:15:33.708099+00:00",
     "flights": "2026-08-30T23:01:38.831471+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": null,
-    "jma_updated_at_utc": "2026-08-31T13:35:41.574245+00:00",
+    "typhoon_reference_time": "2026-09-01T03:00:00+09:00",
+    "jma_updated_at_utc": "2026-08-31T19:38:52.000509+00:00",
     "weather_updated_at_utc": "2026-08-29T02:24:57.369569+00:00",
     "impact_updated_at_utc": "2026-08-29T02:24:55.922435+00:00",
-    "risk_updated_at_utc": "2026-08-31T07:16:23.439583+00:00",
+    "risk_updated_at_utc": "2026-08-31T15:15:33.708099+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
-  "typhoon": {},
+  "typhoon": {
+    "number": "2618",
+    "name": "SAUDEL",
+    "current": {
+      "time": "2026-09-01T03:00:00+09:00",
+      "lat": 19.2,
+      "lon": 112.0,
+      "pressure_hpa": 996.0,
+      "max_wind_mps": 18.0,
+      "movement_direction": "東南東",
+      "movement_speed_kmh": 13.0
+    },
+    "forecast_track": [
+      {
+        "forecast_hour": 12,
+        "time": "2026-09-01T15:00:00+09:00",
+        "lat": 20.3,
+        "lon": 114.6,
+        "pressure_hpa": 994.0,
+        "max_wind_mps": 18.0,
+        "movement_direction": "東北東"
+      },
+      {
+        "forecast_hour": 24,
+        "time": "2026-09-02T03:00:00+09:00",
+        "lat": 21.1,
+        "lon": 116.1,
+        "pressure_hpa": 994.0,
+        "max_wind_mps": 18.0,
+        "movement_direction": "東北東"
+      },
+      {
+        "forecast_hour": 48,
+        "time": "2026-09-03T03:00:00+09:00",
+        "lat": 22.1,
+        "lon": 117.5,
+        "pressure_hpa": 994.0,
+        "max_wind_mps": 18.0,
+        "movement_direction": "北東"
+      },
+      {
+        "forecast_hour": 72,
+        "time": "2026-09-04T03:00:00+09:00",
+        "lat": 21.9,
+        "lon": 116.9,
+        "pressure_hpa": 996.0,
+        "max_wind_mps": 0.0,
+        "movement_direction": null
+      }
+    ]
+  },
   "forecast_comparison": {
     "emoji": "🔴",
     "label_ko": "차이 큼",
