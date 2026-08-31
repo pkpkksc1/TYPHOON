@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 5376,
-    "max_difference_km": 5506,
+    "average_difference_km": 5882,
+    "max_difference_km": 6105,
     "overall": {
       "level": "RED",
       "emoji": "🔴",
@@ -18,19 +18,19 @@
   },
   "comparisons": [
     {
-      "forecast_hour": 9,
-      "jma_time": "2026-08-29T12:00:00+09:00",
-      "kma_time": "202608292100",
-      "time_gap_hours": 9.0,
+      "forecast_hour": 12,
+      "jma_time": "2026-09-01T15:00:00+09:00",
+      "kma_time": "202609010900",
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 27.2,
-        "lon": 115.5
+        "lat": 20.3,
+        "lon": 114.6
       },
       "kma": {
-        "lat": 25.1,
-        "lon": 168.4
+        "lat": 42.7,
+        "lon": 169.6
       },
-      "difference_km": 5246,
+      "difference_km": 5660,
       "status": {
         "level": "RED",
         "emoji": "🔴",
@@ -38,25 +38,45 @@
       }
     },
     {
-      "forecast_hour": 21,
-      "jma_time": "2026-08-30T00:00:00+09:00",
-      "kma_time": "202608292100",
-      "time_gap_hours": 3.0,
+      "forecast_hour": 24,
+      "jma_time": "2026-09-02T03:00:00+09:00",
+      "kma_time": "202609020900",
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 26.4,
-        "lon": 113.0
+        "lat": 21.1,
+        "lon": 116.1
       },
       "kma": {
-        "lat": 25.1,
-        "lon": 168.4
+        "lat": 48.5,
+        "lon": 176.5
       },
-      "difference_km": 5506,
+      "difference_km": 6105,
       "status": {
         "level": "RED",
         "emoji": "🔴",
         "label_ko": "차이 큼"
       }
+    },
+    {
+      "forecast_hour": 48,
+      "jma_time": "2026-09-03T03:00:00+09:00",
+      "status": {
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "KMA 비교자료 없음"
+      },
+      "time_gap_hours": 18.0
+    },
+    {
+      "forecast_hour": 72,
+      "jma_time": "2026-09-04T03:00:00+09:00",
+      "status": {
+        "level": "NO_DATA",
+        "emoji": "⚪",
+        "label_ko": "KMA 비교자료 없음"
+      },
+      "time_gap_hours": 42.0
     }
   ],
-  "generated_at_utc": "2026-08-29T02:05:08.706236+00:00"
+  "generated_at_utc": "2026-08-31T19:59:17.547911+00:00"
 }
