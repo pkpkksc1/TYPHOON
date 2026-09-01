@@ -1734,7 +1734,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-09-01T22:47:19.276808+00:00",
+  "generated_at_utc": "2026-09-01T23:59:51.481986+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
@@ -1747,7 +1747,7 @@
     "name_en": "SAUDEL",
     "name_cn": "沙德尔",
     "number": 2618,
-    "time_utc": "202609012200",
+    "time_utc": "202609012300",
     "grade": "TS",
     "grade_ko": "열대폭풍",
     "pressure_hpa": 992,
@@ -1770,7 +1770,7 @@
           300,
           300,
           100,
-          3328557
+          3328577
         ],
         "meaning_ko": "30kt 풍권"
       }
@@ -1778,11 +1778,11 @@
   },
   "agency_time_comparison": {
     "jtwc_time_utc": "2026-09-01T21:00:00+00:00",
-    "cma_time_utc": "2026-09-01T22:00:00+00:00",
+    "cma_time_utc": "2026-09-01T23:00:00+00:00",
     "jtwc_time_china": "09/02 05:00",
-    "cma_time_china": "09/02 06:00",
-    "difference_hours": 1.0,
-    "label_ko": "기관 발표시각 차이 1시간",
+    "cma_time_china": "09/02 07:00",
+    "difference_hours": 2.0,
+    "label_ko": "기관 발표시각 차이 2시간",
     "same_issue_time": false,
     "jtwc_time_source": "typhoon.jtwc_issue_time_utc",
     "cma_time_source": "cma.current.time_utc",

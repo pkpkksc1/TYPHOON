@@ -18,12 +18,12 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-09-02 06:47"
+        "localtime": "2026-09-02 07:59"
       },
       "current": {
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.56,
-        "wind_mps": 3.5,
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.26,
+        "wind_mps": 3.9,
         "wind_dir": "NNE",
         "condition": "Light rain shower"
       },
@@ -619,14 +619,14 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-09-02 06:47"
+        "localtime": "2026-09-02 07:59"
       },
       "current": {
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.0,
-        "wind_mps": 2.7,
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.06,
+        "wind_mps": 3.5,
         "wind_dir": "ENE",
-        "condition": "Overcast"
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1220,12 +1220,12 @@
         "country": "South Korea",
         "lat": 37.45,
         "lon": 126.417,
-        "localtime": "2026-09-02 07:47"
+        "localtime": "2026-09-02 08:59"
       },
       "current": {
-        "last_updated": "2026-09-02 07:30",
+        "last_updated": "2026-09-02 08:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.0,
+        "wind_mps": 1.1,
         "wind_dir": "NNE",
         "condition": "Overcast"
       },
@@ -1290,7 +1290,7 @@
           "time": "2026-09-02 07:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 29,
-          "wind_mps": 1.0,
+          "wind_mps": 0.4,
           "wind_dir": "NNE",
           "condition": "Overcast"
         },
@@ -1821,14 +1821,14 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-09-02 06:47"
+        "localtime": "2026-09-02 07:59"
       },
       "current": {
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.09,
-        "wind_mps": 8.0,
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.24,
+        "wind_mps": 7.9,
         "wind_dir": "SW",
-        "condition": "Patchy rain nearby"
+        "condition": "Light rain shower"
       },
       "hourly_forecast": [
         {
@@ -2417,17 +2417,17 @@
         "lon": 105.807
       },
       "resolved_location": {
-        "name": "Phu Xa ÃOai",
+        "name": "Noi Bai",
         "region": "",
         "country": "Vietnam",
-        "lat": 21.183,
+        "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-09-02 05:47"
+        "localtime": "2026-09-02 06:59"
       },
       "current": {
-        "last_updated": "2026-09-02 05:30",
+        "last_updated": "2026-09-02 06:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.3,
+        "wind_mps": 1.4,
         "wind_dir": "WNW",
         "condition": "Smoky haze"
       },
@@ -3023,12 +3023,12 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-09-02 06:47"
+        "localtime": "2026-09-02 07:59"
       },
       "current": {
-        "last_updated": "2026-09-02 06:45",
-        "rain_mm": 0.11,
-        "wind_mps": 4.1,
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.08,
+        "wind_mps": 5.0,
         "wind_dir": "SW",
         "condition": "Patchy rain nearby"
       },
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-09-01T22:47:20.617148+00:00"
+  "generated_at_utc": "2026-09-01T23:59:52.930081+00:00"
 }

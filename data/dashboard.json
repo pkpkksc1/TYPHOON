@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-01T23:39:38.058527+00:00",
+  "generated_at_utc": "2026-09-01T23:59:53.056624+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-01T22:47:08.980478+00:00",
-    "weather": "2026-09-01T22:47:20.617148+00:00",
-    "risk": "2026-09-01T22:47:20.946855+00:00",
+    "weather": "2026-09-01T23:59:52.930081+00:00",
+    "risk": "2026-09-01T23:59:52.980331+00:00",
     "flights": "2026-09-01T22:54:24.779358+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-09-02T06:00:00+09:00",
     "jma_updated_at_utc": "2026-09-01T22:47:08.980478+00:00",
-    "weather_updated_at_utc": "2026-09-01T22:47:20.617148+00:00",
-    "impact_updated_at_utc": "2026-09-01T22:47:19.276808+00:00",
-    "risk_updated_at_utc": "2026-09-01T22:47:20.946855+00:00",
+    "weather_updated_at_utc": "2026-09-01T23:59:52.930081+00:00",
+    "impact_updated_at_utc": "2026-09-01T23:59:51.481986+00:00",
+    "risk_updated_at_utc": "2026-09-01T23:59:52.980331+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -86,7 +86,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 18,
+      "score": 13,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -100,9 +100,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.56,
-        "wind_mps": 3.5
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.26,
+        "wind_mps": 3.9
       },
       "forecast_72h": {
         "max_rain_mm": 2.53,
@@ -113,7 +113,7 @@
     },
     "PVG": {
       "name_ko": "푸동 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -127,9 +127,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.0,
-        "wind_mps": 2.7
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.06,
+        "wind_mps": 3.5
       },
       "forecast_72h": {
         "max_rain_mm": 2.75,
@@ -154,9 +154,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 07:30",
+        "last_updated": "2026-09-02 08:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.0
+        "wind_mps": 1.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.01,
@@ -181,9 +181,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 06:30",
-        "rain_mm": 0.09,
-        "wind_mps": 8.0
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.24,
+        "wind_mps": 7.9
       },
       "forecast_72h": {
         "max_rain_mm": 6.08,
@@ -208,9 +208,9 @@
       "trend_ko": "접근 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 05:30",
+        "last_updated": "2026-09-02 06:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.3
+        "wind_mps": 1.4
       },
       "forecast_72h": {
         "max_rain_mm": 0.89,
@@ -235,9 +235,9 @@
       "trend_ko": "멀어지는 중",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-02 06:45",
-        "rain_mm": 0.11,
-        "wind_mps": 4.1
+        "last_updated": "2026-09-02 07:45",
+        "rain_mm": 0.08,
+        "wind_mps": 5.0
       },
       "forecast_72h": {
         "max_rain_mm": 1.64,
@@ -291,7 +291,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
