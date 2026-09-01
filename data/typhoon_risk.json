@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-01T14:45:03.516769+00:00",
-    "weather": "2026-09-01T14:45:04.848610+00:00"
+    "impact": "2026-09-01T17:25:37.182924+00:00",
+    "weather": "2026-09-01T17:25:38.431879+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -19,7 +19,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 83
+    "average_difference_km": 85
   },
   "locations": {
     "SUZHOU": {
@@ -42,9 +42,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 22:30",
-        "current_rain_mm": 0.11,
-        "current_wind_mps": 2.0,
+        "current_last_updated": "2026-09-02 01:15",
+        "current_rain_mm": 0.29,
+        "current_wind_mps": 2.5,
         "max_72h_rain_mm": 0.93,
         "max_72h_rain_time": "2026-09-02 03:00",
         "max_72h_wind_mps": 6.2,
@@ -76,7 +76,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 22:30",
+        "current_last_updated": "2026-09-02 01:15",
         "current_rain_mm": 0.0,
         "current_wind_mps": 2.2,
         "max_72h_rain_mm": 1.41,
@@ -110,13 +110,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 23:30",
+        "current_last_updated": "2026-09-02 02:15",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.6,
-        "max_72h_rain_mm": 8.32,
-        "max_72h_rain_time": "2026-09-01 00:00",
-        "max_72h_wind_mps": 4.4,
-        "max_72h_wind_time": "2026-09-03 20:00"
+        "current_wind_mps": 1.0,
+        "max_72h_rain_mm": 0.08,
+        "max_72h_rain_time": "2026-09-02 09:00",
+        "max_72h_wind_mps": 6.2,
+        "max_72h_wind_time": "2026-09-04 09:00"
       },
       "score_detail": {
         "distance": 0,
@@ -144,11 +144,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 22:30",
-        "current_rain_mm": 0.1,
-        "current_wind_mps": 8.1,
-        "max_72h_rain_mm": 1.55,
-        "max_72h_rain_time": "2026-09-03 19:00",
+        "current_last_updated": "2026-09-02 01:15",
+        "current_rain_mm": 0.2,
+        "current_wind_mps": 7.9,
+        "max_72h_rain_mm": 5.22,
+        "max_72h_rain_time": "2026-09-04 17:00",
         "max_72h_wind_mps": 10.7,
         "max_72h_wind_time": "2026-09-02 12:00"
       },
@@ -178,13 +178,13 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 21:30",
+        "current_last_updated": "2026-09-02 00:15",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.0,
         "max_72h_rain_mm": 0.03,
         "max_72h_rain_time": "2026-09-02 22:00",
-        "max_72h_wind_mps": 4.2,
-        "max_72h_wind_time": "2026-09-01 13:00"
+        "max_72h_wind_mps": 4.7,
+        "max_72h_wind_time": "2026-09-04 19:00"
       },
       "score_detail": {
         "distance": 10,
@@ -212,11 +212,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 22:45",
-        "current_rain_mm": 0.04,
-        "current_wind_mps": 4.3,
-        "max_72h_rain_mm": 1.16,
-        "max_72h_rain_time": "2026-09-01 12:00",
+        "current_last_updated": "2026-09-02 01:15",
+        "current_rain_mm": 0.17,
+        "current_wind_mps": 4.9,
+        "max_72h_rain_mm": 1.0,
+        "max_72h_rain_time": "2026-09-04 16:00",
         "max_72h_wind_mps": 10.6,
         "max_72h_wind_time": "2026-09-02 13:00"
       },
@@ -313,6 +313,6 @@
       "risk_location": "PVG"
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-09-01T16:48:51.846624+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-09-01T17:25:38.493065+00:00"
 }

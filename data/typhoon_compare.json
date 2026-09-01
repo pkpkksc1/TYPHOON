@@ -8,7 +8,7 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 83,
+    "average_difference_km": 85,
     "max_difference_km": 151,
     "overall": {
       "level": "YELLOW",
@@ -19,36 +19,16 @@
   "comparisons": [
     {
       "forecast_hour": 12,
-      "jma_time": "2026-09-02T09:00:00+09:00",
+      "jma_time": "2026-09-02T12:00:00+09:00",
       "kma_time": "202609020900",
-      "time_gap_hours": 0,
+      "time_gap_hours": 3.0,
       "jma": {
-        "lat": 21.6,
-        "lon": 116.5
+        "lat": 21.7,
+        "lon": 116.9
       },
       "kma": {
         "lat": 21.5,
         "lon": 116.8
-      },
-      "difference_km": 33,
-      "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "거의 일치"
-      }
-    },
-    {
-      "forecast_hour": 24,
-      "jma_time": "2026-09-02T21:00:00+09:00",
-      "kma_time": "202609022100",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 22.3,
-        "lon": 117.6
-      },
-      "kma": {
-        "lat": 22.1,
-        "lon": 117.7
       },
       "difference_km": 25,
       "status": {
@@ -58,7 +38,27 @@
       }
     },
     {
-      "forecast_hour": 48,
+      "forecast_hour": 24,
+      "jma_time": "2026-09-03T00:00:00+09:00",
+      "kma_time": "202609022100",
+      "time_gap_hours": 3.0,
+      "jma": {
+        "lat": 22.4,
+        "lon": 117.5
+      },
+      "kma": {
+        "lat": 22.1,
+        "lon": 117.7
+      },
+      "difference_km": 39,
+      "status": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
+      }
+    },
+    {
+      "forecast_hour": 45,
       "jma_time": "2026-09-03T21:00:00+09:00",
       "kma_time": "202609032100",
       "time_gap_hours": 0,
@@ -78,7 +78,7 @@
       }
     },
     {
-      "forecast_hour": 72,
+      "forecast_hour": 69,
       "jma_time": "2026-09-04T21:00:00+09:00",
       "kma_time": "202609042100",
       "time_gap_hours": 0,
@@ -98,7 +98,7 @@
       }
     },
     {
-      "forecast_hour": 96,
+      "forecast_hour": 93,
       "jma_time": "2026-09-05T21:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -108,5 +108,5 @@
       "time_gap_hours": 24.0
     }
   ],
-  "generated_at_utc": "2026-09-01T14:44:55.378392+00:00"
+  "generated_at_utc": "2026-09-01T17:25:29.185082+00:00"
 }
