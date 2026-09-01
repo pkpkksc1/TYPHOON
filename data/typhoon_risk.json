@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-01T09:57:56.894475+00:00",
-    "weather": "2026-09-01T09:57:58.390809+00:00"
+    "impact": "2026-09-01T12:42:55.414236+00:00",
+    "weather": "2026-09-01T12:42:57.361854+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -19,7 +19,7 @@
   "forecast_confidence": {
     "emoji": "🟡",
     "label_ko": "차이 있음",
-    "average_difference_km": 63
+    "average_difference_km": 54
   },
   "locations": {
     "SUZHOU": {
@@ -42,9 +42,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 17:45",
-        "current_rain_mm": 0.01,
-        "current_wind_mps": 3.7,
+        "current_last_updated": "2026-09-01 20:30",
+        "current_rain_mm": 0.32,
+        "current_wind_mps": 2.8,
         "max_72h_rain_mm": 1.59,
         "max_72h_rain_time": "2026-09-02 06:00",
         "max_72h_wind_mps": 6.1,
@@ -76,9 +76,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 17:45",
+        "current_last_updated": "2026-09-01 20:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.4,
+        "current_wind_mps": 2.8,
         "max_72h_rain_mm": 1.78,
         "max_72h_rain_time": "2026-09-02 05:00",
         "max_72h_wind_mps": 5.7,
@@ -93,7 +93,7 @@
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -110,9 +110,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 18:45",
-        "current_rain_mm": 0.03,
-        "current_wind_mps": 2.7,
+        "current_last_updated": "2026-09-01 21:30",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 1.6,
         "max_72h_rain_mm": 8.32,
         "max_72h_rain_time": "2026-09-01 00:00",
         "max_72h_wind_mps": 4.1,
@@ -120,7 +120,7 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
@@ -144,9 +144,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 17:45",
-        "current_rain_mm": 0.17,
-        "current_wind_mps": 8.7,
+        "current_last_updated": "2026-09-01 20:30",
+        "current_rain_mm": 0.08,
+        "current_wind_mps": 8.1,
         "max_72h_rain_mm": 0.87,
         "max_72h_rain_time": "2026-09-03 18:00",
         "max_72h_wind_mps": 11.4,
@@ -178,11 +178,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 16:45",
+        "current_last_updated": "2026-09-01 19:30",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 2.5,
+        "current_wind_mps": 2.7,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-01 16:45",
+        "max_72h_rain_time": "2026-09-01 19:30",
         "max_72h_wind_mps": 4.3,
         "max_72h_wind_time": "2026-09-02 10:00"
       },
@@ -212,9 +212,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 17:45",
-        "current_rain_mm": 0.14,
-        "current_wind_mps": 6.4,
+        "current_last_updated": "2026-09-01 20:30",
+        "current_rain_mm": 0.02,
+        "current_wind_mps": 5.0,
         "max_72h_rain_mm": 1.16,
         "max_72h_rain_time": "2026-09-01 12:00",
         "max_72h_wind_mps": 11.1,
@@ -231,7 +231,7 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 3,
+      "score": 0,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -313,6 +313,6 @@
       "risk_location": "PVG"
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-09-01T11:55:07.755998+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-09-01T12:42:57.403817+00:00"
 }
