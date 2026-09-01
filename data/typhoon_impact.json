@@ -8,14 +8,14 @@
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
-    "jtwc_id": null,
-    "jtwc_warning_number": null,
-    "jtwc_issue_time_utc": null
+    "jtwc_id": "17W",
+    "jtwc_warning_number": 40,
+    "jtwc_issue_time_utc": "2026-09-01T09:00:00Z"
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 1533
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 63
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -31,57 +31,204 @@
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 1443,
-      "closest_distance_km": 1001,
-      "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 45,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 1400,
+      "closest_distance_km": 1030,
+      "closest_time": "2026-09-03T06:00:00Z",
+      "closest_forecast_hour": 48,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 45,
-      "risk_time": "2026-09-03T09:00:00+09:00",
+      "risk_forecast_hour": 48,
+      "risk_time": "2026-09-03T06:00:00Z",
       "risk_detail": {
-        "center_distance_km": 1001,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 1030,
+        "direction_from_typhoon": "NE",
+        "bearing_deg": 21,
+        "wind_radius_34_km": 74,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": 956,
+        "distance_to_34kt_radius_ratio": 13.91,
+        "boundary_status_ko": "강풍 영향권까지 956 km",
+        "max_wind_mps": 18.0,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 1443
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 1400,
+          "bearing_deg": 25,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1400,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1400 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 1240
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 1222,
+          "bearing_deg": 21,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1222,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1222 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 1150
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 1118,
+          "bearing_deg": 18,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1118,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1118 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 1001
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 1052,
+          "bearing_deg": 17,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1052,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1052 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 1042
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 1030,
+          "bearing_deg": 21,
+          "quadrant": "NE",
+          "wind_radius_34_km": 74,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 956,
+          "distance_to_34kt_radius_ratio": 13.91,
+          "boundary_status_ko": "강풍 영향권까지 956 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 1128
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 1085,
+          "bearing_deg": 27,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 1202,
+          "bearing_deg": 33,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ],
       "risk_summary": {
@@ -92,24 +239,24 @@
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "JTWC · CMA 모두 강풍 영향권 밖",
+            "basis_ko": "JTWC · CMA 모두 강풍 영향권 밖"
           },
           "jtwc": {
-            "level": "NO_DATA",
-            "emoji": "⚪",
-            "label_ko": "자료 없음",
-            "severity_rank": 0,
-            "basis": "JTWC 현재 위험도 자료 없음",
-            "basis_ko": "JTWC 현재 위험도 자료 없음"
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "강풍 영향권과 충분히 떨어짐"
           },
           "cma": {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "CMA 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "CMA 강풍 영향권과 충분히 떨어짐"
           },
           "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
         },
@@ -118,12 +265,12 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 1001,
-          "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 45,
-          "strong_wind_zone_distance_km": null,
-          "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
+          "basis_ko": "강풍 영향권과 충분히 떨어짐",
+          "closest_distance_km": 1030,
+          "closest_time_utc": "2026-09-03T06:00:00Z",
+          "closest_forecast_hour": 48,
+          "strong_wind_zone_distance_km": 956,
+          "strong_wind_zone_status_ko": "강풍 영향권까지 956 km",
           "source": "JTWC",
           "scope_ko": "향후 5일"
         }
@@ -134,89 +281,236 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
         },
         "jtwc_current_risk": {
-          "level": "NO_DATA",
-          "emoji": "⚪",
-          "label_ko": "자료 없음",
-          "severity_rank": 0,
-          "basis": "JTWC 현재 위험도 자료 없음"
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
         },
         "cma_current_risk": {
           "level": "GREEN",
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 1410,
-          "bearing_deg": 25,
+          "center_distance_km": 1350,
+          "bearing_deg": 23,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 1290,
-          "distance_to_30kt_radius_ratio": 11.75,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1290 km"
+          "distance_to_30kt_boundary_km": 1230,
+          "distance_to_30kt_radius_ratio": 11.25,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1230 km"
         }
       }
     },
     "PVG": {
       "code": "PVG",
       "name_ko": "푸동 국제공항",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 1489,
-      "closest_distance_km": 1022,
-      "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 45,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 1444,
+      "closest_distance_km": 1066,
+      "closest_time": "2026-09-03T06:00:00Z",
+      "closest_forecast_hour": 48,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 45,
-      "risk_time": "2026-09-03T09:00:00+09:00",
+      "risk_forecast_hour": 48,
+      "risk_time": "2026-09-03T06:00:00Z",
       "risk_detail": {
-        "center_distance_km": 1022,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 1066,
+        "direction_from_typhoon": "NE",
+        "bearing_deg": 27,
+        "wind_radius_34_km": 74,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": 992,
+        "distance_to_34kt_radius_ratio": 14.39,
+        "boundary_status_ko": "강풍 영향권까지 992 km",
+        "max_wind_mps": 18.0,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 1489
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 1444,
+          "bearing_deg": 29,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1444,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1444 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 1277
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 1258,
+          "bearing_deg": 26,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1258,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1258 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 1178
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 1148,
+          "bearing_deg": 24,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1148,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1148 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 1022
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 1080,
+          "bearing_deg": 23,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1080,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1080 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 1070
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 1066,
+          "bearing_deg": 27,
+          "quadrant": "NE",
+          "wind_radius_34_km": 74,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 992,
+          "distance_to_34kt_radius_ratio": 14.39,
+          "boundary_status_ko": "강풍 영향권까지 992 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 1161
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 1133,
+          "bearing_deg": 33,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 1261,
+          "bearing_deg": 38,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ],
       "risk_summary": {
@@ -227,24 +521,24 @@
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "JTWC · CMA 모두 강풍 영향권 밖",
+            "basis_ko": "JTWC · CMA 모두 강풍 영향권 밖"
           },
           "jtwc": {
-            "level": "NO_DATA",
-            "emoji": "⚪",
-            "label_ko": "자료 없음",
-            "severity_rank": 0,
-            "basis": "JTWC 현재 위험도 자료 없음",
-            "basis_ko": "JTWC 현재 위험도 자료 없음"
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "강풍 영향권과 충분히 떨어짐"
           },
           "cma": {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "CMA 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "CMA 강풍 영향권과 충분히 떨어짐"
           },
           "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
         },
@@ -253,12 +547,12 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 1022,
-          "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 45,
-          "strong_wind_zone_distance_km": null,
-          "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
+          "basis_ko": "강풍 영향권과 충분히 떨어짐",
+          "closest_distance_km": 1066,
+          "closest_time_utc": "2026-09-03T06:00:00Z",
+          "closest_forecast_hour": 48,
+          "strong_wind_zone_distance_km": 992,
+          "strong_wind_zone_status_ko": "강풍 영향권까지 992 km",
           "source": "JTWC",
           "scope_ko": "향후 5일"
         }
@@ -269,89 +563,236 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
         },
         "jtwc_current_risk": {
-          "level": "NO_DATA",
-          "emoji": "⚪",
-          "label_ko": "자료 없음",
-          "severity_rank": 0,
-          "basis": "JTWC 현재 위험도 자료 없음"
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
         },
         "cma_current_risk": {
           "level": "GREEN",
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 1454,
-          "bearing_deg": 29,
+          "center_distance_km": 1389,
+          "bearing_deg": 28,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 1334,
-          "distance_to_30kt_radius_ratio": 12.11,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1334 km"
+          "distance_to_30kt_boundary_km": 1269,
+          "distance_to_30kt_radius_ratio": 11.58,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1269 km"
         }
       }
     },
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 2309,
-      "closest_distance_km": 1839,
-      "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 45,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 2264,
+      "closest_distance_km": 1887,
+      "closest_time": "2026-09-03T06:00:00Z",
+      "closest_forecast_hour": 48,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 45,
-      "risk_time": "2026-09-03T09:00:00+09:00",
+      "risk_forecast_hour": 48,
+      "risk_time": "2026-09-03T06:00:00Z",
       "risk_detail": {
-        "center_distance_km": 1839,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 1887,
+        "direction_from_typhoon": "NE",
+        "bearing_deg": 27,
+        "wind_radius_34_km": 74,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": 1813,
+        "distance_to_34kt_radius_ratio": 25.47,
+        "boundary_status_ko": "강풍 영향권까지 1813 km",
+        "max_wind_mps": 18.0,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 2309
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 2264,
+          "bearing_deg": 28,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 2264,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 2264 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 2098
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 2079,
+          "bearing_deg": 27,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 2079,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 2079 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 1998
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 1968,
+          "bearing_deg": 26,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1968,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1968 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 1839
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 1900,
+          "bearing_deg": 25,
+          "quadrant": "NE",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1900,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1900 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 1890
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 1887,
+          "bearing_deg": 27,
+          "quadrant": "NE",
+          "wind_radius_34_km": 74,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1813,
+          "distance_to_34kt_radius_ratio": 25.47,
+          "boundary_status_ko": "강풍 영향권까지 1813 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 1981
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 1952,
+          "bearing_deg": 30,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 2072,
+          "bearing_deg": 33,
+          "quadrant": "NE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ],
       "risk_summary": {
@@ -362,24 +803,24 @@
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "JTWC · CMA 모두 강풍 영향권 밖",
+            "basis_ko": "JTWC · CMA 모두 강풍 영향권 밖"
           },
           "jtwc": {
-            "level": "NO_DATA",
-            "emoji": "⚪",
-            "label_ko": "자료 없음",
-            "severity_rank": 0,
-            "basis": "JTWC 현재 위험도 자료 없음",
-            "basis_ko": "JTWC 현재 위험도 자료 없음"
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "강풍 영향권과 충분히 떨어짐"
           },
           "cma": {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "CMA 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "CMA 강풍 영향권과 충분히 떨어짐"
           },
           "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
         },
@@ -388,12 +829,12 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 1839,
-          "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 45,
-          "strong_wind_zone_distance_km": null,
-          "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
+          "basis_ko": "강풍 영향권과 충분히 떨어짐",
+          "closest_distance_km": 1887,
+          "closest_time_utc": "2026-09-03T06:00:00Z",
+          "closest_forecast_hour": 48,
+          "strong_wind_zone_distance_km": 1813,
+          "strong_wind_zone_status_ko": "강풍 영향권까지 1813 km",
           "source": "JTWC",
           "scope_ko": "향후 5일"
         }
@@ -404,146 +845,440 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
         },
         "jtwc_current_risk": {
-          "level": "NO_DATA",
-          "emoji": "⚪",
-          "label_ko": "자료 없음",
-          "severity_rank": 0,
-          "basis": "JTWC 현재 위험도 자료 없음"
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
         },
         "cma_current_risk": {
           "level": "GREEN",
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 2274,
-          "bearing_deg": 28,
+          "center_distance_km": 2210,
+          "bearing_deg": 27,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 2154,
-          "distance_to_30kt_radius_ratio": 18.95,
-          "boundary_status_ko": "CMA 강풍 영향권까지 2154 km"
+          "distance_to_30kt_boundary_km": 2090,
+          "distance_to_30kt_radius_ratio": 18.42,
+          "boundary_status_ko": "CMA 강풍 영향권까지 2090 km"
         }
       }
     },
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 958,
-      "closest_distance_km": 891,
-      "closest_time": "2026-09-02T12:00:00+09:00",
-      "closest_forecast_hour": 24,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 931,
+      "closest_distance_km": 905,
+      "closest_time": "2026-09-01T18:00:00Z",
+      "closest_forecast_hour": 12,
+      "trend": "MOVING_AWAY",
+      "trend_ko": "멀어지는 중",
+      "trend_emoji": "↗",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 24,
-      "risk_time": "2026-09-02T12:00:00+09:00",
+      "risk_forecast_hour": 12,
+      "risk_time": "2026-09-01T18:00:00Z",
       "risk_detail": {
-        "center_distance_km": 891,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 905,
+        "direction_from_typhoon": "SE",
+        "bearing_deg": 143,
+        "wind_radius_34_km": 241,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": 664,
+        "distance_to_34kt_radius_ratio": 3.76,
+        "boundary_status_ko": "강풍 영향권까지 664 km",
+        "max_wind_mps": 18.0,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 958
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 931,
+          "bearing_deg": 130,
+          "quadrant": "SE",
+          "wind_radius_34_km": 222,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 709,
+          "distance_to_34kt_radius_ratio": 4.19,
+          "boundary_status_ko": "강풍 영향권까지 709 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 909
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 905,
+          "bearing_deg": 143,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 664,
+          "distance_to_34kt_radius_ratio": 3.76,
+          "boundary_status_ko": "강풍 영향권까지 664 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 891
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 920,
+          "bearing_deg": 151,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 679,
+          "distance_to_34kt_radius_ratio": 3.82,
+          "boundary_status_ko": "강풍 영향권까지 679 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 954
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 951,
+          "bearing_deg": 155,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 710,
+          "distance_to_34kt_radius_ratio": 3.95,
+          "boundary_status_ko": "강풍 영향권까지 710 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 961
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 1018,
+          "bearing_deg": 153,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 777,
+          "distance_to_34kt_radius_ratio": 4.23,
+          "boundary_status_ko": "강풍 영향권까지 777 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 935
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 1086,
+          "bearing_deg": 146,
+          "quadrant": "SE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 1168,
+          "bearing_deg": 137,
+          "quadrant": "SE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ]
     },
     "HAN": {
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 857,
-      "closest_distance_km": 857,
-      "closest_time": "2026-09-01T12:00:00+09:00",
-      "closest_forecast_hour": 0,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 904,
+      "closest_distance_km": 825,
+      "closest_time": "2026-09-04T06:00:00Z",
+      "closest_forecast_hour": 72,
+      "trend": "APPROACHING",
+      "trend_ko": "접근 중",
+      "trend_emoji": "↘",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 0,
-      "risk_time": "2026-09-01T12:00:00+09:00",
+      "risk_forecast_hour": 72,
+      "risk_time": "2026-09-04T06:00:00Z",
       "risk_detail": {
-        "center_distance_km": 857,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 825,
+        "direction_from_typhoon": "SW",
+        "bearing_deg": 262,
+        "wind_radius_34_km": null,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": null,
+        "distance_to_34kt_radius_ratio": null,
+        "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+        "max_wind_mps": 10.3,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 857
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 904,
+          "bearing_deg": 280,
+          "quadrant": "NW",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 904,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 904 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 1037
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 1057,
+          "bearing_deg": 273,
+          "quadrant": "NW",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1057,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1057 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 1149
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 1149,
+          "bearing_deg": 269,
+          "quadrant": "SW",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1149,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1149 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 1267
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 1193,
+          "bearing_deg": 266,
+          "quadrant": "SW",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1193,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1193 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 1193
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 1135,
+          "bearing_deg": 264,
+          "quadrant": "SW",
+          "wind_radius_34_km": 0,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 1135,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 0 km · 태풍 중심까지 1135 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 1118
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 1003,
+          "bearing_deg": 262,
+          "quadrant": "SW",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 825,
+          "bearing_deg": 262,
+          "quadrant": "SW",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ],
       "risk_summary": {
@@ -554,24 +1289,24 @@
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "JTWC · CMA 모두 강풍 영향권 밖",
+            "basis_ko": "JTWC · CMA 모두 강풍 영향권 밖"
           },
           "jtwc": {
-            "level": "NO_DATA",
-            "emoji": "⚪",
-            "label_ko": "자료 없음",
-            "severity_rank": 0,
-            "basis": "JTWC 현재 위험도 자료 없음",
-            "basis_ko": "JTWC 현재 위험도 자료 없음"
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "강풍 영향권과 충분히 떨어짐"
           },
           "cma": {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "CMA 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "CMA 강풍 영향권과 충분히 떨어짐"
           },
           "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
         },
@@ -580,12 +1315,12 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 857,
-          "closest_time_utc": "2026-09-01T12:00:00+09:00",
-          "closest_forecast_hour": 0,
+          "basis_ko": "강풍 영향권과 충분히 떨어짐",
+          "closest_distance_km": 825,
+          "closest_time_utc": "2026-09-04T06:00:00Z",
+          "closest_forecast_hour": 72,
           "strong_wind_zone_distance_km": null,
-          "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
+          "strong_wind_zone_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
           "source": "JTWC",
           "scope_ko": "향후 5일"
         }
@@ -596,89 +1331,236 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
         },
         "jtwc_current_risk": {
-          "level": "NO_DATA",
-          "emoji": "⚪",
-          "label_ko": "자료 없음",
-          "severity_rank": 0,
-          "basis": "JTWC 현재 위험도 자료 없음"
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
         },
         "cma_current_risk": {
           "level": "GREEN",
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 906,
-          "bearing_deg": 281,
+          "center_distance_km": 973,
+          "bearing_deg": 278,
           "quadrant": "NW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 100,
-          "distance_to_30kt_boundary_km": 806,
-          "distance_to_30kt_radius_ratio": 9.06,
-          "boundary_status_ko": "CMA 강풍 영향권까지 806 km"
+          "distance_to_30kt_boundary_km": 873,
+          "distance_to_30kt_radius_ratio": 9.73,
+          "boundary_status_ko": "CMA 강풍 영향권까지 873 km"
         }
       }
     },
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 873,
-      "closest_distance_km": 801,
-      "closest_time": "2026-09-02T12:00:00+09:00",
-      "closest_forecast_hour": 24,
-      "trend": "UNKNOWN",
-      "trend_ko": "JTWC 풍권 자료 없음",
-      "trend_emoji": "⚪",
+      "risk_source": "JTWC_WIND_RADII",
+      "current_distance_km": 844,
+      "closest_distance_km": 815,
+      "closest_time": "2026-09-01T18:00:00Z",
+      "closest_forecast_hour": 12,
+      "trend": "MOVING_AWAY",
+      "trend_ko": "멀어지는 중",
+      "trend_emoji": "↗",
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "risk_forecast_hour": 24,
-      "risk_time": "2026-09-02T12:00:00+09:00",
+      "risk_forecast_hour": 12,
+      "risk_time": "2026-09-01T18:00:00Z",
       "risk_detail": {
-        "center_distance_km": 801,
-        "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
+        "center_distance_km": 815,
+        "direction_from_typhoon": "SE",
+        "bearing_deg": 143,
+        "wind_radius_34_km": 241,
+        "wind_radius_50_km": null,
+        "wind_radius_64_km": null,
+        "distance_to_34kt_boundary_km": 574,
+        "distance_to_34kt_radius_ratio": 3.38,
+        "boundary_status_ko": "강풍 영향권까지 574 km",
+        "max_wind_mps": 18.0,
+        "pressure_hpa": null
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T12:00:00+09:00",
-          "distance_km": 873
+          "time": "2026-09-01T06:00:00Z",
+          "storm_lat": 20.0,
+          "storm_lon": 114.4,
+          "center_distance_km": 844,
+          "bearing_deg": 128,
+          "quadrant": "SE",
+          "wind_radius_34_km": 222,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 622,
+          "distance_to_34kt_radius_ratio": 3.8,
+          "boundary_status_ko": "강풍 영향권까지 622 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": 993,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-02T00:00:00+09:00",
-          "distance_km": 819
+          "time": "2026-09-01T18:00:00Z",
+          "storm_lat": 21.1,
+          "storm_lon": 116.0,
+          "center_distance_km": 815,
+          "bearing_deg": 143,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 574,
+          "distance_to_34kt_radius_ratio": 3.38,
+          "boundary_status_ko": "강풍 영향권까지 574 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T12:00:00+09:00",
-          "distance_km": 801
+          "time": "2026-09-02T06:00:00Z",
+          "storm_lat": 21.8,
+          "storm_lon": 116.9,
+          "center_distance_km": 830,
+          "bearing_deg": 152,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 590,
+          "distance_to_34kt_radius_ratio": 3.45,
+          "boundary_status_ko": "강풍 영향권까지 590 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 45,
-          "time": "2026-09-03T09:00:00+09:00",
-          "distance_km": 867
+          "forecast_hour": 36,
+          "time": "2026-09-02T18:00:00Z",
+          "storm_lat": 22.3,
+          "storm_lon": 117.3,
+          "center_distance_km": 862,
+          "bearing_deg": 156,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 621,
+          "distance_to_34kt_radius_ratio": 3.58,
+          "boundary_status_ko": "강풍 영향권까지 621 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 69,
-          "time": "2026-09-04T09:00:00+09:00",
-          "distance_km": 872
+          "forecast_hour": 48,
+          "time": "2026-09-03T06:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 116.7,
+          "center_distance_km": 929,
+          "bearing_deg": 153,
+          "quadrant": "SE",
+          "wind_radius_34_km": 241,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": 688,
+          "distance_to_34kt_radius_ratio": 3.86,
+          "boundary_status_ko": "강풍 영향권까지 688 km",
+          "max_wind_mps": 18.0,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         },
         {
-          "forecast_hour": 93,
-          "time": "2026-09-05T09:00:00+09:00",
-          "distance_km": 846
+          "forecast_hour": 60,
+          "time": "2026-09-03T18:00:00Z",
+          "storm_lat": 22.7,
+          "storm_lon": 115.4,
+          "center_distance_km": 996,
+          "bearing_deg": 146,
+          "quadrant": "SE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 15.4,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
+        },
+        {
+          "forecast_hour": 72,
+          "time": "2026-09-04T06:00:00Z",
+          "storm_lat": 22.4,
+          "storm_lon": 113.7,
+          "center_distance_km": 1079,
+          "bearing_deg": 137,
+          "quadrant": "SE",
+          "wind_radius_34_km": null,
+          "wind_radius_50_km": null,
+          "wind_radius_64_km": null,
+          "distance_to_34kt_boundary_km": null,
+          "distance_to_34kt_radius_ratio": null,
+          "boundary_status_ko": "해당 방향 34kt 강풍반경 자료 없음",
+          "max_wind_mps": 10.3,
+          "pressure_hpa": null,
+          "risk": {
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐"
+          }
         }
       ],
       "risk_summary": {
@@ -689,24 +1571,24 @@
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "JTWC · CMA 모두 강풍 영향권 밖",
+            "basis_ko": "JTWC · CMA 모두 강풍 영향권 밖"
           },
           "jtwc": {
-            "level": "NO_DATA",
-            "emoji": "⚪",
-            "label_ko": "자료 없음",
-            "severity_rank": 0,
-            "basis": "JTWC 현재 위험도 자료 없음",
-            "basis_ko": "JTWC 현재 위험도 자료 없음"
+            "level": "GREEN",
+            "emoji": "🟢",
+            "label_ko": "낮음",
+            "severity_rank": 1,
+            "basis": "34kt 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "강풍 영향권과 충분히 떨어짐"
           },
           "cma": {
             "level": "GREEN",
             "emoji": "🟢",
             "label_ko": "낮음",
             "severity_rank": 1,
-            "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용",
-            "basis_ko": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+            "basis": "CMA 강풍 영향권과 충분히 떨어짐",
+            "basis_ko": "CMA 강풍 영향권과 충분히 떨어짐"
           },
           "rule_ko": "JTWC와 CMA 중 더 높은 위험단계를 사용"
         },
@@ -715,12 +1597,12 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 801,
-          "closest_time_utc": "2026-09-02T12:00:00+09:00",
-          "closest_forecast_hour": 24,
-          "strong_wind_zone_distance_km": null,
-          "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
+          "basis_ko": "강풍 영향권과 충분히 떨어짐",
+          "closest_distance_km": 815,
+          "closest_time_utc": "2026-09-01T18:00:00Z",
+          "closest_forecast_hour": 12,
+          "strong_wind_zone_distance_km": 574,
+          "strong_wind_zone_status_ko": "강풍 영향권까지 574 km",
           "source": "JTWC",
           "scope_ko": "향후 5일"
         }
@@ -731,32 +1613,32 @@
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "JTWC · CMA 모두 강풍 영향권 밖"
         },
         "jtwc_current_risk": {
-          "level": "NO_DATA",
-          "emoji": "⚪",
-          "label_ko": "자료 없음",
-          "severity_rank": 0,
-          "basis": "JTWC 현재 위험도 자료 없음"
+          "level": "GREEN",
+          "emoji": "🟢",
+          "label_ko": "낮음",
+          "severity_rank": 1,
+          "basis": "34kt 강풍 영향권과 충분히 떨어짐"
         },
         "cma_current_risk": {
           "level": "GREEN",
           "emoji": "🟢",
           "label_ko": "낮음",
           "severity_rank": 1,
-          "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
+          "basis": "CMA 강풍 영향권과 충분히 떨어짐"
         },
         "cma": {
-          "center_distance_km": 837,
-          "bearing_deg": 128,
+          "center_distance_km": 803,
+          "bearing_deg": 133,
           "quadrant": "SE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 300,
-          "distance_to_30kt_boundary_km": 537,
-          "distance_to_30kt_radius_ratio": 2.79,
-          "boundary_status_ko": "CMA 강풍 영향권까지 537 km"
+          "distance_to_30kt_boundary_km": 503,
+          "distance_to_30kt_radius_ratio": 2.68,
+          "boundary_status_ko": "CMA 강풍 영향권까지 503 km"
         }
       }
     }
@@ -770,9 +1652,9 @@
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "쑤저우 낮음 (JTWC 풍권 자료 없음 - 임시 거리 기준)",
+      "reason_ko": "쑤저우 낮음 (강풍 영향권까지 956 km)",
       "worst_location": "SUZHOU",
       "locations": [
         "SUZHOU",
@@ -788,10 +1670,10 @@
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "쑤저우 낮음 (JTWC 풍권 자료 없음 - 임시 거리 기준)",
-      "worst_location": "SUZHOU",
+      "reason_ko": "마닐라 국제공항 낮음 (강풍 영향권까지 664 km)",
+      "worst_location": "MNL",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -806,9 +1688,9 @@
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "쑤저우 낮음 (JTWC 풍권 자료 없음 - 임시 거리 기준)",
+      "reason_ko": "쑤저우 낮음 (강풍 영향권까지 956 km)",
       "worst_location": "SUZHOU",
       "locations": [
         "SUZHOU",
@@ -824,10 +1706,10 @@
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "쑤저우 낮음 (JTWC 풍권 자료 없음 - 임시 거리 기준)",
-      "worst_location": "SUZHOU",
+      "reason_ko": "클락 국제공항 낮음 (강풍 영향권까지 574 km)",
+      "worst_location": "CRK",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -842,17 +1724,17 @@
         "emoji": "🟢",
         "label_ko": "낮음",
         "severity_rank": 1,
-        "basis": "JTWC 미확보: 중심거리 임시 기준"
+        "basis": "34kt 강풍 영향권과 충분히 떨어짐"
       },
-      "reason_ko": "인천 국제공항 낮음 (JTWC 풍권 자료 없음 - 임시 거리 기준)",
-      "worst_location": "ICN",
+      "reason_ko": "푸동 국제공항 낮음 (강풍 영향권까지 992 km)",
+      "worst_location": "PVG",
       "locations": [
         "ICN",
         "PVG"
       ]
     }
   ],
-  "generated_at_utc": "2026-09-01T06:43:53.220226+00:00",
+  "generated_at_utc": "2026-09-01T09:57:56.894475+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
@@ -865,16 +1747,16 @@
     "name_en": "SAUDEL",
     "name_cn": "沙德尔",
     "number": 2618,
-    "time_utc": "202609010600",
+    "time_utc": "202609010900",
     "grade": "TS",
     "grade_ko": "열대폭풍",
     "pressure_hpa": 995,
     "max_wind_mps": 18,
-    "lat": 19.9,
-    "lon": 114.4,
+    "lat": 20.2,
+    "lon": 115.1,
     "movement_direction": "NE",
     "movement_direction_ko": "북동",
-    "movement_speed_kmh": 22,
+    "movement_speed_kmh": 17,
     "wind_radii": [
       {
         "label": "30KTS",
@@ -888,21 +1770,21 @@
           300,
           300,
           100,
-          3326995
+          3327345
         ],
         "meaning_ko": "30kt 풍권"
       }
     ]
   },
   "agency_time_comparison": {
-    "jtwc_time_utc": "2026-09-01T03:00:00+00:00",
-    "cma_time_utc": "2026-09-01T06:00:00+00:00",
-    "jtwc_time_china": "09/01 11:00",
-    "cma_time_china": "09/01 14:00",
-    "difference_hours": 3.0,
-    "label_ko": "기관 발표시각 차이 3시간",
-    "same_issue_time": false,
-    "jtwc_time_source": "fallback",
+    "jtwc_time_utc": "2026-09-01T09:00:00+00:00",
+    "cma_time_utc": "2026-09-01T09:00:00+00:00",
+    "jtwc_time_china": "09/01 17:00",
+    "cma_time_china": "09/01 17:00",
+    "difference_hours": 0.0,
+    "label_ko": "기관 발표시각 차이 0시간",
+    "same_issue_time": true,
+    "jtwc_time_source": "typhoon.jtwc_issue_time_utc",
     "cma_time_source": "cma.current.time_utc",
     "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지"
   },

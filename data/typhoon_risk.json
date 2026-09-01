@@ -6,26 +6,26 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-01T06:43:53.220226+00:00",
-    "weather": "2026-09-01T06:43:54.759073+00:00"
+    "impact": "2026-09-01T09:57:56.894475+00:00",
+    "weather": "2026-09-01T09:57:58.390809+00:00"
   },
   "typhoon": {
     "number": "2618",
     "name": "SAUDEL",
-    "jtwc_id": null,
-    "jtwc_warning_number": null,
-    "jtwc_issue_time_utc": null
+    "jtwc_id": "17W",
+    "jtwc_warning_number": 40,
+    "jtwc_issue_time_utc": "2026-09-01T09:00:00Z"
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 1533
+    "emoji": "🟡",
+    "label_ko": "차이 있음",
+    "average_difference_km": 63
   },
   "locations": {
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -33,26 +33,26 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 1443,
-        "closest_distance_km": 1001,
-        "closest_time": "2026-09-03T09:00:00+09:00",
-        "closest_forecast_hour": 45,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 1400,
+        "closest_distance_km": 1030,
+        "closest_time": "2026-09-03T06:00:00Z",
+        "closest_forecast_hour": 48,
+        "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 14:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 2.1,
-        "max_72h_rain_mm": 1.76,
-        "max_72h_rain_time": "2026-09-02 17:00",
-        "max_72h_wind_mps": 6.6,
+        "current_last_updated": "2026-09-01 17:45",
+        "current_rain_mm": 0.01,
+        "current_wind_mps": 3.7,
+        "max_72h_rain_mm": 1.59,
+        "max_72h_rain_time": "2026-09-02 06:00",
+        "max_72h_wind_mps": 6.1,
         "max_72h_wind_time": "2026-09-03 15:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
@@ -67,22 +67,22 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 1489,
-        "closest_distance_km": 1022,
-        "closest_time": "2026-09-03T09:00:00+09:00",
-        "closest_forecast_hour": 45,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 1444,
+        "closest_distance_km": 1066,
+        "closest_time": "2026-09-03T06:00:00Z",
+        "closest_forecast_hour": 48,
+        "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 14:30",
+        "current_last_updated": "2026-09-01 17:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.6,
-        "max_72h_rain_mm": 3.03,
-        "max_72h_rain_time": "2026-09-03 05:00",
-        "max_72h_wind_mps": 5.5,
-        "max_72h_wind_time": "2026-09-03 14:00"
+        "current_wind_mps": 4.4,
+        "max_72h_rain_mm": 1.78,
+        "max_72h_rain_time": "2026-09-02 05:00",
+        "max_72h_wind_mps": 5.7,
+        "max_72h_wind_time": "2026-09-02 13:00"
       },
       "score_detail": {
         "distance": 0,
@@ -93,7 +93,7 @@
     "ICN": {
       "code": "ICN",
       "name_ko": "인천 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -101,60 +101,60 @@
       },
       "reason_ko": "특이 위험요소 낮음",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 2309,
-        "closest_distance_km": 1839,
-        "closest_time": "2026-09-03T09:00:00+09:00",
-        "closest_forecast_hour": 45,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 2264,
+        "closest_distance_km": 1887,
+        "closest_time": "2026-09-03T06:00:00Z",
+        "closest_forecast_hour": 48,
+        "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 15:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 1.9,
-        "max_72h_rain_mm": 3.93,
-        "max_72h_rain_time": "2026-09-01 06:00",
-        "max_72h_wind_mps": 5.4,
-        "max_72h_wind_time": "2026-09-03 21:00"
+        "current_last_updated": "2026-09-01 18:45",
+        "current_rain_mm": 0.03,
+        "current_wind_mps": 2.7,
+        "max_72h_rain_mm": 8.32,
+        "max_72h_rain_time": "2026-09-01 00:00",
+        "max_72h_wind_mps": 4.1,
+        "max_72h_wind_time": "2026-09-03 23:00"
       },
       "score_detail": {
         "distance": 0,
-        "rain": 0,
+        "rain": 3,
         "wind": 0
       }
     },
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 15,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 891 km",
+      "reason_ko": "태풍 최접근 905 km",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 958,
-        "closest_distance_km": 891,
-        "closest_time": "2026-09-02T12:00:00+09:00",
-        "closest_forecast_hour": 24,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 931,
+        "closest_distance_km": 905,
+        "closest_time": "2026-09-01T18:00:00Z",
+        "closest_forecast_hour": 12,
+        "trend_ko": "멀어지는 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 14:30",
-        "current_rain_mm": 0.0,
-        "current_wind_mps": 9.0,
-        "max_72h_rain_mm": 1.22,
-        "max_72h_rain_time": "2026-09-03 10:00",
-        "max_72h_wind_mps": 11.1,
+        "current_last_updated": "2026-09-01 17:45",
+        "current_rain_mm": 0.17,
+        "current_wind_mps": 8.7,
+        "max_72h_rain_mm": 0.87,
+        "max_72h_rain_time": "2026-09-03 18:00",
+        "max_72h_wind_mps": 11.4,
         "max_72h_wind_time": "2026-09-02 13:00"
       },
       "score_detail": {
         "distance": 10,
-        "rain": 0,
+        "rain": 3,
         "wind": 5
       }
     },
@@ -167,24 +167,24 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 857 km",
+      "reason_ko": "태풍 최접근 825 km",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 857,
-        "closest_distance_km": 857,
-        "closest_time": "2026-09-01T12:00:00+09:00",
-        "closest_forecast_hour": 0,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 904,
+        "closest_distance_km": 825,
+        "closest_time": "2026-09-04T06:00:00Z",
+        "closest_forecast_hour": 72,
+        "trend_ko": "접근 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 13:30",
+        "current_last_updated": "2026-09-01 16:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 4.5,
+        "current_wind_mps": 2.5,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-01 13:30",
-        "max_72h_wind_mps": 4.5,
-        "max_72h_wind_time": "2026-09-01 13:30"
+        "max_72h_rain_time": "2026-09-01 16:45",
+        "max_72h_wind_mps": 4.3,
+        "max_72h_wind_time": "2026-09-02 10:00"
       },
       "score_detail": {
         "distance": 10,
@@ -195,35 +195,35 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 23,
+      "score": 13,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "태풍 최접근 801 km",
+      "reason_ko": "태풍 최접근 815 km",
       "typhoon": {
-        "source": "JMA_DISTANCE_FALLBACK",
-        "current_distance_km": 873,
-        "closest_distance_km": 801,
-        "closest_time": "2026-09-02T12:00:00+09:00",
-        "closest_forecast_hour": 24,
-        "trend_ko": "JTWC 풍권 자료 없음"
+        "source": "JTWC_WIND_RADII",
+        "current_distance_km": 844,
+        "closest_distance_km": 815,
+        "closest_time": "2026-09-01T18:00:00Z",
+        "closest_forecast_hour": 12,
+        "trend_ko": "멀어지는 중"
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-01 14:30",
-        "current_rain_mm": 0.66,
-        "current_wind_mps": 7.2,
-        "max_72h_rain_mm": 0.87,
-        "max_72h_rain_time": "2026-09-02 13:00",
-        "max_72h_wind_mps": 10.4,
-        "max_72h_wind_time": "2026-09-02 12:00"
+        "current_last_updated": "2026-09-01 17:45",
+        "current_rain_mm": 0.14,
+        "current_wind_mps": 6.4,
+        "max_72h_rain_mm": 1.16,
+        "max_72h_rain_time": "2026-09-01 12:00",
+        "max_72h_wind_mps": 11.1,
+        "max_72h_wind_time": "2026-09-02 13:00"
       },
       "score_detail": {
         "distance": 10,
-        "rain": 8,
-        "wind": 5
+        "rain": 3,
+        "wind": 0
       }
     }
   },
@@ -231,7 +231,7 @@
     {
       "code": "SUZHOU_PVG_ICN",
       "name_ko": "쑤저우 → PVG → 한국",
-      "score": 0,
+      "score": 3,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -254,7 +254,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 857 km)",
+      "reason_ko": "하노이 노이바이 국제공항 낮음 (태풍 최접근 825 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -265,13 +265,13 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 23,
+      "score": 13,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "클락 국제공항 낮음 (태풍 최접근 801 km)",
+      "reason_ko": "클락 국제공항 낮음 (태풍 최접근 815 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -282,13 +282,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 15,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (태풍 최접근 891 km)",
+      "reason_ko": "마닐라 국제공항 낮음 (태풍 최접근 905 km)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -314,5 +314,5 @@
     }
   ],
   "data_changed": true,
-  "generated_at_utc": "2026-09-01T06:43:54.820031+00:00"
+  "generated_at_utc": "2026-09-01T09:57:58.435847+00:00"
 }
