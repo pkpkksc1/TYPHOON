@@ -13,9 +13,9 @@
     "jtwc_issue_time_utc": null
   },
   "forecast_confidence": {
-    "emoji": "🟡",
-    "label_ko": "차이 있음",
-    "average_difference_km": 87
+    "emoji": "🔴",
+    "label_ko": "차이 큼",
+    "average_difference_km": 1533
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -32,10 +32,10 @@
       "code": "SUZHOU",
       "name_ko": "쑤저우",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 1531,
+      "current_distance_km": 1443,
       "closest_distance_km": 1001,
       "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 48,
+      "closest_forecast_hour": 45,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
       "trend_emoji": "⚪",
@@ -46,7 +46,7 @@
         "severity_rank": 1,
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
-      "risk_forecast_hour": 48,
+      "risk_forecast_hour": 45,
       "risk_time": "2026-09-03T09:00:00+09:00",
       "risk_detail": {
         "center_distance_km": 1001,
@@ -55,31 +55,31 @@
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 1531
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 1443
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 1273
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 1240
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 1163
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 1150
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 1001
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 1042
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 1128
         }
@@ -121,7 +121,7 @@
           "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
           "closest_distance_km": 1001,
           "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 48,
+          "closest_forecast_hour": 45,
           "strong_wind_zone_distance_km": null,
           "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
           "source": "JTWC",
@@ -151,15 +151,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 1526,
-          "bearing_deg": 28,
+          "center_distance_km": 1428,
+          "bearing_deg": 26,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 1406,
-          "distance_to_30kt_radius_ratio": 12.71,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1406 km"
+          "distance_to_30kt_boundary_km": 1308,
+          "distance_to_30kt_radius_ratio": 11.9,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1308 km"
         }
       }
     },
@@ -167,10 +167,10 @@
       "code": "PVG",
       "name_ko": "푸동 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 1584,
+      "current_distance_km": 1489,
       "closest_distance_km": 1022,
       "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 48,
+      "closest_forecast_hour": 45,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
       "trend_emoji": "⚪",
@@ -181,7 +181,7 @@
         "severity_rank": 1,
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
-      "risk_forecast_hour": 48,
+      "risk_forecast_hour": 45,
       "risk_time": "2026-09-03T09:00:00+09:00",
       "risk_detail": {
         "center_distance_km": 1022,
@@ -190,31 +190,31 @@
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 1584
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 1489
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 1311
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 1277
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 1193
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 1178
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 1022
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 1070
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 1161
         }
@@ -256,7 +256,7 @@
           "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
           "closest_distance_km": 1022,
           "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 48,
+          "closest_forecast_hour": 45,
           "strong_wind_zone_distance_km": null,
           "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
           "source": "JTWC",
@@ -286,15 +286,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 1576,
-          "bearing_deg": 32,
+          "center_distance_km": 1474,
+          "bearing_deg": 30,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 1456,
-          "distance_to_30kt_radius_ratio": 13.14,
-          "boundary_status_ko": "CMA 강풍 영향권까지 1456 km"
+          "distance_to_30kt_boundary_km": 1354,
+          "distance_to_30kt_radius_ratio": 12.29,
+          "boundary_status_ko": "CMA 강풍 영향권까지 1354 km"
         }
       }
     },
@@ -302,10 +302,10 @@
       "code": "ICN",
       "name_ko": "인천 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 2400,
+      "current_distance_km": 2309,
       "closest_distance_km": 1839,
       "closest_time": "2026-09-03T09:00:00+09:00",
-      "closest_forecast_hour": 48,
+      "closest_forecast_hour": 45,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
       "trend_emoji": "⚪",
@@ -316,7 +316,7 @@
         "severity_rank": 1,
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
-      "risk_forecast_hour": 48,
+      "risk_forecast_hour": 45,
       "risk_time": "2026-09-03T09:00:00+09:00",
       "risk_detail": {
         "center_distance_km": 1839,
@@ -325,31 +325,31 @@
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 2400
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 2309
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 2132
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 2098
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 2012
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 1998
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 1839
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 1890
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 1981
         }
@@ -391,7 +391,7 @@
           "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
           "closest_distance_km": 1839,
           "closest_time_utc": "2026-09-03T09:00:00+09:00",
-          "closest_forecast_hour": 48,
+          "closest_forecast_hour": 45,
           "strong_wind_zone_distance_km": null,
           "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
           "source": "JTWC",
@@ -421,15 +421,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 2394,
-          "bearing_deg": 30,
+          "center_distance_km": 2294,
+          "bearing_deg": 29,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 120,
-          "distance_to_30kt_boundary_km": 2274,
-          "distance_to_30kt_radius_ratio": 19.95,
-          "boundary_status_ko": "CMA 강풍 영향권까지 2274 km"
+          "distance_to_30kt_boundary_km": 2174,
+          "distance_to_30kt_radius_ratio": 19.12,
+          "boundary_status_ko": "CMA 강풍 영향권까지 2174 km"
         }
       }
     },
@@ -437,9 +437,9 @@
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 1044,
-      "closest_distance_km": 887,
-      "closest_time": "2026-09-02T09:00:00+09:00",
+      "current_distance_km": 958,
+      "closest_distance_km": 891,
+      "closest_time": "2026-09-02T12:00:00+09:00",
       "closest_forecast_hour": 24,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
@@ -452,39 +452,39 @@
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
       "risk_forecast_hour": 24,
-      "risk_time": "2026-09-02T09:00:00+09:00",
+      "risk_time": "2026-09-02T12:00:00+09:00",
       "risk_detail": {
-        "center_distance_km": 887,
+        "center_distance_km": 891,
         "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 1044
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 958
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 912
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 909
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 887
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 891
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 954
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 961
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 935
         }
@@ -494,9 +494,9 @@
       "code": "HAN",
       "name_ko": "하노이 노이바이 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 744,
-      "closest_distance_km": 744,
-      "closest_time": "2026-09-01T09:00:00+09:00",
+      "current_distance_km": 857,
+      "closest_distance_km": 857,
+      "closest_time": "2026-09-01T12:00:00+09:00",
       "closest_forecast_hour": 0,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
@@ -509,39 +509,39 @@
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
       "risk_forecast_hour": 0,
-      "risk_time": "2026-09-01T09:00:00+09:00",
+      "risk_time": "2026-09-01T12:00:00+09:00",
       "risk_detail": {
-        "center_distance_km": 744,
+        "center_distance_km": 857,
         "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 744
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 857
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 1007
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 1037
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 1139
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 1149
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 1267
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 1193
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 1118
         }
@@ -581,8 +581,8 @@
           "label_ko": "낮음",
           "severity_rank": 1,
           "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 744,
-          "closest_time_utc": "2026-09-01T09:00:00+09:00",
+          "closest_distance_km": 857,
+          "closest_time_utc": "2026-09-01T12:00:00+09:00",
           "closest_forecast_hour": 0,
           "strong_wind_zone_distance_km": null,
           "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
@@ -613,15 +613,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 777,
-          "bearing_deg": 286,
+          "center_distance_km": 865,
+          "bearing_deg": 281,
           "quadrant": "NW",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 100,
-          "distance_to_30kt_boundary_km": 677,
-          "distance_to_30kt_radius_ratio": 7.77,
-          "boundary_status_ko": "CMA 강풍 영향권까지 677 km"
+          "distance_to_30kt_boundary_km": 765,
+          "distance_to_30kt_radius_ratio": 8.65,
+          "boundary_status_ko": "CMA 강풍 영향권까지 765 km"
         }
       }
     },
@@ -629,9 +629,9 @@
       "code": "CRK",
       "name_ko": "클락 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
-      "current_distance_km": 962,
-      "closest_distance_km": 797,
-      "closest_time": "2026-09-02T09:00:00+09:00",
+      "current_distance_km": 873,
+      "closest_distance_km": 801,
+      "closest_time": "2026-09-02T12:00:00+09:00",
       "closest_forecast_hour": 24,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
@@ -644,39 +644,39 @@
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
       "risk_forecast_hour": 24,
-      "risk_time": "2026-09-02T09:00:00+09:00",
+      "risk_time": "2026-09-02T12:00:00+09:00",
       "risk_detail": {
-        "center_distance_km": 797,
+        "center_distance_km": 801,
         "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
       },
       "timeline": [
         {
           "forecast_hour": 0,
-          "time": "2026-09-01T09:00:00+09:00",
-          "distance_km": 962
+          "time": "2026-09-01T12:00:00+09:00",
+          "distance_km": 873
         },
         {
           "forecast_hour": 12,
-          "time": "2026-09-01T21:00:00+09:00",
-          "distance_km": 822
+          "time": "2026-09-02T00:00:00+09:00",
+          "distance_km": 819
         },
         {
           "forecast_hour": 24,
-          "time": "2026-09-02T09:00:00+09:00",
-          "distance_km": 797
+          "time": "2026-09-02T12:00:00+09:00",
+          "distance_km": 801
         },
         {
-          "forecast_hour": 48,
+          "forecast_hour": 45,
           "time": "2026-09-03T09:00:00+09:00",
           "distance_km": 867
         },
         {
-          "forecast_hour": 72,
+          "forecast_hour": 69,
           "time": "2026-09-04T09:00:00+09:00",
           "distance_km": 872
         },
         {
-          "forecast_hour": 96,
+          "forecast_hour": 93,
           "time": "2026-09-05T09:00:00+09:00",
           "distance_km": 846
         }
@@ -716,8 +716,8 @@
           "label_ko": "낮음",
           "severity_rank": 1,
           "basis_ko": "JTWC 미확보: 중심거리 임시 기준",
-          "closest_distance_km": 797,
-          "closest_time_utc": "2026-09-02T09:00:00+09:00",
+          "closest_distance_km": 801,
+          "closest_time_utc": "2026-09-02T12:00:00+09:00",
           "closest_forecast_hour": 24,
           "strong_wind_zone_distance_km": null,
           "strong_wind_zone_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준",
@@ -748,15 +748,15 @@
           "basis": "CMA 판정이 JTWC보다 높아 CMA 기준 적용"
         },
         "cma": {
-          "center_distance_km": 929,
-          "bearing_deg": 119,
+          "center_distance_km": 871,
+          "bearing_deg": 126,
           "quadrant": "SE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
           "wind_radius_30_km": 300,
-          "distance_to_30kt_boundary_km": 629,
-          "distance_to_30kt_radius_ratio": 3.1,
-          "boundary_status_ko": "CMA 강풍 영향권까지 629 km"
+          "distance_to_30kt_boundary_km": 571,
+          "distance_to_30kt_radius_ratio": 2.9,
+          "boundary_status_ko": "CMA 강풍 영향권까지 571 km"
         }
       }
     }
@@ -852,7 +852,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-09-01T00:47:47.187382+00:00",
+  "generated_at_utc": "2026-09-01T04:55:38.637959+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
@@ -865,16 +865,16 @@
     "name_en": "SAUDEL",
     "name_cn": "沙德尔",
     "number": 2618,
-    "time_utc": "202609010000",
+    "time_utc": "202609010400",
     "grade": "TS",
     "grade_ko": "열대폭풍",
     "pressure_hpa": 995,
     "max_wind_mps": 18,
-    "lat": 19.4,
-    "lon": 113.0,
+    "lat": 19.9,
+    "lon": 114.0,
     "movement_direction": "ENE",
     "movement_direction_ko": "동북동",
-    "movement_speed_kmh": 28,
+    "movement_speed_kmh": 25,
     "wind_radii": [
       {
         "label": "30KTS",
@@ -888,20 +888,20 @@
           300,
           300,
           100,
-          3326545
+          3326961
         ],
         "meaning_ko": "30kt 풍권"
       }
     ]
   },
   "agency_time_comparison": {
-    "jtwc_time_utc": "2026-09-01T00:00:00+00:00",
-    "cma_time_utc": "2026-09-01T00:00:00+00:00",
-    "jtwc_time_china": "09/01 08:00",
-    "cma_time_china": "09/01 08:00",
-    "difference_hours": 0.0,
-    "label_ko": "기관 발표시각 차이 0시간",
-    "same_issue_time": true,
+    "jtwc_time_utc": "2026-09-01T03:00:00+00:00",
+    "cma_time_utc": "2026-09-01T04:00:00+00:00",
+    "jtwc_time_china": "09/01 11:00",
+    "cma_time_china": "09/01 12:00",
+    "difference_hours": 1.0,
+    "label_ko": "기관 발표시각 차이 1시간",
+    "same_issue_time": false,
     "jtwc_time_source": "fallback",
     "cma_time_source": "cma.current.time_utc",
     "note_ko": "화면에는 중국시간으로 표시하고 내부 계산은 UTC를 유지"
