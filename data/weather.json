@@ -18,13 +18,13 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-09-02 01:25"
+        "localtime": "2026-09-02 04:09"
       },
       "current": {
-        "last_updated": "2026-09-02 01:15",
-        "rain_mm": 0.29,
-        "wind_mps": 2.5,
-        "wind_dir": "ENE",
+        "last_updated": "2026-09-02 04:00",
+        "rain_mm": 0.23,
+        "wind_mps": 2.7,
+        "wind_dir": "NNE",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -619,14 +619,14 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-09-02 01:25"
+        "localtime": "2026-09-02 04:09"
       },
       "current": {
-        "last_updated": "2026-09-02 01:15",
-        "rain_mm": 0.0,
-        "wind_mps": 2.2,
-        "wind_dir": "ENE",
-        "condition": "Overcast"
+        "last_updated": "2026-09-02 04:00",
+        "rain_mm": 0.01,
+        "wind_mps": 2.4,
+        "wind_dir": "NE",
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1215,19 +1215,19 @@
         "lon": 126.4407
       },
       "resolved_location": {
-        "name": "Sammok",
+        "name": "Namni",
         "region": "",
         "country": "South Korea",
-        "lat": 37.483,
-        "lon": 126.466,
-        "localtime": "2026-09-02 02:25"
+        "lat": 37.45,
+        "lon": 126.417,
+        "localtime": "2026-09-02 05:09"
       },
       "current": {
-        "last_updated": "2026-09-02 02:15",
-        "rain_mm": 0.0,
-        "wind_mps": 1.0,
-        "wind_dir": "NNE",
-        "condition": "Overcast"
+        "last_updated": "2026-09-02 05:00",
+        "rain_mm": 0.01,
+        "wind_mps": 1.4,
+        "wind_dir": "N",
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -1821,14 +1821,14 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-09-02 01:25"
+        "localtime": "2026-09-02 04:09"
       },
       "current": {
-        "last_updated": "2026-09-02 01:15",
-        "rain_mm": 0.2,
-        "wind_mps": 7.9,
+        "last_updated": "2026-09-02 04:00",
+        "rain_mm": 0.11,
+        "wind_mps": 8.1,
         "wind_dir": "SW",
-        "condition": "Light rain shower"
+        "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
         {
@@ -2422,14 +2422,14 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-09-02 00:25"
+        "localtime": "2026-09-02 03:09"
       },
       "current": {
-        "last_updated": "2026-09-02 00:15",
+        "last_updated": "2026-09-02 03:00",
         "rain_mm": 0.0,
         "wind_mps": 1.0,
-        "wind_dir": "ESE",
-        "condition": "Severe smog"
+        "wind_dir": "NW",
+        "condition": "Smoky haze"
       },
       "hourly_forecast": [
         {
@@ -2444,7 +2444,7 @@
           "time": "2026-09-02 01:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 3,
-          "wind_mps": 1.0,
+          "wind_mps": 0.5,
           "wind_dir": "ESE",
           "condition": "Severe smog"
         },
@@ -2460,7 +2460,7 @@
           "time": "2026-09-02 03:00",
           "rain_mm": 0.0,
           "chance_of_rain_pct": 5,
-          "wind_mps": 0.5,
+          "wind_mps": 1.0,
           "wind_dir": "NW",
           "condition": "Smoky haze"
         },
@@ -3023,13 +3023,13 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-09-02 01:25"
+        "localtime": "2026-09-02 04:09"
       },
       "current": {
-        "last_updated": "2026-09-02 01:15",
-        "rain_mm": 0.17,
+        "last_updated": "2026-09-02 04:00",
+        "rain_mm": 0.39,
         "wind_mps": 4.9,
-        "wind_dir": "WSW",
+        "wind_dir": "SW",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-09-01T17:25:38.431879+00:00"
+  "generated_at_utc": "2026-09-01T20:09:48.714737+00:00"
 }
