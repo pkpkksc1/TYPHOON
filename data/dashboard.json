@@ -2,16 +2,16 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-02T19:04:26.060423+00:00",
+  "generated_at_utc": "2026-09-02T19:28:43.773861+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-02T16:30:03.223709+00:00",
+    "jma": "2026-09-02T19:28:43.292954+00:00",
     "weather": "2026-09-02T18:34:52.746715+00:00",
     "risk": "2026-09-02T18:34:52.811454+00:00",
     "flights": "2026-09-01T22:54:24.779358+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-09-03T00:00:00+09:00",
-    "jma_updated_at_utc": "2026-09-02T16:30:03.223709+00:00",
+    "typhoon_reference_time": "2026-09-03T03:00:00+09:00",
+    "jma_updated_at_utc": "2026-09-02T19:28:43.292954+00:00",
     "weather_updated_at_utc": "2026-09-02T18:34:52.746715+00:00",
     "impact_updated_at_utc": "2026-09-02T18:34:51.262322+00:00",
     "risk_updated_at_utc": "2026-09-02T18:34:52.811454+00:00",
@@ -21,17 +21,17 @@
     "number": "2618",
     "name": "SAUDEL",
     "current": {
-      "time": "2026-09-03T00:00:00+09:00",
-      "lat": 22.8,
-      "lon": 118.1,
+      "time": "2026-09-03T03:00:00+09:00",
+      "lat": 23.2,
+      "lon": 118.2,
       "pressure_hpa": 992.0,
       "max_wind_mps": 18.0,
-      "movement_direction": "北東",
+      "movement_direction": "北北東",
       "movement_speed_kmh": null
     },
     "forecast_track": [
       {
-        "forecast_hour": 21,
+        "forecast_hour": 18,
         "time": "2026-09-03T21:00:00+09:00",
         "lat": 23.2,
         "lon": 116.9,
@@ -41,15 +41,15 @@
       },
       {
         "forecast_hour": 24,
-        "time": "2026-09-04T00:00:00+09:00",
+        "time": "2026-09-04T03:00:00+09:00",
         "lat": 23.2,
-        "lon": 116.7,
-        "pressure_hpa": 994.0,
-        "max_wind_mps": 18.0,
-        "movement_direction": "西北西"
+        "lon": 116.2,
+        "pressure_hpa": 998.0,
+        "max_wind_mps": 0.0,
+        "movement_direction": "西"
       },
       {
-        "forecast_hour": 45,
+        "forecast_hour": 42,
         "time": "2026-09-04T21:00:00+09:00",
         "lat": 22.7,
         "lon": 114.5,
