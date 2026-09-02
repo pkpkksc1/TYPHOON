@@ -6,8 +6,8 @@
   "note_ko": "내부 물류 판단용 위험도입니다. 각 주요 노선은 해당 목적지 거점 기준이며, 태풍 최접근 거리 + WeatherAPI 현재 강수/현재 풍속을 사용합니다. 72시간 최대 강수/풍속은 전망 표시용이며 위험점수에는 사용하지 않습니다. 공항 공식 결항/지연 기준이 아닙니다.",
   "attribution": "Powered by WeatherAPI.com",
   "source_updated_at_utc": {
-    "impact": "2026-09-02T21:45:17.647292+00:00",
-    "weather": "2026-09-02T21:45:19.023085+00:00"
+    "impact": "2026-09-02T22:48:20.725763+00:00",
+    "weather": "2026-09-02T22:48:22.279042+00:00"
   },
   "typhoon": {
     "number": "2618",
@@ -19,13 +19,13 @@
   "forecast_confidence": {
     "emoji": "🟢",
     "label_ko": "거의 일치",
-    "average_difference_km": 44
+    "average_difference_km": 28
   },
   "locations": {
     "SUZHOU": {
       "code": "SUZHOU",
       "name_ko": "쑤저우",
-      "score": 13,
+      "score": 10,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -42,9 +42,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 05:30",
-        "current_rain_mm": 0.07,
-        "current_wind_mps": 3.7,
+        "current_last_updated": "2026-09-03 06:45",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 4.0,
         "max_72h_rain_mm": 2.32,
         "max_72h_rain_time": "2026-09-03 00:00",
         "max_72h_wind_mps": 7.4,
@@ -52,14 +52,14 @@
       },
       "score_detail": {
         "distance": 10,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
     "PVG": {
       "code": "PVG",
       "name_ko": "푸동 국제공항",
-      "score": 13,
+      "score": 10,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -76,9 +76,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 05:30",
-        "current_rain_mm": 0.05,
-        "current_wind_mps": 3.1,
+        "current_last_updated": "2026-09-03 06:45",
+        "current_rain_mm": 0.0,
+        "current_wind_mps": 3.4,
         "max_72h_rain_mm": 1.0,
         "max_72h_rain_time": "2026-09-04 03:00",
         "max_72h_wind_mps": 6.6,
@@ -86,7 +86,7 @@
       },
       "score_detail": {
         "distance": 10,
-        "rain": 3,
+        "rain": 0,
         "wind": 0
       }
     },
@@ -110,11 +110,11 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 06:30",
+        "current_last_updated": "2026-09-03 07:45",
         "current_rain_mm": 0.0,
-        "current_wind_mps": 1.6,
+        "current_wind_mps": 1.9,
         "max_72h_rain_mm": 0.0,
-        "max_72h_rain_time": "2026-09-03 06:30",
+        "max_72h_rain_time": "2026-09-03 07:45",
         "max_72h_wind_mps": 5.8,
         "max_72h_wind_time": "2026-09-05 19:00"
       },
@@ -127,13 +127,13 @@
     "MNL": {
       "code": "MNL",
       "name_ko": "마닐라 국제공항",
-      "score": 8,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "특이 위험요소 낮음",
+      "reason_ko": "현재 풍속 10.2 m/s",
       "typhoon": {
         "source": "JTWC_WIND_RADII",
         "current_distance_km": 1026,
@@ -144,9 +144,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 05:30",
-        "current_rain_mm": 0.35,
-        "current_wind_mps": 9.8,
+        "current_last_updated": "2026-09-03 06:30",
+        "current_rain_mm": 0.64,
+        "current_wind_mps": 10.2,
         "max_72h_rain_mm": 1.54,
         "max_72h_rain_time": "2026-09-05 20:00",
         "max_72h_wind_mps": 11.0,
@@ -154,8 +154,8 @@
       },
       "score_detail": {
         "distance": 0,
-        "rain": 3,
-        "wind": 5
+        "rain": 8,
+        "wind": 10
       }
     },
     "HAN": {
@@ -178,7 +178,7 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 04:30",
+        "current_last_updated": "2026-09-03 05:30",
         "current_rain_mm": 0.0,
         "current_wind_mps": 1.8,
         "max_72h_rain_mm": 0.01,
@@ -195,7 +195,7 @@
     "CRK": {
       "code": "CRK",
       "name_ko": "클락 국제공항",
-      "score": 23,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -212,9 +212,9 @@
       },
       "weather": {
         "source": "WeatherAPI.com",
-        "current_last_updated": "2026-09-03 05:45",
-        "current_rain_mm": 0.61,
-        "current_wind_mps": 7.8,
+        "current_last_updated": "2026-09-03 06:30",
+        "current_rain_mm": 0.18,
+        "current_wind_mps": 8.1,
         "max_72h_rain_mm": 1.81,
         "max_72h_rain_time": "2026-09-05 18:00",
         "max_72h_wind_mps": 9.2,
@@ -222,7 +222,7 @@
       },
       "score_detail": {
         "distance": 10,
-        "rain": 8,
+        "rain": 3,
         "wind": 5
       }
     }
@@ -265,7 +265,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 23,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -282,13 +282,13 @@
     {
       "code": "SUZHOU_PVG_MNL",
       "name_ko": "쑤저우 → PVG → 마닐라",
-      "score": 8,
+      "score": 18,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (특이 위험요소 낮음)",
+      "reason_ko": "마닐라 국제공항 낮음 (현재 풍속 10.2 m/s)",
       "locations": [
         "SUZHOU",
         "PVG",
@@ -299,7 +299,7 @@
     {
       "code": "ICN_PVG",
       "name_ko": "한국 → PVG",
-      "score": 13,
+      "score": 10,
       "risk": {
         "level": "GREEN",
         "emoji": "🟢",
@@ -313,6 +313,6 @@
       "risk_location": "PVG"
     }
   ],
-  "data_changed": false,
-  "generated_at_utc": "2026-09-02T22:45:14.921667+00:00"
+  "data_changed": true,
+  "generated_at_utc": "2026-09-02T22:48:22.323512+00:00"
 }
