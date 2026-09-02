@@ -8,55 +8,75 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 68,
-    "max_difference_km": 83,
+    "average_difference_km": 28,
+    "max_difference_km": 38,
     "overall": {
-      "level": "YELLOW",
-      "emoji": "🟡",
-      "label_ko": "차이 있음"
+      "level": "GREEN",
+      "emoji": "🟢",
+      "label_ko": "거의 일치"
     }
   },
   "comparisons": [
     {
-      "forecast_hour": 24,
+      "forecast_hour": 21,
       "jma_time": "2026-09-03T21:00:00+09:00",
-      "kma_time": "202609031500",
-      "time_gap_hours": 6.0,
+      "kma_time": "202609032100",
+      "time_gap_hours": 0,
       "jma": {
         "lat": 23.2,
         "lon": 116.9
       },
       "kma": {
-        "lat": 22.8,
-        "lon": 117.2
+        "lat": 23.4,
+        "lon": 117.0
       },
-      "difference_km": 54,
+      "difference_km": 24,
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
       }
     },
     {
-      "forecast_hour": 48,
+      "forecast_hour": 24,
+      "jma_time": "2026-09-04T00:00:00+09:00",
+      "kma_time": "202609032100",
+      "time_gap_hours": 3.0,
+      "jma": {
+        "lat": 23.2,
+        "lon": 116.7
+      },
+      "kma": {
+        "lat": 23.4,
+        "lon": 117.0
+      },
+      "difference_km": 38,
+      "status": {
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
+      }
+    },
+    {
+      "forecast_hour": 45,
       "jma_time": "2026-09-04T21:00:00+09:00",
-      "kma_time": "202609050300",
-      "time_gap_hours": 6.0,
+      "kma_time": "202609042100",
+      "time_gap_hours": 0,
       "jma": {
         "lat": 22.7,
         "lon": 114.5
       },
       "kma": {
-        "lat": 22.2,
-        "lon": 115.1
+        "lat": 22.8,
+        "lon": 114.3
       },
-      "difference_km": 83,
+      "difference_km": 23,
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
+        "level": "GREEN",
+        "emoji": "🟢",
+        "label_ko": "거의 일치"
       }
     }
   ],
-  "generated_at_utc": "2026-09-02T14:22:56.726220+00:00"
+  "generated_at_utc": "2026-09-02T16:49:33.246512+00:00"
 }
