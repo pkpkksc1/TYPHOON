@@ -2,12 +2,12 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-02T22:48:22.429505+00:00",
+  "generated_at_utc": "2026-09-02T22:55:05.054636+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-02T22:48:09.449423+00:00",
     "weather": "2026-09-02T22:48:22.279042+00:00",
     "risk": "2026-09-02T22:48:22.323512+00:00",
-    "flights": "2026-09-01T22:54:24.779358+00:00"
+    "flights": "2026-09-02T22:55:04.979170+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-09-03T06:00:00+09:00",
@@ -291,21 +291,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-08-31T02:00:00+09:00",
-        "estimated_local": "2026-08-31T02:00:00+09:00",
-        "actual_local": "2026-08-31T01:30:00+09:00",
-        "display_time_local": "2026-08-31 01:30",
+        "scheduled_local": "2026-09-03T02:00:00+09:00",
+        "estimated_local": "2026-09-03T02:00:00+09:00",
+        "actual_local": "2026-09-03T02:10:00+09:00",
+        "display_time_local": "2026-09-03 02:10",
         "display_label_ko": "실제 출발",
-        "delay_minutes": -30,
+        "delay_minutes": 10,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-31T03:10:00+08:00",
-        "estimated_local": "2026-08-31T01:55:00+08:00",
-        "actual_local": "2026-08-31T01:57:00+08:00",
-        "display_time_local": "2026-08-31 01:57",
+        "scheduled_local": "2026-09-03T03:10:00+08:00",
+        "estimated_local": "2026-09-03T02:38:00+08:00",
+        "actual_local": "2026-09-03T02:34:00+08:00",
+        "display_time_local": "2026-09-03 02:34",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -73,
+        "delay_minutes": -36,
         "timezone_label_ko": "중국시간"
       }
     },
@@ -345,21 +345,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-09-01T16:00:00+08:00",
-        "estimated_local": "2026-09-01T16:00:00+08:00",
-        "actual_local": "2026-09-01T16:21:00+08:00",
-        "display_time_local": "2026-09-01 16:21",
+        "scheduled_local": "2026-09-02T16:00:00+08:00",
+        "estimated_local": "2026-09-02T16:00:00+08:00",
+        "actual_local": "2026-09-02T16:30:00+08:00",
+        "display_time_local": "2026-09-02 16:30",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 21,
+        "delay_minutes": 30,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-09-01T19:40:00+08:00",
-        "estimated_local": "2026-09-01T19:30:00+08:00",
-        "actual_local": "2026-09-01T19:36:00+08:00",
-        "display_time_local": "2026-09-01 19:36",
+        "scheduled_local": "2026-09-02T19:40:00+08:00",
+        "estimated_local": "2026-09-02T19:47:00+08:00",
+        "actual_local": "2026-09-02T19:46:00+08:00",
+        "display_time_local": "2026-09-02 19:46",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -4,
+        "delay_minutes": 6,
         "timezone_label_ko": "필리핀시간"
       }
     },
@@ -372,21 +372,21 @@
         "label_ko": "운항 중"
       },
       "departure": {
-        "scheduled_local": "2026-09-02T03:05:00+08:00",
-        "estimated_local": "2026-09-02T03:05:00+08:00",
-        "actual_local": "2026-09-02T03:08:00+08:00",
-        "display_time_local": "2026-09-02 03:08",
+        "scheduled_local": "2026-09-03T03:05:00+08:00",
+        "estimated_local": "2026-09-03T03:05:00+08:00",
+        "actual_local": "2026-09-03T03:16:00+08:00",
+        "display_time_local": "2026-09-03 03:16",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 3,
+        "delay_minutes": 11,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-09-02T06:10:00+09:00",
-        "estimated_local": "2026-09-02T05:39:00+09:00",
-        "actual_local": "2026-09-02T05:34:00+09:00",
-        "display_time_local": "2026-09-02 05:34",
+        "scheduled_local": "2026-09-03T06:10:00+09:00",
+        "estimated_local": "2026-09-03T05:46:00+09:00",
+        "actual_local": "2026-09-03T05:39:00+09:00",
+        "display_time_local": "2026-09-03 05:39",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -36,
+        "delay_minutes": -31,
         "timezone_label_ko": "한국시간"
       }
     },
@@ -394,26 +394,26 @@
       "flight_iata": "KJ988",
       "route": "PVG → ICN",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "출발 예정"
       },
       "departure": {
-        "scheduled_local": "2026-08-31T15:45:00+08:00",
-        "estimated_local": "2026-08-31T15:45:00+08:00",
-        "actual_local": "2026-08-31T16:34:00+08:00",
-        "display_time_local": "2026-08-31 16:34",
-        "display_label_ko": "실제 출발",
-        "delay_minutes": 49,
+        "scheduled_local": "2026-09-02T19:35:00+08:00",
+        "estimated_local": "2026-09-02T19:35:00+08:00",
+        "actual_local": null,
+        "display_time_local": "2026-09-02 19:35",
+        "display_label_ko": "예상 출발",
+        "delay_minutes": 0,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-08-31T18:50:00+09:00",
-        "estimated_local": "2026-08-31T19:04:00+09:00",
-        "actual_local": "2026-08-31T19:01:00+09:00",
-        "display_time_local": "2026-08-31 19:01",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": 11,
+        "scheduled_local": "2026-09-02T22:40:00+09:00",
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": "2026-09-02 22:40",
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
         "timezone_label_ko": "한국시간"
       }
     }
@@ -422,10 +422,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-09",
-    "monthly_requests": 10,
+    "monthly_requests": 15,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-09-01T22:54:24.779358+00:00",
+    "last_fetch_at_utc": "2026-09-02T22:55:04.979170+00:00",
     "tracking_started_at_utc": "2026-09-01T00:13:38.549370+00:00"
   },
   "attribution": [
