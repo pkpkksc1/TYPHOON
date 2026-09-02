@@ -8,8 +8,8 @@
     "name": "SAUDEL"
   },
   "summary": {
-    "average_difference_km": 76,
-    "max_difference_km": 102,
+    "average_difference_km": 68,
+    "max_difference_km": 83,
     "overall": {
       "level": "YELLOW",
       "emoji": "🟡",
@@ -18,39 +18,19 @@
   },
   "comparisons": [
     {
-      "forecast_hour": 21,
-      "jma_time": "2026-09-03T15:00:00+09:00",
-      "kma_time": "202609031500",
-      "time_gap_hours": 0,
-      "jma": {
-        "lat": 23.4,
-        "lon": 117.4
-      },
-      "kma": {
-        "lat": 22.8,
-        "lon": 117.2
-      },
-      "difference_km": 70,
-      "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "차이 있음"
-      }
-    },
-    {
       "forecast_hour": 24,
-      "jma_time": "2026-09-03T18:00:00+09:00",
+      "jma_time": "2026-09-03T21:00:00+09:00",
       "kma_time": "202609031500",
-      "time_gap_hours": 3.0,
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 23.3,
-        "lon": 117.2
+        "lat": 23.2,
+        "lon": 116.9
       },
       "kma": {
         "lat": 22.8,
         "lon": 117.2
       },
-      "difference_km": 56,
+      "difference_km": 54,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -58,19 +38,19 @@
       }
     },
     {
-      "forecast_hour": 45,
-      "jma_time": "2026-09-04T15:00:00+09:00",
-      "kma_time": "202609040300",
-      "time_gap_hours": 12.0,
+      "forecast_hour": 48,
+      "jma_time": "2026-09-04T21:00:00+09:00",
+      "kma_time": "202609050300",
+      "time_gap_hours": 6.0,
       "jma": {
-        "lat": 23.0,
-        "lon": 115.5
+        "lat": 22.7,
+        "lon": 114.5
       },
       "kma": {
-        "lat": 22.6,
-        "lon": 116.4
+        "lat": 22.2,
+        "lon": 115.1
       },
-      "difference_km": 102,
+      "difference_km": 83,
       "status": {
         "level": "YELLOW",
         "emoji": "🟡",
@@ -78,5 +58,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-09-02T11:39:40.210239+00:00"
+  "generated_at_utc": "2026-09-02T14:22:56.726220+00:00"
 }
