@@ -2,16 +2,16 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-02T14:23:03.920563+00:00",
+  "generated_at_utc": "2026-09-02T16:30:03.289520+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-02T14:20:56.630252+00:00",
+    "jma": "2026-09-02T16:30:03.223709+00:00",
     "weather": "2026-09-02T14:23:03.756015+00:00",
     "risk": "2026-09-02T14:23:03.822067+00:00",
     "flights": "2026-09-01T22:54:24.779358+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-09-02T21:00:00+09:00",
-    "jma_updated_at_utc": "2026-09-02T14:20:56.630252+00:00",
+    "typhoon_reference_time": "2026-09-03T00:00:00+09:00",
+    "jma_updated_at_utc": "2026-09-02T16:30:03.223709+00:00",
     "weather_updated_at_utc": "2026-09-02T14:23:03.756015+00:00",
     "impact_updated_at_utc": "2026-09-02T14:23:02.821061+00:00",
     "risk_updated_at_utc": "2026-09-02T14:23:03.822067+00:00",
@@ -21,17 +21,17 @@
     "number": "2618",
     "name": "SAUDEL",
     "current": {
-      "time": "2026-09-02T21:00:00+09:00",
-      "lat": 22.4,
-      "lon": 118.2,
+      "time": "2026-09-03T00:00:00+09:00",
+      "lat": 22.8,
+      "lon": 118.1,
       "pressure_hpa": 992.0,
       "max_wind_mps": 18.0,
-      "movement_direction": "東北東",
+      "movement_direction": "北東",
       "movement_speed_kmh": null
     },
     "forecast_track": [
       {
-        "forecast_hour": 24,
+        "forecast_hour": 21,
         "time": "2026-09-03T21:00:00+09:00",
         "lat": 23.2,
         "lon": 116.9,
@@ -40,7 +40,16 @@
         "movement_direction": "西北西"
       },
       {
-        "forecast_hour": 48,
+        "forecast_hour": 24,
+        "time": "2026-09-04T00:00:00+09:00",
+        "lat": 23.2,
+        "lon": 116.7,
+        "pressure_hpa": 994.0,
+        "max_wind_mps": 18.0,
+        "movement_direction": "西北西"
+      },
+      {
+        "forecast_hour": 45,
         "time": "2026-09-04T21:00:00+09:00",
         "lat": 22.7,
         "lon": 114.5,
