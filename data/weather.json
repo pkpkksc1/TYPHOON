@@ -18,14 +18,14 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-09-03 17:38"
+        "localtime": "2026-09-03 19:40"
       },
       "current": {
-        "last_updated": "2026-09-03 17:30",
-        "rain_mm": 0.62,
-        "wind_mps": 6.2,
-        "wind_dir": "NNE",
-        "condition": "Moderate rain at times"
+        "last_updated": "2026-09-03 19:30",
+        "rain_mm": 0.0,
+        "wind_mps": 5.7,
+        "wind_dir": "NE",
+        "condition": "Partly Cloudy"
       },
       "hourly_forecast": [
         {
@@ -619,12 +619,12 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-09-03 17:38"
+        "localtime": "2026-09-03 19:40"
       },
       "current": {
-        "last_updated": "2026-09-03 17:30",
-        "rain_mm": 0.08,
-        "wind_mps": 5.2,
+        "last_updated": "2026-09-03 19:30",
+        "rain_mm": 0.05,
+        "wind_mps": 4.7,
         "wind_dir": "NE",
         "condition": "Patchy rain nearby"
       },
@@ -1215,19 +1215,19 @@
         "lon": 126.4407
       },
       "resolved_location": {
-        "name": "Sammok",
+        "name": "Namni",
         "region": "",
         "country": "South Korea",
-        "lat": 37.483,
-        "lon": 126.466,
-        "localtime": "2026-09-03 18:38"
+        "lat": 37.45,
+        "lon": 126.417,
+        "localtime": "2026-09-03 20:40"
       },
       "current": {
-        "last_updated": "2026-09-03 18:30",
+        "last_updated": "2026-09-03 20:30",
         "rain_mm": 0.0,
-        "wind_mps": 3.9,
-        "wind_dir": "N",
-        "condition": "Sunny"
+        "wind_mps": 3.8,
+        "wind_dir": "ENE",
+        "condition": "Clear"
       },
       "hourly_forecast": [
         {
@@ -1821,12 +1821,12 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-09-03 17:38"
+        "localtime": "2026-09-03 19:40"
       },
       "current": {
-        "last_updated": "2026-09-03 17:30",
-        "rain_mm": 0.91,
-        "wind_mps": 10.1,
+        "last_updated": "2026-09-03 19:30",
+        "rain_mm": 0.68,
+        "wind_mps": 9.8,
         "wind_dir": "SW",
         "condition": "Light rain shower"
       },
@@ -2417,19 +2417,19 @@
         "lon": 105.807
       },
       "resolved_location": {
-        "name": "Huong Gia",
+        "name": "Noi Bai",
         "region": "",
         "country": "Vietnam",
-        "lat": 21.2,
-        "lon": 105.8,
-        "localtime": "2026-09-03 16:38"
+        "lat": 21.217,
+        "lon": 105.817,
+        "localtime": "2026-09-03 18:40"
       },
       "current": {
-        "last_updated": "2026-09-03 16:30",
+        "last_updated": "2026-09-03 18:30",
         "rain_mm": 0.0,
-        "wind_mps": 1.5,
-        "wind_dir": "NW",
-        "condition": "Sunny"
+        "wind_mps": 1.2,
+        "wind_dir": "SSW",
+        "condition": "Smoky haze"
       },
       "hourly_forecast": [
         {
@@ -3023,12 +3023,12 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-09-03 17:38"
+        "localtime": "2026-09-03 19:40"
       },
       "current": {
-        "last_updated": "2026-09-03 17:30",
-        "rain_mm": 0.35,
-        "wind_mps": 5.1,
+        "last_updated": "2026-09-03 19:30",
+        "rain_mm": 1.56,
+        "wind_mps": 3.9,
         "wind_dir": "SW",
         "condition": "Light rain shower"
       },
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-09-03T09:38:53.742051+00:00"
+  "generated_at_utc": "2026-09-03T11:40:39.403086+00:00"
 }
