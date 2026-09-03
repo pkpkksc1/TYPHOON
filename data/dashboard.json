@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-03T23:39:31.491397+00:00",
+  "generated_at_utc": "2026-09-03T23:57:54.597002+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-03T22:46:01.619877+00:00",
-    "weather": "2026-09-03T22:46:12.799196+00:00",
-    "risk": "2026-09-03T22:46:12.859156+00:00",
+    "weather": "2026-09-03T23:57:54.437189+00:00",
+    "risk": "2026-09-03T23:57:54.500165+00:00",
     "flights": "2026-09-03T22:53:57.385304+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-09-03T21:00:00+09:00",
     "jma_updated_at_utc": "2026-09-03T22:46:01.619877+00:00",
-    "weather_updated_at_utc": "2026-09-03T22:46:12.799196+00:00",
-    "impact_updated_at_utc": "2026-09-03T22:46:11.272352+00:00",
-    "risk_updated_at_utc": "2026-09-03T22:46:12.859156+00:00",
+    "weather_updated_at_utc": "2026-09-03T23:57:54.437189+00:00",
+    "impact_updated_at_utc": "2026-09-03T23:57:53.122216+00:00",
+    "risk_updated_at_utc": "2026-09-03T23:57:54.500165+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -54,9 +54,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 06:30",
+        "last_updated": "2026-09-04 07:45",
         "rain_mm": 0.0,
-        "wind_mps": 3.6
+        "wind_mps": 4.2
       },
       "forecast_72h": {
         "max_rain_mm": 0.79,
@@ -81,9 +81,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 06:30",
+        "last_updated": "2026-09-04 07:45",
         "rain_mm": 0.0,
-        "wind_mps": 4.5
+        "wind_mps": 4.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.86,
@@ -108,13 +108,13 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 07:30",
+        "last_updated": "2026-09-04 08:45",
         "rain_mm": 0.0,
-        "wind_mps": 2.4
+        "wind_mps": 3.1
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-04 07:30",
+        "max_rain_time": "2026-09-04 08:45",
         "max_wind_mps": 6.0,
         "max_wind_time": "2026-09-05 19:00"
       }
@@ -135,9 +135,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 06:30",
-        "rain_mm": 1.28,
-        "wind_mps": 8.5
+        "last_updated": "2026-09-04 07:45",
+        "rain_mm": 1.16,
+        "wind_mps": 8.7
       },
       "forecast_72h": {
         "max_rain_mm": 6.8,
@@ -162,9 +162,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 05:30",
+        "last_updated": "2026-09-04 06:45",
         "rain_mm": 0.0,
-        "wind_mps": 1.1
+        "wind_mps": 1.4
       },
       "forecast_72h": {
         "max_rain_mm": 0.23,
@@ -189,9 +189,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 06:30",
-        "rain_mm": 0.07,
-        "wind_mps": 1.8
+        "last_updated": "2026-09-04 07:45",
+        "rain_mm": 0.13,
+        "wind_mps": 1.7
       },
       "forecast_72h": {
         "max_rain_mm": 0.95,
