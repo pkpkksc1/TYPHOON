@@ -18,14 +18,14 @@
         "country": "China",
         "lat": 31.285,
         "lon": 120.596,
-        "localtime": "2026-09-03 19:40"
+        "localtime": "2026-09-03 22:24"
       },
       "current": {
-        "last_updated": "2026-09-03 19:30",
+        "last_updated": "2026-09-03 22:15",
         "rain_mm": 0.0,
-        "wind_mps": 5.7,
-        "wind_dir": "NE",
-        "condition": "Partly Cloudy"
+        "wind_mps": 3.9,
+        "wind_dir": "NNE",
+        "condition": "Clear"
       },
       "hourly_forecast": [
         {
@@ -619,13 +619,13 @@
         "country": "China",
         "lat": 31.121,
         "lon": 121.789,
-        "localtime": "2026-09-03 19:40"
+        "localtime": "2026-09-03 22:24"
       },
       "current": {
-        "last_updated": "2026-09-03 19:30",
-        "rain_mm": 0.05,
-        "wind_mps": 4.7,
-        "wind_dir": "NE",
+        "last_updated": "2026-09-03 22:15",
+        "rain_mm": 0.11,
+        "wind_mps": 4.2,
+        "wind_dir": "NNE",
         "condition": "Patchy rain nearby"
       },
       "hourly_forecast": [
@@ -1215,17 +1215,17 @@
         "lon": 126.4407
       },
       "resolved_location": {
-        "name": "Namni",
+        "name": "Sammok",
         "region": "",
         "country": "South Korea",
-        "lat": 37.45,
-        "lon": 126.417,
-        "localtime": "2026-09-03 20:40"
+        "lat": 37.483,
+        "lon": 126.466,
+        "localtime": "2026-09-03 23:24"
       },
       "current": {
-        "last_updated": "2026-09-03 20:30",
+        "last_updated": "2026-09-03 23:15",
         "rain_mm": 0.0,
-        "wind_mps": 3.8,
+        "wind_mps": 3.1,
         "wind_dir": "ENE",
         "condition": "Clear"
       },
@@ -1821,12 +1821,12 @@
         "country": "Philippines",
         "lat": 14.5,
         "lon": 121.019,
-        "localtime": "2026-09-03 19:40"
+        "localtime": "2026-09-03 22:24"
       },
       "current": {
-        "last_updated": "2026-09-03 19:30",
-        "rain_mm": 0.68,
-        "wind_mps": 9.8,
+        "last_updated": "2026-09-03 22:15",
+        "rain_mm": 0.94,
+        "wind_mps": 9.4,
         "wind_dir": "SW",
         "condition": "Light rain shower"
       },
@@ -2422,14 +2422,14 @@
         "country": "Vietnam",
         "lat": 21.217,
         "lon": 105.817,
-        "localtime": "2026-09-03 18:40"
+        "localtime": "2026-09-03 21:24"
       },
       "current": {
-        "last_updated": "2026-09-03 18:30",
+        "last_updated": "2026-09-03 21:15",
         "rain_mm": 0.0,
-        "wind_mps": 1.2,
-        "wind_dir": "SSW",
-        "condition": "Smoky haze"
+        "wind_mps": 1.9,
+        "wind_dir": "NE",
+        "condition": "Smog"
       },
       "hourly_forecast": [
         {
@@ -3023,13 +3023,13 @@
         "country": "Philippines",
         "lat": 15.183,
         "lon": 120.567,
-        "localtime": "2026-09-03 19:40"
+        "localtime": "2026-09-03 22:24"
       },
       "current": {
-        "last_updated": "2026-09-03 19:30",
-        "rain_mm": 1.56,
-        "wind_mps": 3.9,
-        "wind_dir": "SW",
+        "last_updated": "2026-09-03 22:15",
+        "rain_mm": 0.23,
+        "wind_mps": 6.0,
+        "wind_dir": "WSW",
         "condition": "Light rain shower"
       },
       "hourly_forecast": [
@@ -3614,5 +3614,5 @@
   },
   "errors": [],
   "data_changed": true,
-  "generated_at_utc": "2026-09-03T11:40:39.403086+00:00"
+  "generated_at_utc": "2026-09-03T14:24:24.836566+00:00"
 }

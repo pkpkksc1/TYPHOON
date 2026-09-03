@@ -18,7 +18,7 @@
   },
   "comparisons": [
     {
-      "forecast_hour": 12,
+      "forecast_hour": 9,
       "jma_time": "2026-09-04T06:00:00+09:00",
       "kma_time": "202609040300",
       "time_gap_hours": 3.0,
@@ -38,7 +38,7 @@
       }
     },
     {
-      "forecast_hour": 24,
+      "forecast_hour": 21,
       "jma_time": "2026-09-04T18:00:00+09:00",
       "status": {
         "level": "NO_DATA",
@@ -48,5 +48,5 @@
       "time_gap_hours": 15.0
     }
   ],
-  "generated_at_utc": "2026-09-03T11:40:29.586663+00:00"
+  "generated_at_utc": "2026-09-03T14:24:16.249557+00:00"
 }
