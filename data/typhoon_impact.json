@@ -13,9 +13,9 @@
     "jtwc_issue_time_utc": "2026-09-02T21:00:00Z"
   },
   "forecast_confidence": {
-    "emoji": "🟢",
-    "label_ko": "거의 일치",
-    "average_difference_km": 28
+    "emoji": "🔴",
+    "label_ko": "차이 큼",
+    "average_difference_km": 1359
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -226,8 +226,8 @@
           "basis": "CMA 강풍 영향권 자료 없음"
         },
         "cma": {
-          "center_distance_km": 874,
-          "bearing_deg": 19,
+          "center_distance_km": 884,
+          "bearing_deg": 21,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
@@ -436,8 +436,8 @@
           "basis": "CMA 강풍 영향권 자료 없음"
         },
         "cma": {
-          "center_distance_km": 906,
-          "bearing_deg": 26,
+          "center_distance_km": 920,
+          "bearing_deg": 28,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
@@ -646,8 +646,8 @@
           "basis": "CMA 강풍 영향권 자료 없음"
         },
         "cma": {
-          "center_distance_km": 1727,
-          "bearing_deg": 27,
+          "center_distance_km": 1741,
+          "bearing_deg": 28,
           "quadrant": "NE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
@@ -988,7 +988,7 @@
           "basis": "CMA 강풍 영향권 자료 없음"
         },
         "cma": {
-          "center_distance_km": 1247,
+          "center_distance_km": 1217,
           "bearing_deg": 258,
           "quadrant": "SW",
           "wind_zone_label_ko": "강풍 영향권",
@@ -1198,8 +1198,8 @@
           "basis": "CMA 강풍 영향권 자료 없음"
         },
         "cma": {
-          "center_distance_km": 1017,
-          "bearing_deg": 162,
+          "center_distance_km": 1027,
+          "bearing_deg": 160,
           "quadrant": "SE",
           "wind_zone_label_ko": "강풍 영향권",
           "wind_standard_raw": "30KTS",
@@ -1302,7 +1302,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-09-03T00:03:43.125505+00:00",
+  "generated_at_utc": "2026-09-03T01:22:46.541862+00:00",
   "display_policy": {
     "technical_units_visible": false,
     "strong_wind_label_ko": "강풍 영향권",
@@ -1315,25 +1315,25 @@
     "name_en": "SAUDEL",
     "name_cn": "沙德尔",
     "number": 2618,
-    "time_utc": "202609022300",
+    "time_utc": "202609030100",
     "grade": "TS",
     "grade_ko": "열대폭풍",
-    "pressure_hpa": 987,
-    "max_wind_mps": 20,
+    "pressure_hpa": 990,
+    "max_wind_mps": 18,
     "lat": 23.9,
-    "lon": 117.6,
+    "lon": 117.3,
     "movement_direction": "W",
     "movement_direction_ko": "서",
-    "movement_speed_kmh": 20,
+    "movement_speed_kmh": 18,
     "wind_radii": []
   },
   "agency_time_comparison": {
     "jtwc_time_utc": "2026-09-02T21:00:00+00:00",
-    "cma_time_utc": "2026-09-02T23:00:00+00:00",
+    "cma_time_utc": "2026-09-03T01:00:00+00:00",
     "jtwc_time_china": "09/03 05:00",
-    "cma_time_china": "09/03 07:00",
-    "difference_hours": 2.0,
-    "label_ko": "기관 발표시각 차이 2시간",
+    "cma_time_china": "09/03 09:00",
+    "difference_hours": 4.0,
+    "label_ko": "기관 발표시각 차이 4시간",
     "same_issue_time": false,
     "jtwc_time_source": "typhoon.jtwc_issue_time_utc",
     "cma_time_source": "cma.current.time_utc",
