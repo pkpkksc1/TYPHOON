@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-03T04:19:15.077233+00:00",
+  "generated_at_utc": "2026-09-03T06:24:34.016543+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-03T04:14:24.197307+00:00",
-    "weather": "2026-09-03T04:14:37.226533+00:00",
-    "risk": "2026-09-03T04:14:37.275146+00:00",
+    "weather": "2026-09-03T06:24:33.869912+00:00",
+    "risk": "2026-09-03T06:24:33.928976+00:00",
     "flights": "2026-09-02T22:55:04.979170+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-09-03T12:00:00+09:00",
     "jma_updated_at_utc": "2026-09-03T04:14:24.197307+00:00",
-    "weather_updated_at_utc": "2026-09-03T04:14:37.226533+00:00",
-    "impact_updated_at_utc": "2026-09-03T04:14:35.555842+00:00",
-    "risk_updated_at_utc": "2026-09-03T04:14:37.275146+00:00",
+    "weather_updated_at_utc": "2026-09-03T06:24:33.869912+00:00",
+    "impact_updated_at_utc": "2026-09-03T06:24:32.625267+00:00",
+    "risk_updated_at_utc": "2026-09-03T06:24:33.928976+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -59,7 +59,7 @@
   "locations": {
     "SUZHOU": {
       "name_ko": "쑤저우",
-      "score": 18,
+      "score": 13,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -73,15 +73,15 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 12:00",
-        "rain_mm": 0.48,
-        "wind_mps": 7.3
+        "last_updated": "2026-09-03 14:15",
+        "rain_mm": 0.28,
+        "wind_mps": 6.9
       },
       "forecast_72h": {
         "max_rain_mm": 2.32,
         "max_rain_time": "2026-09-03 00:00",
         "max_wind_mps": 7.3,
-        "max_wind_time": "2026-09-03 12:00"
+        "max_wind_time": "2026-09-03 10:00"
       }
     },
     "PVG": {
@@ -100,9 +100,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 12:00",
-        "rain_mm": 0.02,
-        "wind_mps": 6.1
+        "last_updated": "2026-09-03 14:15",
+        "rain_mm": 0.18,
+        "wind_mps": 6.0
       },
       "forecast_72h": {
         "max_rain_mm": 0.79,
@@ -127,13 +127,13 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 13:00",
+        "last_updated": "2026-09-03 15:15",
         "rain_mm": 0.0,
-        "wind_mps": 3.0
+        "wind_mps": 2.9
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-03 13:00",
+        "max_rain_time": "2026-09-03 15:15",
         "max_wind_mps": 5.9,
         "max_wind_time": "2026-09-05 19:00"
       }
@@ -145,7 +145,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "현재 풍속 10.7 m/s",
+      "reason_ko": "현재 풍속 10.2 m/s",
       "current_distance_km": 1171,
       "closest_distance_km": 1130,
       "closest_time": "2026-09-04T00:00:00+09:00",
@@ -154,9 +154,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 12:00",
-        "rain_mm": 0.69,
-        "wind_mps": 10.7
+        "last_updated": "2026-09-03 14:15",
+        "rain_mm": 0.56,
+        "wind_mps": 10.2
       },
       "forecast_72h": {
         "max_rain_mm": 27.47,
@@ -181,9 +181,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 11:00",
+        "last_updated": "2026-09-03 13:15",
         "rain_mm": 0.0,
-        "wind_mps": 3.5
+        "wind_mps": 2.6
       },
       "forecast_72h": {
         "max_rain_mm": 0.64,
@@ -208,9 +208,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 12:00",
-        "rain_mm": 1.11,
-        "wind_mps": 8.6
+        "last_updated": "2026-09-03 14:15",
+        "rain_mm": 0.71,
+        "wind_mps": 8.1
       },
       "forecast_72h": {
         "max_rain_mm": 1.11,
@@ -259,7 +259,7 @@
         "emoji": "🟢",
         "label_ko": "낮음"
       },
-      "reason_ko": "마닐라 국제공항 낮음 (현재 풍속 10.7 m/s)"
+      "reason_ko": "마닐라 국제공항 낮음 (현재 풍속 10.2 m/s)"
     },
     {
       "code": "ICN_PVG",
