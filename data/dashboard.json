@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-03T17:48:45.187388+00:00",
+  "generated_at_utc": "2026-09-03T18:32:41.589785+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-03T16:38:46.966772+00:00",
-    "weather": "2026-09-03T16:38:59.008571+00:00",
-    "risk": "2026-09-03T16:38:59.059943+00:00",
+    "weather": "2026-09-03T18:32:41.423785+00:00",
+    "risk": "2026-09-03T18:32:41.489002+00:00",
     "flights": "2026-09-02T22:55:04.979170+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": "2026-09-03T21:00:00+09:00",
     "jma_updated_at_utc": "2026-09-03T16:38:46.966772+00:00",
-    "weather_updated_at_utc": "2026-09-03T16:38:59.008571+00:00",
-    "impact_updated_at_utc": "2026-09-03T16:38:57.687081+00:00",
-    "risk_updated_at_utc": "2026-09-03T16:38:59.059943+00:00",
+    "weather_updated_at_utc": "2026-09-03T18:32:41.423785+00:00",
+    "impact_updated_at_utc": "2026-09-03T18:32:40.129365+00:00",
+    "risk_updated_at_utc": "2026-09-03T18:32:41.489002+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {
@@ -73,7 +73,7 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 00:30",
+        "last_updated": "2026-09-04 02:15",
         "rain_mm": 0.0,
         "wind_mps": 4.2
       },
@@ -100,9 +100,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 00:30",
+        "last_updated": "2026-09-04 02:15",
         "rain_mm": 0.0,
-        "wind_mps": 4.4
+        "wind_mps": 4.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.57,
@@ -127,13 +127,13 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 01:30",
+        "last_updated": "2026-09-04 03:15",
         "rain_mm": 0.0,
-        "wind_mps": 2.1
+        "wind_mps": 2.3
       },
       "forecast_72h": {
         "max_rain_mm": 0.0,
-        "max_rain_time": "2026-09-04 01:30",
+        "max_rain_time": "2026-09-04 03:15",
         "max_wind_mps": 6.0,
         "max_wind_time": "2026-09-05 19:00"
       }
@@ -154,9 +154,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 00:30",
-        "rain_mm": 1.5,
-        "wind_mps": 8.0
+        "last_updated": "2026-09-04 02:15",
+        "rain_mm": 1.6,
+        "wind_mps": 8.3
       },
       "forecast_72h": {
         "max_rain_mm": 3.09,
@@ -181,9 +181,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-03 23:30",
+        "last_updated": "2026-09-04 01:15",
         "rain_mm": 0.0,
-        "wind_mps": 1.3
+        "wind_mps": 1.5
       },
       "forecast_72h": {
         "max_rain_mm": 0.21,
@@ -194,7 +194,7 @@
     },
     "CRK": {
       "name_ko": "클락 국제공항",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
@@ -208,9 +208,9 @@
       "trend_ko": "JTWC 풍권 자료 없음",
       "current_weather": {
         "source": "WeatherAPI.com",
-        "last_updated": "2026-09-04 00:30",
-        "rain_mm": 0.0,
-        "wind_mps": 2.3
+        "last_updated": "2026-09-04 02:30",
+        "rain_mm": 0.01,
+        "wind_mps": 1.8
       },
       "forecast_72h": {
         "max_rain_mm": 5.99,
@@ -244,7 +244,7 @@
     {
       "code": "SUZHOU_PVG_CRK",
       "name_ko": "쑤저우 → PVG → 클락",
-      "score": 0,
+      "score": 3,
       "risk": {
         "emoji": "🟢",
         "label_ko": "낮음"
