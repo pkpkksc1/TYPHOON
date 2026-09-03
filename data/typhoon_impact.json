@@ -13,9 +13,9 @@
     "jtwc_issue_time_utc": null
   },
   "forecast_confidence": {
-    "emoji": "🔴",
-    "label_ko": "차이 큼",
-    "average_difference_km": 1434
+    "emoji": "⚪",
+    "label_ko": "비교자료 없음",
+    "average_difference_km": null
   },
   "risk_rule": {
     "very_high": "50kt 또는 64kt 영향권 내부",
@@ -54,16 +54,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 929
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 980
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 1044
         }
       ]
     },
@@ -96,16 +86,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 979
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 1039
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 1108
         }
       ]
     },
@@ -138,16 +118,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 1796
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 1850
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 1914
         }
       ]
     },
@@ -180,16 +150,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 1179
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 1230
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 1257
         }
       ]
     },
@@ -198,9 +158,9 @@
       "name_ko": "하노이 노이바이 국제공항",
       "risk_source": "JMA_DISTANCE_FALLBACK",
       "current_distance_km": 1091,
-      "closest_distance_km": 908,
-      "closest_time": "2026-09-04T18:00:00+09:00",
-      "closest_forecast_hour": 21,
+      "closest_distance_km": 1091,
+      "closest_time": "2026-09-03T21:00:00+09:00",
+      "closest_forecast_hour": 0,
       "trend": "UNKNOWN",
       "trend_ko": "JTWC 풍권 자료 없음",
       "trend_emoji": "⚪",
@@ -211,10 +171,10 @@
         "severity_rank": 1,
         "basis": "JTWC 미확보: 중심거리 임시 기준"
       },
-      "risk_forecast_hour": 21,
-      "risk_time": "2026-09-04T18:00:00+09:00",
+      "risk_forecast_hour": 0,
+      "risk_time": "2026-09-03T21:00:00+09:00",
       "risk_detail": {
-        "center_distance_km": 908,
+        "center_distance_km": 1091,
         "boundary_status_ko": "JTWC 풍권 자료 없음 - 임시 거리 기준"
       },
       "timeline": [
@@ -222,16 +182,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 1091
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 993
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 908
         }
       ]
     },
@@ -264,16 +214,6 @@
           "forecast_hour": 0,
           "time": "2026-09-03T21:00:00+09:00",
           "distance_km": 1090
-        },
-        {
-          "forecast_hour": 9,
-          "time": "2026-09-04T06:00:00+09:00",
-          "distance_km": 1140
-        },
-        {
-          "forecast_hour": 21,
-          "time": "2026-09-04T18:00:00+09:00",
-          "distance_km": 1167
         }
       ]
     }
@@ -369,7 +309,7 @@
       ]
     }
   ],
-  "generated_at_utc": "2026-09-03T21:40:16.493265+00:00",
+  "generated_at_utc": "2026-09-03T22:46:11.272352+00:00",
   "cma_crosscheck": {
     "status": "NO_MATCH",
     "message_ko": "CMA에서 동일 태풍을 찾지 못함"
