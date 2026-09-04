@@ -2,35 +2,22 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-03T23:57:54.597002+00:00",
+  "generated_at_utc": "2026-09-04T01:19:29.683060+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-03T22:46:01.619877+00:00",
+    "jma": "2026-09-04T01:19:29.620456+00:00",
     "weather": "2026-09-03T23:57:54.437189+00:00",
-    "risk": "2026-09-03T23:57:54.500165+00:00",
+    "risk": "2026-09-04T00:14:37.337697+00:00",
     "flights": "2026-09-03T22:53:57.385304+00:00"
   },
   "risk_meta": {
-    "typhoon_reference_time": "2026-09-03T21:00:00+09:00",
-    "jma_updated_at_utc": "2026-09-03T22:46:01.619877+00:00",
+    "typhoon_reference_time": null,
+    "jma_updated_at_utc": "2026-09-04T01:19:29.620456+00:00",
     "weather_updated_at_utc": "2026-09-03T23:57:54.437189+00:00",
     "impact_updated_at_utc": "2026-09-03T23:57:53.122216+00:00",
-    "risk_updated_at_utc": "2026-09-03T23:57:54.500165+00:00",
+    "risk_updated_at_utc": "2026-09-04T00:14:37.337697+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
-  "typhoon": {
-    "number": "2618",
-    "name": "SAUDEL",
-    "current": {
-      "time": "2026-09-03T21:00:00+09:00",
-      "lat": 24.0,
-      "lon": 116.0,
-      "pressure_hpa": 998.0,
-      "max_wind_mps": null,
-      "movement_direction": "南西",
-      "movement_speed_kmh": null
-    },
-    "forecast_track": []
-  },
+  "typhoon": {},
   "forecast_comparison": {
     "emoji": "⚪",
     "label_ko": "비교자료 없음",
