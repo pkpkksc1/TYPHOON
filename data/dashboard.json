@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-05T21:09:07.630783+00:00",
+  "generated_at_utc": "2026-09-05T22:29:49.423193+00:00",
   "source_updated_at_utc": {
     "jma": "2026-09-05T18:59:03.071341+00:00",
     "weather": "2026-09-03T23:57:54.437189+00:00",
-    "risk": "2026-09-05T19:13:05.743723+00:00",
-    "flights": "2026-09-04T22:39:09.663426+00:00"
+    "risk": "2026-09-05T21:27:37.418440+00:00",
+    "flights": "2026-09-05T22:29:49.349777+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": null,
     "jma_updated_at_utc": "2026-09-05T18:59:03.071341+00:00",
     "weather_updated_at_utc": "2026-09-03T23:57:54.437189+00:00",
     "impact_updated_at_utc": "2026-09-03T23:57:53.122216+00:00",
-    "risk_updated_at_utc": "2026-09-05T19:13:05.743723+00:00",
+    "risk_updated_at_utc": "2026-09-05T21:27:37.418440+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {},
@@ -304,21 +304,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-09-04T16:00:00+08:00",
-        "estimated_local": "2026-09-04T16:00:00+08:00",
-        "actual_local": "2026-09-04T15:58:00+08:00",
-        "display_time_local": "2026-09-04 15:58",
+        "scheduled_local": "2026-09-05T16:00:00+08:00",
+        "estimated_local": "2026-09-05T16:00:00+08:00",
+        "actual_local": "2026-09-05T16:05:00+08:00",
+        "display_time_local": "2026-09-05 16:05",
         "display_label_ko": "실제 출발",
-        "delay_minutes": -2,
+        "delay_minutes": 5,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-09-04T19:40:00+08:00",
-        "estimated_local": "2026-09-04T19:17:00+08:00",
-        "actual_local": "2026-09-04T19:16:00+08:00",
-        "display_time_local": "2026-09-04 19:16",
+        "scheduled_local": "2026-09-05T19:40:00+08:00",
+        "estimated_local": "2026-09-05T19:16:00+08:00",
+        "actual_local": "2026-09-05T19:15:00+08:00",
+        "display_time_local": "2026-09-05 19:15",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -24,
+        "delay_minutes": -25,
         "timezone_label_ko": "필리핀시간"
       }
     },
@@ -326,26 +326,26 @@
       "flight_iata": "KJ948",
       "route": "PVG → ICN",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "YELLOW",
+        "emoji": "🟡",
+        "label_ko": "운항 중"
       },
       "departure": {
-        "scheduled_local": "2026-09-04T05:05:00+08:00",
-        "estimated_local": "2026-09-04T05:05:00+08:00",
-        "actual_local": "2026-09-04T05:31:00+08:00",
-        "display_time_local": "2026-09-04 05:31",
+        "scheduled_local": "2026-09-06T03:05:00+08:00",
+        "estimated_local": "2026-09-06T03:05:00+08:00",
+        "actual_local": "2026-09-06T03:30:00+08:00",
+        "display_time_local": "2026-09-06 03:30",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 26,
+        "delay_minutes": 25,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-09-04T08:10:00+09:00",
-        "estimated_local": "2026-09-04T08:05:00+09:00",
-        "actual_local": "2026-09-04T07:58:00+09:00",
-        "display_time_local": "2026-09-04 07:58",
+        "scheduled_local": "2026-09-06T06:10:00+09:00",
+        "estimated_local": "2026-09-06T06:00:00+09:00",
+        "actual_local": "2026-09-06T05:55:00+09:00",
+        "display_time_local": "2026-09-06 05:55",
         "display_label_ko": "실제 도착",
-        "delay_minutes": -12,
+        "delay_minutes": -15,
         "timezone_label_ko": "한국시간"
       }
     },
@@ -381,10 +381,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-09",
-    "monthly_requests": 25,
+    "monthly_requests": 30,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-09-04T22:39:09.663426+00:00",
+    "last_fetch_at_utc": "2026-09-05T22:29:49.349777+00:00",
     "tracking_started_at_utc": "2026-09-01T00:13:38.549370+00:00"
   },
   "attribution": [
