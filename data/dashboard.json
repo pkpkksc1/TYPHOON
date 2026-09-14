@@ -2,19 +2,19 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-09-14T00:06:20.796927+00:00",
+  "generated_at_utc": "2026-09-14T04:49:59.008644+00:00",
   "source_updated_at_utc": {
-    "jma": "2026-09-07T15:46:34.632677+00:00",
+    "jma": "2026-09-14T04:49:58.950702+00:00",
     "weather": "2026-09-03T23:57:54.437189+00:00",
-    "risk": "2026-09-13T23:17:15.176062+00:00",
+    "risk": "2026-09-14T01:20:02.603368+00:00",
     "flights": "2026-09-13T22:43:43.897498+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": null,
-    "jma_updated_at_utc": "2026-09-07T15:46:34.632677+00:00",
+    "jma_updated_at_utc": "2026-09-14T04:49:58.950702+00:00",
     "weather_updated_at_utc": "2026-09-03T23:57:54.437189+00:00",
     "impact_updated_at_utc": "2026-09-03T23:57:53.122216+00:00",
-    "risk_updated_at_utc": "2026-09-13T23:17:15.176062+00:00",
+    "risk_updated_at_utc": "2026-09-14T01:20:02.603368+00:00",
     "risk_version": "6.7-DESTINATION-CURRENT-WEATHER"
   },
   "typhoon": {},
