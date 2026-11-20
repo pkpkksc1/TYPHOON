@@ -2,12 +2,12 @@
   "source": "SBLC Typhoon Dashboard",
   "product": "Dashboard Summary",
   "parser_version": "8.4.2-CURRENT-DISTANCE-FLIGHT5-API-USAGE",
-  "generated_at_utc": "2026-11-19T23:46:10.369181+00:00",
+  "generated_at_utc": "2026-11-20T01:57:17.600037+00:00",
   "source_updated_at_utc": {
     "jma": "2026-11-12T02:52:28.709402+00:00",
     "weather": "2026-09-03T23:57:54.437189+00:00",
     "risk": "2026-11-19T20:52:32.543967+00:00",
-    "flights": "2026-11-19T02:08:12.462904+00:00"
+    "flights": "2026-11-20T01:57:17.529140+00:00"
   },
   "risk_meta": {
     "typhoon_reference_time": null,
@@ -277,21 +277,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-11-18T01:50:00+09:00",
-        "estimated_local": "2026-11-18T01:50:00+09:00",
-        "actual_local": "2026-11-18T02:57:00+09:00",
-        "display_time_local": "2026-11-18 02:57",
+        "scheduled_local": "2026-11-20T01:50:00+09:00",
+        "estimated_local": "2026-11-20T01:50:00+09:00",
+        "actual_local": "2026-11-20T02:20:00+09:00",
+        "display_time_local": "2026-11-20 02:20",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 67,
+        "delay_minutes": 30,
         "timezone_label_ko": "한국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-11-18T03:05:00+08:00",
-        "estimated_local": "2026-11-18T03:29:00+08:00",
-        "actual_local": "2026-11-18T03:29:00+08:00",
-        "display_time_local": "2026-11-18 03:29",
+        "scheduled_local": "2026-11-20T03:05:00+08:00",
+        "estimated_local": "2026-11-20T02:58:00+08:00",
+        "actual_local": "2026-11-20T02:55:00+08:00",
+        "display_time_local": "2026-11-20 02:55",
         "display_label_ko": "실제 도착",
-        "delay_minutes": 24,
+        "delay_minutes": -10,
         "timezone_label_ko": "중국시간"
       }
     },
@@ -304,21 +304,21 @@
         "label_ko": "도착 완료"
       },
       "departure": {
-        "scheduled_local": "2026-11-18T16:55:00+08:00",
-        "estimated_local": "2026-11-18T16:55:00+08:00",
-        "actual_local": "2026-11-18T18:26:00+08:00",
-        "display_time_local": "2026-11-18 18:26",
+        "scheduled_local": "2026-11-19T16:55:00+08:00",
+        "estimated_local": "2026-11-19T16:55:00+08:00",
+        "actual_local": "2026-11-19T17:28:00+08:00",
+        "display_time_local": "2026-11-19 17:28",
         "display_label_ko": "실제 출발",
-        "delay_minutes": 91,
+        "delay_minutes": 33,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-11-18T20:50:00+08:00",
-        "estimated_local": "2026-11-18T21:34:00+08:00",
-        "actual_local": "2026-11-18T21:34:00+08:00",
-        "display_time_local": "2026-11-18 21:34",
+        "scheduled_local": "2026-11-19T20:50:00+08:00",
+        "estimated_local": "2026-11-19T20:41:00+08:00",
+        "actual_local": "2026-11-19T20:42:00+08:00",
+        "display_time_local": "2026-11-19 20:42",
         "display_label_ko": "실제 도착",
-        "delay_minutes": 44,
+        "delay_minutes": -8,
         "timezone_label_ko": "필리핀시간"
       }
     },
@@ -326,24 +326,24 @@
       "flight_iata": "KJ948",
       "route": "PVG → ICN",
       "status": {
-        "level": "YELLOW",
-        "emoji": "🟡",
-        "label_ko": "운항 중"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "출발 예정"
       },
       "departure": {
-        "scheduled_local": "2026-11-19T03:25:00+08:00",
-        "estimated_local": "2026-11-19T03:25:00+08:00",
+        "scheduled_local": "2026-11-20T03:25:00+08:00",
+        "estimated_local": "2026-11-20T03:25:00+08:00",
         "actual_local": null,
-        "display_time_local": "2026-11-19 03:25",
+        "display_time_local": "2026-11-20 03:25",
         "display_label_ko": "예상 출발",
         "delay_minutes": 0,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-11-19T06:25:00+09:00",
+        "scheduled_local": "2026-11-20T06:25:00+09:00",
         "estimated_local": null,
         "actual_local": null,
-        "display_time_local": "2026-11-19 06:25",
+        "display_time_local": "2026-11-20 06:25",
         "display_label_ko": "예정 도착",
         "delay_minutes": null,
         "timezone_label_ko": "한국시간"
@@ -353,26 +353,26 @@
       "flight_iata": "KJ988",
       "route": "PVG → ICN",
       "status": {
-        "level": "GREEN",
-        "emoji": "🟢",
-        "label_ko": "도착 완료"
+        "level": "BLUE",
+        "emoji": "🔵",
+        "label_ko": "출발 예정"
       },
       "departure": {
-        "scheduled_local": "2026-11-18T12:35:00+08:00",
-        "estimated_local": "2026-11-18T12:35:00+08:00",
-        "actual_local": "2026-11-18T13:36:00+08:00",
-        "display_time_local": "2026-11-18 13:36",
-        "display_label_ko": "실제 출발",
-        "delay_minutes": 61,
+        "scheduled_local": "2026-11-20T14:45:00+08:00",
+        "estimated_local": "2026-11-20T14:45:00+08:00",
+        "actual_local": null,
+        "display_time_local": "2026-11-20 14:45",
+        "display_label_ko": "예상 출발",
+        "delay_minutes": 0,
         "timezone_label_ko": "중국시간"
       },
       "arrival": {
-        "scheduled_local": "2026-11-18T15:35:00+09:00",
-        "estimated_local": "2026-11-18T15:59:00+09:00",
-        "actual_local": "2026-11-18T15:59:00+09:00",
-        "display_time_local": "2026-11-18 15:59",
-        "display_label_ko": "실제 도착",
-        "delay_minutes": 24,
+        "scheduled_local": "2026-11-20T17:45:00+09:00",
+        "estimated_local": null,
+        "actual_local": null,
+        "display_time_local": "2026-11-20 17:45",
+        "display_label_ko": "예정 도착",
+        "delay_minutes": null,
         "timezone_label_ko": "한국시간"
       }
     }
@@ -381,10 +381,10 @@
     "provider": "Aviationstack",
     "counter_type": "dashboard_local",
     "period": "2026-11",
-    "monthly_requests": 90,
+    "monthly_requests": 95,
     "monthly_limit": 100,
     "last_run_requests": 5,
-    "last_fetch_at_utc": "2026-11-19T02:08:12.462904+00:00",
+    "last_fetch_at_utc": "2026-11-20T01:57:17.529140+00:00",
     "tracking_started_at_utc": "2026-11-02T00:03:26.212015+00:00"
   },
   "attribution": [
